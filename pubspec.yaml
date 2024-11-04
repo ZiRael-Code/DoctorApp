@@ -30,15 +30,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  flutter_svg: ^2.0.0  # For handling SVG images
+  dotted_border: ^2.0.0
+  flutter_rating_bar: ^4.0.0  # For star rating bars
+  table_calendar: ^3.1.2
+  cupertino_icons: ^1.0.8  # Common Cupertino icons used in iOS designs
+  url_launcher: ^6.0.20
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -52,6 +49,25 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  #  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/images/doc.png
+    - assets/images/name.png
+    - assets/images/doc1.png
+    - assets/images/pharm1.jpeg
+    - assets/images/pharm2.jpeg
+    - assets/images/host1.jpeg
+    - assets/images/family.png
+    - assets/images/host2.png
+    - assets/images/host3.png
+    - assets/images/presphone.png
+    - assets/images/notification.svg
+    - assets/images/rema.png
+    - assets/images/cuate.png
+    - assets/images/icons/dashboard/electric.png
+    - assets/images/icons/dashboard/device.png
+    - assets/images/vit.jpg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
