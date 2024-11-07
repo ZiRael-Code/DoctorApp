@@ -107,7 +107,7 @@ class UploadIdCard extends StatelessWidget {
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Row(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
@@ -118,8 +118,7 @@ class UploadIdCard extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                            onPressed: onPressed,
-                            icon: Icon(Icons.arrow_drop_down))
+                            onPressed: () {}, icon: Icon(Icons.arrow_drop_down))
                       ],
                     ),
                   )

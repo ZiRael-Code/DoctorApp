@@ -108,7 +108,7 @@ class _DashboardState extends State<Dashboard> {
                     title: Text('Your device is ready for pickup'),
                     children: [
                       Padding(
-                        padding: EdgeInsets.all(16.0),
+                        padding: EdgeInsets.all(11.0),
                         child: Text(
                             'Details about the pickup location or process.'),
                       ),
