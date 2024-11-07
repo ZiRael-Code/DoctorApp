@@ -117,7 +117,9 @@ class UploadIdCard extends StatelessWidget {
                             style: TextStyle(color: Colors.grey),
                           ),
                         ),
-                        Icon(Icons.arrow_drop_down)
+                        IconButton(
+                            onPressed: onPressed,
+                            icon: Icon(Icons.arrow_drop_down))
                       ],
                     ),
                   )

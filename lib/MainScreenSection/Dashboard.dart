@@ -12,31 +12,23 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(),
-    );
-  }
-}
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title:  Row(
+          title: Row(
             children: [
               SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child:  GestureDetector(
+                child: GestureDetector(
                     // onTap: (){
                     //   Navigator.push(context, MaterialPageRoute(builder:
                     //       (context) => AccountProfileState()));
                     // },
-                    child:
-                    CircleAvatar(
-                      radius: 50,
-                      backgroundImage: AssetImage('assets/images/dr.png'),
-
-                    )
-                ),
+                    child: CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage('assets/images/dr.png'),
+                )),
               ),
               SizedBox(width: 10.0),
               const Column(
@@ -58,19 +50,19 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
               Spacer(),
-              GestureDetector(
-                child:
-                SvgPicture.asset('ass')
-                // onTap: (){
-                //   Navigator.push(context, MaterialPageRoute(builder:
-                //       (context) => Community()));
-                // },
+              GestureDetector(child: SvgPicture.asset('ass')
+                  // onTap: (){
+                  //   Navigator.push(context, MaterialPageRoute(builder:
+                  //       (context) => Community()));
+                  // },
+                  ),
+              SizedBox(
+                width: 10,
               ),
-              SizedBox(width: 10,),
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
-                  child:SvgPicture.asset(
+                  child: SvgPicture.asset(
                     'assets/images/notification.svg',
                     fit: BoxFit.contain,
                   ),
@@ -83,8 +75,8 @@ class _DashboardState extends State<Dashboard> {
             ],
           ),
         ),
-        body: Padding(padding:
-            EdgeInsets.all(14),
+        body: Padding(
+          padding: EdgeInsets.all(14),
           child: Column(
             children: [
               ListView(
@@ -95,7 +87,8 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       Padding(
                         padding: EdgeInsets.all(16.0),
-                        child: Text('More detailed information goes here. Click to collapse.'),
+                        child: Text(
+                            'More detailed information goes here. Click to collapse.'),
                       ),
                     ],
                   ),
@@ -105,7 +98,8 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       Padding(
                         padding: EdgeInsets.all(16.0),
-                        child: Text('Detailed information about the status of your drugs.'),
+                        child: Text(
+                            'Detailed information about the status of your drugs.'),
                       ),
                     ],
                   ),
@@ -115,21 +109,19 @@ class _DashboardState extends State<Dashboard> {
                     children: [
                       Padding(
                         padding: EdgeInsets.all(16.0),
-                        child: Text('Details about the pickup location or process.'),
+                        child: Text(
+                            'Details about the pickup location or process.'),
                       ),
                     ],
                   ),
                 ],
               ),
-
               Row(
-                children: [
-                  Text(''),
-                  Text('')
-                ],
+                children: [Text(''), Text('')],
               ),
-
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               patiencte_reading(
                   name: 'Salami Adebayo',
                   path: 'assets/images/man1.png',
@@ -139,20 +131,16 @@ class _DashboardState extends State<Dashboard> {
                   hba1c: '42mmol/mol,',
                   ihra: '5.7% ...',
                   regularity: 'irregular',
-                  regularityColor: Color(0xffFF8E3C)
-              ),
-
+                  regularityColor: Color(0xffFF8E3C)),
               network_update(
-                profile_path: '',
-                name: '',
-                network_name: '',
-                date: '',
-                time: '',
-                text: ''
-              ),
+                  profile_path: '',
+                  name: '',
+                  network_name: '',
+                  date: '',
+                  time: '',
+                  text: ''),
             ],
           ),
-
         ),
       ),
     );
@@ -162,13 +150,13 @@ class _DashboardState extends State<Dashboard> {
     required String name,
     required String path,
     required String date,
-    required  String bp,
+    required String bp,
     required String hba1c,
     required String ihra,
     required String regularity,
     required Color regularityColor,
     required String time,
-}){
+  }) {
     return Container(
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
@@ -206,7 +194,8 @@ class _DashboardState extends State<Dashboard> {
           Row(
             children: [
               CircleAvatar(
-                backgroundImage: AssetImage(path), // Replace with your image asset
+                backgroundImage:
+                    AssetImage(path), // Replace with your image asset
                 radius: 24.0,
               ),
               SizedBox(width: 12.0),
@@ -222,7 +211,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   SizedBox(height: 4.0),
                   Text(
-                    time+' · '+date,
+                    time + ' · ' + date,
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 12.0,
@@ -246,7 +235,8 @@ class _DashboardState extends State<Dashboard> {
               Text('90/60mmHg, '),
               Text(
                 'HbA1c: ',
-                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
               ),
               Text('42mmol/mol, '),
               Text(
@@ -259,89 +249,78 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
     );
-}
+  }
 
-  network_update({
-    required String profile_path,
-    required String name,
-    required String network_name,
-    required String date,
-    required String time,
-    required String text,
-    imageList
-  }) {
+  network_update(
+      {required String profile_path,
+      required String name,
+      required String network_name,
+      required String date,
+      required String time,
+      required String text,
+      imageList}) {
     final int maxVisibleImages = 4;
     // image_shower(imageList, maxVisibleImages);
 
-    return Column(children: [
-
-
-    ]
-    );
+    return Column(children: []);
   }
 
   void image_shower(imageList, int maxVisibleImages) {
-     if (imageList.length > 1 ){
-      Column(
-        children: [
-          SizedBox(height: 15),
-      Wrap(
-        spacing: 8.0,
-        runSpacing: 8.0,
-        children: List.generate(
-          imageList.length > maxVisibleImages ? maxVisibleImages + 1 : imageList.length,
-              (index) {
-            if (index < maxVisibleImages) {
-              return ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.asset(
-                  imageList[index],
+    if (imageList.length > 1) {
+      Column(children: [
+        SizedBox(height: 15),
+        Wrap(
+          spacing: 8.0,
+          runSpacing: 8.0,
+          children: List.generate(
+            imageList.length > maxVisibleImages
+                ? maxVisibleImages + 1
+                : imageList.length,
+            (index) {
+              if (index < maxVisibleImages) {
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(8.0),
+                  child: Image.asset(
+                    imageList[index],
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              } else {
+                final int remaining = imageList.length - maxVisibleImages;
+                return Container(
                   width: 100,
                   height: 100,
-                  fit: BoxFit.cover,
-                ),
-              );
-            } else {
-              final int remaining = imageList.length - maxVisibleImages;
-              return Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.6),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Center(
-                  child: Text(
-                    '+$remaining',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.6),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      '+$remaining',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                ),
-              );
-            }
-          },
+                );
+              }
+            },
+          ),
         ),
-      ),
-          SizedBox(height: 15),
-          ]
-    );
-    }else if(imageList.length == 0){
+        SizedBox(height: 15),
+      ]);
+    } else if (imageList.length == 0) {
       ClipRRect(
           borderRadius: BorderRadius.circular(8.0),
-          child: Image.asset(imageList[0])
-      );
+          child: Image.asset(imageList[0]));
     }
   }
-
 }
+
 void main() {
   runApp(Dashboard());
 }
-
-
-
-
-
