@@ -73,7 +73,7 @@ class VerifyIdentity extends StatelessWidget {
                     onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => UploadIdCard(),
+                            builder: (context) => const UploadIdCard(),
                           ),
                         ),
                     child: const MyBlueButton(text: "Continue")),

@@ -36,7 +36,7 @@ class UploadIdCard extends StatelessWidget {
                     DottedBorder(
                       color: Colors.grey.withOpacity(0.70),
                       radius: const Radius.circular(19),
-                      dashPattern: [8, 6],
+                      dashPattern: const [8, 6],
                       borderType: BorderType.RRect,
                       strokeWidth: 2,
                       child: Column(
@@ -107,11 +107,11 @@ class UploadIdCard extends StatelessWidget {
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: 10),
                           child: Text(
                             "e.g basic or advanced",
                             style: TextStyle(color: Colors.grey),

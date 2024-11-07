@@ -17,7 +17,7 @@ class MyWhiteButton extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 16),
         ),
       ),
