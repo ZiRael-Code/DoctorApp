@@ -120,19 +120,28 @@ class SetAppointmentTimes2 extends StatelessWidget {
                     Row(
                       children: [
                         MySelected(
-                          text: "Add time",
+                          text: "+ Add time",
                           isSelected: false,
-                          height: 88,
-                          width: 38,
+                          height: 38,
+                          width: 88,
                         ),
                         SizedBox(
-                          width: 20,
+                          width: 15,
                         ),
                         MySelected(
                           text: "11:00AM - 3:00AM",
                           isSelected: false,
                           height: 38,
                           width: 138,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        MySelected(
+                          text: "12:30AM",
+                          isSelected: false,
+                          height: 38,
+                          width: 88,
                         ),
                       ],
                     ),
@@ -147,12 +156,52 @@ class SetAppointmentTimes2 extends StatelessWidget {
                     SizedBox(
                       height: 15,
                     ),
-                    MySelected(
-                      text: "Add days",
-                      isSelected: false,
-                      height: 88,
-                      width: 38,
-                    ),
+                    Wrap(
+                      children: [
+                        MySelected(
+                          text: "+ Add days",
+                          isSelected: false,
+                          height: 38,
+                          width: 88,
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        MySelected(
+                          text: "MON",
+                          isSelected: false,
+                          height: 38,
+                          width: 88,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        MySelected(
+                          text: "WED",
+                          isSelected: false,
+                          height: 38,
+                          width: 88,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        MySelected(
+                          text: "THR",
+                          isSelected: false,
+                          height: 38,
+                          width: 88,
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        MySelected(
+                          text: "FRI",
+                          isSelected: false,
+                          height: 38,
+                          width: 88,
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

@@ -120,8 +120,8 @@ class SetAppointmentTimes extends StatelessWidget {
                     MySelected(
                       text: "Add time",
                       isSelected: false,
-                      height: 88,
-                      width: 38,
+                      height: 38,
+                      width: 88,
                     ),
                     SizedBox(
                       height: 20,
@@ -137,8 +137,8 @@ class SetAppointmentTimes extends StatelessWidget {
                     MySelected(
                       text: "Add days",
                       isSelected: false,
-                      height: 88,
-                      width: 38,
+                      height: 38,
+                      width: 88,
                     ),
                   ],
                 ),

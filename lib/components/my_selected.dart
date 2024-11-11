@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class MySelected extends StatefulWidget {
   final String text;
-  final int width;
-  final int height;
+  final double width;
+  final double height;
   final bool isSelected;
 
   const MySelected(
@@ -31,8 +31,8 @@ class _MySelectedState extends State<MySelected> {
     return GestureDetector(
       onTap: _toggleColor,
       child: Container(
-        width: 88,
-        height: 38,
+        width: widget.width,
+        height: widget.height,
         decoration: BoxDecoration(
           color: _isSelected
               ? const Color.fromARGB(255, 195, 225, 249)
