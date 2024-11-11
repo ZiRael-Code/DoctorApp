@@ -65,9 +65,7 @@ class VerifyIdentity extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(
-                  height: 100,
-                ),
+                const Spacer(),
 
                 GestureDetector(
                     onTap: () => Navigator.push(

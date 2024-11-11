@@ -1,4 +1,7 @@
 import 'package:doctor_app/MainScreenSection/Dashboard.dart';
+import 'package:doctor_app/onboarding/set_appointment_times.dart';
+import 'package:doctor_app/onboarding/set_appointment_times2.dart';
+import 'package:doctor_app/onboarding/upload_id_card.dart';
 import 'package:doctor_app/onboarding/verify_identity.dart';
 import 'package:flutter/material.dart';
 
