@@ -1,0 +1,59 @@
+import 'package:doctor_app/components/my_blue_button.dart';
+import 'package:flutter/material.dart';
+
+class SuccessPage extends StatelessWidget {
+  const SuccessPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Center(
+              child: Column(
+            children: [
+              const SizedBox(
+                height: 120,
+              ),
+              Text(
+                "Success!",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "Your account has been created",
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                  ),
+                  Text(
+                    "successfully",
+                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 100,
+              ),
+              Image.asset(
+                "assets/images/unboardinglogo.png",
+                scale: 4,
+              ),
+              const Spacer(),
+              MyBlueButton(text: "Continue to Login"),
+              SizedBox(
+                height: 40,
+              )
+            ],
+          )),
+        ),
+      ),
+    );
+  }
+}

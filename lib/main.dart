@@ -1,6 +1,11 @@
 import 'package:doctor_app/MainScreenSection/Dashboard.dart';
+import 'package:doctor_app/onboarding/login_page.dart';
+import 'package:doctor_app/onboarding/onboarding1.dart';
+import 'package:doctor_app/onboarding/onboarding2.dart';
 import 'package:doctor_app/onboarding/set_appointment_times.dart';
 import 'package:doctor_app/onboarding/set_appointment_times2.dart';
+import 'package:doctor_app/onboarding/set_password.dart';
+import 'package:doctor_app/onboarding/success_page.dart';
 import 'package:doctor_app/onboarding/upload_id_card.dart';
 import 'package:doctor_app/onboarding/verify_identity.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +28,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SetAppointmentTimes2(),
+      home: const Onboarding1(),
     );
   }
 }

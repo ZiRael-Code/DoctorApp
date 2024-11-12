@@ -13,73 +13,75 @@ class VerifyIdentity extends StatelessWidget {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(25),
-            child: Column(
-              children: [
-                const SizedBox(
-                  height: 80,
-                ),
-                const Text(
-                  "Verify Identity",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 80,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 75),
-                  child: Text(
-                    "Verify your identity as a medical specalist. You will be needed to upload or take a photo of your license.",
+                  const Text(
+                    "Verify Identity",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                ),
-
-                // image
-                Stack(
-                  children: [
-                    Center(
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 80.5),
-                        child: Image.asset(
-                          "assets/images/Group 803.png",
-                          width: 215,
-                          height: 215,
-                        ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 75),
+                    child: Text(
+                      "Verify your identity as a medical specalist. You will be needed to upload or take a photo of your license.",
+                      style: TextStyle(
+                        fontSize: 14,
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                    Center(
-                      child: Container(
-                        margin: const EdgeInsets.only(top: 26),
-                        child: Image.asset(
-                          "assets/images/id-card.png",
-                          width: 222,
-                          height: 276,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
 
-                const Spacer(),
-
-                GestureDetector(
-                    onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const UploadIdCard(),
+                  // image
+                  Stack(
+                    children: [
+                      Center(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 80.5),
+                          child: Image.asset(
+                            "assets/images/Group 803.png",
+                            width: 215,
+                            height: 215,
                           ),
                         ),
-                    child: const MyBlueButton(text: "Continue")),
-                const SizedBox(
-                  height: 20,
-                ),
-                const MyWhiteButton(text: "I'll do this later")
-              ],
+                      ),
+                      Center(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 26),
+                          child: Image.asset(
+                            "assets/images/id-card.png",
+                            width: 222,
+                            height: 276,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const Spacer(),
+
+                  GestureDetector(
+                      onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const UploadIdCard(),
+                            ),
+                          ),
+                      child: const MyBlueButton(text: "Continue")),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const MyWhiteButton(text: "I'll do this later")
+                ],
+              ),
             ),
           ),
         ),

@@ -157,6 +157,7 @@ class SetAppointmentTimes2 extends StatelessWidget {
                       height: 15,
                     ),
                     Wrap(
+                      runSpacing: 10.0,
                       children: [
                         MySelected(
                           text: "+ Add days",
@@ -164,7 +165,7 @@ class SetAppointmentTimes2 extends StatelessWidget {
                           height: 38,
                           width: 88,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 15,
                         ),
                         MySelected(
