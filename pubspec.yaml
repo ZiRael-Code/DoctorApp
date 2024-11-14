@@ -36,6 +36,7 @@ dependencies:
   table_calendar: ^3.1.2
   cupertino_icons: ^1.0.8  # Common Cupertino icons used in iOS designs
   url_launcher: ^6.0.20
+#
   image_picker: ^1.1.2
   
 
@@ -71,9 +72,6 @@ flutter:
     - assets/images/icons/dashboard/device.png
     - assets/images/vit.jpg
 
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
