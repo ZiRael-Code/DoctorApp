@@ -30,7 +30,7 @@ class _SetPasswordState extends State<SetPassword> {
             const SizedBox(
               height: 40,
             ),
-            Text(
+            const Text(
               "Set Password",
               style: TextStyle(
                 fontSize: 28,

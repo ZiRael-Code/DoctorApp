@@ -30,7 +30,7 @@ class _DashboardState extends State<Dashboard> {
                   backgroundImage: AssetImage('assets/images/dr.png'),
                 )),
               ),
-              SizedBox(width: 10.0),
+              const SizedBox(width: 10.0),
               const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -49,14 +49,14 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               GestureDetector(child: SvgPicture.asset('ass')
                   // onTap: (){
                   //   Navigator.push(context, MaterialPageRoute(builder:
                   //       (context) => Community()));
                   // },
                   ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Align(
@@ -76,11 +76,11 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.all(14),
+          padding: const EdgeInsets.all(14),
           child: Column(
             children: [
               ListView(
-                children: [
+                children: const [
                   ExpansionTile(
                     leading: Icon(Icons.message),
                     title: Text('You have a new message from Alexander...'),
@@ -116,10 +116,10 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [Text(''), Text('')],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               patiencte_reading(
@@ -158,7 +158,7 @@ class _DashboardState extends State<Dashboard> {
     required String time,
   }) {
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
@@ -167,7 +167,7 @@ class _DashboardState extends State<Dashboard> {
             color: Colors.grey.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -176,7 +176,7 @@ class _DashboardState extends State<Dashboard> {
         children: [
           // Label
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             decoration: BoxDecoration(
               color: regularityColor.withOpacity(0.15),
               borderRadius: BorderRadius.circular(8.0),
@@ -189,7 +189,7 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          SizedBox(height: 12.0),
+          const SizedBox(height: 12.0),
           // User Information
           Row(
             children: [
@@ -204,15 +204,15 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16.0,
                     ),
                   ),
-                  SizedBox(height: 4.0),
+                  const SizedBox(height: 4.0),
                   Text(
                     time + ' · ' + date,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12.0,
                     ),
@@ -221,12 +221,12 @@ class _DashboardState extends State<Dashboard> {
               ),
             ],
           ),
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           // Divider
           Divider(color: Colors.grey[300]),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
           // Health Readings
-          Row(
+          const Row(
             children: [
               Text(
                 'BP: ',
@@ -299,7 +299,7 @@ class _DashboardState extends State<Dashboard> {
                   child: Center(
                     child: Text(
                       '+$remaining',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -311,7 +311,7 @@ class _DashboardState extends State<Dashboard> {
             },
           ),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
       ]);
     } else if (imageList.length == 0) {
       ClipRRect(

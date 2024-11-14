@@ -87,7 +87,7 @@ class UploadIdCardValidator extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Container(
@@ -96,7 +96,7 @@ class UploadIdCardValidator extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 208, 232, 252),
                             borderRadius: BorderRadius.circular(12)),
-                        child: Center(
+                        child: const Center(
                           child: Text(
                             "Change Photo",
                             style: TextStyle(
@@ -158,7 +158,8 @@ class UploadIdCardValidator extends StatelessWidget {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => UploadIdCardValidator())),
+                            builder: (context) =>
+                                const UploadIdCardValidator())),
                     child: const MyBlueButton(text: "Continue"))
               ],
             ),

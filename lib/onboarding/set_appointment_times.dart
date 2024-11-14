@@ -39,9 +39,9 @@ class SetAppointmentTimes extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Column(
+              const Column(
                 children: [
-                  const Text(
+                  Text(
                     "Set appointment",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -144,7 +144,7 @@ class SetAppointmentTimes extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              MyBlueButton(text: "Continue"),
+              const MyBlueButton(text: "Continue"),
               const SizedBox(
                 height: 30,
               ),
