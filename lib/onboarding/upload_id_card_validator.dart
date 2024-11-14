@@ -1,38 +1,9 @@
 import 'package:doctor_app/components/my_blue_button.dart';
-import 'package:doctor_app/onboarding/upload_id_card_validator.dart';
-import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
+import 'package:flutter/material.dart';
 
-class UploadIdCard extends StatefulWidget {
-  const UploadIdCard({super.key});
-
-  @override
-  State<UploadIdCard> createState() => _UploadIdCardState();
-}
-
-class _UploadIdCardState extends State<UploadIdCard> {
-  final ImagePicker _picker = ImagePicker();
-  File? _selectedImage;
-
-  Future<void> _pickImage() async {
-    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        _selectedImage = File(pickedFile.path);
-      });
-    }
-
-    if (pickedFile != null) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const UploadIdCardValidator(),
-        ),
-      );
-    }
-  }
+class UploadIdCardValidator extends StatelessWidget {
+  const UploadIdCardValidator({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +15,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 60,
+                  height: 80,
                 ),
                 Center(
                   child: Column(
@@ -80,17 +51,9 @@ class _UploadIdCardState extends State<UploadIdCard> {
                               child: Column(
                                 children: [
                                   const SizedBox(
-                                    height: 50,
+                                    height: 60,
                                   ),
-                                  _selectedImage != null
-                                      ? Image.file(
-                                          _selectedImage!,
-                                          width: 150,
-                                          height: 150,
-                                          fit: BoxFit.cover,
-                                        )
-                                      : Image.asset(
-                                          "assets/images/filelogo.png"),
+                                  Image.asset("assets/images/filelogo.png"),
                                   const SizedBox(
                                     height: 30,
                                   ),
@@ -102,7 +65,6 @@ class _UploadIdCardState extends State<UploadIdCard> {
                                     height: 20,
                                   ),
                                   Container(
-                                    height: 55,
                                     padding: const EdgeInsets.only(
                                         left: 50,
                                         right: 50,
@@ -112,23 +74,38 @@ class _UploadIdCardState extends State<UploadIdCard> {
                                         color: Colors.blue,
                                         borderRadius:
                                             BorderRadius.circular(12)),
-                                    child: TextButton(
-                                      onPressed: _pickImage,
-                                      child: const Text(
-                                        "Upload ID",
-                                        style: TextStyle(
+                                    child: const Text(
+                                      "Upload Image",
+                                      style: TextStyle(
                                           color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                  ),
+                                  )
                                 ],
                               ),
                             )
                           ],
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        width: 174,
+                        height: 45,
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 208, 232, 252),
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Center(
+                          child: Text(
+                            "Change Photo",
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -178,14 +155,11 @@ class _UploadIdCardState extends State<UploadIdCard> {
                   height: 40,
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const UploadIdCardValidator(),
-                    ),
-                  ),
-                  child: const MyBlueButton(text: "Continue"),
-                )
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => UploadIdCardValidator())),
+                    child: const MyBlueButton(text: "Continue"))
               ],
             ),
           ),

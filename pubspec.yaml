@@ -35,9 +35,10 @@ dependencies:
   flutter_rating_bar: ^4.0.0  # For star rating bars
   table_calendar: ^3.1.2
   cupertino_icons: ^1.0.8  # Common Cupertino icons used in iOS designs
-#  url_launcher: ^6.0.20
-#
-  flutter_lints: ^4.0.0
+  url_launcher: ^6.0.20
+
+#  flutter_lints: ^4.0.0
+  image_picker: ^1.1.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
