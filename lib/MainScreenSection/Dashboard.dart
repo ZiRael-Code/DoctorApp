@@ -321,6 +321,13 @@ class _DashboardState extends State<Dashboard> {
   }
 }
 
+man({
+  required String name
+}){
+  return Container(
+    child: Image.asset('assets/images/man.png'),
+  );
+}
 void main() {
   runApp(Dashboard());
 }
