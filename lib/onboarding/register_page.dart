@@ -169,7 +169,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account yet?"),
+                    const Text("Already have an account?"),
                     const SizedBox(
                       width: 4,
                     ),
@@ -179,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           MaterialPageRoute(
                               builder: (context) => const RegisterPage())),
                       child: const Text(
-                        "Register here",
+                        "Login here",
                         style: TextStyle(color: Colors.blue),
                       ),
                     )
