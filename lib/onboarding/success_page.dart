@@ -16,17 +16,17 @@ class SuccessPage extends StatelessWidget {
               const SizedBox(
                 height: 120,
               ),
-              Text(
+              const Text(
                 "Success!",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 28,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Column(
+              const Column(
                 children: [
                   Text(
                     "Your account has been created",
@@ -38,7 +38,7 @@ class SuccessPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 100,
               ),
               Image.asset(
@@ -46,8 +46,8 @@ class SuccessPage extends StatelessWidget {
                 scale: 4,
               ),
               const Spacer(),
-              MyBlueButton(text: "Continue to Login"),
-              SizedBox(
+              const MyBlueButton(text: "Continue to Login"),
+              const SizedBox(
                 height: 40,
               )
             ],

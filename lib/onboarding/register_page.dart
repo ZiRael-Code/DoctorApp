@@ -17,13 +17,13 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
-                SizedBox(
-                  height: 30,
+                const SizedBox(
+                  height: 40,
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Register",
@@ -112,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 20,
                 ),
-                MyBlueButton(
+                const MyBlueButton(
                   text: "Register",
                 ),
                 const SizedBox(
@@ -128,13 +128,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         thickness: 1,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
-                    Text(
+                    const Text(
                       "Or register with",
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
                     SizedBox(
@@ -169,7 +169,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account yet?"),
+                    const Text("Already have an account?"),
                     const SizedBox(
                       width: 4,
                     ),
@@ -179,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           MaterialPageRoute(
                               builder: (context) => const RegisterPage())),
                       child: const Text(
-                        "Register here",
+                        "Login here",
                         style: TextStyle(color: Colors.blue),
                       ),
                     )

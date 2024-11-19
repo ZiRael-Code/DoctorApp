@@ -57,7 +57,7 @@ class Onboarding3 extends StatelessWidget {
                 child: Container(
                   width: 301,
                   height: 71,
-                  child: Text(
+                  child: const Text(
                     "Prescribe medications for your patients rignt from the app and monitor their usage.",
                     style: TextStyle(
                       fontSize: 14,

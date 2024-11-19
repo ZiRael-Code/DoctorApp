@@ -39,9 +39,9 @@ class SetAppointmentTimes2 extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Column(
+              const Column(
                 children: [
-                  const Text(
+                  Text(
                     "Set appointment",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
