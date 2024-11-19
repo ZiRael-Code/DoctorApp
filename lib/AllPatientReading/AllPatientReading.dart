@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 
 void main(){
   runApp(MaterialApp(
-      home:AllPatientReading()));
+      home: AllPatientReading()));
 }
 
 class AllPatientReading extends StatefulWidget{
@@ -87,7 +87,7 @@ class _AllPatientState extends State<AllPatientReading>{
   bool isFilterOpen = false;
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
           backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -218,20 +218,20 @@ class _AllPatientState extends State<AllPatientReading>{
                       spacing: 5, //
                       runSpacing: 8, //
                         children: [
-                        for (int i = 0; i <= btnText.length-1; i++) // Create 9 buttons
+                        for (int i = 0; i <= btnText.length-1; i++)
                           ElevatedButton(
                             onPressed: () {
                               // Button logic here
                             },
                             style: ElevatedButton.styleFrom(
                               side: BorderSide(
-                                color: i == btnText.length-1 ? Colors.blue : Colors.transparent, // Border color
-                                width:  i == btnText.length-1 ? 1.0 : 0.0, // Border width
+                                color: i == btnText.length-1 ? Colors.blue : Colors.transparent,
+                                width:  i == btnText.length-1 ? 1.0 : 0.0,
                               ),
                               shadowColor: Colors.transparent,
-                              backgroundColor: i == btnText.length-1 ? Colors.transparent : Color(0xFFE2EDFF)  , // Button color
+                              backgroundColor: i == btnText.length-1 ? Colors.transparent : Color(0xFFE2EDFF)  ,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50), // Rounded corners
+                                borderRadius: BorderRadius.circular(50),
                               ),
                             ),
                             child: Padding(

@@ -1,4 +1,10 @@
+import 'package:doctor_app/AllPatientReading/DrugCompliance.dart';
+import 'package:doctor_app/AllPatientReading/PrescribeDrugs.dart';
+import 'package:doctor_app/components/vitals_reading_comp.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../Call_MessagePatient/Chat.dart';
 
 class PatientReading extends StatefulWidget {
   const PatientReading({super.key});
@@ -37,7 +43,9 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
           ],
         ),
       ),
-      body: Padding(
+      body: Stack(
+    children: [
+      Padding(
         padding: EdgeInsets.only(left: 12, right: 12, top: 25),
         child: Column(
           children: [
@@ -84,6 +92,8 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
                 ],
               ),
             ),
+            Column(
+              children: [
             Container(
               height: 50,
               padding: EdgeInsets.all(4),
@@ -108,6 +118,10 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
                 ],
               ),
             ),
+                SizedBox(height: 20,),
+
+            ]
+        ),
             SizedBox(height: 10),
             Flexible(
               child: TabBarView(
@@ -121,14 +135,228 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
           ],
         ),
       ),
+
+      DraggableScrollableSheet(
+          initialChildSize: 0.1, // Default height (collapsed state)
+          minChildSize: 0.1,     // Minimum height
+          maxChildSize: 0.3,     // Maximum height
+          builder: (context, scrollController) {
+            return Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 10,
+                    offset: Offset(0, -2),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 10),
+                  Container(
+                    width: 50,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Expanded(
+                    child: ListView(
+                      controller: scrollController,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            GestureDetector(
+                              onTap: (){
+
+                              },
+                              child: 
+                            _actionButton(
+                              icon: Icons.phone,
+                              label: 'Call patient',
+                              color: Colors.blue,
+                            ),
+                            ),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> PrescribeDrugs()));
+                              },
+                              child: _actionButton(
+                              icon: Icons.medical_services,
+                              label: 'Prescribe drugs',
+                              color: Colors.blue,
+                            ),
+                            ),
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Chat()));
+                              },
+                              child: 
+                            _actionButton(
+                              icon: Icons.message,
+                              label: 'Message patient',
+                              color: Colors.blue,
+                            ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
+            );
+          }
+      )
+    ]
+      ),
     );
   }
 
+  Widget _actionButton({required IconData icon, required String label, required Color color}) {
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 30,
+          backgroundColor: color.withOpacity(0.1),
+          child: Icon(
+            icon,
+            color: color,
+            size: 30,
+          ),
+        ),
+        SizedBox(height: 8),
+        Text(
+          label,
+          style: TextStyle(fontSize: 12),
+        ),
+      ],
+    );
+  }
+}
+
   Widget vital_reading() {
-    return Center(child: Text('Vital Readings'));
+    return Expanded(
+      child: SingleChildScrollView(
+      child: Column(
+      children: [
+
+
+        vitals_reading_comp(
+            name: 'Blood Pressure',
+            deviceName: 'Wellue BP2 connect',
+            reading: '90/60 mmHg',
+            timestamp: '12/09/2022',
+            datestamp: '12:08AM',
+            iconPath: 'assets/images/bpicon.svg',
+            color: Color(0xffA64FFE)
+        ),
+        vitals_reading_comp(
+            name: 'Stress (HRV rate)',
+            deviceName: 'Wellue BP2 connect',
+            reading: '50 milliseconds',
+            timestamp: '12/09/2022',
+            datestamp: '12:08AM',
+            iconPath: 'assets/images/hrvicon.svg',
+            color: Color(0xffFF6161)
+    ),
+        vitals_reading_comp(
+            name: 'Oxygen Saturation',
+            deviceName: 'Stress (HRV rate)',
+            reading: '95 %',
+            timestamp: '12/09/2022',
+            datestamp: '12:08AM',
+            iconPath: 'assets/images/osicon.svg',
+            color: Color(0xff2C68BF)
+    ),
+        vitals_reading_comp(
+            name: 'Lipids',
+            deviceName: 'Stress (HRV rate)',
+            reading: '100 mg/DL',
+            timestamp: '12/09/2022',
+            datestamp: '12:08AM',
+            iconPath: 'assets/images/lipidicon.svg',
+            color: Color(0xff1C9A9A)
+    ),
+    vitals_reading_comp(
+    deviceName: 'Wellue BP2 connect',
+    name: 'Heart rate (ECG)',
+    reading: '77 bpm',
+    timestamp: '12:08AM',
+    datestamp: '12/09/2022',
+    iconPath: 'assets/images/hearticon.svg',
+    color: Color(0xffFF4E86),
+    ),
+
+    vitals_reading_comp(
+    deviceName: 'Wellue BP2 connect',
+    name: 'Blood glucose',
+    reading: '70-80 mg/DL',
+    timestamp: '12:08AM',
+    datestamp: '12/09/2022',
+    iconPath: 'assets/images/glucoseicon.svg',
+    color: Color(0xff158CFF),
+    ),
+
+    vitals_reading_comp(
+    deviceName: 'Wellue BP2 connect',
+    name: 'IHRA',
+    reading: '5.7%',
+    timestamp: '12:08AM',
+    datestamp: '12/09/2022',
+    iconPath: 'assets/images/ihraicon.svg',
+    color: Color(0xff1CA757),
+    ),
+
+    vitals_reading_comp(
+    deviceName: 'Wellue BP2 connect',
+    name: 'Body temperature',
+    reading: '37.0°',
+    timestamp: '12:08AM',
+    datestamp: '12/09/2022',
+    iconPath: 'assets/images/tempicon.svg',
+    color: Color(0xffFF754E),
+    ),
+
+    vitals_reading_comp(
+    deviceName: 'Wellue BP2 connect',
+    name: 'Uric Acid',
+    reading: '5.3 mg/DL',
+    timestamp: '12:08AM',
+    datestamp: '12/09/2022',
+    iconPath: 'assets/images/uricacidicon.svg',
+    color: Color(0xff1C9A9A),
+    ),
+
+    vitals_reading_comp(
+    deviceName: 'Wellue BP2 connect',
+    name: 'Respiratory rate',
+    reading: '16 bpm',
+    timestamp: '12:08AM',
+    datestamp: '12/09/2022',
+    iconPath: 'assets/images/respiratoryicon.svg',
+    color: Color(0xff805FFF),
+    )
+
+
+
+    ],
+    )
+    )
+    );
   }
 
   Widget drug_compliance() {
-    return Center(child: Text('Drug Compliance'));
+    return DrugCompliance();
   }
-}
+
