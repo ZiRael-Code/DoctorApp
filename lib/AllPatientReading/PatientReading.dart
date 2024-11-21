@@ -1,5 +1,6 @@
 import 'package:doctor_app/AllPatientReading/DrugCompliance.dart';
 import 'package:doctor_app/AllPatientReading/PrescribeDrugs.dart';
+import 'package:doctor_app/Call_MessagePatient/SearchPatient.dart';
 import 'package:doctor_app/components/vitals_reading_comp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -177,7 +178,7 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
                           children: [
                             GestureDetector(
                               onTap: (){
-
+                                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Searchpatient()));
                               },
                               child: 
                             _actionButton(

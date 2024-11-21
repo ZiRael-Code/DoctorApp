@@ -1,11 +1,9 @@
+import 'package:doctor_app/Call_MessagePatient/VideoCalling.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
-void main(){
-  runApp(Chat());
-}
+import 'CallPatient.dart';
 
 class Chat extends StatefulWidget {
   const Chat({super.key});
@@ -18,7 +16,8 @@ class _ChatState extends  State<Chat> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        home: Scaffold(
             backgroundColor: Colors.white,
             appBar: AppBar(
               title: Row(
@@ -71,7 +70,7 @@ class _ChatState extends  State<Chat> {
                   InkWell(
                     onTap: (){
                       print("lol works ");
-                      showCallMenuDialog(context);
+                      showCallMenuBottomSheet(context);
                     },
                     child:
                   Container(
@@ -230,6 +229,7 @@ class _ChatState extends  State<Chat> {
 
                 ],
               ),
+              ),
 
 
             ));
@@ -321,77 +321,80 @@ class _ChatState extends  State<Chat> {
     );
   }
 
-  void showCallMenuDialog(BuildContext ctx) {
-    showDialog(
-      context: ctx, // Ensure this is the context of the current widget
-      builder: (BuildContext dialogContext) {
-        return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16), // Rounded corners for the dialog
-          ),
-          title: Text(
-            "Call",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-            ),
-          ),
-          content: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  void showCallMenuBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(16), // Rounded top corners for the bottom sheet
+        ),
+      ),
+      builder: (BuildContext sheetContext) {
+        return Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Wrap content to avoid full height
             children: [
-              // Voice Call Container
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightBlue.shade100, // Light blue background
-                  shape: BoxShape.circle, // Circular shape
-                ),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.call, // Voice call icon
-                    color: Colors.blue, // Icon color
-                  ),
-                  onPressed: () {
-                    // Handle voice call action
-                    Navigator.pop(dialogContext);
-                  },
+              // Title
+              Text(
+                "Call",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
               ),
-              // Video Call Container
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightBlue.shade100, // Light blue background
-                  shape: BoxShape.circle, // Circular shape
-                ),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.video_call, // Video call icon
-                    color: Colors.blue, // Icon color
+              const SizedBox(height: 20),
+              // Voice Call and Video Call Buttons
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  // Voice Call Button
+                  Container(
+                    width: 86,
+                    height: 86,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE2EDFF),
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.call,
+                        color: Colors.blue,
+                        size: 46,
+                      ),
+                      onPressed: () {
+                        // Handle voice call action
+                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> CallingUi())); // Close the bottom sheet
+                      },
+                    ),
                   ),
-                  onPressed: () {
-                    // Handle video call action
-                    Navigator.pop(dialogContext);
-                  },
-                ),
+                  // Video Call Button
+                  Container(
+                    width: 86,
+                    height: 86,
+                    decoration: BoxDecoration(
+                      color: Color(0xffE2EDFF),
+                      shape: BoxShape.circle,
+                    ),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.video_call,
+                        color: Colors.blue,
+                        size: 46,
+                      ),
+                      onPressed: () {
+                        // Handle video call action
+                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VideoCalling())); // Close the bottom sheet// Close the bottom sheet
+                      },
+                    ),
+                  ),
+                ],
               ),
+              // Cancel Button
+
             ],
           ),
-          actionsAlignment: MainAxisAlignment.center,
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(dialogContext); // Close the dialog
-              },
-              child: Text(
-                "Cancel",
-                style: TextStyle(color: Colors.red),
-              ),
-            ),
-          ],
         );
       },
     );

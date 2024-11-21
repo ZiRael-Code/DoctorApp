@@ -13,7 +13,6 @@ void main(){
 class AllPatientReading extends StatefulWidget{
 _AllPatientState createState() => _AllPatientState();
 }
-
 class _AllPatientState extends State<AllPatientReading>{
   List<Map<String, dynamic>> patientReadings = [
     {
