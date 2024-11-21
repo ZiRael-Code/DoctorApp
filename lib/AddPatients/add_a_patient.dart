@@ -14,8 +14,8 @@ class AddAPatient extends StatefulWidget {
 class _AddAPatientState extends State<AddAPatient>
     with TickerProviderStateMixin {
   late TabController _tabController;
+
   // Define the initial contacts list with ContactsTile objects
-  // Full contacts list
   List<String> contacts = [
     "Alexander Trelawney",
     "Blexander Trelawney",
@@ -31,8 +31,6 @@ class _AddAPatientState extends State<AddAPatient>
     "Jonathan Mason",
     "Sophia Bennett",
   ];
-
-  // Define a list to store filtered contacts based on the search query
 
   // Filter contacts based on search query
   void _filterContacts(String query) {
@@ -53,6 +51,9 @@ class _AddAPatientState extends State<AddAPatient>
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _tabController.addListener(() {
+      setState(() {}); // Update the UI when the tab changes
+    });
   }
 
   @override
@@ -72,14 +73,17 @@ class _AddAPatientState extends State<AddAPatient>
               const SizedBox(height: 40),
               Row(
                 children: [
-                  Container(
-                    height: 45,
-                    width: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      shape: BoxShape.circle,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
                     ),
-                    child: const Icon(Icons.arrow_back),
                   ),
                   const SizedBox(width: 70),
                   const Center(
@@ -123,26 +127,30 @@ class _AddAPatientState extends State<AddAPatient>
                       ),
                     ),
                     const SizedBox(height: 40),
-                    Container(
-                      height: 50,
-                      padding: const EdgeInsets.all(4),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      child: TextField(
-                        onChanged: _filterContacts,
-                        decoration: InputDecoration(
+                    // Only show the search bar for the first tab
+                    if (_tabController.index == 0)
+                      Container(
+                        height: 50,
+                        padding: const EdgeInsets.all(4),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[200],
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: TextField(
+                          onChanged: _filterContacts,
+                          decoration: InputDecoration(
                             hintText: "Patient name or Phone number",
                             hintStyle: TextStyle(
                                 fontSize: 14, color: Colors.grey[400]),
                             prefixIcon: const Icon(Icons.search),
                             prefixIconColor: Colors.grey[400],
                             enabledBorder: InputBorder.none,
-                            border: InputBorder.none),
+                            border: InputBorder.none,
+                          ),
+                        ),
                       ),
-                    ), // Pass the filter method here ),
+                    const SizedBox(height: 10),
                     Expanded(
                       child: TabBarView(
                         controller: _tabController,
@@ -150,7 +158,7 @@ class _AddAPatientState extends State<AddAPatient>
                           Center(
                               child: AddExistingPatient(
                                   filteredContacts: filteredContacts)),
-                          Center(child: InviteThroughLink()),
+                          const Center(child: InviteThroughLink()),
                         ],
                       ),
                     ),

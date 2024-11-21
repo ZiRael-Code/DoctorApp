@@ -45,7 +45,7 @@ class _MySelectedState extends State<MySelected> {
         child: Center(
           child: Text(
             widget.text,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color.fromARGB(255, 63, 164, 246),
               fontSize: 12,
             ),

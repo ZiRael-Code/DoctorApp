@@ -207,7 +207,7 @@ class SetAppointmentTimes2 extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              MyBlueButton(text: "Continue"),
+              const MyBlueButton(text: "Continue"),
               const SizedBox(
                 height: 30,
               ),
@@ -216,6 +216,5 @@ class SetAppointmentTimes2 extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

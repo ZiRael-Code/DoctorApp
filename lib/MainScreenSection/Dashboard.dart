@@ -25,7 +25,7 @@ class _DashboardState extends State<Dashboard> {
                     //   Navigator.push(context, MaterialPageRoute(builder:
                     //       (context) => AccountProfileState()));
                     // },
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage('assets/images/dr.png'),
                 )),
@@ -131,7 +131,7 @@ class _DashboardState extends State<Dashboard> {
                   hba1c: '42mmol/mol,',
                   ihra: '5.7% ...',
                   regularity: 'irregular',
-                  regularityColor: Color(0xffFF8E3C)),
+                  regularityColor: const Color(0xffFF8E3C)),
               network_update(
                   profile_path: '',
                   name: '',
@@ -198,7 +198,7 @@ class _DashboardState extends State<Dashboard> {
                     AssetImage(path), // Replace with your image asset
                 radius: 24.0,
               ),
-              SizedBox(width: 12.0),
+              const SizedBox(width: 12.0),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -211,7 +211,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   const SizedBox(height: 4.0),
                   Text(
-                    time + ' · ' + date,
+                    '$time · $date',
                     style: const TextStyle(
                       color: Colors.grey,
                       fontSize: 12.0,
@@ -259,16 +259,16 @@ class _DashboardState extends State<Dashboard> {
       required String time,
       required String text,
       imageList}) {
-    final int maxVisibleImages = 4;
+    const int maxVisibleImages = 4;
     // image_shower(imageList, maxVisibleImages);
 
-    return Column(children: []);
+    return const Column(children: []);
   }
 
   void image_shower(imageList, int maxVisibleImages) {
     if (imageList.length > 1) {
       Column(children: [
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Wrap(
           spacing: 8.0,
           runSpacing: 8.0,
@@ -321,13 +321,12 @@ class _DashboardState extends State<Dashboard> {
   }
 }
 
-man({
-  required String name
-}){
+man({required String name}) {
   return Container(
     child: Image.asset('assets/images/man.png'),
   );
 }
+
 void main() {
-  runApp(Dashboard());
+  runApp(const Dashboard());
 }

@@ -94,7 +94,7 @@ class _SetPasswordState extends State<SetPassword> {
               ),
             ),
             const Spacer(),
-            MyBlueButton(text: "Continue"),
+            const MyBlueButton(text: "Continue"),
             const SizedBox(
               height: 40,
             )

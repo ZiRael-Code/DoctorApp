@@ -1,8 +1,14 @@
 import 'package:doctor_app/AddPatients/add_a_patient.dart';
+import 'package:doctor_app/AddPatients/chat_page.dart';
+import 'package:doctor_app/AddPatients/messages.dart';
+import 'package:doctor_app/AddPatients/patients_information.dart';
 import 'package:doctor_app/AddPatients/pin_settings_10.dart';
 import 'package:doctor_app/AddPatients/prioritized_patients.dart';
 import 'package:doctor_app/AddPatients/select_from_contact_list.dart';
+import 'package:doctor_app/AllPatientReading/PatientReading.dart';
 import 'package:doctor_app/MainScreenSection/Dashboard.dart';
+import 'package:doctor_app/Network/add_new_network.dart';
+import 'package:doctor_app/Network/affiliated_networks.dart';
 import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:doctor_app/onboarding/onboarding1.dart';
 import 'package:doctor_app/onboarding/onboarding2.dart';
@@ -33,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const PrioritizedPatients(),
+      home: const AffiliatedNetworks(),
     );
   }
 }
@@ -60,6 +66,6 @@ class _LoaderState extends State<Loader> {
 
   @override
   Widget build(BuildContext context) {
-    return SplashScreen();
+    return const SplashScreen();
   }
 }

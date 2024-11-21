@@ -15,14 +15,17 @@ class SendInvitesSuccessPage extends StatelessWidget {
               const SizedBox(height: 40),
               Row(
                 children: [
-                  Container(
-                    height: 45,
-                    width: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      shape: BoxShape.circle,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
                     ),
-                    child: const Icon(Icons.arrow_back),
                   ),
                   const SizedBox(width: 100),
                   const Center(
@@ -39,10 +42,10 @@ class SendInvitesSuccessPage extends StatelessWidget {
               const SizedBox(
                 height: 120,
               ),
-              Container(
+              SizedBox(
                 width: 260,
                 height: 71,
-                child: Text(
+                child: const Text(
                   textAlign: TextAlign.center,
                   "You have successfully sent invitation links, when they sign up, you get a commission.",
                   style: TextStyle(
@@ -51,7 +54,7 @@ class SendInvitesSuccessPage extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              MyBlueButton(text: "Done"),
+              const MyBlueButton(text: "Done"),
               const SizedBox(
                 height: 30,
               )

@@ -15,10 +15,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
         alignment: Alignment.center,
         child: Column(
           children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Container(
+            SizedBox(
               width: 305,
               child: const Column(
                 children: [
@@ -46,7 +43,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
+                const Row(
                   children: [
                     SizedBox(
                       width: 30,
@@ -69,7 +66,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                     ),
                     child: Row(
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         SizedBox(
@@ -79,17 +76,17 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                             "assets/images/Union.png",
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
-                        Text("Copy")
+                        const Text("Copy")
                       ],
                     ),
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Center(
@@ -100,7 +97,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                   color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Center(child: Text("Select from contact list")),
+                child: const Center(child: Text("Select from contact list")),
               ),
             )
           ],

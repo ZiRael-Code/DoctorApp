@@ -54,7 +54,7 @@ class Onboarding2 extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Container(
+                child: SizedBox(
                   width: 301,
                   height: 71,
                   child: const Text(

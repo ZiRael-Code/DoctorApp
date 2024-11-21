@@ -54,7 +54,7 @@ class Onboarding3 extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Container(
+                child: SizedBox(
                   width: 301,
                   height: 71,
                   child: const Text(
@@ -72,7 +72,7 @@ class Onboarding3 extends StatelessWidget {
               child: GestureDetector(
                 onTap: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const LoginPage())),
-                child: MyBlueButton(text: "Continue"),
+                child: const MyBlueButton(text: "Continue"),
               ),
             ),
             const SizedBox(

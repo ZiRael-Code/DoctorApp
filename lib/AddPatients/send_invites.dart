@@ -23,14 +23,17 @@ class _SendInvitesState extends State<SendInvites> {
               const SizedBox(height: 30),
               Row(
                 children: [
-                  Container(
-                    height: 45,
-                    width: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      shape: BoxShape.circle,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
                     ),
-                    child: const Icon(Icons.arrow_back),
                   ),
                   const SizedBox(width: 50),
                   const Center(
@@ -45,23 +48,23 @@ class _SendInvitesState extends State<SendInvites> {
                 ],
               ),
               const SizedBox(height: 40),
-              Container(
+              SizedBox(
                 width: 310,
                 height: 190,
-                child: Column(
+                child: const Column(
                   children: [
-                    const Text(
+                    Text(
                       "Send an invite link to a patient, so when the person registers on the app using your link, you will be able to access their details.",
                       style: TextStyle(fontSize: 14),
                     ),
-                    const SizedBox(height: 20),
-                    const Text(
+                    SizedBox(height: 20),
+                    Text(
                       "To download the MyVitalz app, click on this link to download from playstore or app store.",
                       style: TextStyle(fontSize: 14),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     Row(
-                      children: const [
+                      children: [
                         Text(
                           "Link: ",
                           style: TextStyle(fontWeight: FontWeight.bold),
@@ -215,11 +218,11 @@ class _SendInvitesState extends State<SendInvites> {
                       const SizedBox(
                         height: 20,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 90,
                         child: Text(
                           "Share on whatsapp",
-                          style: const TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: 12),
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.center,
                         ),
@@ -246,11 +249,11 @@ class _SendInvitesState extends State<SendInvites> {
                       const SizedBox(
                         height: 20,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 90,
                         child: Text(
                           "Share as text message",
-                          style: const TextStyle(fontSize: 12),
+                          style: TextStyle(fontSize: 12),
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.center,
                         ),
@@ -268,7 +271,7 @@ class _SendInvitesState extends State<SendInvites> {
                       MaterialPageRoute(
                           builder: (context) =>
                               const SendInvitesSuccessPage())),
-                  child: MyBlueButton(text: "Send invites"))
+                  child: const MyBlueButton(text: "Send invites"))
             ],
           ),
         ),

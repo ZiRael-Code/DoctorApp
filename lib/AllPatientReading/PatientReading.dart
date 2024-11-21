@@ -7,8 +7,10 @@ class PatientReading extends StatefulWidget {
   State<PatientReading> createState() => _PatientReadingState();
 }
 
-class _PatientReadingState extends State<PatientReading> with SingleTickerProviderStateMixin {
-  late TabController _tabController = TabController(length: 2, vsync: this);
+class _PatientReadingState extends State<PatientReading>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabController =
+      TabController(length: 2, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +22,17 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
             Navigator.pop(context);
           },
           child: Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(8),
+            decoration: const BoxDecoration(
               color: Color(0xffE5E5E5),
               shape: BoxShape.circle,
             ),
-            child: Icon(Icons.arrow_back_ios_rounded, color: Color(0xff666666)),
+            child: const Icon(Icons.arrow_back_ios_rounded,
+                color: Color(0xff666666)),
           ),
         ),
         backgroundColor: Colors.white,
-        title: Row(
+        title: const Row(
           children: [
             Spacer(),
             Text('Patient Readings'),
@@ -38,18 +41,18 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.only(left: 12, right: 12, top: 25),
+        padding: const EdgeInsets.only(left: 12, right: 12, top: 25),
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.only(bottom: 18),
-              padding: EdgeInsets.all(16.0),
+              margin: const EdgeInsets.only(bottom: 18),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12.0),
                 border: Border.all(width: 0.7, color: Colors.black12),
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 12.0),
@@ -86,7 +89,7 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
             ),
             Container(
               height: 50,
-              padding: EdgeInsets.all(4),
+              padding: const EdgeInsets.all(4),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.grey[200],
@@ -101,14 +104,14 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
                   borderRadius: BorderRadius.circular(30),
                 ),
                 labelColor: Colors.black,
-                unselectedLabelColor: Color(0xff4F4F4F),
-                tabs: [
+                unselectedLabelColor: const Color(0xff4F4F4F),
+                tabs: const [
                   Tab(text: "Vital readings"),
                   Tab(text: "Drug compliance"),
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Flexible(
               child: TabBarView(
                 controller: _tabController,
@@ -125,10 +128,10 @@ class _PatientReadingState extends State<PatientReading> with SingleTickerProvid
   }
 
   Widget vital_reading() {
-    return Center(child: Text('Vital Readings'));
+    return const Center(child: Text('Vital Readings'));
   }
 
   Widget drug_compliance() {
-    return Center(child: Text('Drug Compliance'));
+    return const Center(child: Text('Drug Compliance'));
   }
 }

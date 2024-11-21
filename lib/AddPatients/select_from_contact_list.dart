@@ -83,14 +83,17 @@ class _SelectFromContactListState extends State<SelectFromContactList>
               const SizedBox(height: 40),
               Row(
                 children: [
-                  Container(
-                    height: 45,
-                    width: 45,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      shape: BoxShape.circle,
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(Icons.arrow_back),
                     ),
-                    child: const Icon(Icons.arrow_back),
                   ),
                   const SizedBox(width: 50),
                   const Center(
@@ -120,39 +123,39 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                                   Container(
                                     width: 49,
                                     height: 49,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
-                                    child:
-                                        Icon(Icons.person, color: Colors.white),
+                                    child: const Icon(Icons.person,
+                                        color: Colors.white),
                                   ),
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
 
-                                  Text(
+                                  const Text(
                                     'Referral link:',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  SizedBox(width: 10), // Spacing
+                                  const SizedBox(width: 10), // Spacing
 
                                   Expanded(
                                     child: Text(
                                       referralCode,
-                                      style: TextStyle(fontSize: 16),
+                                      style: const TextStyle(fontSize: 16),
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
 
-                                  SizedBox(width: 10),
+                                  const SizedBox(width: 10),
 
                                   GestureDetector(
                                     onTap: () {
                                       Clipboard.setData(
                                           ClipboardData(text: referralCode));
                                       ScaffoldMessenger.of(context)
-                                          .showSnackBar(SnackBar(
+                                          .showSnackBar(const SnackBar(
                                               content:
                                                   Text('Copied to clipboard')));
                                     },
@@ -160,10 +163,10 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                                       width: 79,
                                       height: 28,
                                       decoration: BoxDecoration(
-                                        color: Color(0xFFE2EDFF),
+                                        color: const Color(0xFFE2EDFF),
                                         borderRadius: BorderRadius.circular(5),
                                       ),
-                                      child: Row(
+                                      child: const Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
@@ -221,7 +224,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                     Center(
                       child: Text(
                         "[ ${selectedContacts.length} selected ]", // Show the count of selected contacts
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.blue,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -269,7 +272,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Done",
                               style: TextStyle(

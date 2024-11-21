@@ -17,12 +17,17 @@ class PinSettings10 extends StatelessWidget {
             ),
             Row(
               children: [
-                Container(
-                  height: 45,
-                  width: 45,
-                  decoration: BoxDecoration(
-                      color: Colors.grey.shade300, shape: BoxShape.circle),
-                  child: const Icon(Icons.arrow_back),
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    height: 45,
+                    width: 45,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade300,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(Icons.arrow_back),
+                  ),
                 ),
                 const SizedBox(
                   width: 80,
@@ -41,7 +46,7 @@ class PinSettings10 extends StatelessWidget {
             const SizedBox(
               height: 100,
             ),
-            Container(
+            SizedBox(
               width: 260,
               height: 70,
               child: const Text(

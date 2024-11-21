@@ -5,7 +5,7 @@ class ContactsCheckedTile extends StatefulWidget {
   final bool isInitiallySelected;
   final ValueChanged<bool> onSelectionChanged;
 
-  ContactsCheckedTile({
+  const ContactsCheckedTile({
     super.key,
     required this.name,
     this.isInitiallySelected = false,
@@ -39,6 +39,10 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
               Container(
                 width: 50,
                 height: 50,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.black,
+                ),
                 child: Center(
                   child: Text(
                     widget.name[0],
@@ -47,10 +51,6 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.black,
                 ),
               ),
               Column(
