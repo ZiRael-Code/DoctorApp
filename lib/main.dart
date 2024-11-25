@@ -5,6 +5,8 @@ import 'package:doctor_app/onboarding/onboarding1.dart';
 import 'package:doctor_app/onboarding/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'Network/my_network.dart';
+
 void main() {
   runApp(const MyApp());
 }
