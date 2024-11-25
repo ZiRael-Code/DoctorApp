@@ -407,153 +407,155 @@ class _DashboardState extends State<Dashboard> {
   }
 
 //
-  network_update({
-    required String profile_path,
-    required String name,
-    required String network_name,
-    required String date,
-    required String time,
-    required List<String> imageList,
-    required String text,
-  }) {
-    int lenght = imageList.length;
-    if (imageList.length > 4) {
-      lenght = 4;
-    }
-    return Container(
-      alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 15),
-      decoration: BoxDecoration(color: Colors.white),
-      padding: EdgeInsets.all(12),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              SizedBox(
-                width: 42,
-                height: 42,
-                child: CircleAvatar(
-                  radius: 50,
-                  backgroundImage: AssetImage(profile_path),
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(children: [
-                    Text(
-                      name + " . ",
-                      style: TextStyle(fontSize: 16),
-                    ),
-                    Text(
-                      network_name,
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ]),
-                  Text(time + " . " + date,
-                      style: TextStyle(color: Colors.black45))
-                ],
-              ),
-              Spacer(),
-              Icon(
-                Icons.more_vert,
-                color: Colors.black,
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            width: 285,
-            child: Text(text, style: TextStyle(fontSize: 16)),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          imageList.length == 1
-              ? imageViewer(w: 326, h: 326, path: imageList[0], imageList: imageList, index: 0)
-              : imageList.length > 1
-                  ? Wrap(
-                      direction: Axis.horizontal,
-                      children: List.generate(lenght, (index) {
-                        return imageViewer(
-                            w: 150, h: 150, path: imageList[index],
-                        imageList: imageList,
-                          index: index
-                        );
-                      }),
-                    )
-                  : SizedBox(height: 15,),
-          SizedBox(height: 8,),
-          Align(alignment: Alignment.center,
-          child:
-          Container(
-            padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: Colors.grey.withOpacity(0.5),
-                    width: 1,
-                  ),
-                  color: Color(0xffE2EDFF)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text("View details", style: TextStyle(color: Colors.blue, fontSize: 16),),
-                  Icon(Icons.arrow_forward, color: Colors.blue,)
-                ],
-              )))
-        ],
-      ),
-    );
-  }
 
-  Widget imageViewer({
-    required double w,
-    required double h,
-    required String path,
-    required int index,
-    required List<String> imageList
-  }) {
-    return Container(
-        margin: EdgeInsets.only(right: 10, bottom: 10),
-        child: Stack(
-          children: [
-      SizedBox(
-          width: w,
-          height: h,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              path,
-              fit: BoxFit.cover,
-            ),
-          )
-      ),
-      if (imageList.length > 4 && index == 3)
-      Container(
-        width: w,
-        height: h,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.black.withOpacity(0.50),
-        ),
-        child: Center(child: Text("+"+(imageList.length - index).toString(),
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),),
-      ))
-            ],)
-    );
-  }
+
 }
+network_update({
+  required String profile_path,
+  required String name,
+  required String network_name,
+  required String date,
+  required String time,
+  required List<String> imageList,
+  required String text,
+}) {
+  int lenght = imageList.length;
+  if (imageList.length > 4) {
+    lenght = 4;
+  }
+  return Container(
+    alignment: Alignment.center,
+    margin: EdgeInsets.only(bottom: 15),
+    decoration: BoxDecoration(color: Colors.white),
+    padding: EdgeInsets.all(12),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            SizedBox(
+              width: 42,
+              height: 42,
+              child: CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage(profile_path),
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(children: [
+                  Text(
+                    name + " . ",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Text(
+                    network_name,
+                    style: TextStyle(color: Colors.blue),
+                  )
+                ]),
+                Text(time + " . " + date,
+                    style: TextStyle(color: Colors.black45))
+              ],
+            ),
+            Spacer(),
+            Icon(
+              Icons.more_vert,
+              color: Colors.black,
+            )
+          ],
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          width: 285,
+          child: Text(text, style: TextStyle(fontSize: 16)),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        imageList.length == 1
+            ? imageViewer(w: 326, h: 326, path: imageList[0], imageList: imageList, index: 0)
+            : imageList.length > 1
+            ? Wrap(
+          direction: Axis.horizontal,
+          children: List.generate(lenght, (index) {
+            return imageViewer(
+                w: 150, h: 150, path: imageList[index],
+                imageList: imageList,
+                index: index
+            );
+          }),
+        )
+            : SizedBox(height: 15,),
+        SizedBox(height: 8,),
+        Align(alignment: Alignment.center,
+            child:
+            Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(
+                      color: Colors.grey.withOpacity(0.5),
+                      width: 1,
+                    ),
+                    color: Color(0xffE2EDFF)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text("View details", style: TextStyle(color: Colors.blue, fontSize: 16),),
+                    Icon(Icons.arrow_forward, color: Colors.blue,)
+                  ],
+                )))
+      ],
+    ),
+  );
+}
+Widget imageViewer({
+  required double w,
+  required double h,
+  required String path,
+  required int index,
+  required List<String> imageList
+}) {
+  return Container(
+      margin: EdgeInsets.only(right: 10, bottom: 10),
+      child: Stack(
+        children: [
+          SizedBox(
+              width: w,
+              height: h,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  path,
+                  fit: BoxFit.cover,
+                ),
+              )
+          ),
+          if (imageList.length > 4 && index == 3)
+            Container(
+                width: w,
+                height: h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.black.withOpacity(0.50),
+                ),
+                child: Center(child: Text("+"+(imageList.length - index).toString(),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),),
+                ))
+        ],)
+  );
+}
+
 
 void main() {
   runApp(MaterialApp(home: Dashboard()));
