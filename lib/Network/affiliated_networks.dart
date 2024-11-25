@@ -114,7 +114,7 @@ class _AffiliatedNetworksState extends State<AffiliatedNetworks> {
                     child: TextField(
                       onChanged: _filterContacts,
                       decoration: InputDecoration(
-                        hintText: "Search by name, vital reading...",
+                        hintText: "Search by name, location",
                         hintStyle:
                             TextStyle(fontSize: 14, color: Colors.grey[400]),
                         prefixIcon: const Icon(Icons.search),

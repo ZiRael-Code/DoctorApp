@@ -1,0 +1,44 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class Prescriptionsentsuccess extends StatelessWidget {
+  const Prescriptionsentsuccess({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SafeArea(child: Padding(padding: EdgeInsets.only(bottom: 26, left: 16, right: 16, top:  10), child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(height: 80),
+        Text('Success!', style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold),),
+        SizedBox(height: 13),
+        Text('Prescription has been sent', style: TextStyle(fontSize: 14,),),
+        Spacer(),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Prescriptionsentsuccess()));
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(9),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            child: Text(
+              'Okay',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
+      ],
+    )
+    )
+    )
+    );
+  }
+}

@@ -55,6 +55,7 @@ class _NetworkTileState extends State<NetworkTile> {
             radius: 25,
           ),
           title: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
@@ -67,25 +68,22 @@ class _NetworkTileState extends State<NetworkTile> {
               GestureDetector(
                 onTap: _toggleJoinStatus,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 14),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      width: 55,
-                      height: 30,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: _isJoined ? Colors.blue[100] : Colors.blue,
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: Text(
-                        _isJoined ? "Joined" : "Join",
-                        style: TextStyle(
-                          color: _isJoined ? Colors.blue : Colors.white,
-                          fontSize: 10,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Container(
+                    width: 55,
+                    height: 30,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: _isJoined ? Colors.blue[100] : Colors.blue,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      _isJoined ? "Joined" : "Join",
+                      style: TextStyle(
+                        color: _isJoined ? Colors.blue : Colors.white,
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),

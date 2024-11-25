@@ -9,6 +9,7 @@ import 'package:doctor_app/AllPatientReading/PatientReading.dart';
 import 'package:doctor_app/MainScreenSection/Dashboard.dart';
 import 'package:doctor_app/Network/add_new_network.dart';
 import 'package:doctor_app/Network/affiliated_networks.dart';
+import 'package:doctor_app/Network/my_network.dart';
 import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:doctor_app/onboarding/onboarding1.dart';
 import 'package:doctor_app/onboarding/onboarding2.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const AffiliatedNetworks(),
+      home: const MyNetwork(),
     );
   }
 }
