@@ -1,6 +1,7 @@
 import 'package:doctor_app/AddPatients/add_a_patient.dart';
 import 'package:doctor_app/AddPatients/pin_settings_10.dart';
 import 'package:doctor_app/AddPatients/prioritized_patients.dart';
+import 'package:doctor_app/Network/my_network.dart';
 import 'package:doctor_app/onboarding/onboarding1.dart';
 import 'package:doctor_app/onboarding/splash_screen.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,6 @@
+import 'package:doctor_app/Network/add_new_network.dart';
+import 'package:doctor_app/Network/invite_people.dart';
+import 'package:doctor_app/components/network_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -9,6 +12,227 @@ class MyNetwork extends StatefulWidget {
 }
 
 class _MyNetworkState extends State<MyNetwork> {
+  void _showDropdownPopups(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0), // Rounded corners
+      ),
+      builder: (context) {
+        return Container(
+          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Keep it minimal height
+            children: [
+              ListTile(
+                title: Center(
+                  child: const Text(
+                    'Switch network',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pop(context); // Close the popup
+                  // Handle "Switch network" action
+                  _SwitchNetworkPopup(context);
+                  ;
+                },
+              ),
+              const Divider(), // Divider between options
+              ListTile(
+                title: Center(
+                  child: const Text(
+                    'Create new network',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pop(context); // Close the popup
+                  // Handle "Create new network" action
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AddNewNetwork()));
+                },
+              ),
+              const Divider(), // Divider between options
+              ListTile(
+                title: Center(
+                  child: const Text(
+                    'Invite people',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pop(context); // Close the popup
+                  // Handle "Invite people" action
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => InvitePeople()));
+                },
+              ),
+              const Divider(), // Divider between options
+              ListTile(
+                title: Center(
+                  child: const Text(
+                    'Leave network',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pop(context); // Close the popup
+                  // Handle "Leave network" action
+                  _LeaveNetworkPopup(context);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _SwitchNetworkPopup(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16.0), // Rounded corners
+        ),
+        builder: (context) {
+          return Container(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Switch Network",
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                NetworkListTile(
+                    isChecked: true), // This tile will start as checked
+                NetworkListTile(
+                    isChecked: false), // This tile will start as unchecked
+              ],
+            ),
+          );
+        });
+  }
+
+  void _LeaveNetworkPopup(BuildContext context) {
+    // Define states for the buttons
+    bool isNoSelected = true; // Default selected button
+    bool isYesSelected = false;
+
+    showModalBottomSheet(
+      context: context,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0), // Rounded corners
+      ),
+      builder: (context) {
+        return StatefulBuilder(
+          // Use StatefulBuilder to manage state within the modal
+          builder: (context, setState) {
+            return Container(
+              height: 210,
+              padding:
+                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 25),
+                  Container(
+                    width: 230,
+                    height: 45,
+                    child: const Text(
+                      "Are you sure you want to leave the network?",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  const SizedBox(height: 25),
+                  Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        // No button
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isNoSelected = true;
+                              isYesSelected = false;
+                            });
+                          },
+                          child: Container(
+                            width: 124,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color:
+                                  isNoSelected ? Colors.blue : Colors.grey[200],
+                            ),
+                            child: Center(
+                              child: Text(
+                                "No",
+                                style: TextStyle(
+                                  color:
+                                      isNoSelected ? Colors.white : Colors.blue,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        // Yes button
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isYesSelected = true;
+                              isNoSelected = false;
+                            });
+                          },
+                          child: Container(
+                            width: 124,
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: isYesSelected
+                                  ? Colors.blue
+                                  : Colors.grey[200],
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Yes",
+                                style: TextStyle(
+                                  color: isYesSelected
+                                      ? Colors.white
+                                      : Colors.blue,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,7 +246,7 @@ class _MyNetworkState extends State<MyNetwork> {
                     height: 195,
                     decoration: BoxDecoration(
                       color: Colors.blue[400],
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         bottomLeft: Radius.circular(25),
                         bottomRight: Radius.circular(25),
                       ),
@@ -50,22 +274,25 @@ class _MyNetworkState extends State<MyNetwork> {
                                   ),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 "My Network",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                     fontSize: 20),
                               ),
-                              Container(
-                                width: 45,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  color: Colors.blue[400],
-                                  shape: BoxShape.circle,
+                              GestureDetector(
+                                onTap: () => _showDropdownPopups(context),
+                                child: Container(
+                                  width: 45,
+                                  height: 45,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue[400],
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset(
+                                      "assets/images/whitedots.png"),
                                 ),
-                                child:
-                                    Image.asset("assets/images/whitedots.png"),
                               )
                             ],
                           ),
@@ -96,7 +323,7 @@ class _MyNetworkState extends State<MyNetwork> {
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    CircleAvatar(
+                                    const CircleAvatar(
                                       backgroundImage:
                                           AssetImage("assets/images/guild.png"),
                                       radius: 25,
@@ -108,7 +335,7 @@ class _MyNetworkState extends State<MyNetwork> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
+                                          const Text(
                                             "Guild of Nigerian Dentists",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
@@ -135,56 +362,93 @@ class _MyNetworkState extends State<MyNetwork> {
                             const SizedBox(
                               height: 10,
                             ),
-                            SizedBox(
-                              width: 300,
-                              child: Divider(
-                                color: Colors.grey.shade200,
-                              ),
-                            ),
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Container(
-                                    width: 80,
+                            Stack(
+                              children: [
+                                Center(
+                                  child: SizedBox(
+                                    width: 300,
+                                    child: Divider(
+                                      color: Colors.grey.shade200,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8),
+                                  child: Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16),
                                     child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Text(
-                                          "55",
-                                          style: TextStyle(color: Colors.blue),
+                                        // Members Section
+                                        const Flexible(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(left: 25),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "55",
+                                                  style: TextStyle(
+                                                      color: Colors.blue,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                SizedBox(width: 10),
+                                                Flexible(
+                                                  child: Text(
+                                                    "Members",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style:
+                                                        TextStyle(fontSize: 16),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                        SizedBox(
-                                          width: 10,
+                                        // Divider
+                                        Container(
+                                          width: 1,
+                                          height: 35,
+                                          color: Colors.grey.shade200,
                                         ),
-                                        Text("Members"),
+                                        // Posts Section
+                                        const Flexible(
+                                          child: Padding(
+                                            padding: EdgeInsets.only(left: 25),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  "22",
+                                                  style: TextStyle(
+                                                      color: Colors.blue,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                SizedBox(width: 10),
+                                                Flexible(
+                                                  child: Text(
+                                                    "Posts",
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    style:
+                                                        TextStyle(fontSize: 16),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ),
-                                  Container(
-                                    width: 1,
-                                    height: 20,
-                                    decoration:
-                                        BoxDecoration(color: Colors.grey),
-                                  ),
-                                  Container(
-                                    width: 80,
-                                    child: Row(
-                                      children: [
-                                        Text(
-                                          "22",
-                                          style: TextStyle(color: Colors.blue),
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text("Posts"),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ),
@@ -192,11 +456,11 @@ class _MyNetworkState extends State<MyNetwork> {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 28),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 28),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -212,7 +476,7 @@ class _MyNetworkState extends State<MyNetwork> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Container(
@@ -233,7 +497,7 @@ class _MyNetworkState extends State<MyNetwork> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // row with profile and name
-                          Row(
+                          const Row(
                             children: [
                               CircleAvatar(
                                 backgroundImage:
@@ -246,8 +510,7 @@ class _MyNetworkState extends State<MyNetwork> {
                                   Row(
                                     children: [
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 15),
+                                        padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           "RX Pharmacy . ",
                                           style: TextStyle(
@@ -262,11 +525,11 @@ class _MyNetworkState extends State<MyNetwork> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 4,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(right: 46),
+                                    padding: EdgeInsets.only(right: 46),
                                     child: Text(
                                       "11:20am . 9th Sept 2022",
                                       style: TextStyle(
@@ -291,7 +554,7 @@ class _MyNetworkState extends State<MyNetwork> {
                     Container(
                       width: 326,
                       height: 47,
-                      child: Text(
+                      child: const Text(
                         "We have restocked our pharmacy and new drugs are now available for sale.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
@@ -311,14 +574,14 @@ class _MyNetworkState extends State<MyNetwork> {
                         padding: const EdgeInsets.only(left: 12),
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               "View details",
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 4,
                             ),
                             Icon(
@@ -358,7 +621,7 @@ class _MyNetworkState extends State<MyNetwork> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // row with profile and name
-                          Row(
+                          const Row(
                             children: [
                               CircleAvatar(
                                 backgroundImage:
@@ -371,8 +634,7 @@ class _MyNetworkState extends State<MyNetwork> {
                                   Row(
                                     children: [
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 15),
+                                        padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           "New Life Hospital . ",
                                           style: TextStyle(
@@ -387,11 +649,11 @@ class _MyNetworkState extends State<MyNetwork> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 4,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(right: 46),
+                                    padding: EdgeInsets.only(right: 46),
                                     child: Text(
                                       "11:20am . 9th Sept 2022",
                                       style: TextStyle(
@@ -416,7 +678,7 @@ class _MyNetworkState extends State<MyNetwork> {
                     Container(
                       width: 326,
                       height: 47,
-                      child: Text(
+                      child: const Text(
                         "We have new devices to measure vitals in stock.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
@@ -445,14 +707,14 @@ class _MyNetworkState extends State<MyNetwork> {
                         padding: const EdgeInsets.only(left: 12),
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               "View details",
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 4,
                             ),
                             Icon(
@@ -492,7 +754,7 @@ class _MyNetworkState extends State<MyNetwork> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // row with profile and name
-                          Row(
+                          const Row(
                             children: [
                               CircleAvatar(
                                 backgroundImage:
@@ -521,11 +783,11 @@ class _MyNetworkState extends State<MyNetwork> {
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 4,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(right: 46),
+                                    padding: EdgeInsets.only(right: 46),
                                     child: Text(
                                       "11:20am . 9th Sept 2022",
                                       style: TextStyle(
@@ -550,7 +812,7 @@ class _MyNetworkState extends State<MyNetwork> {
                     Container(
                       width: 326,
                       height: 47,
-                      child: Text(
+                      child: const Text(
                         "We have restocked our pharmacy and new drugs are now available for sale.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
@@ -570,14 +832,14 @@ class _MyNetworkState extends State<MyNetwork> {
                         padding: const EdgeInsets.only(left: 12),
                         child: Row(
                           children: [
-                            Text(
+                            const Text(
                               "View details",
                               style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.blue,
                                   fontWeight: FontWeight.bold),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 4,
                             ),
                             Icon(
