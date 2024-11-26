@@ -1,6 +1,9 @@
+import 'package:doctor_app/AllPatientReading/PatientReading.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../Network1/PersonalMinistore.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -149,7 +152,9 @@ class _DashboardState extends State<Dashboard> {
                             hba1c: '42mmol/mol,',
                             ihra: '5.7% ...',
                             regularity: 'irregular',
-                            regularityColor: const Color(0xffFF8E3C)),
+                            regularityColor: const Color(0xffFF8E3C),
+                            action: MaterialPageRoute(builder: (builder)=> PatientReading())
+                        ),
                         patiencte_reading(
                             name: 'Salami Adebayo',
                             path: 'assets/images/man1.png',
@@ -159,7 +164,10 @@ class _DashboardState extends State<Dashboard> {
                             hba1c: '42mmol/mol,',
                             ihra: '5.7% ...',
                             regularity: 'irregular',
-                            regularityColor: Color(0xffFF8E3C)),
+                            regularityColor: Color(0xffFF8E3C),
+                            action: MaterialPageRoute(builder: (builder)=> PatientReading())
+                        ),
+
                       ],
                     ),
                   ),
@@ -197,7 +205,9 @@ class _DashboardState extends State<Dashboard> {
                           date: "9th Sept 2022",
                           text:
                               "We have restocked our pharmacy and new drugs are now available for sale.",
-                          imageList: []
+                          imageList: [],
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
+                          ,context: context
                       ),
                       network_update(
                           network_name: "James’ Network",
@@ -208,7 +218,9 @@ class _DashboardState extends State<Dashboard> {
                           text:
                               "We have new devices to measure vitals in stock.",
                           imageList: [
-                            "assets/images/doc.png"]
+                            "assets/images/doc.png"],
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
+                          ,context: context
                       ),
                       network_update(
                           network_name: "My Network",
@@ -218,7 +230,10 @@ class _DashboardState extends State<Dashboard> {
                           date: "9th Sept 2022",
                           text:
                           "We have restocked our pharmacy and new drugs are now available for sale.",
-                          imageList: []
+                          imageList: [],
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
+                          ,context: context
+
                       ),
                       network_update(
                           network_name: "My Network",
@@ -235,7 +250,9 @@ class _DashboardState extends State<Dashboard> {
                             "assets/images/doc.png",
                             "assets/images/doc.png",
                             "assets/images/doc.png"
-                          ]
+                          ],
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
+                          ,context: context
                       ),
 
                     ],
@@ -297,8 +314,13 @@ class _DashboardState extends State<Dashboard> {
     required String regularity,
     required Color regularityColor,
     required String time,
+    required MaterialPageRoute action,
   }) {
-    return Container(
+    return InkWell(
+    onTap: () =>{
+      Navigator.push(context, action)
+    },
+        child: Container(
       margin: EdgeInsets.only(right: 15),
       width: 320,
       padding: const EdgeInsets.all(16.0),
@@ -403,6 +425,7 @@ class _DashboardState extends State<Dashboard> {
           ),
         ],
       ),
+      ),
     );
   }
 
@@ -418,12 +441,18 @@ network_update({
   required String time,
   required List<String> imageList,
   required String text,
+  required MaterialPageRoute action,
+  required BuildContext context
 }) {
   int lenght = imageList.length;
   if (imageList.length > 4) {
     lenght = 4;
   }
-  return Container(
+  return GestureDetector(
+    onTap: () => {
+      Navigator.push(context, action)
+    },
+      child: Container(
     alignment: Alignment.center,
     margin: EdgeInsets.only(bottom: 15),
     decoration: BoxDecoration(color: Colors.white),
@@ -516,6 +545,7 @@ network_update({
                   ],
                 )))
       ],
+    ),
     ),
   );
 }

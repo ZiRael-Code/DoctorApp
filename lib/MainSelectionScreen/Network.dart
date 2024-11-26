@@ -4,6 +4,7 @@ import '../AddPatients/add_a_patient.dart';
 import '../AddPatients/messages.dart';
 import '../AllPatientReading/AllPatientReading.dart';
 import '../Call_MessagePatient/SearchPatient.dart';
+import '../Network1/PersonalMinistore.dart';
 import 'Dashboard.dart';
 import 'Patients.dart';
 
@@ -83,6 +84,9 @@ class _NetworkState extends State<Network> {
                               text:
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                               imageList: []
+                              ,context: context,
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+
                           ),
                           network_update(
                               network_name: "James’ Network",
@@ -94,6 +98,9 @@ class _NetworkState extends State<Network> {
                               "We have new devices to measure vitals in stock.",
                               imageList: [
                                 "assets/images/doc.png"]
+                              ,context: context,
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+
                           ),
                           network_update(
                               network_name: "My Network",
@@ -104,6 +111,9 @@ class _NetworkState extends State<Network> {
                               text:
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                               imageList: []
+                              ,context: context,
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+
                           ),
                           network_update(
                               network_name: "My Network",
@@ -121,6 +131,8 @@ class _NetworkState extends State<Network> {
                                 "assets/images/doc.png",
                                 "assets/images/doc.png"
                               ]
+                              ,context: context,
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
                           ),
 
                         ],

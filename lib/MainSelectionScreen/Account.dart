@@ -62,7 +62,7 @@ class _AccountState extends State<Account> {
                                   ),
                                 ),
                                 SizedBox(width: 16),
-                                Column(
+                                const Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -76,7 +76,7 @@ class _AccountState extends State<Account> {
                                             color: Color(0xFF2E2E42), // Text color
                                           ),
                                         ),
-                                        Text("Doctor", style: TextStyle(color: Colors.black12, fontSize: 16),)
+                                        Text("Doctor", style: TextStyle(color: Colors.black12, fontSize: 16 ),)
                                       ],
                                     ),
                                    
@@ -100,7 +100,7 @@ class _AccountState extends State<Account> {
                                     alignment: Alignment.topRight,
                                     width: 27,
                                     height: 27,
-                                    decoration: BoxDecoration(
+                                    decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.blue, // Blue background
                                     ),
@@ -127,7 +127,7 @@ class _AccountState extends State<Account> {
                     padding: EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 20, top: 20),
-                    child: Text(
+                    child: const Text(
                       'Personal Details',
                       style: TextStyle(
                         fontSize: 18,
