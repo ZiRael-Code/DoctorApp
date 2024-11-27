@@ -39,6 +39,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Row(
           children: [
             SizedBox(
@@ -108,13 +109,17 @@ class _DashboardState extends State<Dashboard> {
                 padding: const EdgeInsets.all(14),
                 child: Column(children: [
                   Column(
-                    children: List.generate(
+                    children:
+
+                    List.generate(
                       show_notification.length,
                       (index) {
                         Map<String, dynamic> nots = show_notification[index];
                         return notification(nots['icon'], nots['text']);
                       },
                     ),
+
+
                   ),
                   Row(
                     children: [
@@ -590,3 +595,71 @@ Widget imageViewer({
 void main() {
   runApp(MaterialApp(home: Dashboard()));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

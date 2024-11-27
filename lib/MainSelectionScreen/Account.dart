@@ -1,3 +1,4 @@
+import 'package:doctor_app/Referral/Referral.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -203,12 +204,17 @@ class _AccountState extends State<Account> {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child:
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => Referrals()));
+                      },
+                      child:
                     detailsNoCol(
                         icon: Icons.link,
                         detailInfo: "Refer someone",
                         shouldLine: false
                     ),
+                  ),
                   ),
 
                   Container(
