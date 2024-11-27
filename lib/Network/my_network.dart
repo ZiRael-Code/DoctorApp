@@ -2,7 +2,6 @@ import 'package:doctor_app/Network/add_new_network.dart';
 import 'package:doctor_app/Network/invite_people.dart';
 import 'package:doctor_app/components/network_list_tile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class MyNetwork extends StatefulWidget {
   const MyNetwork({super.key});
@@ -25,8 +24,8 @@ class _MyNetworkState extends State<MyNetwork> {
             mainAxisSize: MainAxisSize.min, // Keep it minimal height
             children: [
               ListTile(
-                title: Center(
-                  child: const Text(
+                title: const Center(
+                  child: Text(
                     'Switch network',
                     style: TextStyle(fontSize: 16),
                   ),
@@ -35,13 +34,12 @@ class _MyNetworkState extends State<MyNetwork> {
                   Navigator.pop(context); // Close the popup
                   // Handle "Switch network" action
                   _SwitchNetworkPopup(context);
-                  ;
                 },
               ),
               const Divider(), // Divider between options
               ListTile(
-                title: Center(
-                  child: const Text(
+                title: const Center(
+                  child: Text(
                     'Create new network',
                     style: TextStyle(fontSize: 16),
                   ),
@@ -50,13 +48,13 @@ class _MyNetworkState extends State<MyNetwork> {
                   Navigator.pop(context); // Close the popup
                   // Handle "Create new network" action
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AddNewNetwork()));
+                      MaterialPageRoute(builder: (context) => const AddNewNetwork()));
                 },
               ),
               const Divider(), // Divider between options
               ListTile(
-                title: Center(
-                  child: const Text(
+                title: const Center(
+                  child: Text(
                     'Invite people',
                     style: TextStyle(fontSize: 16),
                   ),
@@ -65,13 +63,13 @@ class _MyNetworkState extends State<MyNetwork> {
                   Navigator.pop(context); // Close the popup
                   // Handle "Invite people" action
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => InvitePeople()));
+                      MaterialPageRoute(builder: (context) => const InvitePeople()));
                 },
               ),
               const Divider(), // Divider between options
               ListTile(
-                title: Center(
-                  child: const Text(
+                title: const Center(
+                  child: Text(
                     'Leave network',
                     style: TextStyle(fontSize: 16),
                   ),
@@ -99,17 +97,17 @@ class _MyNetworkState extends State<MyNetwork> {
           return Container(
             padding:
                 const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
-            child: Column(
+            child: const Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 Text(
                   "Switch Network",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 NetworkListTile(
@@ -144,10 +142,10 @@ class _MyNetworkState extends State<MyNetwork> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const SizedBox(height: 25),
-                  Container(
+                  const SizedBox(
                     width: 230,
                     height: 45,
-                    child: const Text(
+                    child: Text(
                       "Are you sure you want to leave the network?",
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -551,10 +549,10 @@ class _MyNetworkState extends State<MyNetwork> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    const SizedBox(
                       width: 326,
                       height: 47,
-                      child: const Text(
+                      child: Text(
                         "We have restocked our pharmacy and new drugs are now available for sale.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
@@ -675,10 +673,10 @@ class _MyNetworkState extends State<MyNetwork> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    const SizedBox(
                       width: 326,
                       height: 47,
-                      child: const Text(
+                      child: Text(
                         "We have new devices to measure vitals in stock.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),
@@ -688,7 +686,7 @@ class _MyNetworkState extends State<MyNetwork> {
                       height: 20,
                     ),
 
-                    Container(
+                    SizedBox(
                       width: 326,
                       height: 326,
                       child: Image.asset("assets/images/recpng.png"),
@@ -767,8 +765,7 @@ class _MyNetworkState extends State<MyNetwork> {
                                   Row(
                                     children: [
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 15),
+                                        padding: EdgeInsets.only(left: 15),
                                         child: Text(
                                           "RX Pharmacy . ",
                                           style: TextStyle(
@@ -809,10 +806,10 @@ class _MyNetworkState extends State<MyNetwork> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    const SizedBox(
                       width: 326,
                       height: 47,
-                      child: const Text(
+                      child: Text(
                         "We have restocked our pharmacy and new drugs are now available for sale.",
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 16),

@@ -60,7 +60,7 @@ class AddExistingPatient extends StatelessWidget {
                                         "assets/images/checked.svg"),
                                   )),
                               const SizedBox(height: 30),
-                              Container(
+                              SizedBox(
                                 width: 156,
                                 height: 45,
                                 child: Text(

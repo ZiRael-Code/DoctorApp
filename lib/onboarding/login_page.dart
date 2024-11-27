@@ -114,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                         onTap: () => Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MainNavigator())),
+                                builder: (context) => const MainNavigator())),
                         child: const MyBlueButton(text: "Login")),
                     const SizedBox(
                       height: 20,

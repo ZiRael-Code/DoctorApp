@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CallingUi extends StatefulWidget {
@@ -14,11 +13,11 @@ class _CallingUiState extends State<CallingUi> {
     return Scaffold(
         body: SafeArea(
         child: Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            SizedBox(height: 70,),
-            SizedBox(
+            const SizedBox(height: 70,),
+            const SizedBox(
             width: 108,
             height: 108,
             child:
@@ -27,12 +26,12 @@ class _CallingUiState extends State<CallingUi> {
               backgroundImage: AssetImage('assets/images/doc.png'),
             )
             ),
-            SizedBox(height: 20,),
-            Text('Dr. Nelson Yang', style: TextStyle(fontSize: 16),)
-            ,Text('Calling', style: TextStyle(fontSize: 16, color: Colors.black26),)
+            const SizedBox(height: 20,),
+            const Text('Dr. Nelson Yang', style: TextStyle(fontSize: 16),)
+            ,const Text('Calling', style: TextStyle(fontSize: 16, color: Colors.black26),)
 
-            ,Spacer(),
-            Padding(padding: EdgeInsets.only(left: 35, right: 35),
+            ,const Spacer(),
+            Padding(padding: const EdgeInsets.only(left: 35, right: 35),
             child:
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -43,11 +42,11 @@ class _CallingUiState extends State<CallingUi> {
             Container(
               width: 62,
               height: 62,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.red,
               ),
-              child: Icon(Icons.phone_missed_outlined, color: Colors.white,),
+              child: const Icon(Icons.phone_missed_outlined, color: Colors.white,),
             ),
                 callAction(
                   icon: Icons.mic
@@ -55,7 +54,7 @@ class _CallingUiState extends State<CallingUi> {
               ],
             ),
             ),
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
           ],
         )
         )
@@ -69,7 +68,7 @@ class _CallingUiState extends State<CallingUi> {
     return Container(
       width: 62,
       height: 62,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Color(0xffE2EDFF),
       ),

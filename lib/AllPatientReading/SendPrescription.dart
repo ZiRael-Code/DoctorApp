@@ -1,13 +1,14 @@
-import 'package:doctor_app/AllPatientReading/PrescribeDrugsAddDrug.dart';
 import 'package:doctor_app/AllPatientReading/PrescriptionSentSuccess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(SendPrescription());
+  runApp(const SendPrescription());
 }
 
 class SendPrescription extends StatelessWidget {
+  const SendPrescription({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,20 +19,20 @@ class SendPrescription extends StatelessWidget {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Text(
+                const Text(
                   'Send prescription',
                   style: TextStyle(
                       fontSize: 20,
@@ -40,18 +41,18 @@ class SendPrescription extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
         ),
-        body: Padding(padding: EdgeInsets.all(12),
+        body: Padding(padding: const EdgeInsets.all(12),
           child: Column(
           children: [
 
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
-            Wrap(
+            const Wrap(
               direction: Axis.horizontal,
               children: [
                 Row(
@@ -87,7 +88,7 @@ class SendPrescription extends StatelessWidget {
                 ),
               ],
             ),
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
 
 
 
@@ -98,39 +99,39 @@ class SendPrescription extends StatelessWidget {
               drugUnit: '1 pack:  '
             ),
 
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
 
-            Spacer(),
+            const Spacer(),
 
             Container(
               width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(7),
+                color: const Color(0xFFF2F2F2),
+              ),
 
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(Icons.info, color: Colors.black45,),
                   SizedBox(width: 10),
-                  Container(
+                  SizedBox(
                       width: 250,
                       child:
                       Text("Prescription will be sent to patient as a message", softWrap: true,)
                   ),
                 ],
               ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
-                color: Color(0xFFF2F2F2),
-              ),
             ),
 
-            SizedBox(height: 40,),
+            const SizedBox(height: 40,),
 
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Prescriptionsentsuccess()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>const Prescriptionsentsuccess()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -139,8 +140,8 @@ class SendPrescription extends StatelessWidget {
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Send',
                   style: TextStyle(color: Colors.white, fontSize: 18),
@@ -160,7 +161,7 @@ class SendPrescription extends StatelessWidget {
     required String drugUnit
   }) {
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey.shade200, width: 1),
@@ -170,12 +171,12 @@ class SendPrescription extends StatelessWidget {
       Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Text(name, style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10,),
+          Text(name, style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 10,),
           Row(
           children: [
             Text(drugUnit, style: TextStyle(color: Colors.grey[500]),),
-            Text(dosage + ' . '+instructions, style: TextStyle(color: Colors.grey[500])),
+            Text('$dosage . $instructions', style: TextStyle(color: Colors.grey[500])),
           ],
         ),
         ],

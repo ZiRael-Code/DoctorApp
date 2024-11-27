@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -37,20 +36,20 @@ class _SearchpatientState extends State<Searchpatient> {
             Container(
               width: 35,
               height: 35,
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: Color(0xFFE5E5E5),
+                color: const Color(0xFFE5E5E5),
               ),
               child: SvgPicture.asset('assets/images/back.svg',
                 width: 8.0,
                 height: 15,),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               alignment: Alignment.center,
               child:
-              Center(child: Text(
+              const Center(child: Text(
                 'Search patient',
                 style: TextStyle(
                     fontSize: 20,
@@ -59,15 +58,15 @@ class _SearchpatientState extends State<Searchpatient> {
               ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
-      body: Padding(padding: EdgeInsets.all(16),
+      body: Padding(padding: const EdgeInsets.all(16),
       child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(right: 10),
+              padding: const EdgeInsets.only(right: 10),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.grey[200],
@@ -91,7 +90,7 @@ class _SearchpatientState extends State<Searchpatient> {
                   prefixIcon: Icon(Icons.search, color: Colors.grey[300]),
                   suffixIcon: query.isNotEmpty
                       ? IconButton(
-                    icon: Icon(Icons.clear, color: Colors.black54),
+                    icon: const Icon(Icons.clear, color: Colors.black54),
                     onPressed: () {
                       setState(() {
                         query = ""; // Clear the search query
@@ -101,7 +100,7 @@ class _SearchpatientState extends State<Searchpatient> {
                   )
                       : null,
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(vertical: 15),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 15),
                 ),
               ),
             ),
@@ -116,10 +115,10 @@ class _SearchpatientState extends State<Searchpatient> {
                 itemBuilder: (context, index) {
                   String name = filteredNames[index];
                   return ListTile(
-                    leading: Icon(Icons.search, color: Colors.black54),
+                    leading: const Icon(Icons.search, color: Colors.black54),
                     title: Text(
                       name,
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                     onTap: () {
                       controller.text = name;
@@ -136,9 +135,9 @@ class _SearchpatientState extends State<Searchpatient> {
 
 
            controller.text.isEmpty ? Column(children: [
-              SizedBox(height: 60,),
+              const SizedBox(height: 60,),
             SvgPicture.asset('assets/images/searchname.svg'),
-            Container(
+            const SizedBox(
               width: 260,
                 child: Text(textAlign: TextAlign.center, "Start typing a patient’s name or phone number to search for them. Only patients you’ve added will show up here."),
             ),
@@ -153,8 +152,8 @@ class _SearchpatientState extends State<Searchpatient> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("No users were found.", style: TextStyle(fontSize: 14),),
-                SizedBox(height: 12,),
+                const Text("No users were found.", style: TextStyle(fontSize: 14),),
+                const SizedBox(height: 12,),
                 ElevatedButton(
                   onPressed: () {
                   },
@@ -164,8 +163,8 @@ class _SearchpatientState extends State<Searchpatient> {
                       borderRadius: BorderRadius.circular(9),
                     ),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 7.0),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 7.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -174,7 +173,7 @@ class _SearchpatientState extends State<Searchpatient> {
                           color: Colors.white,
                           size: 16,
                         ),
-                        const SizedBox(width: 8),
+                        SizedBox(width: 8),
                         Text(
                           'Add a new patient',
                           style: TextStyle(color: Colors.white, fontSize: 12),

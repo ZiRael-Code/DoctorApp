@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
-void main(){
-  runApp(HowItWorks());
+void main() {
+  runApp(const HowItWorks());
 }
 
 class HowItWorks extends StatefulWidget {
@@ -13,100 +11,96 @@ class HowItWorks extends StatefulWidget {
   _HowItWorksScreen createState() => _HowItWorksScreen();
 }
 
-class _HowItWorksScreen extends  State<HowItWorks> {
+class _HowItWorksScreen extends State<HowItWorks> {
   String? _selectedValue;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Row(
-            children: [
-              Container(
-                width: 35,
-                height: 35,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
-                ),
-                child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
-              ),
-              Spacer(),
-              Container(
-                alignment: Alignment.center,
-                child:
-                Center(child: Text(
-                  'How It Work',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontStyle: FontStyle.normal
+        home: Scaffold(
+            appBar: AppBar(
+              title: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: Container(
+                      width: 35,
+                      height: 35,
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color(0xFFE5E5E5),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/images/back.svg',
+                        width: 8.0,
+                        height: 15,
+                      ),
+                    ),
                   ),
-                ),
-                ),
+                  const Spacer(),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Center(
+                      child: Text(
+                        'How It Work',
+                        style: TextStyle(
+                            fontSize: 20, fontStyle: FontStyle.normal),
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
               ),
-              Spacer(),
-
-            ],
-          ),
-          centerTitle: true,
-        ),
-        body:
-        Container(
-            padding: EdgeInsets.all(15),
-            child: Column(children: [
-              how(
-                text: "How to take vital readings with your device",
-              ),
-
-              how(
-                text: "How to book an appointment",
-              ),
-
-              how(
-                text: "How to take vital readings with your device",
-              ),
-
-              how(
-                text: "How to become an interpreter for others",
-              ),
-
-              how(
-                text: "How to book an appointment",
-              ),
-
-              how(
-                text: "How to become an interpreter for others",
-              ),
-
-          ]
+              centerTitle: true,
             ),
-
-
-    )));
+            body: Container(
+              padding: const EdgeInsets.all(15),
+              child: Column(children: [
+                how(
+                  text: "How to take vital readings with your device",
+                ),
+                how(
+                  text: "How to book an appointment",
+                ),
+                how(
+                  text: "How to take vital readings with your device",
+                ),
+                how(
+                  text: "How to become an interpreter for others",
+                ),
+                how(
+                  text: "How to book an appointment",
+                ),
+                how(
+                  text: "How to become an interpreter for others",
+                ),
+              ]),
+            )));
   }
 
-  how({
-    required String text
-  }) {
+  how({required String text}) {
     return Column(children: [
-      Row(children: [
-      Container(
-        width: 240,
-        child: Text(text, style: TextStyle(
-          fontSize: 16,
-        ),),
+      Row(
+        children: [
+          SizedBox(
+            width: 240,
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 16,
+              ),
+            ),
+          ),
+          const Spacer(),
+          const Icon(Icons.arrow_forward_ios_rounded),
+        ],
       ),
-      Spacer(),
-      Icon(Icons.arrow_forward_ios_rounded),
-    ],),
-      SizedBox(height: 12,),
+      const SizedBox(
+        height: 12,
+      ),
       SvgPicture.asset("assets/images/line.svg"),
-      SizedBox(height: 20)
-    ]
-    );
+      const SizedBox(height: 20)
+    ]);
   }
 }

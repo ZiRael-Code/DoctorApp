@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
-void main(){
-  runApp(DeviceInformation());
+void main() {
+  runApp(const DeviceInformation());
 }
 
 class DeviceInformation extends StatefulWidget {
@@ -13,7 +11,7 @@ class DeviceInformation extends StatefulWidget {
   _DeviceInformationState createState() => _DeviceInformationState();
 }
 
-class _DeviceInformationState extends  State<DeviceInformation> {
+class _DeviceInformationState extends State<DeviceInformation> {
   String? _selectedValue;
 
   @override
@@ -26,101 +24,107 @@ class _DeviceInformationState extends  State<DeviceInformation> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
-                    child: SvgPicture.asset('assets/images/back.svg',
+                    child: SvgPicture.asset(
+                      'assets/images/back.svg',
                       width: 8.0,
-                      height: 15,),
+                      height: 15,
+                    ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
-                    child:
-                    Center(child: Text(
-                      'Device Information',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontStyle: FontStyle.normal
+                    child: const Center(
+                      child: Text(
+                        'Device Information',
+                        style: TextStyle(
+                            fontSize: 20, fontStyle: FontStyle.normal),
                       ),
                     ),
-                    ),
                   ),
-                  Spacer(),
-
+                  const Spacer(),
                 ],
               ),
               centerTitle: true,
             ),
-            body:
-            Container(
-                padding: EdgeInsets.all(25),
-                child:
-                Column(
+            body: Container(
+                padding: const EdgeInsets.all(25),
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(alignment: Alignment.center,child:
-                    SvgPicture.asset('assets/images/dev.svg', height: 117, width: 195,),
+                    Container(
+                      alignment: Alignment.center,
+                      child: SvgPicture.asset(
+                        'assets/images/dev.svg',
+                        height: 117,
+                        width: 195,
+                      ),
                     ),
-                    SizedBox(height: 30,),
-                    Text(
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    const Text(
                       'Name:',
                       style: TextStyle(color: Colors.grey, fontSize: 14),
                     ),
-                    SizedBox(height: 5),
-                    Text(
+                    const SizedBox(height: 5),
+                    const Text(
                       'Wellue Bp2 Connect device',
                       style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
 
-
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     SvgPicture.asset('assets/images/line.svg'),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Price
-                    Text(
+                    const Text(
                       'Price:',
                       style: TextStyle(color: Colors.grey, fontSize: 14),
                     ),
-                    SizedBox(height: 5),
-                    Text(
+                    const SizedBox(height: 5),
+                    const Text(
                       'N25,000.00',
-                      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 16),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                          fontSize: 16),
                     ),
 
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     SvgPicture.asset('assets/images/line.svg'),
 
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
 
                     // Vitals measured
-                    Text(
+                    const Text(
                       'Vitals measured:',
                       style: TextStyle(color: Colors.grey, fontSize: 14),
                     ),
-                    SizedBox(height: 5),
-                    Text(
+                    const SizedBox(height: 5),
+                    const Text(
                       'Oxygen saturation, blood pressure, stress level, body temperature.',
                       style: TextStyle(color: Colors.black, fontSize: 16),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     SvgPicture.asset('assets/images/line.svg'),
 
-
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
 
                     // How many devices do you need?
-                    Center(child: Text(
-                      'How many devices do you need?',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
-                    ),
+                    const Center(
+                      child: Text(
+                        'How many devices do you need?',
+                        style: TextStyle(color: Colors.black, fontSize: 18),
+                      ),
                     ),
 
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
 
                     // Row for quantity control
                     Row(
@@ -130,37 +134,42 @@ class _DeviceInformationState extends  State<DeviceInformation> {
                         Container(
                           width: 35,
                           height: 35,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xffE2EDFF),
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            icon: Icon(Icons.remove, size: 16,color: Colors.blue),
+                            icon: const Icon(Icons.remove,
+                                size: 16, color: Colors.blue),
                             onPressed: () {
                               // Logic to decrease the number
                             },
                           ),
                         ),
 
-                        SizedBox(width: 25),
+                        const SizedBox(width: 25),
 
                         // Display quantity
-                        Text(
+                        const Text(
                           '1',
-                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
                         ),
 
-                        SizedBox(width: 25),
+                        const SizedBox(width: 25),
                         // Increase button
                         Container(
                           width: 35,
                           height: 35,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color(0xffE2EDFF),
                             shape: BoxShape.circle,
                           ),
                           child: IconButton(
-                            icon: Icon(Icons.add, size: 16, color: Colors.blue),
+                            icon: const Icon(Icons.add,
+                                size: 16, color: Colors.blue),
                             onPressed: () {
                               // Logic to increase the number
                             },
@@ -169,7 +178,7 @@ class _DeviceInformationState extends  State<DeviceInformation> {
                       ],
                     ),
 
-                    Spacer(),
+                    const Spacer(),
 
                     // Place an Order button
                     SizedBox(
@@ -181,21 +190,21 @@ class _DeviceInformationState extends  State<DeviceInformation> {
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12), // Border radius of 12
+                            borderRadius: BorderRadius.circular(
+                                12), // Border radius of 12
                           ),
                           backgroundColor: Colors.blue,
                         ),
-                        child: Text(
+                        child: const Text(
                           'Place an order',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ),
-                    SizedBox(height: 45,),
+                    const SizedBox(
+                      height: 45,
+                    ),
                   ],
-                )
-            )
-
-        ));
+                ))));
   }
 }

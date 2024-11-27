@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddANewUpdate extends StatefulWidget {
@@ -57,13 +58,18 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      width: 35,
+                      height: 35,
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        shape: BoxShape.circle,
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color(0xFFE5E5E5),
                       ),
-                      child: const Icon(Icons.arrow_back),
+                      child: SvgPicture.asset(
+                        'assets/images/back.svg',
+                        width: 8.0,
+                        height: 15,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 60),
@@ -77,9 +83,9 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                 ],
               ),
               const SizedBox(height: 60),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   "Name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -113,9 +119,9 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
               const SizedBox(
                 height: 30,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   "Add a picture",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),

@@ -1,5 +1,4 @@
 import 'package:doctor_app/AllPatientReading/PatientReading.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,26 +14,28 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   List<Map<String, dynamic>> show_notification = [
     {
-      'icon': Icon(
+      'icon': const Icon(
         Icons.message,
         color: Colors.blue,
       ),
       'text': "You have a new message from Alexander..."
     },
     {
-      'icon': Icon(
+      'icon': const Icon(
         Icons.local_pharmacy,
         color: Colors.blue,
       ),
       'text': 'Your malaria drugs have been exhausted',
     },
     {
-      'icon': Icon(Icons.devices, color: Colors.blue),
+      'icon': const Icon(Icons.devices, color: Colors.blue),
       'text': 'Your device is ready for pickup',
     },
   ];
 
   int? selectedIndex; // Track the expanded notification index
+
+  bool isCollaps = false;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class _DashboardState extends State<Dashboard> {
                   //   Navigator.push(context, MaterialPageRoute(builder:
                   //       (context) => AccountProfileState()));
                   // },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage('assets/images/dr.png'),
               )),
@@ -86,8 +87,8 @@ class _DashboardState extends State<Dashboard> {
             const SizedBox(
               width: 10,
             ),
-            Icon(Icons.wallet_outlined),
-            SizedBox(
+            const Icon(Icons.wallet_outlined),
+            const SizedBox(
               width: 10,
             ),
             Align(
@@ -117,7 +118,8 @@ class _DashboardState extends State<Dashboard> {
                       show_notification.length,
                       (index) {
                         Map<String, dynamic> nots = show_notification[index];
-                        return notification(nots['icon'], nots['text']);
+                        return notification(
+                            nots['icon'], nots['text'], index, isCollaps);
                       },
                     ),
                   ),
@@ -162,7 +164,7 @@ class _DashboardState extends State<Dashboard> {
                             regularity: 'irregular',
                             regularityColor: const Color(0xffFF8E3C),
                             action: MaterialPageRoute(
-                                builder: (builder) => PatientReading())),
+                                builder: (builder) => const PatientReading())),
                         patiencte_reading(
                             name: 'Salami Adebayo',
                             path: 'assets/images/man1.png',
@@ -172,16 +174,16 @@ class _DashboardState extends State<Dashboard> {
                             hba1c: '42mmol/mol,',
                             ihra: '5.7% ...',
                             regularity: 'irregular',
-                            regularityColor: Color(0xffFF8E3C),
+                            regularityColor: const Color(0xffFF8E3C),
                             action: MaterialPageRoute(
-                                builder: (builder) => PatientReading())),
+                                builder: (builder) => const PatientReading())),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 14,
                   ),
-                  Align(
+                  const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Network updates",
@@ -194,14 +196,14 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ])),
             Padding(
-                padding: EdgeInsets.only(left: 5, right: 5),
+                padding: const EdgeInsets.only(left: 5, right: 5),
                 child: Container(
-                  padding: EdgeInsets.only(left: 1.5, right: 1.5),
+                  padding: const EdgeInsets.only(left: 1.5, right: 1.5),
                   width: double.infinity,
                   decoration: BoxDecoration(color: Colors.grey[300]),
                   child: Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 3,
                       ),
                       network_update(
@@ -214,7 +216,7 @@ class _DashboardState extends State<Dashboard> {
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                           imageList: [],
                           action: MaterialPageRoute(
-                              builder: (builder) => Ministore()),
+                              builder: (builder) => const Ministore()),
                           context: context),
                       network_update(
                           network_name: "James’ Network",
@@ -226,7 +228,7 @@ class _DashboardState extends State<Dashboard> {
                               "We have new devices to measure vitals in stock.",
                           imageList: ["assets/images/doc.png"],
                           action: MaterialPageRoute(
-                              builder: (builder) => Ministore()),
+                              builder: (builder) => const Ministore()),
                           context: context),
                       network_update(
                           network_name: "My Network",
@@ -238,7 +240,7 @@ class _DashboardState extends State<Dashboard> {
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                           imageList: [],
                           action: MaterialPageRoute(
-                              builder: (builder) => Ministore()),
+                              builder: (builder) => const Ministore()),
                           context: context),
                       network_update(
                           network_name: "My Network",
@@ -257,7 +259,7 @@ class _DashboardState extends State<Dashboard> {
                             "assets/images/doc.png"
                           ],
                           action: MaterialPageRoute(
-                              builder: (builder) => Ministore()),
+                              builder: (builder) => const Ministore()),
                           context: context),
                     ],
                   ),
@@ -268,42 +270,47 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  notification(Icon icon, String text) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12.0),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 8,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            width: 35,
-            height: 35,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
-            child: icon,
-          ),
-          Spacer(),
-          Container(
-            width: 229,
-            child: Text(text,
-                style: TextStyle(fontSize: 16.0, color: Colors.black45),
-                overflow: TextOverflow.ellipsis),
-          ),
-          Spacer(),
-          Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue),
-        ],
+  notification(Icon icon, String text, int index, bool isCollaps) {
+    return SizedBox(
+      width: 150,
+      // height: 150,
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 10),
+        padding:
+            const EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 8,
+              offset: const Offset(0, 4),
+            ),
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              width: 35,
+              height: 35,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Color(0xffE2EDFF)),
+              child: icon,
+            ),
+            const Spacer(),
+            SizedBox(
+              width: 229,
+              child: Text(text,
+                  style: const TextStyle(fontSize: 16.0, color: Colors.black45),
+                  overflow: TextOverflow.ellipsis),
+            ),
+            const Spacer(),
+            const Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue),
+          ],
+        ),
       ),
     );
   }
@@ -323,7 +330,7 @@ class _DashboardState extends State<Dashboard> {
     return InkWell(
       onTap: () => {Navigator.push(context, action)},
       child: Container(
-        margin: EdgeInsets.only(right: 15),
+        margin: const EdgeInsets.only(right: 15),
         width: 320,
         padding: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
@@ -358,7 +365,7 @@ class _DashboardState extends State<Dashboard> {
                       AssetImage(path), // Replace with your image asset
                   radius: 24.0,
                 ),
-                SizedBox(width: 12.0),
+                const SizedBox(width: 12.0),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -371,7 +378,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                     const SizedBox(height: 4.0),
                     Text(
-                      time + ' · ' + date,
+                      '$time · $date',
                       style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 12.0,
@@ -390,38 +397,38 @@ class _DashboardState extends State<Dashboard> {
               children: [
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'BP: ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 12),
                     ),
-                    Text(bp, style: TextStyle(fontSize: 12)),
+                    Text(bp, style: const TextStyle(fontSize: 12)),
                   ],
                 ),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'HbA1c: ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 12),
                     ),
-                    Text(hba1c, style: TextStyle(fontSize: 12)),
+                    Text(hba1c, style: const TextStyle(fontSize: 12)),
                   ],
                 ),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       'IHRA: ',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.blue,
                           fontSize: 12),
                     ),
-                    Text(ihra, style: TextStyle(fontSize: 12)),
+                    Text(ihra, style: const TextStyle(fontSize: 12)),
                   ],
                 )
               ],
@@ -453,9 +460,9 @@ network_update(
     onTap: () => {Navigator.push(context, action)},
     child: Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(bottom: 15),
-      decoration: BoxDecoration(color: Colors.white),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: 15),
+      decoration: const BoxDecoration(color: Colors.white),
+      padding: const EdgeInsets.all(12),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -470,7 +477,7 @@ network_update(
                   backgroundImage: AssetImage(profile_path),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Column(
@@ -479,33 +486,33 @@ network_update(
                 children: [
                   Row(children: [
                     Text(
-                      name + " . ",
-                      style: TextStyle(fontSize: 16),
+                      "$name . ",
+                      style: const TextStyle(fontSize: 16),
                     ),
                     Text(
                       network_name,
-                      style: TextStyle(color: Colors.blue),
+                      style: const TextStyle(color: Colors.blue),
                     )
                   ]),
-                  Text(time + " . " + date,
-                      style: TextStyle(color: Colors.black45))
+                  Text("$time . $date",
+                      style: const TextStyle(color: Colors.black45))
                 ],
               ),
-              Spacer(),
-              Icon(
+              const Spacer(),
+              const Icon(
                 Icons.more_vert,
                 color: Colors.black,
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          Container(
-            width: 285,
-            child: Text(text, style: TextStyle(fontSize: 16)),
-          ),
           SizedBox(
+            width: 285,
+            child: Text(text, style: const TextStyle(fontSize: 16)),
+          ),
+          const SizedBox(
             height: 20,
           ),
           imageList.length == 1
@@ -527,38 +534,40 @@ network_update(
                             index: index);
                       }),
                     )
-                  : SizedBox(
+                  : const SizedBox(
                       height: 15,
                     ),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           Align(
-              alignment: Alignment.center,
-              child: Container(
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: Colors.grey.withOpacity(0.5),
-                        width: 1,
-                      ),
-                      color: Color(0xffE2EDFF)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "View details",
-                        style: TextStyle(color: Colors.blue, fontSize: 16),
-                      ),
-                      Icon(
-                        Icons.arrow_forward,
-                        color: Colors.blue,
-                      )
-                    ],
-                  )))
+            alignment: Alignment.center,
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Colors.grey.withOpacity(0.5),
+                    width: 1,
+                  ),
+                  color: const Color(0xffE2EDFF)),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "View details",
+                    style: TextStyle(color: Colors.blue, fontSize: 16),
+                  ),
+                  Icon(
+                    Icons.arrow_forward,
+                    color: Colors.blue,
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     ),
@@ -572,40 +581,43 @@ Widget imageViewer(
     required int index,
     required List<String> imageList}) {
   return Container(
-      margin: EdgeInsets.only(right: 10, bottom: 10),
-      child: Stack(
-        children: [
-          SizedBox(
-              width: w,
-              height: h,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  path,
-                  fit: BoxFit.cover,
-                ),
-              )),
-          if (imageList.length > 4 && index == 3)
-            Container(
-                width: w,
-                height: h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Colors.black.withOpacity(0.50),
-                ),
-                child: Center(
-                  child: Text(
-                    "+" + (imageList.length - index).toString(),
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 26),
-                  ),
-                ))
-        ],
-      ));
+    margin: const EdgeInsets.only(right: 10, bottom: 10),
+    child: Stack(
+      children: [
+        SizedBox(
+          width: w,
+          height: h,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              path,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        if (imageList.length > 4 && index == 3)
+          Container(
+            width: w,
+            height: h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.black.withOpacity(0.50),
+            ),
+            child: Center(
+              child: Text(
+                "+${imageList.length - index}",
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 26),
+              ),
+            ),
+          )
+      ],
+    ),
+  );
 }
 
 void main() {
-  runApp(MaterialApp(home: Dashboard()));
+  runApp(const MaterialApp(home: Dashboard()));
 }

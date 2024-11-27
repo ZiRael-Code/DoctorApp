@@ -200,9 +200,11 @@ class _AccountState extends State<Account> {
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Referrals()));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Referrals(),
+                      ),
+                    );
                   },
                   child: detailsNoCol(
                       icon: Icons.link,
@@ -234,10 +236,10 @@ class _AccountState extends State<Account> {
                 child: Column(
                   children: [
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => FundWallet())),
+                              builder: (context) => const FundWallet())),
                       child: detailsNoCol(
                           icon: Icons.wallet_outlined,
                           detailInfo: "Wallet",
@@ -247,10 +249,10 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => CreditDebitCard())),
+                              builder: (context) => const CreditDebitCard())),
                       child: detailsNoCol(
                           icon: Icons.credit_card,
                           detailInfo: "Credit/Debit Cards ",
@@ -260,7 +262,7 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const PinSettings())),
@@ -295,7 +297,7 @@ class _AccountState extends State<Account> {
                   ),
                   child: Column(children: [
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
@@ -309,7 +311,7 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const HealthStatic())),
@@ -342,7 +344,7 @@ class _AccountState extends State<Account> {
                   ),
                   child: Column(children: [
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const DeviceOwned())),
@@ -355,7 +357,7 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const DeviceOrder())),
@@ -388,7 +390,7 @@ class _AccountState extends State<Account> {
                   ),
                   child: Column(children: [
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
@@ -402,7 +404,7 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const DeviceOwned())),
@@ -415,7 +417,7 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const BlogAndAticles())),
@@ -428,7 +430,7 @@ class _AccountState extends State<Account> {
                       height: 25,
                     ),
                     GestureDetector(
-                      onTap: () => Navigator.pushReplacement(
+                      onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const HowItWorks())),

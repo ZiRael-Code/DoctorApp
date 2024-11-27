@@ -3,7 +3,6 @@ import 'package:doctor_app/AllPatientReading/PrescribeDrugs.dart';
 import 'package:doctor_app/Call_MessagePatient/SearchPatient.dart';
 import 'package:doctor_app/components/vitals_reading_comp.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../Call_MessagePatient/Chat.dart';
 
@@ -49,7 +48,7 @@ class _PatientReadingState extends State<PatientReading>
       ),
       body: Stack(children: [
         Padding(
-          padding: EdgeInsets.only(left: 12, right: 12, top: 25),
+          padding: const EdgeInsets.only(left: 12, right: 12, top: 25),
           child: Column(
             children: [
               Container(
@@ -120,11 +119,11 @@ class _PatientReadingState extends State<PatientReading>
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
               ]),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Flexible(
                 child: TabBarView(
                   controller: _tabController,
@@ -143,7 +142,7 @@ class _PatientReadingState extends State<PatientReading>
             maxChildSize: 0.3, // Maximum height
             builder: (context, scrollController) {
               return Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
@@ -159,7 +158,7 @@ class _PatientReadingState extends State<PatientReading>
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Container(
                       width: 50,
                       height: 5,
@@ -168,7 +167,7 @@ class _PatientReadingState extends State<PatientReading>
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Expanded(
                       child: ListView(
                         controller: scrollController,
@@ -179,7 +178,7 @@ class _PatientReadingState extends State<PatientReading>
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (builder) => Searchpatient()));
+                                      builder: (builder) => const Searchpatient()));
                                 },
                                 child: _actionButton(
                                   icon: Icons.phone,
@@ -190,7 +189,7 @@ class _PatientReadingState extends State<PatientReading>
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (builder) => PrescribeDrugs()));
+                                      builder: (builder) => const PrescribeDrugs()));
                                 },
                                 child: _actionButton(
                                   icon: Icons.medical_services,
@@ -201,7 +200,7 @@ class _PatientReadingState extends State<PatientReading>
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (builder) => Chat()));
+                                      builder: (builder) => const Chat()));
                                 },
                                 child: _actionButton(
                                   icon: Icons.message,
@@ -235,10 +234,10 @@ class _PatientReadingState extends State<PatientReading>
             size: 30,
           ),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Text(
           label,
-          style: TextStyle(fontSize: 12),
+          style: const TextStyle(fontSize: 12),
         ),
       ],
     );
@@ -246,7 +245,7 @@ class _PatientReadingState extends State<PatientReading>
 }
 
 Widget vital_reading() {
-  return Expanded(
+  return const Expanded(
       child: SingleChildScrollView(
           child: Column(
     children: [
@@ -341,5 +340,5 @@ Widget vital_reading() {
 }
 
 Widget drug_compliance() {
-  return DrugCompliance();
+  return const DrugCompliance();
 }

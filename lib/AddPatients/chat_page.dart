@@ -24,8 +24,8 @@ class _ChatPageState extends State<ChatPage> {
             mainAxisSize: MainAxisSize.min, // Keep it minimal height
             children: [
               ListTile(
-                title: Center(
-                  child: const Text(
+                title: const Center(
+                  child: Text(
                     'View patient information',
                     style: TextStyle(fontSize: 16),
                   ),
@@ -37,8 +37,8 @@ class _ChatPageState extends State<ChatPage> {
               ),
               const Divider(), // Divider between options
               ListTile(
-                title: Center(
-                  child: const Text(
+                title: const Center(
+                  child: Text(
                     'Add to prioritized patients',
                     style: TextStyle(fontSize: 16),
                   ),
@@ -259,7 +259,7 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                   child: Row(
                     children: [
-                      Expanded(
+                      const Expanded(
                         child: TextField(
                           decoration: InputDecoration(
                             hintText: "Type a message...",

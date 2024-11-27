@@ -49,7 +49,7 @@ class SuccessPage extends StatelessWidget {
               const Spacer(),
               GestureDetector(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage())),
+                      MaterialPageRoute(builder: (context) => const LoginPage())),
                   child: const MyBlueButton(text: "Continue to Login")),
               const SizedBox(
                 height: 40,

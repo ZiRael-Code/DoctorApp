@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Monthy extends StatefulWidget {
+  const Monthy({super.key});
+
   @override
   _MonthyState createState() => _MonthyState();
 }
@@ -10,15 +12,25 @@ class _MonthyState extends State<Monthy> {
   String _selectedMonth = "";
 
   final List<String> _months = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Year and Month'),
+        title: const Text('Select Year and Month'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -28,7 +40,7 @@ class _MonthyState extends State<Monthy> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: Icon(Icons.arrow_left),
+                icon: const Icon(Icons.arrow_left),
                 onPressed: () {
                   setState(() {
                     _selectedYear = DateTime(_selectedYear.year - 1);
@@ -37,10 +49,11 @@ class _MonthyState extends State<Monthy> {
               ),
               Text(
                 '${_selectedYear.year}',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               IconButton(
-                icon: Icon(Icons.arrow_right),
+                icon: const Icon(Icons.arrow_right),
                 onPressed: () {
                   setState(() {
                     _selectedYear = DateTime(_selectedYear.year + 1);
@@ -49,13 +62,13 @@ class _MonthyState extends State<Monthy> {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
 
           // Month Selector (Grid of months)
           Expanded(
             child: GridView.builder(
-              padding: EdgeInsets.all(10),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              padding: const EdgeInsets.all(10),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, // Display 3 months per row
                 childAspectRatio: 2 / 1, // Adjust for good sizing
                 crossAxisSpacing: 10,
@@ -109,16 +122,17 @@ class _MonthyState extends State<Monthy> {
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text('Please select a month'),
                     ),
                   );
                 }
               },
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 50), // Full width button
+                minimumSize:
+                    const Size(double.infinity, 50), // Full width button
               ),
-              child: Text('Done'),
+              child: const Text('Done'),
             ),
           ),
         ],
@@ -128,5 +142,5 @@ class _MonthyState extends State<Monthy> {
 }
 
 void main() {
-  runApp(MaterialApp(home: Monthy()));
+  runApp(const MaterialApp(home: Monthy()));
 }

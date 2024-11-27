@@ -1,8 +1,8 @@
 import 'package:doctor_app/AddPatients/add_existing_patient.dart';
 import 'package:doctor_app/AddPatients/invite_through_link.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-import '../components/contacts_tile.dart';
 
 class InvitePeople extends StatefulWidget {
   const InvitePeople({super.key});
@@ -76,13 +76,18 @@ class _InvitePeopleState extends State<InvitePeople>
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      width: 35,
+                      height: 35,
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        shape: BoxShape.circle,
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color(0xFFE5E5E5),
                       ),
-                      child: const Icon(Icons.arrow_back),
+                      child: SvgPicture.asset(
+                        'assets/images/back.svg',
+                        width: 8.0,
+                        height: 15,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 70),

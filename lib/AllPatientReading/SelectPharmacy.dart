@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'PrescribeDrugsAddDrug.dart';
 
 void main(){
-  runApp(SelectPharmacy());
+  runApp(const SelectPharmacy());
 }
 
 class SelectPharmacy extends StatefulWidget {
@@ -30,20 +29,20 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'Select pharmacy',
                   style: TextStyle(
                       fontSize: 20,
@@ -52,28 +51,28 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
             child: Column(
               children: [
-                SizedBox(height: 30),
+                const SizedBox(height: 30),
                 Row(
                   children: [
                     // Search field
                     Container(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 10),
                       width: MediaQuery.of(context).size.width * 0.70,
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: TextField(
+                      child: const TextField(
                         decoration: InputDecoration(
                           hintText: 'Search by name, location',
                           hintStyle: TextStyle(color: Colors.grey),
@@ -92,14 +91,14 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
                         });
                       },
                       child: Container(
-                        margin: EdgeInsets.only(left: 12),
-                        padding: EdgeInsets.all(12),
+                        margin: const EdgeInsets.only(left: 12),
+                        padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           color: Colors.grey[300],
                           shape: BoxShape.circle,
                         ),
                         child: isFilterOpen
-                            ? Icon(Icons.close, color: Colors.black) // X icon when open
+                            ? const Icon(Icons.close, color: Colors.black) // X icon when open
                             : SvgPicture.asset('assets/images/filter.svg'), // Filter icon when closed
                       ),
                     ),
@@ -110,22 +109,22 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
 
                 if (isFilterOpen)
                   Container(
-                    margin: EdgeInsets.only(top: 16), // Spacing between row and dropdown
+                    margin: const EdgeInsets.only(top: 16), // Spacing between row and dropdown
                     width: double.infinity, // Matches screen width
-                    padding: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(16),
+                    decoration: const BoxDecoration(
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Filters",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 18,
                           ),
                         ),
-                        SizedBox(height: 20), // Space between the text and buttons
+                        const SizedBox(height: 20), // Space between the text and buttons
                         Wrap(
                           spacing: 5, // Space between buttons horizontally
                           runSpacing: 8, // Space between buttons vertically
@@ -141,16 +140,16 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
                                     width:  i == btnText.length-1 ? 1.0 : 0.0, // Border width
                                   ),
                                   shadowColor: Colors.transparent,
-                                  backgroundColor: i == btnText.length-1 ? Colors.transparent : Color(0xFFE2EDFF)  , // Button color
+                                  backgroundColor: i == btnText.length-1 ? Colors.transparent : const Color(0xFFE2EDFF)  , // Button color
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50), // Rounded corners
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsets.all(0),
+                                  padding: const EdgeInsets.all(0),
                                   child: Text(
                                     btnText[i],
-                                    style: TextStyle(color: Color(0xff3C8AFF), fontSize: 11.5), // Button text color
+                                    style: const TextStyle(color: Color(0xff3C8AFF), fontSize: 11.5), // Button text color
                                   ),
                                 ),
                               ),
@@ -159,7 +158,7 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
                       ],
                     ),
                   ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
 
                 // List of specialists
                 specialist(
@@ -214,7 +213,7 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
   }) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => PrescribeDrugsAddDrugs()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const PrescribeDrugsAddDrugs()));
       },
         child: Container(
       child: Column(
@@ -223,7 +222,7 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
             children: [
               Align(
                 alignment: Alignment.topCenter,
-                child: Container(
+                child: SizedBox(
                   height: 44,
                   width: 44,
                   child: CircleAvatar(
@@ -233,21 +232,21 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
-                    "${specialization} . ${workingType}",
+                    "$specialization . $workingType",
                     style: TextStyle(
                       fontSize: 12,
                       color: Colors.grey.withOpacity(0.90),
@@ -257,9 +256,9 @@ class _AppointmentPaymentScreen extends  State<SelectPharmacy> {
               ),
             ],
           ),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15),
+          const SizedBox(height: 15),
         ],
       ),
       ),

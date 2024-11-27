@@ -1,10 +1,11 @@
 
 import 'package:doctor_app/AllPatientReading/PrescribeDrugsViewAll.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PrescribeDrugsAddDrugs extends StatelessWidget {
+  const PrescribeDrugsAddDrugs({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,20 +16,20 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Text(
+                const Text(
                   'Prescribe drugs',
                   style: TextStyle(
                       fontSize: 20,
@@ -37,13 +38,13 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -88,14 +89,14 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
               maxLength: 4,
               leftIcon: false,
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
 
                 Align(
                   child:
                 Container(
-                  decoration: BoxDecoration(color: Color(0xffE2EDFF), borderRadius: BorderRadius.circular(10)),
-                  padding: EdgeInsets.all(10),
-                  child: Row(
+                  decoration: BoxDecoration(color: const Color(0xffE2EDFF), borderRadius: BorderRadius.circular(10)),
+                  padding: const EdgeInsets.all(10),
+                  child: const Row(
                     mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -107,10 +108,10 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
                   ),
                   ),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>PrescribeDrugsViewAll()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>const PrescribeDrugsViewAll()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -119,8 +120,8 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Continue',
                   style: TextStyle(color: Colors.white, fontSize: 18),
@@ -144,13 +145,13 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontSize: 16),),
-        SizedBox(height: 10,),
+        Text(label, style: const TextStyle(fontSize: 16),),
+        const SizedBox(height: 10,),
 
         TextField(
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: TextStyle(color: Colors.black26),
+            hintStyle: const TextStyle(color: Colors.black26),
             filled: true,
             fillColor: Colors.grey[200], // Light gray background
             border: OutlineInputBorder(
@@ -175,19 +176,19 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
               ),
             ),
             suffixIcon: leftIcon
-                ? Icon(
+                ? const Icon(
               Icons.keyboard_arrow_down_sharp,
               color: Colors.black45,
             )
                 : null, // Optional suffix icon
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 331, // Set the fixed width for the TextField
             ),
           ),
           maxLines: maxLength, // Ensures single-line input
         ),
 
-        SizedBox(height: 15,), // Additional vertical space between fields
+        const SizedBox(height: 15,), // Additional vertical space between fields
       ],
     );
   }
@@ -204,9 +205,9 @@ inputField2({
     children: [
       Text(
         label,
-        style: TextStyle(fontSize: 16),
+        style: const TextStyle(fontSize: 16),
       ),
-      SizedBox(height: 10),
+      const SizedBox(height: 10),
       Container(
         width: width, // Set the fixed width
         decoration: BoxDecoration(
@@ -224,7 +225,7 @@ inputField2({
               child: TextField(
                 decoration: InputDecoration(
                   hintText: hint,
-                  hintStyle: TextStyle(color: Colors.black26),
+                  hintStyle: const TextStyle(color: Colors.black26),
                   border: InputBorder.none, // Remove default TextField border
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 14,
@@ -234,8 +235,8 @@ inputField2({
               ),
             ),
             if (leftIcon) // Optionally display the suffix icon
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
+              const Padding(
+                padding: EdgeInsets.only(right: 8.0),
                 child: Icon(
                   Icons.keyboard_arrow_down_sharp,
                   color: Colors.black45,
@@ -244,7 +245,7 @@ inputField2({
           ],
         ),
       ),
-      SizedBox(height: 15), // Additional vertical space between fields
+      const SizedBox(height: 15), // Additional vertical space between fields
     ],
   );
 }

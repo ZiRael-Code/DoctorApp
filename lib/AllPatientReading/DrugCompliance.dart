@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 List<int> generateCalendarDays(int month) {
   int year = DateTime.now().year;
@@ -51,19 +49,19 @@ class _DrugComplianceState extends State<DrugCompliance> {
     {'day': 5, 'indicator': Colors.red},
     {'day': 6, 'indicator': Colors.red},
     {'day': 7, 'indicator': Colors.red},
-    {'day': 8, 'indicator': Color(0xff1BE43B)},
-    {'day': 9, 'indicator': Color(0xff1BE43B)},
-    {'day': 10, 'indicator': Color(0xffFFA135)},
-    {'day': 11, 'indicator': Color(0xff1BE43B)},
-    {'day': 12, 'indicator': Color(0xff1BE43B)},
-    {'day': 13, 'indicator': Color(0xffFFA135)},
-    {'day': 14, 'indicator': Color(0xff1BE43B)},
-    {'day': 15, 'indicator': Color(0xff1BE43B)},
-    {'day': 16, 'indicator': Color(0xff1BE43B)},
+    {'day': 8, 'indicator': const Color(0xff1BE43B)},
+    {'day': 9, 'indicator': const Color(0xff1BE43B)},
+    {'day': 10, 'indicator': const Color(0xffFFA135)},
+    {'day': 11, 'indicator': const Color(0xff1BE43B)},
+    {'day': 12, 'indicator': const Color(0xff1BE43B)},
+    {'day': 13, 'indicator': const Color(0xffFFA135)},
+    {'day': 14, 'indicator': const Color(0xff1BE43B)},
+    {'day': 15, 'indicator': const Color(0xff1BE43B)},
+    {'day': 16, 'indicator': const Color(0xff1BE43B)},
     {'day': 17, 'indicator': Colors.red},
-    {'day': 18, 'indicator': Color(0xff1BE43B)},
-    {'day': 19, 'indicator': Color(0xff1BE43B)},
-    {'day': 20, 'indicator': Color(0xff1BE43B)},
+    {'day': 18, 'indicator': const Color(0xff1BE43B)},
+    {'day': 19, 'indicator': const Color(0xff1BE43B)},
+    {'day': 20, 'indicator': const Color(0xff1BE43B)},
   ];
 
   List<String> daysOfWeek = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
@@ -86,7 +84,7 @@ class _DrugComplianceState extends State<DrugCompliance> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-          child: Padding(padding: EdgeInsets.only(left: 5, right: 5),
+          child: Padding(padding: const EdgeInsets.only(left: 5, right: 5),
     child: SingleChildScrollView(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,17 +104,17 @@ class _DrugComplianceState extends State<DrugCompliance> {
               },
               child:
             Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: Icon(Icons.arrow_back_ios_new_outlined, size: 16, color: Colors.white,),
+              child: const Icon(Icons.arrow_back_ios_new_outlined, size: 16, color: Colors.white,),
             ),
             ),
-            SizedBox(width: 12,),
-            Text(monthNames[current_month-1].toString(), style: TextStyle(fontSize: 16),),
-            SizedBox(width: 12,),
+            const SizedBox(width: 12,),
+            Text(monthNames[current_month-1].toString(), style: const TextStyle(fontSize: 16),),
+            const SizedBox(width: 12,),
            GestureDetector(
               onTap: () {
                 setState(() {
@@ -127,17 +125,17 @@ class _DrugComplianceState extends State<DrugCompliance> {
                 });
               },
              child: Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: Colors.blue,
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: Icon(Icons.arrow_forward_ios_rounded, size: 16, color: Colors.white,),
+              child: const Icon(Icons.arrow_forward_ios_rounded, size: 16, color: Colors.white,),
             )
             )
           ],
         ),
-        SizedBox(height: 25,),
+        const SizedBox(height: 25,),
 
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -153,7 +151,7 @@ class _DrugComplianceState extends State<DrugCompliance> {
               );
           }).toList(),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
 
       Center(child:  Wrap(
         children:
@@ -173,7 +171,7 @@ class _DrugComplianceState extends State<DrugCompliance> {
                   height: 53,
                   margin: const EdgeInsets.all(4),
                   decoration: BoxDecoration(
-                    color: Color(0xffE2EDFF),
+                    color: const Color(0xffE2EDFF),
                     border: Border.all(color: Colors.grey.shade300),
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -228,7 +226,7 @@ class _DrugComplianceState extends State<DrugCompliance> {
 
     )
       ),
-        SizedBox(height: 25,),
+        const SizedBox(height: 25,),
         Column(
           children: [
             Row(
@@ -238,18 +236,18 @@ class _DrugComplianceState extends State<DrugCompliance> {
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: Color(0xffFF6161),
+                    color: const Color(0xffFF6161),
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
-                SizedBox(width: 12),
-                Text(
+                const SizedBox(width: 12),
+                const Text(
                   "The medications were not taken that day ",
                   style: TextStyle(fontSize: 14),
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -257,18 +255,18 @@ class _DrugComplianceState extends State<DrugCompliance> {
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: Color(0xffFFA135),
+                    color: const Color(0xffFFA135),
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
-                SizedBox(width: 12),
-                Text(
+                const SizedBox(width: 12),
+                const Text(
                   "Some of the medications were taken that day ",
                   style: TextStyle(fontSize: 14),
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -276,12 +274,12 @@ class _DrugComplianceState extends State<DrugCompliance> {
                   width: 10,
                   height: 10,
                   decoration: BoxDecoration(
-                    color: Color(0xff1BE43B),
+                    color: const Color(0xff1BE43B),
                     borderRadius: BorderRadius.circular(50),
                   ),
                 ),
-                SizedBox(width: 12),
-                Text(
+                const SizedBox(width: 12),
+                const Text(
                   "All the medications were taken that day",
                   style: TextStyle(fontSize: 14),
                 ),

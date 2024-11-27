@@ -1,7 +1,3 @@
-import 'package:doctor_app/Network/affiliated_networks.dart';
-import 'package:doctor_app/Network/my_network.dart';
-import 'package:doctor_app/Network1/AffiliatedNetwork.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../AddPatients/add_a_patient.dart';
 import '../AddPatients/messages.dart';
@@ -22,16 +18,17 @@ class _NetworkState extends State<Network> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          title: Text(
-            "Network",
-            style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),
-          ),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        title: const Text(
+          "Network",
+          style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),
         ),
-        body: Column(children: [
+      ),
+      body: Column(
+        children: [
           Padding(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -43,184 +40,112 @@ class _NetworkState extends State<Network> {
                             Icons.supervisor_account,
                             "All affiliated networks",
                             MaterialPageRoute(
-                                builder: (builder) => AppointmentPayment())),
+                                builder: (builder) => const AddAPatient())),
                         actions(
                             context,
                             Icons.public_outlined,
                             "My network",
                             MaterialPageRoute(
-                                builder: (builder) => MyNetwork())),
+                                builder: (builder) => const Messages())),
                         actions(
                             context,
                             Icons.share,
                             "Join new network",
                             MaterialPageRoute(
-                                builder: (builder) => AffiliatedNetworks())),
+                                builder: (builder) => const AllPatientReading())),
                         actions(
                             context,
                             Icons.add_home_work_outlined,
                             "Personal ministore",
                             MaterialPageRoute(
-                                builder: (builder) => Searchpatient())),
+                                builder: (builder) => const Searchpatient())),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    Text(
+                    const Text(
                       "Network updates",
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
                     )
                   ])),
           Expanded(
-              child: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.only(left: 5, right: 5),
-              child: Container(
-                padding: EdgeInsets.only(left: 1.5, right: 1.5),
-                width: double.infinity,
-                decoration: BoxDecoration(color: Colors.grey[300]),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 3,
-                    ),
-                    network_update(
-                        network_name: "My Network",
-                        profile_path: "assets/images/doc1.png",
-                        name: "Rayoo Rayoo",
-                        time: "11:20am",
-                        date: "9th Sept 2022",
-                        text:
-                            "We have restocked our pharmacy and new drugs are now available for sale.",
-                        imageList: []),
-                    network_update(
-                        network_name: "James’ Network",
-                        profile_path: "assets/images/doc1.png",
-                        name: "New Life Hospital",
-                        time: "11:20am",
-                        date: "9th Sept 2022",
-                        text: "We have new devices to measure vitals in stock.",
-                        imageList: ["assets/images/doc.png"]),
-                    network_update(
-                        network_name: "My Network",
-                        profile_path: "assets/images/doc1.png",
-                        name: "Rayoo Rayoo",
-                        time: "11:20am",
-                        date: "9th Sept 2022",
-                        text:
-                            "We have restocked our pharmacy and new drugs are now available for sale.",
-                        imageList: []),
-                    network_update(
-                        network_name: "My Network",
-                        profile_path: "assets/images/doc1.png",
-                        name: "Rayoo Rayoo",
-                        time: "11:20am",
-                        date: "9th Sept 2022",
-                        text:
-                            "We have restocked our pharmacy and new drugs are now available for sale.",
-                        imageList: [
-                          "assets/images/doc.png",
-                          "assets/images/doc.png",
-                          "assets/images/doc.png",
-                          "assets/images/doc.png",
-                          "assets/images/doc.png",
-                          "assets/images/doc.png"
-                        ]),
-                  ],
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5, right: 5),
+                child: Container(
+                  padding: const EdgeInsets.only(left: 1.5, right: 1.5),
+                  width: double.infinity,
+                  decoration: BoxDecoration(color: Colors.grey[300]),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 3,
+                      ),
+                      network_update(
+                          network_name: "My Network",
+                          profile_path: "assets/images/doc1.png",
+                          name: "Rayoo Rayoo",
+                          time: "11:20am",
+                          date: "9th Sept 2022",
+                          text:
+                              "We have restocked our pharmacy and new drugs are now available for sale.",
+                          imageList: [],
+                          context: context,
+                          action: MaterialPageRoute(
+                              builder: (builder) => const Ministore())),
+                      network_update(
+                          network_name: "James’ Network",
+                          profile_path: "assets/images/doc1.png",
+                          name: "New Life Hospital",
+                          time: "11:20am",
+                          date: "9th Sept 2022",
+                          text:
+                              "We have new devices to measure vitals in stock.",
+                          imageList: ["assets/images/doc.png"],
+                          context: context,
+                          action: MaterialPageRoute(
+                              builder: (builder) => const Ministore())),
+                      network_update(
+                          network_name: "My Network",
+                          profile_path: "assets/images/doc1.png",
+                          name: "Rayoo Rayoo",
+                          time: "11:20am",
+                          date: "9th Sept 2022",
+                          text:
+                              "We have restocked our pharmacy and new drugs are now available for sale.",
+                          imageList: [],
+                          context: context,
+                          action: MaterialPageRoute(
+                              builder: (builder) => const Ministore())),
+                      network_update(
+                          network_name: "My Network",
+                          profile_path: "assets/images/doc1.png",
+                          name: "Rayoo Rayoo",
+                          time: "11:20am",
+                          date: "9th Sept 2022",
+                          text:
+                              "We have restocked our pharmacy and new drugs are now available for sale.",
+                          imageList: [
+                            "assets/images/doc.png",
+                            "assets/images/doc.png",
+                            "assets/images/doc.png",
+                            "assets/images/doc.png",
+                            "assets/images/doc.png",
+                            "assets/images/doc.png"
+                          ],
+                          context: context,
+                          action: MaterialPageRoute(
+                              builder: (builder) => const Ministore())),
+                    ],
+                  ),
                 ),
-<<<<<<< HEAD
               ),
             ),
-          ))
-        ]));
-=======
-                SizedBox(height: 25,),
-                Text("Network updates", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),)
-               ]
           )
-      )
-                , Expanded(child:  SingleChildScrollView(
-                    child:Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5),
-                    child: Container(
-                      padding: EdgeInsets.only(left: 1.5, right: 1.5),
-                      width: double.infinity,
-                      decoration: BoxDecoration(color: Colors.grey[300]),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: 3,
-                          ),
-                          network_update(
-                              network_name: "My Network",
-                              profile_path: "assets/images/doc1.png",
-                              name: "Rayoo Rayoo",
-                              time: "11:20am",
-                              date: "9th Sept 2022",
-                              text:
-                              "We have restocked our pharmacy and new drugs are now available for sale.",
-                              imageList: []
-                              ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
-
-                          ),
-                          network_update(
-                              network_name: "James’ Network",
-                              profile_path: "assets/images/doc1.png",
-                              name: "New Life Hospital",
-                              time: "11:20am",
-                              date: "9th Sept 2022",
-                              text:
-                              "We have new devices to measure vitals in stock.",
-                              imageList: [
-                                "assets/images/doc.png"]
-                              ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
-
-                          ),
-                          network_update(
-                              network_name: "My Network",
-                              profile_path: "assets/images/doc1.png",
-                              name: "Rayoo Rayoo",
-                              time: "11:20am",
-                              date: "9th Sept 2022",
-                              text:
-                              "We have restocked our pharmacy and new drugs are now available for sale.",
-                              imageList: []
-                              ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
-
-                          ),
-                          network_update(
-                              network_name: "My Network",
-                              profile_path: "assets/images/doc1.png",
-                              name: "Rayoo Rayoo",
-                              time: "11:20am",
-                              date: "9th Sept 2022",
-                              text:
-                              "We have restocked our pharmacy and new drugs are now available for sale.",
-                              imageList: [
-                                "assets/images/doc.png",
-                                "assets/images/doc.png",
-                                "assets/images/doc.png",
-                                "assets/images/doc.png",
-                                "assets/images/doc.png",
-                                "assets/images/doc.png"
-                              ]
-                              ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
-                          ),
-
-                        ],
-                      ),
-                      ),
-                      ),
-                    ))
-              ]
-          )
+        ],
+      ),
     );
->>>>>>> c9c034281ebf6f943dd812f794b5e19b94362db3
   }
 }

@@ -26,13 +26,18 @@ class _SendInvitesState extends State<SendInvites> {
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      width: 35,
+                      height: 35,
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade300,
-                        shape: BoxShape.circle,
+                        borderRadius: BorderRadius.circular(50),
+                        color: const Color(0xFFE5E5E5),
                       ),
-                      child: const Icon(Icons.arrow_back),
+                      child: SvgPicture.asset(
+                        'assets/images/back.svg',
+                        width: 8.0,
+                        height: 15,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 50),
@@ -48,10 +53,10 @@ class _SendInvitesState extends State<SendInvites> {
                 ],
               ),
               const SizedBox(height: 40),
-              SizedBox(
+              const SizedBox(
                 width: 310,
                 height: 190,
-                child: const Column(
+                child: Column(
                   children: [
                     Text(
                       "Send an invite link to a patient, so when the person registers on the app using your link, you will be able to access their details.",

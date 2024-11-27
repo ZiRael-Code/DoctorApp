@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
-  runApp(CreditDebitNoCard());
+  runApp(const CreditDebitNoCard());
 }
 
 class CreditDebitNoCard extends StatefulWidget {
@@ -17,8 +16,6 @@ class _AddedAccountSucessScreen extends State<CreditDebitNoCard> {
   String? _selectedValue;
   bool isSelected = false;
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,10 +26,10 @@ class _AddedAccountSucessScreen extends State<CreditDebitNoCard> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset(
                       'assets/images/back.svg',
@@ -40,10 +37,10 @@ class _AddedAccountSucessScreen extends State<CreditDebitNoCard> {
                       height: 15,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       'Withdraw funds',
                       style: TextStyle(
                           fontSize: 20,
@@ -51,38 +48,36 @@ class _AddedAccountSucessScreen extends State<CreditDebitNoCard> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
             body: Container(
-                padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+                padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
                 child: Align(
                   child: Column(
                     children: [
-                      SizedBox(height: 130),
-
+                      const SizedBox(height: 130),
                       SvgPicture.asset("assets/images/wallecuatet.svg"),
-                      SizedBox(height: 140),
-                      Text(
+                      const SizedBox(height: 140),
+                      const Text(
                         'You have no cards yet.',
                         style: TextStyle(
                           fontSize: 18.0,
                           color: Colors.black,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Container(
                         width: MediaQuery.of(context).size.width * 0.70,
                         height: 54,
                         decoration: BoxDecoration(
-                          color: Color(0xFF3C8AFF),
+                          color: const Color(0xFF3C8AFF),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextButton(
-                          onPressed: () {
-                          },
-                          child: Text(
+                          onPressed: () {},
+                          child: const Text(
                             'Add new card',
                             style: TextStyle(
                               color: Colors.white,
@@ -95,6 +90,4 @@ class _AddedAccountSucessScreen extends State<CreditDebitNoCard> {
                   ),
                 ))));
   }
-
 }
-

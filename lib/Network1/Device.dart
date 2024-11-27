@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,14 +14,14 @@ class _DeviceState extends State<Device> {
     return Scaffold(
       body: SingleChildScrollView( child: Column(
         children: [
-          SizedBox(height: 25,),
+          const SizedBox(height: 25,),
           recomendDevice(
             name: "Wellue BP2 Connect Device",
             measures: "Measures 1 vital",
             image: "assets/images/printer.svg",
             prices: "N25,000",
           ),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           recomendDevice(
             name: "Wellue BP2 Connect Device",
             measures: "Measures 1 vital",
@@ -30,7 +29,7 @@ class _DeviceState extends State<Device> {
             prices: "N25,000",
           ),
 
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           recomendDevice(
             name: "Wellue BP2 Connect Device",
             measures: "Measures 1 vital",
@@ -52,7 +51,7 @@ recomendDevice({
   required String prices,
 }) {
   return Container(
-    padding: EdgeInsets.all(18),
+    padding: const EdgeInsets.all(18),
     width: double.infinity,
     decoration: BoxDecoration(
       border: Border.all(
@@ -69,52 +68,52 @@ recomendDevice({
             children: [
               Text(
                 name,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Container(
-                margin: EdgeInsets.only(left: 10),
-                padding: EdgeInsets.all(8),
+                margin: const EdgeInsets.only(left: 10),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(7),
                 ),
                 child: Text(measures),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
                 prices,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.blue,
                   fontSize: 20,
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
 
               Row(
                 children: [
-                  Text("Qty left:"),
-                  SizedBox(width: 13),
+                  const Text("Qty left:"),
+                  const SizedBox(width: 13),
                   Container(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.grey.shade200
                     ),
-                    child: Text("95"),
+                    child: const Text("95"),
                   )
                 ],
               )
             ],
           ),
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         Container(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           height: 110,
           width: 110,
           decoration: BoxDecoration(

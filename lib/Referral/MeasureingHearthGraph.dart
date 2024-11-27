@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(MeasureingHearthGraph());
+  runApp(const MeasureingHearthGraph());
 }
 
 class MeasureingHearthGraph extends StatefulWidget {
@@ -26,25 +25,25 @@ class _MeasureingHearthGraphState extends  State<MeasureingHearthGraph> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
           Container(
             width: 35,
             height: 35,
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: Color(0xFFE5E5E5),
+              color: const Color(0xFFE5E5E5),
             ),
-            child: Icon(Icons.share),
+            child: const Icon(Icons.share),
             ),
 
             ],
@@ -53,20 +52,20 @@ class _MeasureingHearthGraphState extends  State<MeasureingHearthGraph> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
             child:
             Align(
               child:
               Column(
                 children: [
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   Container(
                     decoration: BoxDecoration(
                       border: Border.all(width: 1, color: Colors.black.withOpacity(0.15)),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                      margin: EdgeInsets.only(left: 15),
-                      padding: EdgeInsets.all(15),
+                      margin: const EdgeInsets.only(left: 15),
+                      padding: const EdgeInsets.all(15),
                       child: Column(
                           children: [
                             Row(
@@ -76,12 +75,12 @@ class _MeasureingHearthGraphState extends  State<MeasureingHearthGraph> {
                                   // Spacer(),
                                 Column(
                                   children: [
-                                    Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26),),
+                                    const Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26),),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('SYS/DIA  ', style: TextStyle(fontSize: 10),),
+                                        const Text('SYS/DIA  ', style: TextStyle(fontSize: 10),),
                                         Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
                                       ],
                                     )
@@ -89,24 +88,24 @@ class _MeasureingHearthGraphState extends  State<MeasureingHearthGraph> {
                                 ),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     shape: BoxShape.circle,
                                     color: Color(0xffFF618F),
                                   ),
                                   width: 46,
                                   height: 46,
-                                  padding: EdgeInsets.all(8),
+                                  padding: const EdgeInsets.all(8),
                                   child: SvgPicture.asset('assets/images/hearth.svg'),
                                 ),
 
                               ],
                             ),
-                            SizedBox(height: 15,),
+                            const SizedBox(height: 15,),
                             SvgPicture.asset('assets/images/line.svg'),
-                            SizedBox(height: 15,),
-                           Row(
+                            const SizedBox(height: 15,),
+                           const Row(
                              children: [
                                Icon(Icons.info),
                                SizedBox(width: 10,),
@@ -129,8 +128,8 @@ class _MeasureingHearthGraphState extends  State<MeasureingHearthGraph> {
                         borderRadius: BorderRadius.circular(9),
                       ),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                       child: Text(
                         'Back to readings',
                         style: TextStyle(color: Colors.white, fontSize: 18),
