@@ -15,18 +15,19 @@ class MainNavigator extends StatefulWidget {
 class _MainNavigatorState extends State<MainNavigator> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    Dashboard(),
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  late final List<Widget> _screens = [
+    Dashboard(onItemTapped: _onItemTapped),
     Patients(),
     Network(),
     Account(),
   ];
 
-  void _onItemTapped(int index, BuildContext context) {
-      setState(() {
-        _selectedIndex = index;
-      });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class _MainNavigatorState extends State<MainNavigator> {
               backgroundColor: Colors.white,
               type: BottomNavigationBarType.fixed,
               currentIndex: _selectedIndex,
-              onTap: (index) => _onItemTapped(index, context),
+              onTap: (index) => _onItemTapped(index),
               selectedItemColor: Colors.blue,
               unselectedItemColor: Colors.grey,
               items: <BottomNavigationBarItem>[
