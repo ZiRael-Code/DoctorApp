@@ -1,4 +1,5 @@
 import 'package:doctor_app/components/my_blue_button.dart';
+import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SuccessPage extends StatelessWidget {
@@ -46,7 +47,10 @@ class SuccessPage extends StatelessWidget {
                 scale: 4,
               ),
               const Spacer(),
-              const MyBlueButton(text: "Continue to Login"),
+              GestureDetector(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage())),
+                  child: const MyBlueButton(text: "Continue to Login")),
               const SizedBox(
                 height: 40,
               )

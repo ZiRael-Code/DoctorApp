@@ -31,11 +31,14 @@ class _DashboardState extends State<Dashboard> {
     },
   ];
 
+  int? selectedIndex; // Track the expanded notification index
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
             SizedBox(
@@ -81,7 +84,9 @@ class _DashboardState extends State<Dashboard> {
               width: 10,
             ),
             Icon(Icons.wallet_outlined),
-            SizedBox(width: 10,),
+            SizedBox(
+              width: 10,
+            ),
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
@@ -125,12 +130,15 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       const Spacer(),
                       TextButton(
-                          onPressed: () {},
-                          child: const Text('See all',
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontSize: 16.0,
-                              )))
+                        onPressed: () {},
+                        child: const Text(
+                          'See all',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontSize: 16.0,
+                          ),
+                        ),
+                      )
                     ],
                   ),
                   const SizedBox(
@@ -197,8 +205,7 @@ class _DashboardState extends State<Dashboard> {
                           date: "9th Sept 2022",
                           text:
                               "We have restocked our pharmacy and new drugs are now available for sale.",
-                          imageList: []
-                      ),
+                          imageList: []),
                       network_update(
                           network_name: "James’ Network",
                           profile_path: "assets/images/doc1.png",
@@ -207,9 +214,7 @@ class _DashboardState extends State<Dashboard> {
                           date: "9th Sept 2022",
                           text:
                               "We have new devices to measure vitals in stock.",
-                          imageList: [
-                            "assets/images/doc.png"]
-                      ),
+                          imageList: ["assets/images/doc.png"]),
                       network_update(
                           network_name: "My Network",
                           profile_path: "assets/images/doc1.png",
@@ -217,9 +222,8 @@ class _DashboardState extends State<Dashboard> {
                           time: "11:20am",
                           date: "9th Sept 2022",
                           text:
-                          "We have restocked our pharmacy and new drugs are now available for sale.",
-                          imageList: []
-                      ),
+                              "We have restocked our pharmacy and new drugs are now available for sale.",
+                          imageList: []),
                       network_update(
                           network_name: "My Network",
                           profile_path: "assets/images/doc1.png",
@@ -227,7 +231,7 @@ class _DashboardState extends State<Dashboard> {
                           time: "11:20am",
                           date: "9th Sept 2022",
                           text:
-                          "We have restocked our pharmacy and new drugs are now available for sale.",
+                              "We have restocked our pharmacy and new drugs are now available for sale.",
                           imageList: [
                             "assets/images/doc.png",
                             "assets/images/doc.png",
@@ -235,9 +239,7 @@ class _DashboardState extends State<Dashboard> {
                             "assets/images/doc.png",
                             "assets/images/doc.png",
                             "assets/images/doc.png"
-                          ]
-                      ),
-
+                          ]),
                     ],
                   ),
                 ))
@@ -407,9 +409,8 @@ class _DashboardState extends State<Dashboard> {
   }
 
 //
-
-
 }
+
 network_update({
   required String profile_path,
   required String name,
@@ -481,23 +482,33 @@ network_update({
           height: 20,
         ),
         imageList.length == 1
-            ? imageViewer(w: 326, h: 326, path: imageList[0], imageList: imageList, index: 0)
-            : imageList.length > 1
-            ? Wrap(
-          direction: Axis.horizontal,
-          children: List.generate(lenght, (index) {
-            return imageViewer(
-                w: 150, h: 150, path: imageList[index],
+            ? imageViewer(
+                w: 326,
+                h: 326,
+                path: imageList[0],
                 imageList: imageList,
-                index: index
-            );
-          }),
-        )
-            : SizedBox(height: 15,),
-        SizedBox(height: 8,),
-        Align(alignment: Alignment.center,
-            child:
-            Container(
+                index: 0)
+            : imageList.length > 1
+                ? Wrap(
+                    direction: Axis.horizontal,
+                    children: List.generate(lenght, (index) {
+                      return imageViewer(
+                          w: 150,
+                          h: 150,
+                          path: imageList[index],
+                          imageList: imageList,
+                          index: index);
+                    }),
+                  )
+                : SizedBox(
+                    height: 15,
+                  ),
+        SizedBox(
+          height: 8,
+        ),
+        Align(
+            alignment: Alignment.center,
+            child: Container(
                 padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
@@ -511,21 +522,27 @@ network_update({
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("View details", style: TextStyle(color: Colors.blue, fontSize: 16),),
-                    Icon(Icons.arrow_forward, color: Colors.blue,)
+                    Text(
+                      "View details",
+                      style: TextStyle(color: Colors.blue, fontSize: 16),
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: Colors.blue,
+                    )
                   ],
                 )))
       ],
     ),
   );
 }
-Widget imageViewer({
-  required double w,
-  required double h,
-  required String path,
-  required int index,
-  required List<String> imageList
-}) {
+
+Widget imageViewer(
+    {required double w,
+    required double h,
+    required String path,
+    required int index,
+    required List<String> imageList}) {
   return Container(
       margin: EdgeInsets.only(right: 10, bottom: 10),
       child: Stack(
@@ -539,8 +556,7 @@ Widget imageViewer({
                   path,
                   fit: BoxFit.cover,
                 ),
-              )
-          ),
+              )),
           if (imageList.length > 4 && index == 3)
             Container(
                 width: w,
@@ -549,13 +565,18 @@ Widget imageViewer({
                   borderRadius: BorderRadius.circular(12),
                   color: Colors.black.withOpacity(0.50),
                 ),
-                child: Center(child: Text("+"+(imageList.length - index).toString(),
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),),
+                child: Center(
+                  child: Text(
+                    "+" + (imageList.length - index).toString(),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26),
+                  ),
                 ))
-        ],)
-  );
+        ],
+      ));
 }
-
 
 void main() {
   runApp(MaterialApp(home: Dashboard()));

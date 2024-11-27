@@ -69,7 +69,7 @@ class _MessagesState extends State<Messages> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
               const SizedBox(height: 40),
@@ -101,7 +101,7 @@ class _MessagesState extends State<Messages> {
               Container(
                 height: 50,
                 padding: const EdgeInsets.all(4),
-                width: 324,
+                width: 350,
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(50),
