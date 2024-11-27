@@ -36,6 +36,7 @@ dependencies:
   table_calendar: ^3.1.2
   cupertino_icons: ^1.0.8  # Common Cupertino icons used in iOS designs
   url_launcher: ^6.0.20
+  font_awesome_flutter: ^10.5.0
 #
   image_picker: ^1.1.2
   

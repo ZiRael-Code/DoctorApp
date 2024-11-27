@@ -44,7 +44,7 @@ class _MainNavigatorState extends State<MainNavigator> {
                 BottomNavigationBarItem(
                   icon: SvgPicture.asset(
                     _selectedIndex == 0
-                        ? 'assets/images/un_home.svg'
+                        ? 'assets/images/s_home.svg'
                         : 'assets/images/un_home.svg',
                     width: 28,
                     height: 28,
