@@ -1,3 +1,4 @@
+import 'package:doctor_app/MainSelectionScreen/MainNavigator.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/my_textfield.dart';
 import 'package:doctor_app/onboarding/register_page.dart';
@@ -109,7 +110,12 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const MyBlueButton(text: "Login"),
+                    GestureDetector(
+                        onTap: () => Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MainNavigator())),
+                        child: const MyBlueButton(text: "Login")),
                     const SizedBox(
                       height: 20,
                     ),
