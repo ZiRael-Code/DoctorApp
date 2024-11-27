@@ -33,7 +33,7 @@ class _DashboardState extends State<Dashboard> {
       'text': 'Your device is ready for pickup',
     },
   ];
-
+  bool isCollaps = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -111,11 +111,12 @@ class _DashboardState extends State<Dashboard> {
                   Column(
                     children:
 
+
                     List.generate(
                       show_notification.length,
                       (index) {
                         Map<String, dynamic> nots = show_notification[index];
-                        return notification(nots['icon'], nots['text']);
+                        return notification(nots['icon'], nots['text'], index , isCollaps);
                       },
                     ),
 
@@ -269,8 +270,12 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
-  notification(Icon icon, String text) {
-    return Container(
+  notification(Icon icon, String text,
+      int index, bool isCollaps) {
+    return SizedBox(
+      width: 150,
+      // height: 150,
+        child: Container(
       margin: EdgeInsets.only(bottom: 10),
       padding: EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
       decoration: BoxDecoration(
@@ -305,6 +310,7 @@ class _DashboardState extends State<Dashboard> {
           Spacer(),
           Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue),
         ],
+      ),
       ),
     );
   }
