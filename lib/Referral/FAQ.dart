@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
-  runApp(Faq());
+  runApp(const Faq());
 }
 
 class Faq extends StatefulWidget {
@@ -13,7 +12,7 @@ class Faq extends StatefulWidget {
 }
 
 class _AppointmentPaymentScreen extends State<Faq> {
-  List<bool> _isExpandedList = List.generate(50000, (index) => false);
+  final List<bool> _isExpandedList = List.generate(50000, (index) => false);
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +24,10 @@ class _AppointmentPaymentScreen extends State<Faq> {
                 Container(
                   width: 35,
                   height: 35,
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
+                    color: const Color(0xFFE5E5E5),
                   ),
                   child: SvgPicture.asset(
                     'assets/images/back.svg',
@@ -36,7 +35,7 @@ class _AppointmentPaymentScreen extends State<Faq> {
                     height: 15,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   alignment: Alignment.center,
                   child: const Center(
@@ -46,13 +45,13 @@ class _AppointmentPaymentScreen extends State<Faq> {
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
             centerTitle: true,
           ),
           body: Padding(
-            padding: EdgeInsets.only(left: 30, right: 30, bottom: 35, top: 35),
+            padding: const EdgeInsets.only(left: 30, right: 30, bottom: 35, top: 35),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -136,7 +135,7 @@ class _AppointmentPaymentScreen extends State<Faq> {
     required int index,
   }) {
     return Container(
-      margin: EdgeInsets.only(top: 10, bottom: 10),
+      margin: const EdgeInsets.only(top: 10, bottom: 10),
       child: Align(
         alignment: Alignment.center,
         child: Column(
@@ -146,12 +145,12 @@ class _AppointmentPaymentScreen extends State<Faq> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
+                SizedBox(
                   width: 266,
                   child: Expanded(
                     child: Text(
                       question,
-                      style: TextStyle(fontSize: 16, color: Colors.black),
+                      style: const TextStyle(fontSize: 16, color: Colors.black),
                       maxLines: _isExpandedList[index] ? null : 1,
                       overflow: _isExpandedList[index]
                           ? TextOverflow.visible
@@ -159,7 +158,7 @@ class _AppointmentPaymentScreen extends State<Faq> {
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -176,7 +175,7 @@ class _AppointmentPaymentScreen extends State<Faq> {
               ],
             ),
             if (_isExpandedList[index]) ...[
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
@@ -184,12 +183,12 @@ class _AppointmentPaymentScreen extends State<Faq> {
                   width: 226,
                   child: Text(
                     ans,
-                    style: TextStyle(fontSize: 12, color: Color(0xff2C2C2C)),
+                    style: const TextStyle(fontSize: 12, color: Color(0xff2C2C2C)),
                   ),
                 ),
               ),
             ],
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             SvgPicture.asset("assets/images/line.svg")
           ],
         ),

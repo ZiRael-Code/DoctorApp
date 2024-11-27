@@ -46,10 +46,10 @@ class PinSettings10 extends StatelessWidget {
             const SizedBox(
               height: 100,
             ),
-            SizedBox(
+            const SizedBox(
               width: 260,
               height: 70,
-              child: const Text(
+              child: Text(
                 textAlign: TextAlign.center,
                 "You have successfully sent invitation links, when they sign up you get a commission.",
                 style: TextStyle(fontSize: 16),

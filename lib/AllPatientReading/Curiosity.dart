@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-void main() => runApp(CollapsibleCalendar());
+void main() => runApp(const CollapsibleCalendar());
 
 class CollapsibleCalendar extends StatefulWidget {
+  const CollapsibleCalendar({super.key});
+
   @override
   _CollapsibleCalendarState createState() => _CollapsibleCalendarState();
 }
@@ -32,7 +34,7 @@ class _CollapsibleCalendarState extends State<CollapsibleCalendar> with SingleTi
   }
 
   bool isCollapsed = false;
-  DateTime _focusedDay = DateTime.now();
+  final DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
   List<String> graphPath = ['assets/images/vgraph.svg','assets/images/vgraph.svg','assets/images/vgraph.svg','assets/images/vgraph.svg','assets/images/vgraph.svg','assets/images/vgraph.svg'];
   List<String> vitalIcon = ['assets/images/bpicon.svg','assets/images/hrvicon.svg','assets/images/osicon.svg','assets/images/lipidicon.svg','assets/images/hearticon.svg','assets/images/glucoseicon.svg'];
@@ -44,31 +46,31 @@ class _CollapsibleCalendarState extends State<CollapsibleCalendar> with SingleTi
       appBar: AppBar(
         leading:
         Container(
-          margin: EdgeInsets.only(left: 10),
-        child:
-        Icon(Icons.arrow_back_ios_new_outlined, color: Colors.white,),
+          margin: const EdgeInsets.only(left: 10),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white.withOpacity(0.40)
           ),
+        child:
+        const Icon(Icons.arrow_back_ios_new_outlined, color: Colors.white,),
         ),
     actions: [
          Container(
-           padding: EdgeInsets.all(10),
-           child: Icon(Icons.share, color: Colors.white,),
+           padding: const EdgeInsets.all(10),
          decoration: BoxDecoration(
            shape: BoxShape.circle,
            color: Colors.white.withOpacity(0.40)
          ),
+           child: const Icon(Icons.share, color: Colors.white,),
          ),
-          SizedBox(width: 10,)
+          const SizedBox(width: 10,)
         ],
         backgroundColor: color,
-        title: Text('Collapsible Calendar'),
+        title: const Text('Collapsible Calendar'),
 
           elevation: 2,
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(60),
+          preferredSize: const Size.fromHeight(60),
           child: TabBar(
             controller: _tabController,
             indicator: BoxDecoration(
@@ -76,11 +78,11 @@ class _CollapsibleCalendarState extends State<CollapsibleCalendar> with SingleTi
               // color: Colors.blue,
               shape: BoxShape.circle,
             ),
-            labelPadding: EdgeInsets.symmetric(horizontal: 10),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 10),
             indicatorSize: TabBarIndicatorSize.tab,
             tabs: List.generate(6, (index) {
               return Container(
-                padding: EdgeInsets.all(9),
+                padding: const EdgeInsets.all(9),
                 width: 43,
                 height: 43,
                 decoration: BoxDecoration(
@@ -115,34 +117,34 @@ class _CollapsibleCalendarState extends State<CollapsibleCalendar> with SingleTi
             headerStyle: HeaderStyle(
               formatButtonVisible: false,
               titleCentered: true,
-              rightChevronMargin: EdgeInsets.only(right: 69),
-              leftChevronMargin: EdgeInsets.only(left: 69),
+              rightChevronMargin: const EdgeInsets.only(right: 69),
+              leftChevronMargin: const EdgeInsets.only(left: 69),
               leftChevronIcon: Container(
                 alignment: Alignment.center,
                 height: 23,
                 width: 23,
-                child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: 15,),),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.blue.withOpacity(0.20),
                 ),
+                child: const Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: 15,),),
               ),
               rightChevronIcon: Container(
                 height: 23,
                 width: 23,
-                child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: 15,),),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.blue.withOpacity(0.20),
                 ),
+                child: const Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: 15,),),
               ),
             ),
-            daysOfWeekStyle: DaysOfWeekStyle(
+            daysOfWeekStyle: const DaysOfWeekStyle(
                 weekendStyle: TextStyle(color: Colors.black, fontSize: 14),
                 weekdayStyle: TextStyle(color: Colors.black, fontSize: 14),
                 decoration: BoxDecoration()
             ),
-            calendarStyle: CalendarStyle(
+            calendarStyle: const CalendarStyle(
               selectedTextStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               todayDecoration: BoxDecoration(
                 color: Colors.blueAccent,
@@ -167,7 +169,7 @@ class _CollapsibleCalendarState extends State<CollapsibleCalendar> with SingleTi
               });
             },
             child: Container(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 child:
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -179,13 +181,13 @@ class _CollapsibleCalendarState extends State<CollapsibleCalendar> with SingleTi
                 ),
                 child: Icon(isCollapsed ? Icons.keyboard_arrow_down_rounded : Icons.keyboard_arrow_up_rounded),
               ),
-              SizedBox(width: 5,),
+              const SizedBox(width: 5,),
               Text(isCollapsed ? 'Expand Calender': "Close Calender")
             ],
           )
           )
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           SvgPicture.asset('assets/images/vgraph.svg'),
 
       // TabBarView(

@@ -50,14 +50,14 @@ class Onboarding2 extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
                   width: 301,
                   height: 71,
-                  child: const Text(
+                  child: Text(
                     "Easily schedule appointments with your patients, either through a video/voice call or a physical appointment, right from the app.",
                     style: TextStyle(
                       fontSize: 14,

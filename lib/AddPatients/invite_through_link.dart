@@ -15,9 +15,9 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
         alignment: Alignment.center,
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               width: 305,
-              child: const Column(
+              child: Column(
                 children: [
                   Text(
                     "Send an invite link to a patient, so when the person registers on the app using your link, you will be able to access their details.",

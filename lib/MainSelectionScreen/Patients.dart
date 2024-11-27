@@ -2,8 +2,9 @@ import 'package:doctor_app/AddPatients/add_a_patient.dart';
 import 'package:doctor_app/AddPatients/messages.dart';
 import 'package:doctor_app/AllPatientReading/AllPatientReading.dart';
 import 'package:doctor_app/Call_MessagePatient/SearchPatient.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'Dashboard.dart';
 
 class Patients extends StatefulWidget {
   const Patients({super.key});
@@ -16,18 +17,20 @@ class _PatientsState extends State<Patients> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title:  Text("Patients", style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),),
+        backgroundColor: Colors.white,
+        title:   Text("Patients", style: TextStyle(fontSize: getFontSize(27, context), fontWeight: FontWeight.w500),),
         actions: [
           IconButton(
-            icon: Icon(Icons.stars_rounded, size: 36,),
+            icon: const Icon(Icons.stars_rounded, size: 36,),
             onPressed: () {
               // Search logic here
             },
           ),
         ],
       ),
-      body: Padding(padding: EdgeInsets.all(12),
+      body: Padding(padding: const EdgeInsets.all(12),
       child: Column(
         children: [
           Row(
@@ -37,30 +40,35 @@ class _PatientsState extends State<Patients> {
                 context,
                 Icons.add,
                  "Add new patient",
-                 MaterialPageRoute(builder: (builder)=>AddAPatient()),
+                 MaterialPageRoute(builder: (builder)=>const AddAPatient()),
 
               ),
               actions(
                   context,
                  Icons.message,
                  "Message patients",
-                 MaterialPageRoute(builder: (builder)=>Messages())
+                 MaterialPageRoute(builder: (builder)=>const Messages())
               ),
               actions(
                   context,
                  Icons.edit_note,
                  "Patient’s readings",
-                 MaterialPageRoute(builder: (builder)=>AllPatientReading())
+                 MaterialPageRoute(builder: (builder)=>const AllPatientReading())
               ),
               actions(
                   context,
                  Icons.search,
                  "Search for patients",
-                 MaterialPageRoute(builder: (builder)=>Searchpatient())
+                 MaterialPageRoute(builder: (builder)=>const Searchpatient())
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          const SizedBox(height: 30,),
+          Align(
+            alignment: Alignment.centerLeft,
+            child:
+          Text("Requests from patients", style: TextStyle(fontWeight: FontWeight.w600 ,fontSize: getFontSize(20, context)),),),
+          SizedBox(height: 14,),
           Expanded(
             child:
           SingleChildScrollView(
@@ -130,8 +138,8 @@ class _PatientsState extends State<Patients> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 50,
-                height: 50,
+                width: getFontSize(55, context),
+                height: getFontSize(55, context),
                 child: CircleAvatar(
                   radius: 50,
                   backgroundImage: AssetImage(profile_path),
@@ -144,13 +152,13 @@ class _PatientsState extends State<Patients> {
                     alignment: Alignment.centerLeft,
                     child: Text(
                       name,
-                      style: const TextStyle(
-                        fontSize: 16,
+                      style: TextStyle(
+                        fontSize: getFontSize(18, context),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(height: 5,),
+                  const SizedBox(height: 5,),
                   const SizedBox(height: 2),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -179,17 +187,17 @@ class _PatientsState extends State<Patients> {
                   onPressed:(){
 
                   }, // Trigger the callback
-                  child: const Text(
+                  child: Text(
                     "View details",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: getFontSize(12, context),
                     ),
                   ),
                 ),
               ),
-                  SizedBox(height: 10,),
-                  Text(date)
+                  const SizedBox(height: 10,),
+                  Text(date, style: TextStyle(fontSize: getFontSize(11, context)),)
               ]
           )
             ],
@@ -220,17 +228,17 @@ actions(
       child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(
+            padding:  EdgeInsets.all(getFontSize(12, context)),
+            decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xffE2EDFF)
             ),
-            child: Icon(icon, size: 36, color: Colors.blue,),
+            child: Icon(icon, size: getFontSize(36, context), color: Colors.blue,),
           ),
-          SizedBox(height: 12,),
-          Container(
+          const SizedBox(height: 12,),
+          SizedBox(
             width: 62,
-            child:  Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: 12,  fontWeight: FontWeight.w400),),
+            child:  Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(13, context),  fontWeight: FontWeight.w400),),
           )
         ],
       )

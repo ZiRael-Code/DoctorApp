@@ -50,14 +50,14 @@ class Onboarding3 extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
                   width: 301,
                   height: 71,
-                  child: const Text(
+                  child: Text(
                     "Prescribe medications for your patients rignt from the app and monitor their usage.",
                     style: TextStyle(
                       fontSize: 14,

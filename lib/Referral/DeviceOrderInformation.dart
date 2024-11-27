@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(DeviceInformation());
+  runApp(const DeviceInformation());
 }
 
 class DeviceInformation extends StatefulWidget {
@@ -26,20 +25,20 @@ class _DeviceInformationState extends  State<DeviceInformation> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'Order Information',
                   style: TextStyle(
                       fontSize: 20,
@@ -48,7 +47,7 @@ class _DeviceInformationState extends  State<DeviceInformation> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -56,27 +55,27 @@ class _DeviceInformationState extends  State<DeviceInformation> {
         ),
         body:
             Container(
-              padding: EdgeInsets.all(25),
+              padding: const EdgeInsets.all(25),
               child: 
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 35,),
+            const SizedBox(height: 35,),
             Container(alignment: Alignment.center,child:
             SvgPicture.asset('assets/images/dev.svg', height: 117, width: 195,),
             ),
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
 
-              Center(child:
+              const Center(child:
               Text(
               'Wellue Bp2 Connect device',
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             ),
 
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
 
-            Wrap(
+            const Wrap(
               direction: Axis.horizontal,
               children: [
                 Row(
@@ -113,7 +112,7 @@ class _DeviceInformationState extends  State<DeviceInformation> {
               ],
             ),
 
-            Spacer(),
+            const Spacer(),
 
             // Place an Order button
             SizedBox(
@@ -135,15 +134,15 @@ class _DeviceInformationState extends  State<DeviceInformation> {
                     backgroundColor: Colors.transparent,
                     elevation: 0,
                   ),
-                  child: Text(
+                  child: const Text(
                     'Cancel Order',
                     style: TextStyle(color: Colors.red),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 45),
-            SizedBox(height: 45,),
+            const SizedBox(height: 45),
+            const SizedBox(height: 45,),
           ],
         )
         )

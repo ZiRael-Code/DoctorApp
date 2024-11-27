@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../AddPatients/add_a_patient.dart';
 import '../AddPatients/messages.dart';
@@ -21,11 +20,11 @@ class _NetworkState extends State<Network> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title:  Text("Network", style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),),
+        title: Text("Network", style: TextStyle(fontSize: getFontSize(27, context), fontWeight: FontWeight.w500),),
       ),
       body: Column(
               children: [
-      Padding(padding: EdgeInsets.all(12),
+      Padding(padding: const EdgeInsets.all(12),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -36,43 +35,43 @@ class _NetworkState extends State<Network> {
                         context,
                         Icons.supervisor_account,
                         "All affiliated networks",
-                        MaterialPageRoute(builder: (builder)=>AddAPatient())
+                        MaterialPageRoute(builder: (builder)=>const AddAPatient())
                     ),
                     actions(
                         context,
                         Icons.public_outlined,
                         "My network",
-                         MaterialPageRoute(builder: (builder)=>Messages())
+                         MaterialPageRoute(builder: (builder)=>const Messages())
                     ),
                     actions(
                         context,
                         Icons.share,
                         "Join new network",
-                        MaterialPageRoute(builder: (builder)=>AllPatientReading())
+                        MaterialPageRoute(builder: (builder)=>const AllPatientReading())
                     ),
                     actions(
                         context,
                         Icons.add_home_work_outlined,
                         "Personal ministore",
-                        MaterialPageRoute(builder: (builder)=>Searchpatient())
+                        MaterialPageRoute(builder: (builder)=>const Searchpatient())
                     ),
                   ],
                 ),
-                SizedBox(height: 25,),
-                Text("Network updates", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),)
+                const SizedBox(height: 25,),
+                Text("Network updates", style: TextStyle(fontSize: getFontSize(22, context), fontWeight: FontWeight.w500),)
                ]
           )
       )
                 , Expanded(child:  SingleChildScrollView(
                     child:Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5),
+                    padding: const EdgeInsets.only(left: 5, right: 5),
                     child: Container(
-                      padding: EdgeInsets.only(left: 1.5, right: 1.5),
+                      padding: const EdgeInsets.only(left: 1.5, right: 1.5),
                       width: double.infinity,
                       decoration: BoxDecoration(color: Colors.grey[300]),
                       child: Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 3,
                           ),
                           network_update(
@@ -85,7 +84,7 @@ class _NetworkState extends State<Network> {
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                               imageList: []
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
 
                           ),
                           network_update(
@@ -99,7 +98,7 @@ class _NetworkState extends State<Network> {
                               imageList: [
                                 "assets/images/doc.png"]
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
 
                           ),
                           network_update(
@@ -112,7 +111,7 @@ class _NetworkState extends State<Network> {
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                               imageList: []
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
 
                           ),
                           network_update(
@@ -132,7 +131,7 @@ class _NetworkState extends State<Network> {
                                 "assets/images/doc.png"
                               ]
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
                           ),
 
                         ],

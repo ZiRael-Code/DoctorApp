@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -70,13 +69,13 @@ class _AllMedState extends State<AllMed> {
       children: [
         Row(
           children: [
-            Text(name+"  ", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16 ),),
-            Text("($type)", style: TextStyle(color: Colors.black26)),
-            Spacer(),
-            Text("Qty left:"),
-            SizedBox(width: 13),
+            Text("$name  ", style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16 ),),
+            Text("($type)", style: const TextStyle(color: Colors.black26)),
+            const Spacer(),
+            const Text("Qty left:"),
+            const SizedBox(width: 13),
             Container(
-              padding: EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.grey.shade200
@@ -85,12 +84,12 @@ class _AllMedState extends State<AllMed> {
             )
           ],
         ),
-        Text(price, style: TextStyle(fontSize: 18,
+        Text(price, style: const TextStyle(fontSize: 18,
             fontWeight: FontWeight.w500,
             color: Colors.black45),),
-        SizedBox(height: 10,),
+        const SizedBox(height: 10,),
         SvgPicture.asset("assets/images/line.svg"),
-        SizedBox(height: 10,)
+        const SizedBox(height: 10,)
       ],
     );
   }

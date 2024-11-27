@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(HowItWorkExplained());
+  runApp(const HowItWorkExplained());
 }
 
 class HowItWorkExplained extends StatefulWidget {
@@ -26,20 +25,20 @@ class _HowItWorkExplainedScreen extends  State<HowItWorkExplained> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'How It Work',
                   style: TextStyle(
                       fontSize: 20,
@@ -48,7 +47,7 @@ class _HowItWorkExplainedScreen extends  State<HowItWorkExplained> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -56,7 +55,7 @@ class _HowItWorkExplainedScreen extends  State<HowItWorkExplained> {
         ),
         body:
         Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Column(children: [
               Container(
                 decoration: BoxDecoration(
@@ -70,20 +69,20 @@ class _HowItWorkExplainedScreen extends  State<HowItWorkExplained> {
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.05)
                   ),
-                  child: Center(child: Icon(Icons.play_arrow, color: Colors.white)),
+                  child: const Center(child: Icon(Icons.play_arrow, color: Colors.white)),
                 ),
                 ),
               ),
-              SizedBox(height: 25,),
-              Container(
+              const SizedBox(height: 25,),
+              const SizedBox(
                   width: 280,
                   child: 
               Text("How to take vital readings with your device", style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),)),
-              SizedBox(height: 15,),
-              Text("""1.) Remove your device from the box and turn it on
+              const SizedBox(height: 15,),
+              const Text("""1.) Remove your device from the box and turn it on
 
 2.) Connect it with the app via bluetooth
 

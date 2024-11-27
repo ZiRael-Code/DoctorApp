@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(HowItWorks());
+  runApp(const HowItWorks());
 }
 
 class HowItWorks extends StatefulWidget {
@@ -26,20 +25,20 @@ class _HowItWorksScreen extends  State<HowItWorks> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'How It Work',
                   style: TextStyle(
                       fontSize: 20,
@@ -48,7 +47,7 @@ class _HowItWorksScreen extends  State<HowItWorks> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -56,7 +55,7 @@ class _HowItWorksScreen extends  State<HowItWorks> {
         ),
         body:
         Container(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Column(children: [
               how(
                 text: "How to take vital readings with your device",
@@ -94,18 +93,18 @@ class _HowItWorksScreen extends  State<HowItWorks> {
   }) {
     return Column(children: [
       Row(children: [
-      Container(
+      SizedBox(
         width: 240,
-        child: Text(text, style: TextStyle(
+        child: Text(text, style: const TextStyle(
           fontSize: 16,
         ),),
       ),
-      Spacer(),
-      Icon(Icons.arrow_forward_ios_rounded),
+      const Spacer(),
+      const Icon(Icons.arrow_forward_ios_rounded),
     ],),
-      SizedBox(height: 12,),
+      const SizedBox(height: 12,),
       SvgPicture.asset("assets/images/line.svg"),
-      SizedBox(height: 20)
+      const SizedBox(height: 20)
     ]
     );
   }

@@ -1,7 +1,9 @@
+import 'package:doctor_app/Referral/EditAccount.dart';
 import 'package:doctor_app/Referral/Referral.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'Dashboard.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -15,15 +17,15 @@ class _AccountState extends State<Account> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-            backgroundColor: Color(0xffF2F2F2),
+            backgroundColor: const Color(0xffF2F2F2),
             body: SingleChildScrollView(
                 child:
                 Column(children: [
                   Container(
-                      padding: EdgeInsets.only(left: 20, right: 20),
-                      height: 250,
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      height: getFontSize(250, context),
                       width: double.infinity,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(20),
@@ -33,22 +35,23 @@ class _AccountState extends State<Account> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
+                           Text(
                             'Account',
                             style: TextStyle(
-                              fontSize: 26,
+                              fontSize: getFontSize(29, context),
                               fontWeight: FontWeight.bold,
                               color: Color(0xFF2E2E42),
                             ),
                           ),
+                          SizedBox(height: getFontSize(10, context),),
                           Container(
-                            height: 117,
+                            height: getFontSize(117, context),
                             width: double.infinity,
-                            padding: EdgeInsets.all(16),
+                            padding: const EdgeInsets.all(16),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
-                                color: Color(0x0D000000),
+                                color: const Color(0x0D000000),
                               ),
                             ),
                             child: Row(
@@ -57,13 +60,13 @@ class _AccountState extends State<Account> {
                                 ClipOval(
                                   child: Image.asset(
                                     'assets/images/rema.png',
-                                    height: 60,
-                                    width: 60,
+                                    height: getFontSize(60, context),
+                                    width: getFontSize(60, context),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
-                                SizedBox(width: 16),
-                                const Column(
+                                const SizedBox(width: 16),
+                                Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -72,12 +75,12 @@ class _AccountState extends State<Account> {
                                         Text(
                                           'Sanni Muiz . ',
                                           style: TextStyle(
-                                            fontSize: 20,
+                                            fontSize: getFontSize(22, context),
                                             fontWeight: FontWeight.bold,
                                             color: Color(0xFF2E2E42), // Text color
                                           ),
                                         ),
-                                        Text("Doctor", style: TextStyle(color: Colors.black12, fontSize: 16 ),)
+                                        Text("Doctor", style: TextStyle(color: Colors.black12, fontSize: getFontSize(17, context)),)
                                       ],
                                     ),
                                    
@@ -86,14 +89,14 @@ class _AccountState extends State<Account> {
                                     Text(
                                       'johndoe@gmail.com', // Email text
                                       style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: getFontSize(14, context),
                                         color: Colors
                                             .blue, // Blue color for the email text
                                       ),
                                     ),
                                   ],
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Align(
                                   alignment: Alignment.topRight,
                                   child:
@@ -105,11 +108,21 @@ class _AccountState extends State<Account> {
                                       shape: BoxShape.circle,
                                       color: Colors.blue, // Blue background
                                     ),
-                                    child: Center(
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => EditAccount(),
+                                          ),
+                                        );
+                                      },
+                                      child: Center(
                                       child: Icon(
                                         Icons.edit, // Write (edit) icon
                                         color: Colors.white, // White icon color
-                                        size: 16, // Adjust the size as needed
+                                        size: getFontSize(16, context), // Adjust the size as needed
+                                      ),
                                       ),
                                     ),
                                   ),
@@ -118,16 +131,16 @@ class _AccountState extends State<Account> {
                               ],
                             ),
                           ),
-                          SizedBox(height: 30,),
+                          const SizedBox(height: 30,),
 
                         ],
                       )
                   ),
 
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 20, top: 20),
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
                     child: const Text(
                       'Personal Details',
                       style: TextStyle(
@@ -140,7 +153,7 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                      padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+                      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
                       height: 345,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -182,10 +195,10 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 20, top: 20),
-                    child: Text(
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
+                    child: const Text(
                       'Referrals',
                       style: TextStyle(
                         fontSize: 18,
@@ -197,7 +210,7 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 20, left: 20, right: 20, bottom: 10),
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -206,7 +219,7 @@ class _AccountState extends State<Account> {
                     ),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => Referrals()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const Referrals()));
                       },
                       child:
                     detailsNoCol(
@@ -218,10 +231,10 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 20, top: 20),
-                    child: Text(
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
+                    child: const Text(
                       'Payments',
                       style: TextStyle(
                         fontSize: 18,
@@ -234,7 +247,7 @@ class _AccountState extends State<Account> {
 
 
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         top: 20, left: 20, right: 20, bottom: 10),
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -248,13 +261,13 @@ class _AccountState extends State<Account> {
                             detailInfo: "Wallet",
                             shouldLine: true
                         ),
-                        SizedBox(height: 25,),
+                        const SizedBox(height: 25,),
                         detailsNoCol(
                             icon: Icons.credit_card,
                             detailInfo: "Credit/Debit Cards ",
                             shouldLine: true
                         ),
-                        SizedBox(height: 25,),
+                        const SizedBox(height: 25,),
                         detailsNoCol(
                             icon: Icons.lock,
                             detailInfo: "PIN settings",
@@ -266,11 +279,11 @@ class _AccountState extends State<Account> {
 
 
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 20, top: 20),
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
                     child:
-                    Text(
+                    const Text(
                       'Health history',
                       style: TextStyle(
                         fontSize: 18,
@@ -284,7 +297,7 @@ class _AccountState extends State<Account> {
 
 
                   Container(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           top: 20, left: 20, right: 20, bottom: 10),
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -298,7 +311,7 @@ class _AccountState extends State<Account> {
                                 detailInfo: "Personal history records",
                                 shouldLine: true
                             ),
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             detailsNoCol(
                                 icon: Icons.network_cell,
                                 detailInfo: "Health statistics (in-app)",
@@ -309,11 +322,11 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 20, top: 20),
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
                     child:
-                    Text(
+                    const Text(
                       'Device',
                       style: TextStyle(
                         fontSize: 18,
@@ -324,7 +337,7 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           top: 20, left: 20, right: 20, bottom: 10),
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -338,7 +351,7 @@ class _AccountState extends State<Account> {
                                 detailInfo: "Devices owned",
                                 shouldLine: true
                             ),
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             detailsNoCol(
                                 icon: Icons.receipt_long_outlined,
                                 detailInfo: "Device Orders",
@@ -350,11 +363,11 @@ class _AccountState extends State<Account> {
 
 
                   Container(
-                    padding: EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.only(left: 20),
                     alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(bottom: 20, top: 20),
+                    margin: const EdgeInsets.only(bottom: 20, top: 20),
                     child:
-                    Text(
+                    const Text(
                       'Help and support',
                       style: TextStyle(
                         fontSize: 18,
@@ -365,7 +378,7 @@ class _AccountState extends State<Account> {
                   ),
 
                   Container(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                           top: 20, left: 20, right: 20, bottom: 10),
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -379,19 +392,19 @@ class _AccountState extends State<Account> {
                                 detailInfo: "Customer care",
                                 shouldLine: true
                             ),
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             detailsNoCol(
                                 icon: Icons.question_mark,
                                 detailInfo: "Device Orders",
                                 shouldLine: true
                             ),
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             detailsNoCol(
                                 icon: Icons.receipt,
                                 detailInfo: "Blogs & articles",
                                 shouldLine: true
                             ),
-                            SizedBox(height: 25,),
+                            const SizedBox(height: 25,),
                             detailsNoCol(
                                 icon: Icons.search,
                                 detailInfo: "How it works",
@@ -401,13 +414,13 @@ class _AccountState extends State<Account> {
                       )
                   ),
 
-                  SizedBox(height: 20,),
+                  const SizedBox(height: 20,),
 
                   Container(
-                    padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+                    padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                     height: 90,
                     width: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
@@ -422,7 +435,7 @@ class _AccountState extends State<Account> {
                   ),
 
 
-                  SizedBox(height: 20,)
+                  const SizedBox(height: 20,)
 
                 ]
                 )
@@ -443,30 +456,30 @@ class _AccountState extends State<Account> {
           Container(
               width: 41,
               height: 41,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xffE2EDFF),
                 shape: BoxShape.circle,
               ),
               child: Center(child: Icon(icon, size: 28, color: Colors.blue),)
           ),
-          SizedBox(width: 10,),
+          const SizedBox(width: 10,),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(detailType,
-                style: TextStyle(color: Colors.grey, fontSize: 14),),
-              SizedBox(height: 10,),
+                style: const TextStyle(color: Colors.grey, fontSize: 14),),
+              const SizedBox(height: 10,),
               Text(detailInfo,
-                  style: TextStyle(color: Colors.black, fontSize: 18))
+                  style: const TextStyle(color: Colors.black, fontSize: 18))
             ],
           )
 
         ],
       ),
-      SizedBox(height: 10),
+      const SizedBox(height: 10),
       SvgPicture.asset(shouldLine == true ? "assets/images/line.svg" : ""),
-      SizedBox(height: 15),
+      const SizedBox(height: 15),
     ]
     );
   }
@@ -485,14 +498,14 @@ class _AccountState extends State<Account> {
               width: 41,
               height: 41,
               decoration: BoxDecoration(
-                color: lol == null ? Color(0xffE2EDFF) : Colors.red.withOpacity(
+                color: lol == null ? const Color(0xffE2EDFF) : Colors.red.withOpacity(
                     0.05),
                 shape: BoxShape.circle,
               ),
               child: Center(child: Icon(icon, size: 28,
                   color: lol == null ? Colors.blue : Colors.red),)
           ),
-          SizedBox(width: 10,),
+          const SizedBox(width: 10,),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -507,7 +520,7 @@ class _AccountState extends State<Account> {
 
         ],
       ),
-      SizedBox(height: 10),
+      const SizedBox(height: 10),
       SvgPicture.asset(shouldLine == true ? "assets/images/line.svg" : ""),
     ]
     );

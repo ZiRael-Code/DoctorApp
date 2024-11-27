@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:doctor_app/Network/add_a_new_update.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
-import 'package:doctor_app/components/patients_textfield.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -181,7 +180,7 @@ class _EditNetworkState extends State<EditNetwork> {
                     child: Center(
                       child: TextButton(
                         onPressed: _changeImage,
-                        child: Text("Change photo"),
+                        child: const Text("Change photo"),
                       ),
                     ),
                   ),
@@ -189,8 +188,8 @@ class _EditNetworkState extends State<EditNetwork> {
                 const SizedBox(height: 30),
                 GestureDetector(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AddANewUpdate())),
-                  child: MyBlueButton(
+                      MaterialPageRoute(builder: (context) => const AddANewUpdate())),
+                  child: const MyBlueButton(
                     text: "Save",
                   ),
                 ),

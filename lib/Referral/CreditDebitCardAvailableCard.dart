@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(CreditDebitCardAvailableCard());
+  runApp(const CreditDebitCardAvailableCard());
 }
 
 class CreditDebitCardAvailableCard extends StatefulWidget{
@@ -25,10 +25,10 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                 Container(
                   width: 35,
                   height: 35,
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
+                    color: const Color(0xFFE5E5E5),
                   ),
                   child: SvgPicture.asset(
                     'assets/images/back.svg',
@@ -36,10 +36,10 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                     height: 15,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                       'Credit/Debit Cards',
                       style: TextStyle(
                         fontSize: 20,
@@ -47,16 +47,16 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                       ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),
           body: Padding(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Stack(children: [
                 Container(
                   decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                   child: SvgPicture.asset('assets/images/atm.svg', fit: BoxFit.fill,),
                 ),
               Container(
-                padding: EdgeInsets.all( 20),
+                padding: const EdgeInsets.all( 20),
                 width: double.infinity,
                   height: 184,
                   alignment: Alignment.centerLeft,
@@ -78,25 +78,25 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 Container(
-                  padding: EdgeInsets.only(right: 15, left: 15, bottom: 7, top: 7),
+                  padding: const EdgeInsets.only(right: 15, left: 15, bottom: 7, top: 7),
                   decoration: BoxDecoration(
-                    color: Color(0x29000000).withOpacity(0.16),
+                    color: const Color(0x29000000).withOpacity(0.16),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Text("CARD 1", style: TextStyle(
+                  child: const Text("CARD 1", style: TextStyle(
                     fontSize: 11,
                     color: Colors.white
                   ),),
                 ),
-                  Spacer(),
+                  const Spacer(),
                 SvgPicture.asset("assets/images/cardicon.svg")
               ],),
 
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   Container(
                       alignment: Alignment.centerLeft,
                     child:
-                  Text(
+                  const Text(
                     '1111 2222 3333 4444',
                     style: TextStyle(
                       fontSize: 23.0,
@@ -105,12 +105,12 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                     ),
                   ),
                   ),
-                        SizedBox(height: 15.0),
+                        const SizedBox(height: 15.0),
 
                         Row(children: [
                         Container(
                           alignment: Alignment.centerLeft,
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Align(alignment: Alignment.centerLeft,
@@ -136,10 +136,10 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                             ],
                           ),
                         ),
-                          SizedBox(width: 60,),
+                          const SizedBox(width: 60,),
                           Container(
                           alignment: Alignment.centerLeft,
-                          child: Column(
+                          child: const Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Align(alignment: Alignment.centerLeft,
@@ -171,18 +171,18 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
       ]),
               ),
                 ],),
-              Spacer(),
+              const Spacer(),
                 Container(
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: 54,
                   decoration: BoxDecoration(
-                    color: Color(0xFF3C8AFF),
+                    color: const Color(0xFF3C8AFF),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: TextButton(
                     onPressed: () {
                     },
-                    child: Text(
+                    child: const Text(
                       'Add new card',
                       style: TextStyle(
                         color: Colors.white,
@@ -191,7 +191,7 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
                     ),
                   ),
                 ),
-                SizedBox(height: 25,),
+                const SizedBox(height: 25,),
 
               ],
             ),
@@ -218,25 +218,25 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
           child:
           Text(
             textHeader,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
             ),
           ),
         ),
 
-        SizedBox(height: 15.0),
+        const SizedBox(height: 15.0),
 
-        Container(
+        SizedBox(
         width: containerWight,
         child: TextField(
         decoration: InputDecoration(
         hintText: textHint,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
         color: Colors.grey,
         ),
         filled: true,
         fillColor: Colors.grey[300],
-        contentPadding: EdgeInsets.symmetric(
+        contentPadding: const EdgeInsets.symmetric(
         vertical: 15.0, // Adjust padding to control height
         horizontal: 10.0,
         ),
@@ -246,7 +246,7 @@ class  _CreateDebitCardAddCardState extends State<CreditDebitCardAvailableCard>{
         ),
         ),
         keyboardType: textType,
-        style: TextStyle(
+        style: const TextStyle(
         fontSize: 16.0,
     ),
     ),

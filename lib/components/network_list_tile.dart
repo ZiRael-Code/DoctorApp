@@ -34,24 +34,24 @@ class _NetworkListTileState extends State<NetworkListTile> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage: AssetImage("assets/images/guild.png"),
                   radius: 25,
                 ),
-                Column(
+                const Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Text(
                       "Guild of Nigerian Doctors",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 14,
                     ),
                   ],

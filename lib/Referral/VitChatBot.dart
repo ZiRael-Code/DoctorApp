@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(VitChatBot());
+  runApp(const VitChatBot());
 }
 
 class VitChatBot extends StatefulWidget {
@@ -26,38 +25,38 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
                 Row(
                   children: [
                     Image.asset("assets/images/vit.jpg"),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Column(
                       children: [
 
                         Row(children: [
-                        Text(
+                        const Text(
                           'Vit the Chatbot',
                           style: TextStyle(
                             color: Colors.black, // Black text color
                             fontSize: 16, // Font size 16
                           ),
                         ),
-                          SizedBox(width: 7,),
+                          const SizedBox(width: 7,),
                           SvgPicture.asset("assets/images/verified.svg")
                         ],),
-                      SizedBox(height: 8,),
+                      const SizedBox(height: 8,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -65,7 +64,7 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
                               alignment: Alignment.centerLeft,
                               child:
                         Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             color: Color(0xFF218130)
                           ),
@@ -74,8 +73,8 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
                         ),
                         ),
 
-                          SizedBox(width: 7,),
-                          Text(
+                          const SizedBox(width: 7,),
+                          const Text(
                             'Active now',
                             style: TextStyle(
                               color: Color(0xff2E2E42),
@@ -88,26 +87,26 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
           centerTitle: true,
         ),
         body: Container(
-          padding: EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
+          padding: const EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
           child: Column(
             children: [
-              SizedBox(height: 20),
-              Text("Wed 8:21 AM"),
-              SizedBox(height: 70),
+              const SizedBox(height: 20),
+              const Text("Wed 8:21 AM"),
+              const SizedBox(height: 70),
 
            incomingMessage(
                text: 'Hello, I’m Vit! 😁👋 How can I help you?'),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
               outGoingMessage(text: "How do I use my device?"),
 
-              Spacer(),
+              const Spacer(),
               Row(
                 children: [
                   // TextField
@@ -115,35 +114,35 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Type a message...',
-                        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                        contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0x66BFBFBF),
                             width: 0.5,
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0x66BFBFBF),
                             width: 0.5,
                           ),
                         ),
-                        suffixIcon: Container(
+                        suffixIcon: SizedBox(
                           width: 96,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               IconButton(
-                                icon: Icon(Icons.attach_file, color: Colors.grey),
+                                icon: const Icon(Icons.attach_file, color: Colors.grey),
                                 onPressed: () {
                                 },
                               ),
                               IconButton(
-                                icon: Icon(Icons.mic, color: Colors.grey),
+                                icon: const Icon(Icons.mic, color: Colors.grey),
                                 onPressed: () {
                                 },
                               ),
@@ -154,16 +153,16 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
                     ),
                   ),
 
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
 
                   Container(
                     width: 51,
                     height: 51,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.blue,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(Icons.add, color: Colors.white),
+                    child: const Icon(Icons.add, color: Colors.white),
                   ),
                 ],
               ),
@@ -186,8 +185,8 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
               color: Color(0xFFF2F4F5),
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
@@ -197,7 +196,7 @@ class _AppointmentPaymentScreen extends  State<VitChatBot> {
             ),
             child: Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
               ),
             ),
@@ -217,8 +216,8 @@ outGoingMessage({
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          padding: EdgeInsets.all(16),
-          decoration: BoxDecoration(
+          padding: const EdgeInsets.all(16),
+          decoration: const BoxDecoration(
             color: Color(0xFF3C8AFF),
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(20),
@@ -228,7 +227,7 @@ outGoingMessage({
           ),
           child: Text(
             text,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 14,
               color: Colors.white,
             ),

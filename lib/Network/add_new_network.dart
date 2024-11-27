@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:doctor_app/components/my_blue_button.dart';
-import 'package:doctor_app/components/patients_textfield.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -197,7 +196,7 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                         ),
                       ),
                     ),
-                    child: MyBlueButton(
+                    child: const MyBlueButton(
                       text: "Add",
                     ),
                   ),

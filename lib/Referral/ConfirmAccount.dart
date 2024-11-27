@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(AddedAccountSucess());
+  runApp(const AddedAccountSucess());
 }
 
 class AddedAccountSucess extends StatefulWidget {
@@ -26,20 +25,20 @@ class _AddedAccountSucessScreen extends  State<AddedAccountSucess> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
                       width: 8.0,
                       height: 15,),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
                     child:
-                    Text(
+                    const Text(
                       'Add Account',
                       style: TextStyle(
                           fontSize: 20,
@@ -48,7 +47,7 @@ class _AddedAccountSucessScreen extends  State<AddedAccountSucess> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
 
                 ],
               ),
@@ -58,38 +57,38 @@ class _AddedAccountSucessScreen extends  State<AddedAccountSucess> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   textField(
                     textHeader: 'Account Number',
                     textHint: "0123456789"
                   ),
 
-                  SizedBox(height: 25.0),
+                  const SizedBox(height: 25.0),
                   textField(
                     textHeader: 'Bank name',
                     textHint: "GTBank"
                   ),
-                  SizedBox(height: 25.0),
+                  const SizedBox(height: 25.0),
 
                   textField(textHeader: "Name",
                       textHint: "SANNI MUIZ DOLAPO"),
 
-                  SizedBox(height: 25.0),
+                  const SizedBox(height: 25.0),
 
-                  Spacer(),
+                  const Spacer(),
                   Align(
                     child:
                     Container(
                       width: double.infinity,
                       height: 54,
                       decoration: BoxDecoration(
-                        color: Color(0xFF3C8AFF),
+                        color: const Color(0xFF3C8AFF),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: TextButton(
                         onPressed: () {
                         },
-                        child: Text(
+                        child: const Text(
                           'Confirm',
                           style: TextStyle(
                             color: Colors.white,
@@ -99,7 +98,7 @@ class _AddedAccountSucessScreen extends  State<AddedAccountSucess> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15.0),
+                  const SizedBox(height: 15.0),
                 ],
               ),
             ),
@@ -116,27 +115,27 @@ class _AddedAccountSucessScreen extends  State<AddedAccountSucess> {
         Align(alignment: Alignment.centerLeft,child:
         Text(
         textHeader,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 16.0,
         ),
         textAlign: TextAlign.start,
       ),
       ),
-        SizedBox(height: 15.0),
+        const SizedBox(height: 15.0),
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.grey[300],
             borderRadius: BorderRadius.circular(8.0),
           ),
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             vertical: 15.0,
             horizontal: 10.0,
           ),
           child: Text(
             textHint,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 16.0,
             ),

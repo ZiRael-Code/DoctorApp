@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(SetNewPin());
+  runApp(const SetNewPin());
 }
 
 class SetNewPin extends StatefulWidget {
@@ -26,7 +25,7 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
             child:
         Align(
           child:
@@ -36,48 +35,48 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
           alignment: Alignment.topCenter,
           child: SvgPicture.asset('assets/images/slider2.svg'),
         ),
-        SizedBox(height:30),
-        Text(textAlign: TextAlign.center, 'Set new PIN', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-        SizedBox(height:20),
+        const SizedBox(height:30),
+        const Text(textAlign: TextAlign.center, 'Set new PIN', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+        const SizedBox(height:20),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.70,
           child:
-        Align(child: Text("Set a new PIN for making transactions on the application.", textAlign: TextAlign.center,
+        const Align(child: Text("Set a new PIN for making transactions on the application.", textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 14,
         ),
         ),
         ),
         ),
-        SizedBox(height: 35),
+        const SizedBox(height: 35),
         Container(
           width: 163,
           height: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(11),
             color: Colors.black.withOpacity(0.05),
-            border: Border.all(color: Color(0xFFE2E2E2)),
+            border: Border.all(color: const Color(0xFFE2E2E2)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               dot(
-                color: pin.length == 1 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 1 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
               dot(
-                color: pin.length == 2 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 2 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
               dot(
-                color: pin.length == 3 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 3 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
               dot(
-                color: pin.length == 4 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 4 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
             ],
           ),
         ),
-        SizedBox(height: 30,),
+        const SizedBox(height: 30,),
         // Container(
         //   child: Row(
         //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +102,7 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
         // ),
               
               
-        SizedBox(height: 60,),
+        const SizedBox(height: 60,),
 
         Container(
           child:Column(children: [
@@ -118,12 +117,12 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
                     );
                   }),
           ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(children: [
-              Spacer(),
-              SizedBox(width:75),
+              const Spacer(),
+              const SizedBox(width:75),
               number(num: "0"),
-              Spacer(),
+              const Spacer(),
               GestureDetector(
                 child: SvgPicture.asset("assets/images/backspace.svg"),
               onTap: () {
@@ -134,11 +133,11 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
                   });
               },
               ),
-              SizedBox(width:35)
+              const SizedBox(width:35)
             ],)
         ]),
         ),
-        SizedBox(height:40),
+        const SizedBox(height:40),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
@@ -148,8 +147,8 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
               borderRadius: BorderRadius.circular(9),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
               style: TextStyle(color: Colors.white, fontSize: 18),
@@ -168,7 +167,7 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
     return Container(
       width: 12,
       height: 12,
-      margin: EdgeInsets.all(4),
+      margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
@@ -183,7 +182,7 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
       child: Text(
       num,
       style:
-      TextStyle(
+      const TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,
         color: Colors.black,

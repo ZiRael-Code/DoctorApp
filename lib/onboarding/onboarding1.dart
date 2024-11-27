@@ -49,14 +49,14 @@ class Onboarding1 extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
                   width: 340,
                   height: 80,
-                  child: const Text(
+                  child: Text(
                     "You can register a patient under you, and always get notified of the patient's vial readings so if things start going out of hand, you can always step in.",
                     style: TextStyle(
                       fontSize: 14,

@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(PinSettings());
+  runApp(const PinSettings());
 }
 
 class PinSettings extends StatefulWidget {
@@ -27,20 +26,20 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'PIN Settings',
                   style: TextStyle(
                       fontSize: 20,
@@ -49,7 +48,7 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -57,59 +56,59 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height:70),
+        const SizedBox(height:70),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.50,
           child:
-        Align(child: Text("Type in your former PIN to set a new one.", textAlign: TextAlign.center,
+        const Align(child: Text("Type in your former PIN to set a new one.", textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 16,
         ),
         ),
         ),
         ),
-        SizedBox(height: 65),
-        Text("Enter Pin", textAlign: TextAlign.center,
+        const SizedBox(height: 65),
+        const Text("Enter Pin", textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Container(
           width: 163,
           height: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(11),
             color: Colors.black.withOpacity(0.05),
-            border: Border.all(color: Color(0xFFE2E2E2)),
+            border: Border.all(color: const Color(0xFFE2E2E2)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               dot(
-                color: pin.length == 1 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 1 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
               dot(
-                color: pin.length == 2 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 2 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
               dot(
-                color: pin.length == 3 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 3 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
               dot(
-                color: pin.length == 4 ? Color(0xFF000000) : Color(0xFFCCCCCC),
+                color: pin.length == 4 ? const Color(0xFF000000) : const Color(0xFFCCCCCC),
               ),
             ],
           ),
         ),
-        SizedBox(height: 30,),
+        const SizedBox(height: 30,),
         // Container(
         //   child: Row(
         //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -135,7 +134,7 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
         // ),
               
               
-        SizedBox(height: 60,),
+        const SizedBox(height: 60,),
 
         Container(
           child:Column(children: [
@@ -150,12 +149,12 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
                     );
                   }),
           ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Row(children: [
-              Spacer(),
-              SizedBox(width:75),
+              const Spacer(),
+              const SizedBox(width:75),
               number(num: "0"),
-              Spacer(),
+              const Spacer(),
               GestureDetector(
                 child: SvgPicture.asset("assets/images/backspace.svg"),
               onTap: () {
@@ -166,13 +165,13 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
                   });
               },
               ),
-              SizedBox(width:35)
+              const SizedBox(width:35)
             ],)
         ]),
         ),
-        SizedBox(height:40),
+        const SizedBox(height:40),
         RichText(
-          text: TextSpan(
+          text: const TextSpan(
             text: 'Forgot your PIN? ',
             style: TextStyle(
               color: Colors.black,
@@ -201,7 +200,7 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
     return Container(
       width: 12,
       height: 12,
-      margin: EdgeInsets.all(4),
+      margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: color,
@@ -216,7 +215,7 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
       child: Text(
       num,
       style:
-      TextStyle(
+      const TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.bold,
         color: Colors.black,

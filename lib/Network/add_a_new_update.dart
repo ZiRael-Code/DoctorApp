@@ -77,9 +77,9 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                 ],
               ),
               const SizedBox(height: 60),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   "Name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -113,9 +113,9 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
               const SizedBox(
                 height: 30,
               ),
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: const Text(
+                child: Text(
                   "Add a picture",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),

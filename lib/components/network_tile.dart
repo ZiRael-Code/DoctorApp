@@ -8,13 +8,13 @@ class NetworkTile extends StatefulWidget {
   final Function(bool joined)? onToggle; // Callback for state change
 
   const NetworkTile({
-    Key? key,
+    super.key,
     required this.name,
     required this.imagePath,
     required this.description,
     this.initialJoined = false,
     this.onToggle,
-  }) : super(key: key);
+  });
 
   @override
   State<NetworkTile> createState() => _NetworkTileState();

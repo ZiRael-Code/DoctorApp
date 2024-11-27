@@ -1,7 +1,6 @@
 import 'package:doctor_app/AddPatients/send_invites.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../components/contacts_checked_tile.dart';
 
@@ -128,7 +127,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Icon(Icons.local_hospital_sharp,
+                                    child: const Icon(Icons.local_hospital_sharp,
                                         color: Colors.white),
                                   ),
                                   const SizedBox(width: 10),

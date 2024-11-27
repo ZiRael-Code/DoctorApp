@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(EditAccount());
+  runApp(const EditAccount());
 }
 
 class EditAccount extends StatefulWidget {
@@ -26,20 +25,20 @@ class _EditAccountState extends  State<EditAccount> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'Edit Profile',
                   style: TextStyle(
                       fontSize: 20,
@@ -48,7 +47,7 @@ class _EditAccountState extends  State<EditAccount> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -56,7 +55,7 @@ class _EditAccountState extends  State<EditAccount> {
         ),
         body: SingleChildScrollView(
           child: Container(
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
         child: Column(
           children: [
 
@@ -89,7 +88,7 @@ class _EditAccountState extends  State<EditAccount> {
             ),
 
 
-            Align(
+            const Align(
               alignment: Alignment.topLeft,
               child: Text(
                 "Gender",
@@ -99,22 +98,22 @@ class _EditAccountState extends  State<EditAccount> {
             Container(
               width: double.infinity,
               height: 50,
-              padding: EdgeInsets.only(left: 12, right: 12),
+              padding: const EdgeInsets.only(left: 12, right: 12),
               decoration: BoxDecoration(
-                color: Color(0xFFf0f0f0),
+                color: const Color(0xFFf0f0f0),
                 borderRadius: BorderRadius.circular(15.0),
               ),
               child: DropdownButton<String>(
                 value: _selectedValue,
-                hint: Text("Gender", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),),
+                hint: const Text("Gender", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.grey),),
                 isExpanded: true,
-                underline: SizedBox(),
-                style: TextStyle(
+                underline: const SizedBox(),
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color:  Colors.grey,
                 ),
-                icon: Icon(Icons.keyboard_arrow_down),
+                icon: const Icon(Icons.keyboard_arrow_down),
                 onChanged: (newValue) {
                   setState(() {
                     _selectedValue = newValue;
@@ -129,24 +128,24 @@ class _EditAccountState extends  State<EditAccount> {
                 }).toList(),
               ),
             ),
-SizedBox(height: 15,),
-            Align(
+const SizedBox(height: 15,),
+            const Align(
               alignment: Alignment.topLeft,
               child: Text(
                 "Certificate",
                 style: TextStyle(fontSize: 16),
               ),
             ),
-        SizedBox(height: 8,),
+        const SizedBox(height: 8,),
         Container(
           width: double.infinity,
           height: 50,
-          padding: EdgeInsets.only(left: 12, right: 12),
+          padding: const EdgeInsets.only(left: 12, right: 12),
           decoration: BoxDecoration(
-            color: Color(0xFFf0f0f0),
+            color: const Color(0xFFf0f0f0),
             borderRadius: BorderRadius.circular(15.0),
           ),
-          child: Row(
+          child: const Row(
             children: [
               Text("Bsc.", style: TextStyle(
                 color: Colors.grey
@@ -156,7 +155,7 @@ SizedBox(height: 15,),
             ],
           ),
         ),
-SizedBox(height: 40,),
+const SizedBox(height: 40,),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -166,8 +165,8 @@ SizedBox(height: 40,),
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Save changes',
                   style: TextStyle(color: Colors.white, fontSize: 16),
@@ -191,7 +190,7 @@ SizedBox(height: 40,),
           alignment: Alignment.topLeft,
           child: Text(
             fieldType,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ),
         const SizedBox(height: 8.0),
@@ -207,7 +206,7 @@ SizedBox(height: 40,),
             ),
           ),
         ),
-        SizedBox(height: 20,)
+        const SizedBox(height: 20,)
       ],
     );
   }

@@ -1,14 +1,15 @@
-import 'package:doctor_app/AllPatientReading/PrescribeDrugsAddDrug.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'SendPrescription.dart';
 
 void main() {
-  runApp(PrescribeDrugsViewAll());
+  runApp(const PrescribeDrugsViewAll());
 }
 
 class PrescribeDrugsViewAll extends StatelessWidget {
+  const PrescribeDrugsViewAll({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,20 +20,20 @@ class PrescribeDrugsViewAll extends StatelessWidget {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Text(
+                const Text(
                   'Prescribe drugs',
                   style: TextStyle(
                       fontSize: 20,
@@ -41,12 +42,12 @@ class PrescribeDrugsViewAll extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
         ),
-        body: Padding(padding: EdgeInsets.all(12),
+        body: Padding(padding: const EdgeInsets.all(12),
     child: Column(
           children: [
 
@@ -56,14 +57,14 @@ class PrescribeDrugsViewAll extends StatelessWidget {
               instructions: '2X daily',
               drugUnit: '1 pack:  '
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
 
             Align(
               child:
               Container(
-                decoration: BoxDecoration(color: Color(0xffE2EDFF), borderRadius: BorderRadius.circular(10)),
-                padding: EdgeInsets.all(10),
-                child: Row(
+                decoration: BoxDecoration(color: const Color(0xffE2EDFF), borderRadius: BorderRadius.circular(10)),
+                padding: const EdgeInsets.all(10),
+                child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -75,10 +76,10 @@ class PrescribeDrugsViewAll extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>SendPrescription()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>const SendPrescription()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -87,8 +88,8 @@ class PrescribeDrugsViewAll extends StatelessWidget {
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Continue',
                   style: TextStyle(color: Colors.white, fontSize: 18),
@@ -109,7 +110,7 @@ class PrescribeDrugsViewAll extends StatelessWidget {
     required String drugUnit
   }) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey.shade200, width: 1),
@@ -119,18 +120,18 @@ class PrescribeDrugsViewAll extends StatelessWidget {
       Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Text(name, style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10,),
+          Text(name, style: const TextStyle(fontSize: 18)),
+            const SizedBox(height: 10,),
           Row(
           children: [
             Text(drugUnit, style: TextStyle(color: Colors.grey[500]),),
-            Text(dosage + ' . '+instructions, style: TextStyle(color: Colors.grey[500])),
+            Text('$dosage . $instructions', style: TextStyle(color: Colors.grey[500])),
           ],
         ),
         ],
         ),
-          Spacer(),
-            Icon(Icons.keyboard_arrow_down)
+          const Spacer(),
+            const Icon(Icons.keyboard_arrow_down)
           ],
         ),
     );

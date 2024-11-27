@@ -1,14 +1,16 @@
 import 'package:doctor_app/AllPatientReading/PatientReading.dart';
-import 'package:doctor_app/components/patient_reading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 // import 'package:flutter_svg/svg.dart';
 
 void main() {
-  runApp(MaterialApp(home: AllPatientReading()));
+  runApp(const MaterialApp(home: AllPatientReading()));
 }
 
 class AllPatientReading extends StatefulWidget {
+  const AllPatientReading({super.key});
+
+  @override
   _AllPatientState createState() => _AllPatientState();
 }
 
@@ -25,7 +27,7 @@ class _AllPatientState extends State<AllPatientReading> {
       'oxy': '95%',
       'regularity': 'irregular',
       'isOnline': true,
-      'regularityColor': Color(0xffFF8E3C),
+      'regularityColor': const Color(0xffFF8E3C),
     },
     {
       'name': 'Fatima Abdullahi',
@@ -38,7 +40,7 @@ class _AllPatientState extends State<AllPatientReading> {
       'oxy': '98%',
       'regularity': 'regular',
       'isOnline': false,
-      'regularityColor': Color(0xffFF8E3C),
+      'regularityColor': const Color(0xffFF8E3C),
     },
     {
       'name': 'Adisa Asabe',
@@ -51,7 +53,7 @@ class _AllPatientState extends State<AllPatientReading> {
       'oxy': '97%',
       'regularity': 'irregular',
       'isOnline': true,
-      'regularityColor': Color(0xffFF8E3C),
+      'regularityColor': const Color(0xffFF8E3C),
     },
     {
       'name': 'Mary Johnson',
@@ -64,7 +66,7 @@ class _AllPatientState extends State<AllPatientReading> {
       'oxy': '96%',
       'regularity': 'regular',
       'isOnline': true,
-      'regularityColor': Color(0xffFF8E3C),
+      'regularityColor': const Color(0xffFF8E3C),
     },
     {
       'name': 'Chinedu Obi',
@@ -77,7 +79,7 @@ class _AllPatientState extends State<AllPatientReading> {
       'oxy': '94%',
       'regularity': 'irregular',
       'isOnline': false,
-      'regularityColor': Color(0xffFF8E3C),
+      'regularityColor': const Color(0xffFF8E3C),
     },
   ];
   List<Map<String, dynamic>> filteredList = [];
@@ -103,24 +105,24 @@ class _AllPatientState extends State<AllPatientReading> {
               InkWell(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => PatientReading()));
+                      builder: (context) => const PatientReading()));
                   // Navigator.pop(context);
                 },
                 child: Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(
                         color: Color(0xffE5E5E5), shape: BoxShape.circle),
-                    child: Icon(
+                    child: const Icon(
                       Icons.arrow_back_ios_rounded,
                       color: Color(0xff666666),
                     )),
               ),
-              Spacer(),
-              Text('All Patient\'s Reading'),
-              Spacer(),
+              const Spacer(),
+              const Text('All Patient\'s Reading'),
+              const Spacer(),
             ])),
         body: Padding(
-          padding: EdgeInsets.only(left: 16, right: 16, top: 25),
+          padding: const EdgeInsets.only(left: 16, right: 16, top: 25),
           child: Column(
             children: [
               Row(
@@ -129,36 +131,36 @@ class _AllPatientState extends State<AllPatientReading> {
                   Container(
                     width: 10,
                     height: 10,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color(0xffE5E5E5), shape: BoxShape.circle),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
-                  Text('Unchecked'),
-                  SizedBox(
+                  const Text('Unchecked'),
+                  const SizedBox(
                     width: 8,
                   ),
                   Container(
                     width: 10,
                     height: 10,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Colors.green, shape: BoxShape.circle),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 8,
                   ),
-                  Text('Checked')
+                  const Text('Checked')
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 children: [
                   // Search field
                   Container(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: const EdgeInsets.only(right: 10),
                     width: MediaQuery.of(context).size.width * 0.70,
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
@@ -174,7 +176,7 @@ class _AllPatientState extends State<AllPatientReading> {
                           }).toList();
                         });
                       },
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Search by name, vital reading..',
                         hintStyle: TextStyle(color: Colors.grey),
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
@@ -192,14 +194,14 @@ class _AllPatientState extends State<AllPatientReading> {
                       });
                     },
                     child: Container(
-                      margin: EdgeInsets.only(left: 5),
-                      padding: EdgeInsets.all(12),
+                      margin: const EdgeInsets.only(left: 5),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
                         shape: BoxShape.circle,
                       ),
                       child: isFilterOpen
-                          ? Icon(Icons.close, color: Colors.black)
+                          ? const Icon(Icons.close, color: Colors.black)
                           : SvgPicture.asset('assets/images/filter.svg'),
                     ),
                   ),
@@ -207,21 +209,21 @@ class _AllPatientState extends State<AllPatientReading> {
               ),
               if (isFilterOpen)
                 Container(
-                  margin: EdgeInsets.only(top: 16),
+                  margin: const EdgeInsets.only(top: 16),
                   width: double.infinity,
-                  padding: EdgeInsets.all(16),
-                  decoration: BoxDecoration(),
+                  padding: const EdgeInsets.all(16),
+                  decoration: const BoxDecoration(),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         "Filters",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
                         ),
                       ),
-                      SizedBox(height: 20), //
+                      const SizedBox(height: 20), //
                       Wrap(
                         spacing: 5, //
                         runSpacing: 8, //
@@ -241,16 +243,16 @@ class _AllPatientState extends State<AllPatientReading> {
                                 shadowColor: Colors.transparent,
                                 backgroundColor: i == btnText.length - 1
                                     ? Colors.transparent
-                                    : Color(0xFFE2EDFF),
+                                    : const Color(0xFFE2EDFF),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(50),
                                 ),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(0),
+                                padding: const EdgeInsets.all(0),
                                 child: Text(
                                   btnText[i],
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Color(0xff3C8AFF),
                                       fontSize: 11.5), // Button text color
                                 ),
@@ -261,19 +263,19 @@ class _AllPatientState extends State<AllPatientReading> {
                     ],
                   ),
                 ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Expanded(
                   child: ListView(
                 children: List.generate(
-                  filteredList.length == 0
+                  filteredList.isEmpty
                       ? patientReadings.length
                       : filteredList.length,
                   (index) => InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => PatientReading()));
+                          builder: (context) => const PatientReading()));
                     },
                     child: patient_reading(
                       name: patientReadings[index]['name'],
@@ -311,8 +313,8 @@ class _AllPatientState extends State<AllPatientReading> {
     required bool isOnline,
   }) {
     return Container(
-      margin: EdgeInsets.only(bottom: 18),
-      padding: EdgeInsets.all(16.0),
+      margin: const EdgeInsets.only(bottom: 18),
+      padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
@@ -324,7 +326,7 @@ class _AllPatientState extends State<AllPatientReading> {
             children: [
               // Label
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
                 decoration: BoxDecoration(
                   color: regularityColor.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(8.0),
@@ -336,7 +338,7 @@ class _AllPatientState extends State<AllPatientReading> {
                   ),
                 ),
               ),
-              SizedBox(height: 12.0),
+              const SizedBox(height: 12.0),
               // User Information
               Row(
                 children: [
@@ -345,20 +347,20 @@ class _AllPatientState extends State<AllPatientReading> {
                         AssetImage(path), // Replace with your image asset
                     radius: 24.0,
                   ),
-                  SizedBox(width: 12.0),
+                  const SizedBox(width: 12.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         name,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                         ),
                       ),
-                      SizedBox(height: 4.0),
+                      const SizedBox(height: 4.0),
                       Text(
-                        time + ' · ' + date,
-                        style: TextStyle(
+                        '$time · $date',
+                        style: const TextStyle(
                           color: Colors.grey,
                           fontSize: 12.0,
                         ),
@@ -367,50 +369,50 @@ class _AllPatientState extends State<AllPatientReading> {
                   ),
                 ],
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Padding(
-                  padding: EdgeInsets.only(right: 50),
+                  padding: const EdgeInsets.only(right: 50),
                   child: Divider(
                     color: Colors.grey[300],
                   )),
-              SizedBox(height: 8.0),
+              const SizedBox(height: 8.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'BP: ',
                         style: TextStyle(color: Colors.blue, fontSize: 11),
                       ),
-                      Text(bp, style: TextStyle(fontSize: 11)),
+                      Text(bp, style: const TextStyle(fontSize: 11)),
                     ],
                   ),
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'HbA1c: ',
                         style: TextStyle(color: Colors.blue, fontSize: 11),
                       ),
-                      Text(hba1c, style: TextStyle(fontSize: 11)),
+                      Text(hba1c, style: const TextStyle(fontSize: 11)),
                     ],
                   ),
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'IHRA: ',
                         style: TextStyle(color: Colors.blue, fontSize: 11),
                       ),
-                      Text(ihra, style: TextStyle(fontSize: 11)),
+                      Text(ihra, style: const TextStyle(fontSize: 11)),
                     ],
                   ),
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         'Oxygen: ',
                         style: TextStyle(color: Colors.blue, fontSize: 11),
                       ),
-                      Text(oxy, style: TextStyle(fontSize: 11)),
+                      Text(oxy, style: const TextStyle(fontSize: 11)),
                     ],
                   )
                 ],

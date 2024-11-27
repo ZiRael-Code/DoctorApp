@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(DeviceOwned());
+  runApp(const DeviceOwned());
 }
 
 class DeviceOwned extends StatefulWidget {
@@ -26,20 +25,20 @@ class _DeviceOwnedScreen extends  State<DeviceOwned> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
                       width: 8.0,
                       height: 15,),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
                     child:
-                    Center(child: Text(
+                    const Center(child: Text(
                       'Devices owned',
                       style: TextStyle(
                           fontSize: 20,
@@ -48,7 +47,7 @@ class _DeviceOwnedScreen extends  State<DeviceOwned> {
                     ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
 
                 ],
               ),
@@ -57,31 +56,31 @@ class _DeviceOwnedScreen extends  State<DeviceOwned> {
             body: SingleChildScrollView(
                 child:
                 Container(
-                    padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+                    padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
                     child:
                     Align(
                         child:
                         Column(
                             children: [
-                              SizedBox(height: 30),
+                              const SizedBox(height: 30),
                               Container(
                                 alignment: Alignment.center,
                                 width: MediaQuery.of(context).size.width * 0.58,
                                 child:
-                                Align(child: Text("View history of any vitals by directly tapping on their icons. ", textAlign: TextAlign.center,
+                                const Align(child: Text("View history of any vitals by directly tapping on their icons. ", textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontSize: 14,
                                   ),
                                 ),
                                 ),
-                              ),SizedBox(height: 20,),
+                              ),const SizedBox(height: 20,),
 
                               Wrap(children: [
                                 devices(
                                     name: "BP2 Connect",
                                     imagePath: "assets/images/dev.svg"
                                 ),
-                                SizedBox(width: 20,),
+                                const SizedBox(width: 20,),
                                 devices(
                                     name: "Device 2",
                                     imagePath: "assets/images/dev.svg"
@@ -112,9 +111,9 @@ class _DeviceOwnedScreen extends  State<DeviceOwned> {
           child:
           Center(child: SvgPicture.asset(imagePath),),
         ),
-        SizedBox(height: 10,),
-        Text(name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-        SizedBox(height: 20, ),
+        const SizedBox(height: 10,),
+        Text(name, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 20, ),
       ],),
     );
   }

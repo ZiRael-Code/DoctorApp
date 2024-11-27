@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(BlogAndAticles());
+  runApp(const BlogAndAticles());
 }
 
 class BlogAndAticles extends StatefulWidget {
@@ -27,20 +26,20 @@ class _BlogAndArticlesScreen extends  State<BlogAndAticles> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
                       width: 8.0,
                       height: 15,),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
                     child:
-                    Center(child: Text(
+                    const Center(child: Text(
                       'Blog & Articles',
                       style: TextStyle(
                           fontSize: 20,
@@ -49,7 +48,7 @@ class _BlogAndArticlesScreen extends  State<BlogAndAticles> {
                     ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
 
                 ],
               ),
@@ -118,10 +117,10 @@ class _BlogAndArticlesScreen extends  State<BlogAndAticles> {
     required String views
 }){
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10),
       child: Column(
       children: [
-        Padding(padding: EdgeInsets.all(30),
+        Padding(padding: const EdgeInsets.all(30),
           child:
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,32 +133,32 @@ class _BlogAndArticlesScreen extends  State<BlogAndAticles> {
                     radius: 25,
                     backgroundImage: AssetImage(profilePath),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           name,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.black,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Row(
                           children: [
                             Text(
                               time,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             Text(
                               date,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
                               ),
@@ -169,33 +168,33 @@ class _BlogAndArticlesScreen extends  State<BlogAndAticles> {
                       ],
                     ),
                   ),
-                  Icon(Icons.more_vert),
+                  const Icon(Icons.more_vert),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               // Bold Title Text
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               Container(
                 child: Text(description,
-                  style: TextStyle(fontSize: 14, color: Colors.black),
+                  style: const TextStyle(fontSize: 14, color: Colors.black),
                   maxLines: 7, // Limit to a max of 10 lines
                   overflow: TextOverflow.ellipsis, // Add "..." if it overflows
                 ),
               ),
-              SizedBox(height: 12), // Space between description and "See More"
+              const SizedBox(height: 12), // Space between description and "See More"
               // "See More" text
               GestureDetector(
                 onTap: () {
                   // Implement action for See More
                 },
-                child: Text(
+                child: const Text(
                   'See More',
                   style: TextStyle(
                     fontSize: 14,
@@ -203,20 +202,20 @@ class _BlogAndArticlesScreen extends  State<BlogAndAticles> {
                   ),
                 ),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               SvgPicture.asset("assets/images/line.svg"),
-              SizedBox(height: 16), // Space between "See More" and bottom row
+              const SizedBox(height: 16), // Space between "See More" and bottom row
               // Row with eye icon, view count, and text
               Row(
                 children: [
-                  Icon(Icons.remove_red_eye, size: 23, color: Colors.black), // Eye icon
-                  SizedBox(width: 8), // Space between icon and views count
+                  const Icon(Icons.remove_red_eye, size: 23, color: Colors.black), // Eye icon
+                  const SizedBox(width: 8), // Space between icon and views count
                   Text(
                     views,
-                    style: TextStyle(fontSize: 14, color: Colors.black),
+                    style: const TextStyle(fontSize: 14, color: Colors.black),
                   ),
-                  SizedBox(width: 4),
-                  Text(
+                  const SizedBox(width: 4),
+                  const Text(
                     'Views',
                     style: TextStyle(fontSize: 14, color: Colors.black),
                   ),

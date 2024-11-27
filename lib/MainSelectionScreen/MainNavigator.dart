@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'Account.dart';
@@ -8,6 +6,8 @@ import 'Network.dart';
 import 'Patients.dart';
 
 class MainNavigator extends StatefulWidget {
+  const MainNavigator({super.key});
+
   @override
   _MainNavigatorState createState() => _MainNavigatorState();
 }
@@ -23,9 +23,9 @@ class _MainNavigatorState extends State<MainNavigator> {
 
   late final List<Widget> _screens = [
     Dashboard(onItemTapped: _onItemTapped),
-    Patients(),
-    Network(),
-    Account(),
+    const Patients(),
+    const Network(),
+    const Account(),
   ];
 
 
@@ -89,6 +89,6 @@ class _MainNavigatorState extends State<MainNavigator> {
     }
   }
 void main(){
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
       home: MainNavigator()));
 }

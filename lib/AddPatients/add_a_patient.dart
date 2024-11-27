@@ -2,7 +2,6 @@ import 'package:doctor_app/AddPatients/add_existing_patient.dart';
 import 'package:doctor_app/AddPatients/invite_through_link.dart';
 import 'package:flutter/material.dart';
 
-import '../components/contacts_tile.dart';
 
 class AddAPatient extends StatefulWidget {
   const AddAPatient({super.key});

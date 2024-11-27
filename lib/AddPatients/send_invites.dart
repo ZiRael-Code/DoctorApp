@@ -48,10 +48,10 @@ class _SendInvitesState extends State<SendInvites> {
                 ],
               ),
               const SizedBox(height: 40),
-              SizedBox(
+              const SizedBox(
                 width: 310,
                 height: 190,
-                child: const Column(
+                child: Column(
                   children: [
                     Text(
                       "Send an invite link to a patient, so when the person registers on the app using your link, you will be able to access their details.",

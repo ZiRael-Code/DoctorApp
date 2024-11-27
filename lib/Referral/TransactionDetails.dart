@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(TransactionDetails());
+  runApp(const TransactionDetails());
 }
 
 class TransactionDetails extends StatefulWidget {
@@ -26,20 +25,20 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'Appointment details',
                   style: TextStyle(
                       fontSize: 20,
@@ -48,7 +47,7 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -56,33 +55,38 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Container(
-          padding: EdgeInsets.only(top: 12, bottom: 12, left: 16, right: 16),
+          padding: const EdgeInsets.only(top: 12, bottom: 12, left: 16, right: 16),
           decoration: BoxDecoration(
-            color: Color(0xffE5E5E5),
+            color: const Color(0xffE5E5E5),
             borderRadius: BorderRadius.circular(50)
           ),
-          child: Text('Appointment', style: TextStyle(fontSize: 16),),
+          child: const Text('Appointment', style: TextStyle(fontSize: 16),),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
           Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 103,
-                  child: Row(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color:  Colors.black.withOpacity(0.1)),
+                  ),
+                  child: const Row(
                     children: [
-                      Container(
+                      SizedBox(
                         width: 56,
                         height: 56,
                      child:
@@ -104,19 +108,14 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
                       ),
                     ],
                   ),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(color:  Colors.black.withOpacity(0.1)),
-                  ),
                 ),
 
-                SizedBox(height: 45,),
+                const SizedBox(height: 45,),
 
                 Row(
                   children: [
                     Container(
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -125,10 +124,10 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
                         ],
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
 
                     Container(
-                      child: Column(
+                      child: const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -139,11 +138,11 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
                     )
                   ],
                 ),
-                SizedBox(height: 25,),
+                const SizedBox(height: 25,),
                 Row(
                   children: [
                     Container(
-                      child: Column(
+                      child: const Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -152,10 +151,10 @@ class _AppointmentPaymentScreen extends  State<TransactionDetails> {
                         ],
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
 
                     Container(
-                      child: Column(
+                      child: const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

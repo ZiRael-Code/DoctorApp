@@ -42,10 +42,10 @@ class SendInvitesSuccessPage extends StatelessWidget {
               const SizedBox(
                 height: 120,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 260,
                 height: 71,
-                child: const Text(
+                child: Text(
                   textAlign: TextAlign.center,
                   "You have successfully sent invitation links, when they sign up, you get a commission.",
                   style: TextStyle(

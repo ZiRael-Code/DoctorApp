@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(CustomerCareOption());
+  runApp(const CustomerCareOption());
 }
 
 class CustomerCareOption extends StatefulWidget {
@@ -26,20 +25,20 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
               Container(
                 width: 35,
                 height: 35,
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: Color(0xFFE5E5E5),
+                  color: const Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                Center(child: Text(
+                const Center(child: Text(
                   'Customer Care',
                   style: TextStyle(
                       fontSize: 20,
@@ -48,7 +47,7 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
                 ),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
 
             ],
           ),
@@ -56,12 +55,12 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
         ),
         body:
             Container(
-              padding: EdgeInsets.only(left: 15, right: 15),
+              padding: const EdgeInsets.only(left: 15, right: 15),
               child:
             Column(
                 children: [
           careOption(
-            careName: Row(children: [
+            careName: const Row(children: [
               Text(
                 'Engage chatbot',
                 style: TextStyle(
@@ -79,9 +78,9 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
             careImgPath: "assets/images/careimgage.svg",
             description: "Talk with an automated responder to help you sort any little issues you may have with myvitalz."
           ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
         careOption(
-            careName: Row(children: [
+            careName: const Row(children: [
               Text(
                 'Send Mail',
                 style: TextStyle(
@@ -100,9 +99,9 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
             description: "Send an email to our official email address myvitalzsupport@myvitalz.com if you need to communicate with us."
           ),
 
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               careOption(
-            careName: Row(children: [
+            careName: const Row(children: [
               Text(
                 'Hotline',
                 style: TextStyle(
@@ -136,23 +135,23 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
       height: 137,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: Color(0xFFE5E5E5), width: 1),
+        border: Border.all(color: const Color(0xFFE5E5E5), width: 1),
       ),
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Row(
         children: [
           // Circular container
           Container(
             width: 59,
             height: 59,
-            padding: EdgeInsets.all(14),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(14),
+            decoration: const BoxDecoration(
               color: Color(0xFFE2EDFF),
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(careImgPath),
           ),
-          SizedBox(width: 16),
+          const SizedBox(width: 16),
 
           Expanded(
             child: Column(
@@ -160,14 +159,14 @@ class _AppointmentPaymentScreen extends  State<CustomerCareOption> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                careName,
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
 
               Container(
-                padding: EdgeInsets.only(right: 30),
+                padding: const EdgeInsets.only(right: 30),
                 child:
                 Text(
                   description,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF2E2E42),
                     fontSize: 12,
                   ),

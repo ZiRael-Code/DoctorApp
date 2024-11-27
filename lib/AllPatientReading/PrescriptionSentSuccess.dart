@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Prescriptionsentsuccess extends StatelessWidget {
@@ -7,18 +6,18 @@ class Prescriptionsentsuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(child: Padding(padding: EdgeInsets.only(bottom: 26, left: 16, right: 16, top:  10), child: Column(
+        body: SafeArea(child: Padding(padding: const EdgeInsets.only(bottom: 26, left: 16, right: 16, top:  10), child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 80),
-        Text('Success!', style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold),),
-        SizedBox(height: 13),
-        Text('Prescription has been sent', style: TextStyle(fontSize: 14,),),
-        Spacer(),
+        const SizedBox(height: 80),
+        const Text('Success!', style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold),),
+        const SizedBox(height: 13),
+        const Text('Prescription has been sent', style: TextStyle(fontSize: 14,),),
+        const Spacer(),
         ElevatedButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Prescriptionsentsuccess()));
+            Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>const Prescriptionsentsuccess()));
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
@@ -27,8 +26,8 @@ class Prescriptionsentsuccess extends StatelessWidget {
               borderRadius: BorderRadius.circular(9),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Okay',
               style: TextStyle(color: Colors.white, fontSize: 18),

@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
-  runApp(AddedAccountSucess());
+  runApp(const AddedAccountSucess());
 }
 
 class AddedAccountSucess extends StatefulWidget {
@@ -17,7 +16,7 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
   String? _selectedValue;
   bool isSelected = false;
   String pin = "";
-  List<int> _enteredPin = [];
+  final List<int> _enteredPin = [];
 
 
   @override
@@ -30,10 +29,10 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset(
                       'assets/images/back.svg',
@@ -41,10 +40,10 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                       height: 15,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       'Withdraw funds',
                       style: TextStyle(
                           fontSize: 20,
@@ -52,20 +51,20 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
             body: Container(
-                padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+                padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
                 child: Align(
                   child: Column(
                     children: [
-                      SizedBox(height: 50),
+                      const SizedBox(height: 50),
                       Container(
                         alignment: Alignment.center,
                         width: MediaQuery.of(context).size.width * 0.55,
-                        child: Align(
+                        child: const Align(
                           child: Text(
                             "Select any of the accounts to withdraw your funds into",
                             textAlign: TextAlign.center,
@@ -75,21 +74,21 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       account(
                           accountNo: "Account 1",
                           accountNumber: "0123456789",
                           bankName: "GTBank"),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       Container(
                         width: MediaQuery.of(context).size.width * 0.50,
                         height: 54,
                         decoration: BoxDecoration(
-                          color: Color(0xFFE2EDFF),
+                          color: const Color(0xFFE2EDFF),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextButton(
@@ -97,7 +96,7 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                             _showPinScreen(context); // Show PIN screen when confirm is clicked
 
                           },
-                          child: Text(
+                          child: const Text(
                             'Add another account',
                             style: TextStyle(
                               color: Colors.blue,
@@ -106,19 +105,19 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         width: double.infinity,
                         height: 54,
                         decoration: BoxDecoration(
-                          color: Color(0xFF3C8AFF),
+                          color: const Color(0xFF3C8AFF),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextButton(
                           onPressed: () {
                             _showPinScreen(context); // Show PIN screen when confirm is clicked
                           },
-                          child: Text(
+                          child: const Text(
                             'Confirm',
                             style: TextStyle(
                               color: Colors.white,
@@ -153,27 +152,27 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                   children: [
                     Text(
                       accountNo,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Row(
                       children: [
                         Text(
                           accountNumber,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.grey,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 3,
                         ),
                         Text(
                           bankName,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 14,
                             color: Colors.grey,
                           ),
@@ -182,12 +181,12 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                     )
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Align(
                   alignment: Alignment.topCenter,
                   child: Column(
                     children: [
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Container(
                         width: 40,
                         height: 40,
@@ -196,7 +195,7 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                           shape: BoxShape.circle,
                         ),
                         child: isSelected
-                            ? Icon(Icons.check, color: Colors.white)
+                            ? const Icon(Icons.check, color: Colors.white)
                             : null,
                       ),
                     ],
@@ -216,24 +215,24 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       builder: (context) {
         return Container(
           height: MediaQuery.of(context).size.height * 0.5,
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Enter PIN',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 width: 163,
                 height: 50,
@@ -257,7 +256,7 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
                   }),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               _buildNumberPad(),
             ],
           ),
@@ -269,17 +268,17 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
   Widget _buildNumberPad() {
     return Expanded(
       child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           childAspectRatio: 2,
         ),
         itemCount: 12,
         itemBuilder: (context, index) {
           if (index == 9) {
-            return SizedBox.shrink();
+            return const SizedBox.shrink();
           } else if (index == 11) {
             return IconButton(
-              icon: Icon(Icons.backspace),
+              icon: const Icon(Icons.backspace),
               onPressed: () {
                 setState(() {
                   if (_enteredPin.isNotEmpty) _enteredPin.removeLast();
@@ -299,7 +298,7 @@ class _AddedAccountSucessScreen extends State<AddedAccountSucess> {
             child: Center(
               child: Text(
                 '$number',
-                style: TextStyle(fontSize: 24),
+                style: const TextStyle(fontSize: 24),
               ),
             ),
           );

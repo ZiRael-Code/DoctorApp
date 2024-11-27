@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(CreditDebitCard());
+  runApp(const CreditDebitCard());
 }
 
 class CreditDebitCard extends StatelessWidget{
+  const CreditDebitCard({super.key});
+
   @override
   Widget build(BuildContext context) {
       return MaterialApp(
@@ -16,10 +18,10 @@ class CreditDebitCard extends StatelessWidget{
                 Container(
                   width: 35,
                   height: 35,
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
+                    color: const Color(0xFFE5E5E5),
                   ),
                   child: SvgPicture.asset(
                     'assets/images/back.svg',
@@ -27,10 +29,10 @@ class CreditDebitCard extends StatelessWidget{
                     height: 15,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                       'Wallet',
                       style: TextStyle(
                         fontSize: 20,
@@ -38,16 +40,16 @@ class CreditDebitCard extends StatelessWidget{
                       ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),
           body: Padding(
-            padding: EdgeInsets.all(15),
+            padding: const EdgeInsets.all(15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 15,),
+                const SizedBox(height: 15,),
                 Stack(children: [
                 Container(
                   decoration: BoxDecoration(
@@ -58,12 +60,12 @@ class CreditDebitCard extends StatelessWidget{
                   child: SvgPicture.asset('assets/images/card.svg', fit: BoxFit.fill,),
                 ),
               Container(
-                padding: EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20),
                 width: double.infinity,
                   height: 90,
                   alignment: Alignment.centerLeft,
                   child:
-              Column(
+              const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 Text(
@@ -85,7 +87,7 @@ class CreditDebitCard extends StatelessWidget{
               ],))
 
                 ],),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -94,22 +96,22 @@ class CreditDebitCard extends StatelessWidget{
                       iconPath: 'assets/images/icons/dashboard/electric.png',
                       actionText: 'Fund wallet'
                   ),
-                  SizedBox(width: 15,),
+                  const SizedBox(width: 15,),
                   quickAction(
                       iconPath: 'assets/images/icons/dashboard/device.png',
                       actionText: 'Withdraw fund'
                   ),
                 ],),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
                 Container(child: 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Recent transactions",
+                    const Text("Recent transactions",
                       style: TextStyle(fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.bold),),
-                    Spacer(),
+                    const Spacer(),
                     ElevatedButton(
                       onPressed: (){
                       },
@@ -118,7 +120,7 @@ class CreditDebitCard extends StatelessWidget{
                           shadowColor: Colors.transparent
 
                       ),
-                      child: Text('See all',
+                      child: const Text('See all',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14,
@@ -129,7 +131,7 @@ class CreditDebitCard extends StatelessWidget{
                   ],
                 ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -190,9 +192,9 @@ class CreditDebitCard extends StatelessWidget{
     return Container(
       width: 150,
       height: 51,
-      padding: EdgeInsets.only(top: 12, left: 10.0, bottom: 12, right: 10),
+      padding: const EdgeInsets.only(top: 12, left: 10.0, bottom: 12, right: 10),
       decoration: BoxDecoration(
-        color: Color(0xFFC4DCFF),
+        color: const Color(0xFFC4DCFF),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Center(
@@ -203,7 +205,7 @@ class CreditDebitCard extends StatelessWidget{
                 width: 27,
                 height: 27,
                 decoration: BoxDecoration(
-                  color: Color(0xFF3C8AFF),
+                  color: const Color(0xFF3C8AFF),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: Center(
@@ -216,9 +218,9 @@ class CreditDebitCard extends StatelessWidget{
                 ),
               ),
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
             Text(actionText,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 10.0,
                   color: Color(0xFF3C8AFF),
               ),),
@@ -235,7 +237,7 @@ class CreditDebitCard extends StatelessWidget{
     required String price
   }) {
     return  Container(
-      padding: EdgeInsets.only(right: 20),
+      padding: const EdgeInsets.only(right: 20),
       child:
       Column(
         children: [
@@ -248,51 +250,51 @@ class CreditDebitCard extends StatelessWidget{
                 children: [
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   Text(
                     type,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                     ),
                   ),
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Column(children: [
               Text(
                 price,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Text(
                 date,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 12,
                 ),
               ),
 
             ],),
           ],),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Container(
             width: 313,
             height: 2,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Color(0x1A2E2E42),
             ),
           ),
-          SizedBox(height: 15,)
+          const SizedBox(height: 15,)
         ],
       ),
     );

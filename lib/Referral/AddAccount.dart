@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(AddedAccount());
+  runApp(const AddedAccount());
 }
 
 class AddedAccount extends StatefulWidget {
@@ -26,20 +25,20 @@ class _AddedAccountSucessScreen extends  State<AddedAccount> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Color(0xFFE5E5E5),
+                      color: const Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
                       width: 8.0,
                       height: 15,),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     alignment: Alignment.center,
                     child:
-                    Text(
+                    const Text(
                       'Add Account',
                       style: TextStyle(
                           fontSize: 20,
@@ -48,7 +47,7 @@ class _AddedAccountSucessScreen extends  State<AddedAccount> {
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
 
                 ],
               ),
@@ -58,33 +57,33 @@ class _AddedAccountSucessScreen extends  State<AddedAccount> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20.0),
+                  const SizedBox(height: 20.0),
                   textField(
                     textType: TextInputType.number,
                     textHeader: 'Account Number',
                     textHint: "Enter account number"
                   ),
 
-                  SizedBox(height: 25.0),
+                  const SizedBox(height: 25.0),
                   textField(
                     textType: TextInputType.number,
                     textHeader: 'Bank name',
                     textHint: "Bank"
                   ),
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
                   Align(
                     child:
                       Container(
                     width: 178,
                     height: 54,
                     decoration: BoxDecoration(
-                      color: Color(0xFFE2EDFF),
+                      color: const Color(0xFFE2EDFF),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
                       onPressed: () {
                       },
-                      child: Text(
+                      child: const Text(
                         'Confirm name',
                         style: TextStyle(
                           color: Color(0xFF3C8AFF),
@@ -115,24 +114,24 @@ class _AddedAccountSucessScreen extends  State<AddedAccount> {
     Text(
 
     textHeader,
-    style: TextStyle(
+    style: const TextStyle(
     fontSize: 16.0,
     ),
     ),
     ),
 
-    SizedBox(height: 15.0),
+    const SizedBox(height: 15.0),
 
     // Account Number TextField
     TextField(
     decoration: InputDecoration(
     hintText: textHint,
-    hintStyle: TextStyle(
+    hintStyle: const TextStyle(
     color: Colors.grey,
     ),
     filled: true,
     fillColor: Colors.grey[300],
-    contentPadding: EdgeInsets.symmetric(
+    contentPadding: const EdgeInsets.symmetric(
     vertical: 15.0, // Height of 50 (including padding)
     horizontal: 10.0,
     ),
@@ -142,7 +141,7 @@ class _AddedAccountSucessScreen extends  State<AddedAccount> {
     ),
     ),
     keyboardType: textType,
-    style: TextStyle(
+    style: const TextStyle(
     fontSize: 16.0,
     ),
     ),
