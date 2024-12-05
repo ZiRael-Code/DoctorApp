@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../components/my_blue_button.dart';
 
 class Onboarding3 extends StatelessWidget {
-  const Onboarding3({super.key});
+  Onboarding3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +12,10 @@ class Onboarding3 extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 40,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: EdgeInsets.only(right: 25),
@@ -28,7 +28,7 @@ class Onboarding3 extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 120,
             ),
             SizedBox(
@@ -38,7 +38,7 @@ class Onboarding3 extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 50,
             ),
             Center(
@@ -47,10 +47,10 @@ class Onboarding3 extends StatelessWidget {
                 scale: 4,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
@@ -66,16 +66,16 @@ class Onboarding3 extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: 25),
               child: GestureDetector(
                 onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage())),
-                child: const MyBlueButton(text: "Continue"),
+                    MaterialPageRoute(builder: (context) => LoginPage())),
+                child: MyBlueButton(text: "Continue"),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 50,
             )
           ],

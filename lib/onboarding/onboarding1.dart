@@ -3,7 +3,7 @@ import 'package:doctor_app/onboarding/onboarding2.dart';
 import 'package:flutter/material.dart';
 
 class Onboarding1 extends StatelessWidget {
-  const Onboarding1({super.key});
+  Onboarding1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +11,10 @@ class Onboarding1 extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 40,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: EdgeInsets.only(right: 25),
@@ -27,7 +27,7 @@ class Onboarding1 extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
             SizedBox(
@@ -37,7 +37,7 @@ class Onboarding1 extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 40,
             ),
             Center(
@@ -46,10 +46,10 @@ class Onboarding1 extends StatelessWidget {
                 scale: 4,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.symmetric(horizontal: 25),
               child: Align(
                 alignment: Alignment.centerLeft,
@@ -65,19 +65,19 @@ class Onboarding1 extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: 25),
               child: GestureDetector(
                   onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Onboarding2(),
+                          builder: (context) => Onboarding2(),
                         ),
                       ),
-                  child: const MyBlueButton(text: "Continue")),
+                  child: MyBlueButton(text: "Continue")),
             ),
-            const SizedBox(
+            SizedBox(
               height: 50,
             )
           ],

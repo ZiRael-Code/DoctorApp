@@ -5,7 +5,7 @@ import '../components/contacts_tile.dart';
 class AddExistingPatient extends StatelessWidget {
   final List<String> filteredContacts;
 
-  const AddExistingPatient({
+  AddExistingPatient({
     super.key,
     required this.filteredContacts,
   });
@@ -19,12 +19,12 @@ class AddExistingPatient extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset("assets/images/patients.png"),
-                  const SizedBox(height: 20),
-                  const Text(
+                  SizedBox(height: 20),
+                  Text(
                     "No patients found",
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
-                  const Text("Click on the search bar to look for patients",
+                  Text("Click on the search bar to look for patients",
                       style: TextStyle(color: Colors.grey, fontSize: 16)),
                 ],
               ),
@@ -55,23 +55,23 @@ class AddExistingPatient extends StatelessWidget {
                                     color: Colors.blue.shade100,
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(12),
+                                    padding: EdgeInsets.all(12),
                                     child: SvgPicture.asset(
                                         "assets/images/checked.svg"),
                                   )),
-                              const SizedBox(height: 30),
+                              SizedBox(height: 30),
                               SizedBox(
                                 width: 156,
                                 height: 45,
                                 child: Text(
                                   'Request sent to $contact',
                                   textAlign: TextAlign.center,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontSize: 16,
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 20),
+                              SizedBox(height: 20),
                               SizedBox(
                                 width: double.infinity,
                                 child: ElevatedButton(
@@ -84,7 +84,7 @@ class AddExistingPatient extends StatelessWidget {
                                   onPressed: () {
                                     Navigator.pop(context); // Close the dialog
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     "Ok, got it",
                                     style: TextStyle(
                                       color: Colors.white,

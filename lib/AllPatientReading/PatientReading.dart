@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../Call_MessagePatient/Chat.dart';
 
 class PatientReading extends StatefulWidget {
-  const PatientReading({super.key});
+  PatientReading({super.key});
 
   @override
   State<PatientReading> createState() => _PatientReadingState();
@@ -28,17 +28,17 @@ class _PatientReadingState extends State<PatientReading>
             Navigator.pop(context);
           },
           child: Container(
-            padding: const EdgeInsets.all(8),
-            decoration: const BoxDecoration(
+            padding: EdgeInsets.all(8),
+            decoration: BoxDecoration(
               color: Color(0xffE5E5E5),
               shape: BoxShape.circle,
             ),
-            child: const Icon(Icons.arrow_back_ios_rounded,
+            child: Icon(Icons.arrow_back_ios_rounded,
                 color: Color(0xff666666)),
           ),
         ),
         backgroundColor: Colors.white,
-        title: const Row(
+        title: Row(
           children: [
             Spacer(),
             Text('Patient Readings'),
@@ -48,18 +48,18 @@ class _PatientReadingState extends State<PatientReading>
       ),
       body: Stack(children: [
         Padding(
-          padding: const EdgeInsets.only(left: 12, right: 12, top: 25),
+          padding: EdgeInsets.only(left: 12, right: 12, top: 25),
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(bottom: 18),
-                padding: const EdgeInsets.all(16.0),
+                margin: EdgeInsets.only(bottom: 18),
+                padding: EdgeInsets.all(16.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12.0),
                   border: Border.all(width: 0.7, color: Colors.black12),
                 ),
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 12.0),
@@ -97,7 +97,7 @@ class _PatientReadingState extends State<PatientReading>
               Column(children: [
                 Container(
                   height: 50,
-                  padding: const EdgeInsets.all(4),
+                  padding: EdgeInsets.all(4),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
@@ -112,18 +112,18 @@ class _PatientReadingState extends State<PatientReading>
                       borderRadius: BorderRadius.circular(30),
                     ),
                     labelColor: Colors.black,
-                    unselectedLabelColor: const Color(0xff4F4F4F),
-                    tabs: const [
+                    unselectedLabelColor: Color(0xff4F4F4F),
+                    tabs: [
                       Tab(text: "Vital readings"),
                       Tab(text: "Drug compliance"),
                     ],
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
               ]),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Flexible(
                 child: TabBarView(
                   controller: _tabController,
@@ -142,7 +142,7 @@ class _PatientReadingState extends State<PatientReading>
             maxChildSize: 0.3, // Maximum height
             builder: (context, scrollController) {
               return Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
@@ -158,7 +158,7 @@ class _PatientReadingState extends State<PatientReading>
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     Container(
                       width: 50,
                       height: 5,
@@ -167,7 +167,7 @@ class _PatientReadingState extends State<PatientReading>
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     Expanded(
                       child: ListView(
                         controller: scrollController,
@@ -178,7 +178,7 @@ class _PatientReadingState extends State<PatientReading>
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (builder) => const Searchpatient()));
+                                      builder: (builder) => Searchpatient()));
                                 },
                                 child: _actionButton(
                                   icon: Icons.phone,
@@ -189,7 +189,7 @@ class _PatientReadingState extends State<PatientReading>
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (builder) => const PrescribeDrugs()));
+                                      builder: (builder) => PrescribeDrugs()));
                                 },
                                 child: _actionButton(
                                   icon: Icons.medical_services,
@@ -200,7 +200,7 @@ class _PatientReadingState extends State<PatientReading>
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (builder) => const Chat()));
+                                      builder: (builder) => Chat()));
                                 },
                                 child: _actionButton(
                                   icon: Icons.message,
@@ -234,10 +234,10 @@ class _PatientReadingState extends State<PatientReading>
             size: 30,
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: 8),
         Text(
           label,
-          style: const TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 12),
         ),
       ],
     );
@@ -245,7 +245,7 @@ class _PatientReadingState extends State<PatientReading>
 }
 
 Widget vital_reading() {
-  return const Expanded(
+  return Expanded(
       child: SingleChildScrollView(
           child: Column(
     children: [
@@ -340,5 +340,5 @@ Widget vital_reading() {
 }
 
 Widget drug_compliance() {
-  return const DrugCompliance();
+  return DrugCompliance();
 }

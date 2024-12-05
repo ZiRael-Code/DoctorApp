@@ -6,7 +6,7 @@ import 'Network.dart';
 import 'Patients.dart';
 
 class MainNavigator extends StatefulWidget {
-  const MainNavigator({super.key});
+  MainNavigator({super.key});
 
   @override
   _MainNavigatorState createState() => _MainNavigatorState();
@@ -23,9 +23,9 @@ class _MainNavigatorState extends State<MainNavigator> {
 
   late final List<Widget> _screens = [
     Dashboard(onItemTapped: _onItemTapped),
-    const Patients(),
-    const Network(),
-    const Account(),
+    Patients(),
+    Network(),
+    Account(),
   ];
 
 
@@ -89,6 +89,6 @@ class _MainNavigatorState extends State<MainNavigator> {
     }
   }
 void main(){
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
       home: MainNavigator()));
 }

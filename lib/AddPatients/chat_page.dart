@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ChatPage extends StatefulWidget {
-  const ChatPage({super.key});
+  ChatPage({super.key});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -19,12 +19,12 @@ class _ChatPageState extends State<ChatPage> {
       ),
       builder: (context) {
         return Container(
-          padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
           child: Column(
             mainAxisSize: MainAxisSize.min, // Keep it minimal height
             children: [
               ListTile(
-                title: const Center(
+                title: Center(
                   child: Text(
                     'View patient information',
                     style: TextStyle(fontSize: 16),
@@ -35,9 +35,9 @@ class _ChatPageState extends State<ChatPage> {
                   // Handle "View patient information" action
                 },
               ),
-              const Divider(), // Divider between options
+              Divider(), // Divider between options
               ListTile(
-                title: const Center(
+                title: Center(
                   child: Text(
                     'Add to prioritized patients',
                     style: TextStyle(fontSize: 16),
@@ -60,10 +60,10 @@ class _ChatPageState extends State<ChatPage> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -78,20 +78,20 @@ class _ChatPageState extends State<ChatPage> {
                           color: Colors.grey.shade300,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.arrow_back),
+                        child: Icon(Icons.arrow_back),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
                     Column(
                       children: [
-                        const Text(
+                        Text(
                           "Janet Okoli",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.bold),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 8,
                         ),
                         Row(
@@ -105,10 +105,10 @@ class _ChatPageState extends State<ChatPage> {
                                 border: Border.all(color: Colors.white),
                               ),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               width: 8,
                             ),
-                            const Text(
+                            Text(
                               "Active now",
                               style:
                                   TextStyle(fontSize: 12, color: Colors.grey),
@@ -127,13 +127,13 @@ class _ChatPageState extends State<ChatPage> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.blue[100]),
                       child: Container(
-                        padding: const EdgeInsets.all(12),
+                        padding: EdgeInsets.all(12),
                         child: SvgPicture.asset(
                           "assets/images/phones.svg",
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 10,
                     ),
                     // Blue dots with click functionality
@@ -147,7 +147,7 @@ class _ChatPageState extends State<ChatPage> {
                           color: Colors.blue[100],
                         ),
                         child: Container(
-                          padding: const EdgeInsets.all(12),
+                          padding: EdgeInsets.all(12),
                           child: SvgPicture.asset(
                             "assets/images/bluedots.svg",
                           ),
@@ -158,10 +158,10 @@ class _ChatPageState extends State<ChatPage> {
                 )
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 30,
             ),
-            const Center(
+            Center(
               child: Text(
                 "Wed 8:12 AM",
                 style: TextStyle(
@@ -170,54 +170,54 @@ class _ChatPageState extends State<ChatPage> {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
             // chat bubbles
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: GreyTextBubble(
                   text: "Hello, i'm Dr Nelson!, How can i help you?"),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: BlueTextBubble(
                   text:
                       "I am not feeling too well. I woke up with a fever this morning. What should i do?"),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: GreyTextBubble(
                 text:
                     "Oh, I see. Sorry about that. Please click on the blue icon at the bottom right of your screen to select your symptoms.",
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
-            const Align(
+            Align(
                 alignment: Alignment.centerRight,
                 child: BlueTextBubble(text: "Okay")),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: GreyTextBubble(text: "Use these medications"),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 10),
                 child: Container(
                   width: 233,
                   height: 40,
@@ -229,10 +229,10 @@ class _ChatPageState extends State<ChatPage> {
                     child: Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(12),
+                          padding: EdgeInsets.all(12),
                           child: SvgPicture.asset("assets/images/pills.svg"),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 0,
                         ),
                         Text(
@@ -246,7 +246,7 @@ class _ChatPageState extends State<ChatPage> {
                 ),
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -259,7 +259,7 @@ class _ChatPageState extends State<ChatPage> {
                   ),
                   child: Row(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: TextField(
                           decoration: InputDecoration(
                             hintText: "Type a message...",
@@ -274,37 +274,37 @@ class _ChatPageState extends State<ChatPage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: SvgPicture.asset("assets/images/pin.svg"),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Image.asset("assets/images/mic.png"),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 8,
                       )
                     ],
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 15,
                 ),
                 Container(
                   width: 51,
                   height: 51,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.blue,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.add,
                     color: Colors.white,
                   ),
                 )
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 40,
             )
           ],

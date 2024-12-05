@@ -3,17 +3,17 @@ import 'package:doctor_app/components/my_selected.dart';
 import 'package:flutter/material.dart';
 
 class SetAppointmentTimes extends StatelessWidget {
-  const SetAppointmentTimes({super.key});
+  SetAppointmentTimes({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: EdgeInsets.all(25),
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 40,
               ),
               Row(
@@ -23,9 +23,9 @@ class SetAppointmentTimes extends StatelessWidget {
                     width: 45,
                     decoration: BoxDecoration(
                         color: Colors.grey.shade300, shape: BoxShape.circle),
-                    child: const Icon(Icons.arrow_back),
+                    child: Icon(Icons.arrow_back),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 110,
                   ),
                   Center(
@@ -36,10 +36,10 @@ class SetAppointmentTimes extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 40,
               ),
-              const Column(
+              Column(
                 children: [
                   Text(
                     "Set appointment",
@@ -57,13 +57,13 @@ class SetAppointmentTimes extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Align(
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Specialzation",
@@ -71,7 +71,7 @@ class SetAppointmentTimes extends StatelessWidget {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 10,
                   ),
                   Container(
@@ -83,7 +83,7 @@ class SetAppointmentTimes extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.only(left: 10),
                           child: Text(
                             "e.g cardiologist",
@@ -92,19 +92,19 @@ class SetAppointmentTimes extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.arrow_drop_down),
+                          icon: Icon(Icons.arrow_drop_down),
                         )
                       ],
                     ),
                   )
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 15,
               ),
 
               // add available times
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,9 +143,9 @@ class SetAppointmentTimes extends StatelessWidget {
                   ],
                 ),
               ),
-              const Spacer(),
-              const MyBlueButton(text: "Continue"),
-              const SizedBox(
+              Spacer(),
+              MyBlueButton(text: "Continue"),
+              SizedBox(
                 height: 30,
               ),
             ],

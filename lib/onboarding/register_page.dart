@@ -1,10 +1,11 @@
 import 'package:doctor_app/components/my_blue_button.dart';
+import 'package:doctor_app/onboarding/set_password.dart';
 import 'package:flutter/material.dart';
 
 import '../components/my_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -17,13 +18,13 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 40,
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Register",
@@ -33,10 +34,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 30,
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "First Name",
@@ -45,17 +46,17 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "First Name",
                   obscuretext: false,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Last Name",
@@ -64,17 +65,17 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "Last Name",
                   obscuretext: false,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Phone Number",
@@ -83,17 +84,17 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "Phone Number",
                   obscuretext: false,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Email",
@@ -102,20 +103,26 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "Email Address",
                   obscuretext: false,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
-                const MyBlueButton(
+                 GestureDetector(
+                   onTap: (){
+                     // Navigate to login page
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => SetPassword()));
+                   },
+                  child: MyBlueButton(
                   text: "Register",
                 ),
-                const SizedBox(
+                ),
+                SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -128,13 +135,13 @@ class _RegisterPageState extends State<RegisterPage> {
                         thickness: 1,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 8,
                     ),
-                    const Text(
+                    Text(
                       "Or register with",
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 8,
                     ),
                     SizedBox(
@@ -146,7 +153,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     )
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -156,29 +163,29 @@ class _RegisterPageState extends State<RegisterPage> {
                       "assets/images/facebook.png",
                       scale: 4,
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10),
                     Image.asset(
                       "assets/images/google.png",
                       scale: 4,
                     ),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account?"),
-                    const SizedBox(
+                    Text("Already have an account?"),
+                    SizedBox(
                       width: 4,
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage())),
-                      child: const Text(
+                              builder: (context) => RegisterPage())),
+                      child: Text(
                         "Login here",
                         style: TextStyle(color: Colors.blue),
                       ),

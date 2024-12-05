@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'CallPatient.dart';
 
 class Chat extends StatefulWidget {
-  const Chat({super.key});
+  Chat({super.key});
   @override
   _ChatState createState() => _ChatState();
 }
@@ -24,21 +24,21 @@ class _ChatState extends  State<Chat> {
                   Container(
                     width: 35,
                     height: 35,
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E5E5),
+                      color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
                       width: 8.0,
                       height: 15,),
                   ),
-                  const SizedBox(width: 25,),
+                  SizedBox(width: 25,),
                   Align(
                     alignment: Alignment.centerLeft,
                     child:
                     Column(children: [
-                      const Text('Dr. Nelson Yang', style: TextStyle(fontSize: 18),),
+                      Text('Dr. Nelson Yang', style: TextStyle(fontSize: 18),),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,7 +47,7 @@ class _ChatState extends  State<Chat> {
                             alignment: Alignment.centerLeft,
                             child:
                             Container(
-                              decoration: const BoxDecoration(
+                              decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Color(0xFF218130)
                               ),
@@ -56,8 +56,8 @@ class _ChatState extends  State<Chat> {
                             ),
                           ),
 
-                          const SizedBox(width: 7,),
-                          const Text(
+                          SizedBox(width: 7,),
+                          Text(
                               'Active now',
                               style: TextStyle(
                                 color: Color(0xff2E2E42),
@@ -65,7 +65,7 @@ class _ChatState extends  State<Chat> {
                               ))],
                       ),
                     ],),),
-                  const Spacer(),
+                  Spacer(),
                   InkWell(
                     onTap: (){
                       print("lol works ");
@@ -73,22 +73,22 @@ class _ChatState extends  State<Chat> {
                     },
                     child:
                   Container(
-                    padding: const EdgeInsets.all(14),
-                    decoration: const BoxDecoration(
+                    padding: EdgeInsets.all(14),
+                    decoration: BoxDecoration(
                         color: Color(0xffE2EDFF),
                         shape: BoxShape.circle
                     ),
-                    child: const Icon(Icons.call, color: Colors.blue,),
+                    child: Icon(Icons.call, color: Colors.blue,),
                   ),
                   ),
-                  const SizedBox(width: 12,),
+                  SizedBox(width: 12,),
                   Container(
-                    padding: const EdgeInsets.all(14),
-                    decoration: const BoxDecoration(
+                    padding: EdgeInsets.all(14),
+                    decoration: BoxDecoration(
                         color: Color(0xffE2EDFF),
                         shape: BoxShape.circle
                     ),
-                    child: const Icon(Icons.more_horiz_rounded, color: Colors.blue,),
+                    child: Icon(Icons.more_horiz_rounded, color: Colors.blue,),
                   )
                 ],
               ),
@@ -97,7 +97,7 @@ class _ChatState extends  State<Chat> {
             body:
 
             Container(
-              padding: const EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
+              padding: EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
               child:
               Column(
                 children: [
@@ -107,9 +107,9 @@ class _ChatState extends  State<Chat> {
                         child:
                         Column(
                             children: [
-                              const SizedBox(height: 20),
-                              const Text("Wed 8:21 AM"),
-                              const SizedBox(height: 70),
+                              SizedBox(height: 20),
+                              Text("Wed 8:21 AM"),
+                              SizedBox(height: 70),
 
                               incomingMessage(
                                   text: 'Hello, I’m Dr. Nelson! 👋How can I help you?'),
@@ -126,12 +126,12 @@ class _ChatState extends  State<Chat> {
                                 alignment: Alignment.centerLeft,
                                 child:
                                 Container(
-                                  padding: const EdgeInsets.all(8),
+                                  padding: EdgeInsets.all(8),
                                   decoration: BoxDecoration(
-                                    color: const Color(0x331BD939).withOpacity(0.080),
+                                    color: Color(0x331BD939).withOpacity(0.080),
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
-                                      color: const Color(0x4D218130).withOpacity(0.070),
+                                      color: Color(0x4D218130).withOpacity(0.070),
                                       width: 2, // Border width
                                     ),
                                   ),
@@ -139,16 +139,16 @@ class _ChatState extends  State<Chat> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       SvgPicture.asset('assets/images/pill1.svg'),
-                                      const SizedBox(width: 8),
+                                      SizedBox(width: 8),
                                       // Text content
-                                      const Text(
+                                      Text(
                                         '12/06/2022 - ',
                                         style: TextStyle(
                                           color: Color(0xff218130),
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      const Text(
+                                      Text(
                                         'Prescriptions',
                                         style: TextStyle(
                                           color: Color(0xff218130),
@@ -163,7 +163,7 @@ class _ChatState extends  State<Chat> {
                             ]),
                       )
                   ),
-                  const Spacer(),
+                  Spacer(),
 
                   Row(
 
@@ -173,19 +173,19 @@ class _ChatState extends  State<Chat> {
                         child: TextField(
                           decoration: InputDecoration(
                             hintText: 'Type a message...',
-                            contentPadding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                            contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                             filled: true,
                             fillColor: Colors.white,
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(40),
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0x66BFBFBF),
                                 width: 0.5,
                               ),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(40),
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0x66BFBFBF),
                                 width: 0.5,
                               ),
@@ -196,12 +196,12 @@ class _ChatState extends  State<Chat> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   IconButton(
-                                    icon: const Icon(Icons.attach_file, color: Colors.grey),
+                                    icon: Icon(Icons.attach_file, color: Colors.grey),
                                     onPressed: () {
                                     },
                                   ),
                                   IconButton(
-                                    icon: const Icon(Icons.mic, color: Colors.grey),
+                                    icon: Icon(Icons.mic, color: Colors.grey),
                                     onPressed: () {
                                     },
                                   ),
@@ -212,16 +212,16 @@ class _ChatState extends  State<Chat> {
                         ),
                       ),
 
-                      const SizedBox(width: 10),
+                      SizedBox(width: 10),
 
                       Container(
                         width: 51,
                         height: 51,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: Colors.blue,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(Icons.add, color: Colors.white),
+                        child: Icon(Icons.add, color: Colors.white),
                       ),
                     ],
                   ),
@@ -247,12 +247,12 @@ class _ChatState extends  State<Chat> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ConstrainedBox(
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 260,
                   ),
                   child: Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: const BoxDecoration(
+                    padding: EdgeInsets.all(16),
+                    decoration: BoxDecoration(
                       color: Color(0xFFF2F4F5),
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20),
@@ -262,7 +262,7 @@ class _ChatState extends  State<Chat> {
                     ),
                     child: Text(
                       text,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 14,
                       ),
                       softWrap: true, // Ensure the text wraps when needed
@@ -272,7 +272,7 @@ class _ChatState extends  State<Chat> {
               ],
             ),
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
         ],
       ),
     );
@@ -289,13 +289,13 @@ class _ChatState extends  State<Chat> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ConstrainedBox(
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 301,
               ),
               child:
               Container(
-                padding: const EdgeInsets.all(16),
-                decoration: const BoxDecoration(
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
                   color: Color(0xFF3C8AFF),
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
@@ -305,7 +305,7 @@ class _ChatState extends  State<Chat> {
                 ),
                 child: Text(
                   text,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
                     color: Colors.white,
                   ),
@@ -315,7 +315,7 @@ class _ChatState extends  State<Chat> {
           ],
         ),
       ),
-      const SizedBox(height: 20,),
+      SizedBox(height: 20,),
     ]
     );
   }
@@ -323,19 +323,19 @@ class _ChatState extends  State<Chat> {
   void showCallMenuBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(16), // Rounded top corners for the bottom sheet
         ),
       ),
       builder: (BuildContext sheetContext) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min, // Wrap content to avoid full height
             children: [
               // Title
-              const Text(
+              Text(
                 "Call",
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -343,7 +343,7 @@ class _ChatState extends  State<Chat> {
                   fontSize: 18,
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               // Voice Call and Video Call Buttons
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -352,19 +352,19 @@ class _ChatState extends  State<Chat> {
                   Container(
                     width: 86,
                     height: 86,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xffE2EDFF),
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.call,
                         color: Colors.blue,
                         size: 46,
                       ),
                       onPressed: () {
                         // Handle voice call action
-                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> const CallingUi())); // Close the bottom sheet
+                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> CallingUi())); // Close the bottom sheet
                       },
                     ),
                   ),
@@ -372,19 +372,19 @@ class _ChatState extends  State<Chat> {
                   Container(
                     width: 86,
                     height: 86,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Color(0xffE2EDFF),
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.video_call,
                         color: Colors.blue,
                         size: 46,
                       ),
                       onPressed: () {
                         // Handle video call action
-                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> const VideoCalling())); // Close the bottom sheet// Close the bottom sheet
+                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VideoCalling())); // Close the bottom sheet// Close the bottom sheet
                       },
                     ),
                   ),

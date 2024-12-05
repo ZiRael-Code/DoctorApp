@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class UploadIdCard extends StatefulWidget {
-  const UploadIdCard({super.key});
+  UploadIdCard({super.key});
 
   @override
   State<UploadIdCard> createState() => _UploadIdCardState();
@@ -28,7 +28,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const UploadIdCardValidator(),
+          builder: (context) => UploadIdCardValidator(),
         ),
       );
     }
@@ -39,11 +39,11 @@ class _UploadIdCardState extends State<UploadIdCard> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: EdgeInsets.all(25),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 60,
                 ),
                 Center(
@@ -53,21 +53,21 @@ class _UploadIdCardState extends State<UploadIdCard> {
                         "assets/images/Frame 1308.png",
                         width: 65,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 60,
                       ),
-                      const Text(
+                      Text(
                         "Upload ID Card",
                         style: TextStyle(
                             fontSize: 28, fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 50,
                       ),
                       DottedBorder(
                         color: Colors.grey.withOpacity(0.70),
-                        radius: const Radius.circular(19),
-                        dashPattern: const [8, 6],
+                        radius: Radius.circular(19),
+                        dashPattern: [8, 6],
                         borderType: BorderType.RRect,
                         strokeWidth: 2,
                         child: Column(
@@ -79,7 +79,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
                               height: 230,
                               child: Column(
                                 children: [
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 50,
                                   ),
                                   _selectedImage != null
@@ -91,19 +91,19 @@ class _UploadIdCardState extends State<UploadIdCard> {
                                         )
                                       : Image.asset(
                                           "assets/images/filelogo.png"),
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 30,
                                   ),
-                                  const Text(
+                                  Text(
                                     "Accepted formats: .jpg, .png",
                                     style: TextStyle(color: Colors.grey),
                                   ),
-                                  const SizedBox(
+                                  SizedBox(
                                     height: 20,
                                   ),
                                   Container(
                                     height: 55,
-                                    padding: const EdgeInsets.only(
+                                    padding: EdgeInsets.only(
                                         left: 50,
                                         right: 50,
                                         top: 10,
@@ -114,7 +114,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
                                             BorderRadius.circular(12)),
                                     child: TextButton(
                                       onPressed: _pickImage,
-                                      child: const Text(
+                                      child: Text(
                                         "Upload ID",
                                         style: TextStyle(
                                           color: Colors.white,
@@ -132,13 +132,13 @@ class _UploadIdCardState extends State<UploadIdCard> {
                     ],
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 50,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Liscence Type",
@@ -146,7 +146,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
                             fontWeight: FontWeight.bold, fontSize: 14),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 10,
                     ),
                     Container(
@@ -158,7 +158,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Padding(
+                          Padding(
                             padding: EdgeInsets.only(left: 10),
                             child: Text(
                               "e.g basic or advanced",
@@ -167,24 +167,24 @@ class _UploadIdCardState extends State<UploadIdCard> {
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(Icons.arrow_drop_down),
+                            icon: Icon(Icons.arrow_drop_down),
                           )
                         ],
                       ),
                     )
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 40,
                 ),
                 GestureDetector(
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const UploadIdCardValidator(),
+                      builder: (context) => UploadIdCardValidator(),
                     ),
                   ),
-                  child: const MyBlueButton(text: "Continue"),
+                  child: MyBlueButton(text: "Continue"),
                 )
               ],
             ),

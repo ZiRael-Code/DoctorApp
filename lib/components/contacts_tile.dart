@@ -5,7 +5,7 @@ class ContactsTile extends StatelessWidget {
   final String phonenumber;
   final VoidCallback onAddPatient; // Callback function
 
-  const ContactsTile({
+  ContactsTile({
     super.key,
     required this.name,
     required this.phonenumber,
@@ -17,21 +17,21 @@ class ContactsTile extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 width: 50,
                 height: 50,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black,
                 ),
                 child: Center(
                   child: Text(
                     name[0],
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -41,18 +41,18 @@ class ContactsTile extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       name,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 2),
+                  SizedBox(height: 2),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -64,7 +64,7 @@ class ContactsTile extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: 10),
               Container(
                 width: 79,
                 height: 27,
@@ -74,7 +74,7 @@ class ContactsTile extends StatelessWidget {
                 ),
                 child: TextButton(
                   onPressed: onAddPatient, // Trigger the callback
-                  child: const Text(
+                  child: Text(
                     "Add Patient",
                     style: TextStyle(
                       color: Colors.white,
@@ -85,7 +85,7 @@ class ContactsTile extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
           SizedBox(
             width: 350,
             child: Divider(

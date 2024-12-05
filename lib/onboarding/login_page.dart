@@ -5,7 +5,7 @@ import 'package:doctor_app/onboarding/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -18,11 +18,11 @@ class _LoginPageState extends State<LoginPage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 60,
                 ),
                 Center(
@@ -31,12 +31,12 @@ class _LoginPageState extends State<LoginPage> {
                     scale: 4,
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 25,
                 ),
                 Column(
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Welcome",
@@ -46,10 +46,10 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Username",
@@ -58,17 +58,17 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
-                    const MyTextfield(
+                    MyTextfield(
                       hinttext: "Username",
                       obscuretext: false,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 10,
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Password",
@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 10,
                     ),
                     MyTextfield(
@@ -94,10 +94,10 @@ class _LoginPageState extends State<LoginPage> {
                             : Icons.visibility_off),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 15,
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         "Forgot passowrd",
@@ -107,22 +107,22 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     GestureDetector(
                         onTap: () => Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const MainNavigator())),
-                        child: const MyBlueButton(text: "Login")),
-                    const SizedBox(
+                                builder: (context) => MainNavigator())),
+                        child: MyBlueButton(text: "Login")),
+                    SizedBox(
                       height: 20,
                     ),
-                    const Center(
+                    Center(
                       child: Text("Or login with"),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                   ],
@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                           "assets/images/facebook.png",
                           scale: 4,
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         Image.asset(
                           "assets/images/google.png",
                           scale: 4,
@@ -146,22 +146,22 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 30,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account yet?"),
-                    const SizedBox(
+                    Text("Don't have an account yet?"),
+                    SizedBox(
                       width: 4,
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage())),
-                      child: const Text(
+                              builder: (context) => RegisterPage())),
+                      child: Text(
                         "Register here",
                         style: TextStyle(color: Colors.blue),
                       ),

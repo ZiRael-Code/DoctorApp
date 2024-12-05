@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PrescribeDrugsAddDrugs extends StatelessWidget {
-  const PrescribeDrugsAddDrugs({super.key});
+  PrescribeDrugsAddDrugs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +16,20 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
               Container(
                 width: 35,
                 height: 35,
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: const Color(0xFFE5E5E5),
+                  color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              const Spacer(),
+              Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                const Text(
+                Text(
                   'Prescribe drugs',
                   style: TextStyle(
                       fontSize: 20,
@@ -38,13 +38,13 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
 
             ],
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: EdgeInsets.all(12),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -89,14 +89,14 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
               maxLength: 4,
               leftIcon: false,
             ),
-            const SizedBox(height: 10,),
+            SizedBox(height: 10,),
 
                 Align(
                   child:
                 Container(
-                  decoration: BoxDecoration(color: const Color(0xffE2EDFF), borderRadius: BorderRadius.circular(10)),
-                  padding: const EdgeInsets.all(10),
-                  child: const Row(
+                  decoration: BoxDecoration(color: Color(0xffE2EDFF), borderRadius: BorderRadius.circular(10)),
+                  padding: EdgeInsets.all(10),
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -108,10 +108,10 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
                   ),
                   ),
             ),
-            const Spacer(),
+            Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>const PrescribeDrugsViewAll()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>PrescribeDrugsViewAll()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -120,7 +120,7 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Continue',
@@ -145,13 +145,13 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontSize: 16),),
-        const SizedBox(height: 10,),
+        Text(label, style: TextStyle(fontSize: 16),),
+        SizedBox(height: 10,),
 
         TextField(
           decoration: InputDecoration(
             hintText: hint,
-            hintStyle: const TextStyle(color: Colors.black26),
+            hintStyle: TextStyle(color: Colors.black26),
             filled: true,
             fillColor: Colors.grey[200], // Light gray background
             border: OutlineInputBorder(
@@ -176,19 +176,19 @@ class PrescribeDrugsAddDrugs extends StatelessWidget {
               ),
             ),
             suffixIcon: leftIcon
-                ? const Icon(
+                ? Icon(
               Icons.keyboard_arrow_down_sharp,
               color: Colors.black45,
             )
                 : null, // Optional suffix icon
-            constraints: const BoxConstraints(
+            constraints: BoxConstraints(
               maxWidth: 331, // Set the fixed width for the TextField
             ),
           ),
           maxLines: maxLength, // Ensures single-line input
         ),
 
-        const SizedBox(height: 15,), // Additional vertical space between fields
+        SizedBox(height: 15,), // Additional vertical space between fields
       ],
     );
   }
@@ -205,9 +205,9 @@ inputField2({
     children: [
       Text(
         label,
-        style: const TextStyle(fontSize: 16),
+        style: TextStyle(fontSize: 16),
       ),
-      const SizedBox(height: 10),
+      SizedBox(height: 10),
       Container(
         width: width, // Set the fixed width
         decoration: BoxDecoration(
@@ -225,7 +225,7 @@ inputField2({
               child: TextField(
                 decoration: InputDecoration(
                   hintText: hint,
-                  hintStyle: const TextStyle(color: Colors.black26),
+                  hintStyle: TextStyle(color: Colors.black26),
                   border: InputBorder.none, // Remove default TextField border
                   contentPadding: EdgeInsets.symmetric(
                     vertical: 14,
@@ -235,7 +235,7 @@ inputField2({
               ),
             ),
             if (leftIcon) // Optionally display the suffix icon
-              const Padding(
+              Padding(
                 padding: EdgeInsets.only(right: 8.0),
                 child: Icon(
                   Icons.keyboard_arrow_down_sharp,
@@ -245,7 +245,7 @@ inputField2({
           ],
         ),
       ),
-      const SizedBox(height: 15), // Additional vertical space between fields
+      SizedBox(height: 15), // Additional vertical space between fields
     ],
   );
 }

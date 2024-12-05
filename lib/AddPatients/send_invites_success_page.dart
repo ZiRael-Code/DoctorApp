@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SendInvitesSuccessPage extends StatelessWidget {
-  const SendInvitesSuccessPage({super.key});
+  SendInvitesSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
               Row(
                 children: [
                   GestureDetector(
@@ -21,10 +21,10 @@ class SendInvitesSuccessPage extends StatelessWidget {
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -33,8 +33,8 @@ class SendInvitesSuccessPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 100),
-                  const Center(
+                  SizedBox(width: 100),
+                  Center(
                     child: Text(
                       "Success",
                       style: TextStyle(
@@ -45,10 +45,10 @@ class SendInvitesSuccessPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 120,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 260,
                 height: 71,
                 child: Text(
@@ -59,9 +59,9 @@ class SendInvitesSuccessPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
-              const MyBlueButton(text: "Done"),
-              const SizedBox(
+              Spacer(),
+              MyBlueButton(text: "Done"),
+              SizedBox(
                 height: 30,
               )
             ],

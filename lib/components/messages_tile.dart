@@ -7,7 +7,7 @@ class MessagesTile extends StatelessWidget {
   final String status;
   final VoidCallback onTap;
 
-  const MessagesTile({
+  MessagesTile({
     super.key,
     required this.name,
     required this.imagePath,
@@ -50,7 +50,7 @@ class MessagesTile extends StatelessWidget {
               Text(
                 name,
                 style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               Container(
                 child: unreadCount > 0
@@ -59,7 +59,7 @@ class MessagesTile extends StatelessWidget {
                         backgroundColor: Colors.blue,
                         child: Text(
                           "$unreadCount",
-                          style: const TextStyle(
+                          style: TextStyle(
                               color: Colors.white, fontSize: 12),
                         ),
                       )
@@ -69,7 +69,7 @@ class MessagesTile extends StatelessWidget {
               )
             ],
           ),
-          subtitle: const Padding(
+          subtitle: Padding(
             padding: EdgeInsets.only(top: 5),
             child: Text(
               "After taking the prescribed medications...",
@@ -91,7 +91,7 @@ class MessagesTile extends StatelessWidget {
 class MessageDetailsPage extends StatelessWidget {
   final String contactName;
 
-  const MessageDetailsPage({super.key, required this.contactName});
+  MessageDetailsPage({super.key, required this.contactName});
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +99,7 @@ class MessageDetailsPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(contactName),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
       ),

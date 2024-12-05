@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 
 class AddAPatient extends StatefulWidget {
-  const AddAPatient({super.key});
+  AddAPatient({super.key});
 
   @override
   State<AddAPatient> createState() => _AddAPatientState();
@@ -67,10 +67,10 @@ class _AddAPatientState extends State<AddAPatient>
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
               Row(
                 children: [
                   GestureDetector(
@@ -78,10 +78,10 @@ class _AddAPatientState extends State<AddAPatient>
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -90,8 +90,8 @@ class _AddAPatientState extends State<AddAPatient>
                       ),
                     ),
                   ),
-                  const SizedBox(width: 70),
-                  const Center(
+                  SizedBox(width: 70),
+                  Center(
                     child: Text(
                       "Add a patient",
                       style: TextStyle(
@@ -102,14 +102,14 @@ class _AddAPatientState extends State<AddAPatient>
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Expanded(
                 child: Column(
                   children: [
-                    const SizedBox(height: 35),
+                    SizedBox(height: 35),
                     Container(
                       height: 50,
-                      padding: const EdgeInsets.all(4),
+                      padding: EdgeInsets.all(4),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
@@ -124,19 +124,19 @@ class _AddAPatientState extends State<AddAPatient>
                           borderRadius: BorderRadius.circular(30),
                         ),
                         labelColor: Colors.black,
-                        unselectedLabelColor: const Color(0xff4F4F4F),
-                        tabs: const [
+                        unselectedLabelColor: Color(0xff4F4F4F),
+                        tabs: [
                           Tab(text: "Add existing patient"),
                           Tab(text: "Invite through link"),
                         ],
                       ),
                     ),
-                    const SizedBox(height: 40),
+                    SizedBox(height: 40),
                     // Only show the search bar for the first tab
                     if (_tabController.index == 0)
                       Container(
                         height: 50,
-                        padding: const EdgeInsets.all(4),
+                        padding: EdgeInsets.all(4),
                         width: double.infinity,
                         decoration: BoxDecoration(
                           color: Colors.grey[200],
@@ -148,14 +148,14 @@ class _AddAPatientState extends State<AddAPatient>
                             hintText: "Patient name or Phone number",
                             hintStyle: TextStyle(
                                 fontSize: 14, color: Colors.grey[400]),
-                            prefixIcon: const Icon(Icons.search),
+                            prefixIcon: Icon(Icons.search),
                             prefixIconColor: Colors.grey[400],
                             enabledBorder: InputBorder.none,
                             border: InputBorder.none,
                           ),
                         ),
                       ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
                     Expanded(
                       child: TabBarView(
                         controller: _tabController,
@@ -163,7 +163,7 @@ class _AddAPatientState extends State<AddAPatient>
                           Center(
                               child: AddExistingPatient(
                                   filteredContacts: filteredContacts)),
-                          const Center(child: InviteThroughLink()),
+                          Center(child: InviteThroughLink()),
                         ],
                       ),
                     ),

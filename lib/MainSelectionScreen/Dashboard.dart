@@ -7,7 +7,7 @@ import '../Network1/PersonalMinistore.dart';
 
 class Dashboard extends StatefulWidget {
   final void Function(int index) onItemTapped;
-  const Dashboard({super.key,
+  Dashboard({super.key,
     required this.onItemTapped});
 
   @override
@@ -17,21 +17,21 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   List<Map<String, dynamic>> show_notification = [
     {
-      'icon': const Icon(
+      'icon': Icon(
         Icons.message,
         color: Colors.blue,
       ),
       'text': "You have a new message from Alexander..."
     },
     {
-      'icon': const Icon(
+      'icon': Icon(
         Icons.local_pharmacy,
         color: Colors.blue,
       ),
       'text': 'Your malaria drugs have been exhausted',
     },
     {
-      'icon': const Icon(Icons.devices, color: Colors.blue),
+      'icon': Icon(Icons.devices, color: Colors.blue),
       'text': 'Your device is ready for pickup',
     },
   ];
@@ -61,7 +61,7 @@ class _DashboardState extends State<Dashboard> {
                     widget.onItemTapped(3);
                   });
                 },
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage('assets/images/dr.png'),
               )),
@@ -85,18 +85,18 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ],
             ),
-            const Spacer(),
+            Spacer(),
             GestureDetector(child: SvgPicture.asset('ass')
                 // onTap: (){
                 //   Navigator.push(context, MaterialPageRoute(builder:
                 //       (context) => Community()));
                 // },
                 ),
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
             Icon(Icons.wallet_outlined, size: getFontSize(29),),
-            const SizedBox(width: 10,),
+            SizedBox(width: 10,),
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
@@ -117,7 +117,7 @@ class _DashboardState extends State<Dashboard> {
         child: Column(
           children: [
             Padding(
-                padding: const EdgeInsets.all(14),
+                padding: EdgeInsets.all(14),
                 child: Column(
                     children: [
                   Column(
@@ -126,8 +126,8 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Center(
                     child:
-                 isCollaps ? buildNotificationList(const Stack(children: []))
-                            : buildNotificationList(const Column(children: [])),)
+                 isCollaps ? buildNotificationList(Stack(children: []))
+                            : buildNotificationList(Column(children: [])),)
                   ],
                   ),
                   Row(
@@ -140,7 +140,7 @@ class _DashboardState extends State<Dashboard> {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      const Spacer(),
+                      Spacer(),
                       TextButton(
                           onPressed: () {},
                           child: AutoSizeText('See all',
@@ -150,7 +150,7 @@ class _DashboardState extends State<Dashboard> {
                               )))
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
                   SingleChildScrollView(
@@ -166,8 +166,8 @@ class _DashboardState extends State<Dashboard> {
                             hba1c: '42mmol/mol,',
                             ihra: '5.7% ...',
                             regularity: 'irregular',
-                            regularityColor: const Color(0xffFF8E3C),
-                            action: MaterialPageRoute(builder: (builder)=> const PatientReading())
+                            regularityColor: Color(0xffFF8E3C),
+                            action: MaterialPageRoute(builder: (builder)=> PatientReading())
                         ),
                         patiencte_reading(
                             name: 'Salami Adebayo',
@@ -178,14 +178,14 @@ class _DashboardState extends State<Dashboard> {
                             hba1c: '42mmol/mol,',
                             ihra: '5.7% ...',
                             regularity: 'irregular',
-                            regularityColor: const Color(0xffFF8E3C),
-                            action: MaterialPageRoute(builder: (builder)=> const PatientReading())
+                            regularityColor: Color(0xffFF8E3C),
+                            action: MaterialPageRoute(builder: (builder)=> PatientReading())
                         ),
 
                       ],
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 14,
                   ),
                   Align(
@@ -201,14 +201,14 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ])),
             Padding(
-                padding: const EdgeInsets.only(left: 5, right: 5),
+                padding: EdgeInsets.only(left: 5, right: 5),
                 child: Container(
-                  padding: const EdgeInsets.only(left: 1.5, right: 1.5),
+                  padding: EdgeInsets.only(left: 1.5, right: 1.5),
                   width: double.infinity,
                   decoration: BoxDecoration(color: Colors.grey[300]),
                   child: Column(
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         height: 3,
                       ),
                       network_update(
@@ -220,7 +220,7 @@ class _DashboardState extends State<Dashboard> {
                           text:
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                           imageList: [],
-                          action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
                           ,context: context
                       ),
                       network_update(
@@ -233,7 +233,7 @@ class _DashboardState extends State<Dashboard> {
                               "We have new devices to measure vitals in stock.",
                           imageList: [
                             "assets/images/doc.png"],
-                          action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
                           ,context: context
                       ),
                       network_update(
@@ -245,7 +245,7 @@ class _DashboardState extends State<Dashboard> {
                           text:
                           "We have restocked our pharmacy and new drugs are now available for sale.",
                           imageList: [],
-                          action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
                           ,context: context
 
                       ),
@@ -265,7 +265,7 @@ class _DashboardState extends State<Dashboard> {
                             "assets/images/doc.png",
                             "assets/images/doc.png"
                           ],
-                          action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                          action: MaterialPageRoute(builder: (builder)=> Ministore())
                           ,context: context
                       ),
 
@@ -298,7 +298,7 @@ class _DashboardState extends State<Dashboard> {
     } else if (layout is Column) {
       return Column(children: notificationWidgets);
     } else {
-      return const SizedBox();
+      return SizedBox();
     }
   }
 
@@ -350,8 +350,8 @@ class _DashboardState extends State<Dashboard> {
               : double.infinity
 
         : double.infinity,
-      margin: const EdgeInsets.only(bottom: 10,),
-      padding: const EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
+      margin: EdgeInsets.only(bottom: 10,),
+      padding: EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
@@ -360,7 +360,7 @@ class _DashboardState extends State<Dashboard> {
             color: Colors.grey.withOpacity(0.2),
             spreadRadius: 2,
             blurRadius: 8,
-            offset: const Offset(0, 4),
+            offset: Offset(0, 4),
           ),
         ],
       ),
@@ -372,7 +372,7 @@ class _DashboardState extends State<Dashboard> {
             width: 35,
             height: 35,
             decoration:
-                const BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
+                BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
             child: icon,
           ),
           SizedBox(width: w * 0.04,),
@@ -386,8 +386,8 @@ class _DashboardState extends State<Dashboard> {
                 overflow: TextOverflow.ellipsis),
           ),
           ),
-          const Spacer(),
-          const Align(
+          Spacer(),
+          Align(
             alignment: Alignment.centerRight,
           child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue),
           )
@@ -422,9 +422,9 @@ class _DashboardState extends State<Dashboard> {
       Navigator.push(context, action)
     },
         child: Container(
-      margin: const EdgeInsets.only(right: 15),
+      margin: EdgeInsets.only(right: 15),
       width: w * 0.80,
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
@@ -434,7 +434,7 @@ class _DashboardState extends State<Dashboard> {
         children: [
           // Label
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
             decoration: BoxDecoration(
               color: regularityColor.withOpacity(0.15),
               borderRadius: BorderRadius.circular(8.0),
@@ -447,7 +447,7 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          const SizedBox(height: 12.0),
+          SizedBox(height: 12.0),
           // User Information
           Row(
             children: [
@@ -456,7 +456,7 @@ class _DashboardState extends State<Dashboard> {
                     AssetImage(path), // Replace with your image asset
                 radius: 24.0,
               ),
-              const SizedBox(width: 12.0),
+              SizedBox(width: 12.0),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -467,10 +467,10 @@ class _DashboardState extends State<Dashboard> {
                       fontSize: getFontSize(18.0),
                     ),
                   ),
-                  const SizedBox(height: 4.0),
+                  SizedBox(height: 4.0),
                   Text(
                     '$time · $date',
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.grey,
                       fontSize: 12.0,
                     ),
@@ -479,16 +479,16 @@ class _DashboardState extends State<Dashboard> {
               ),
             ],
           ),
-          const SizedBox(height: 16.0),
+          SizedBox(height: 16.0),
           SvgPicture.asset("assets/images/line.svg"),
-          const SizedBox(height: 8.0),
+          SizedBox(height: 8.0),
           // Health Readings
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
-                  const Text(
+                  Text(
                     'BP: ',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -496,14 +496,14 @@ class _DashboardState extends State<Dashboard> {
                         color: Colors.blue,
                         fontSize: 12),
                   ),
-                  Text(bp, style: const TextStyle(fontSize: 12),
+                  Text(bp, style: TextStyle(fontSize: 12),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
               Row(
                 children: [
-                  const Text(
+                  Text(
                     'HbA1c: ',
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -511,7 +511,7 @@ class _DashboardState extends State<Dashboard> {
                         color: Colors.blue,
                         fontSize: 12),
                   ),
-                  Text(hba1c, style: const TextStyle(fontSize: 12),
+                  Text(hba1c, style: TextStyle(fontSize: 12),
 
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -519,7 +519,7 @@ class _DashboardState extends State<Dashboard> {
               ),
               Row(
                 children: [
-                  const Text(
+                  Text(
                     overflow: TextOverflow.ellipsis,
                     'IHRA: ',
                     style: TextStyle(
@@ -527,7 +527,7 @@ class _DashboardState extends State<Dashboard> {
                         color: Colors.blue,
                         fontSize: 12),
                   ),
-                  Text(ihra, style: const TextStyle(fontSize: 12),
+                  Text(ihra, style: TextStyle(fontSize: 12),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
@@ -571,9 +571,9 @@ network_update({
     },
       child: Container(
     alignment: Alignment.center,
-    margin: const EdgeInsets.only(bottom: 15),
-    decoration: const BoxDecoration(color: Colors.white),
-    padding: const EdgeInsets.all(12),
+    margin: EdgeInsets.only(bottom: 15),
+    decoration: BoxDecoration(color: Colors.white),
+    padding: EdgeInsets.all(12),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -588,7 +588,7 @@ network_update({
                 backgroundImage: AssetImage(profile_path),
               ),
             ),
-             const SizedBox(
+             SizedBox(
               width: 10,
             ),
             Column(
@@ -602,28 +602,28 @@ network_update({
                   ),
                   Text(
                     network_name,
-                    style: const TextStyle(color: Colors.blue),
+                    style: TextStyle(color: Colors.blue),
                   )
                 ]),
                 Text("$time . $date",
-                    style: const TextStyle(color: Colors.black45))
+                    style: TextStyle(color: Colors.black45))
               ],
             ),
-            const Spacer(),
-            const Icon(
+            Spacer(),
+            Icon(
               Icons.more_vert,
               color: Colors.black,
             )
           ],
         ),
-        const SizedBox(
+        SizedBox(
           height: 20,
         ),
         SizedBox(
           width: 285,
           child: Text(text, style: TextStyle(fontSize: getFontSize(16.8, context))),
         ),
-        const SizedBox(
+        SizedBox(
           height: 20,
         ),
         imageList.length == 1
@@ -640,20 +640,20 @@ network_update({
           }),
         )
         )
-            : const SizedBox(height: 15,),
-        const SizedBox(height: 8,),
+            : SizedBox(height: 15,),
+        SizedBox(height: 8,),
         Align(alignment: Alignment.center,
             child:
             Container(
-                padding: const EdgeInsets.all(12),
+                padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: Colors.grey.withOpacity(0.5),
                       width: 1,
                     ),
-                    color: const Color(0xffE2EDFF)),
-                child: const Row(
+                    color: Color(0xffE2EDFF)),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
@@ -680,7 +680,7 @@ Widget imageViewer({
   required List<String> imageList
 }) {
   return Container(
-      margin: const EdgeInsets.only(right: 10, bottom: 10),
+      margin: EdgeInsets.only(right: 10, bottom: 10),
       child: Stack(
         children: [
           SizedBox(
@@ -703,7 +703,7 @@ Widget imageViewer({
                   color: Colors.black.withOpacity(0.50),
                 ),
                 child: Center(child: Text("+${imageList.length - index}",
-                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 26),),
                 ))
         ],)
   );
@@ -713,71 +713,4 @@ Widget imageViewer({
 // void main() {
 //   runApp(MaterialApp(home: Dashboard()));
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -6,7 +6,7 @@ class MySelected extends StatefulWidget {
   final double height;
   final bool isSelected;
 
-  const MySelected(
+  MySelected(
       {super.key,
       required this.isSelected,
       required this.text,
@@ -35,7 +35,7 @@ class _MySelectedState extends State<MySelected> {
         height: widget.height,
         decoration: BoxDecoration(
           color: _isSelected
-              ? const Color.fromARGB(255, 195, 225, 249)
+              ? Color.fromARGB(255, 195, 225, 249)
               : Colors.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
@@ -45,7 +45,7 @@ class _MySelectedState extends State<MySelected> {
         child: Center(
           child: Text(
             widget.text,
-            style: const TextStyle(
+            style: TextStyle(
               color: Color.fromARGB(255, 63, 164, 246),
               fontSize: 12,
             ),

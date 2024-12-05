@@ -9,7 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'edit_network.dart';
 
 class AddNewNetwork extends StatefulWidget {
-  const AddNewNetwork({super.key});
+  AddNewNetwork({super.key});
 
   @override
   State<AddNewNetwork> createState() => _AddNewNetworkState();
@@ -38,11 +38,11 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(25),
+            padding: EdgeInsets.all(25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 40),
+                SizedBox(height: 40),
                 Row(
                   children: [
                     GestureDetector(
@@ -50,10 +50,10 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                       child: Container(
                         width: 35,
                         height: 35,
-                        padding: const EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
-                          color: const Color(0xFFE5E5E5),
+                          color: Color(0xFFE5E5E5),
                         ),
                         child: SvgPicture.asset(
                           'assets/images/back.svg',
@@ -62,8 +62,8 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 60),
-                    const Text(
+                    SizedBox(width: 60),
+                    Text(
                       "Create a new network",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -72,12 +72,12 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 40),
-                const Text(
+                SizedBox(height: 40),
+                Text(
                   "Name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Container(
                   height: 48,
                   width: 335,
@@ -98,12 +98,12 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Text(
+                SizedBox(height: 20),
+                Text(
                   "Description",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Container(
                   height: 82,
                   width: 335,
@@ -124,16 +124,16 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
-                const Text(
+                SizedBox(height: 30),
+                Text(
                   "Display picture",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 DottedBorder(
                   color: Colors.grey.withOpacity(0.70),
-                  radius: const Radius.circular(19),
-                  dashPattern: const [8, 6],
+                  radius: Radius.circular(19),
+                  dashPattern: [8, 6],
                   borderType: BorderType.RRect,
                   strokeWidth: 2,
                   child: Column(
@@ -144,7 +144,7 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                         height: 230,
                         child: Column(
                           children: [
-                            const SizedBox(
+                            SizedBox(
                               height: 50,
                             ),
                             _selectedImage != null
@@ -155,26 +155,26 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                                     fit: BoxFit.cover,
                                   )
                                 : Image.asset("assets/images/filelogo.png"),
-                            const SizedBox(
+                            SizedBox(
                               height: 30,
                             ),
-                            const Text(
+                            Text(
                               "Accepted formats: .jpg, .png",
                               style: TextStyle(color: Colors.grey),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 20,
                             ),
                             Container(
                               height: 55,
-                              padding: const EdgeInsets.only(
+                              padding: EdgeInsets.only(
                                   left: 50, right: 50, top: 10, bottom: 10),
                               decoration: BoxDecoration(
                                   color: Colors.blue.shade100,
                                   borderRadius: BorderRadius.circular(12)),
                               child: TextButton(
                                 onPressed: _pickImage,
-                                child: const Text(
+                                child: Text(
                                   "Upload ID",
                                   style: TextStyle(
                                     color: Colors.blue,
@@ -189,7 +189,7 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 80),
+                SizedBox(height: 80),
                 Center(
                   child: GestureDetector(
                     onTap: () => Navigator.push(
@@ -202,7 +202,7 @@ class _AddNewNetworkState extends State<AddNewNetwork> {
                         ),
                       ),
                     ),
-                    child: const MyBlueButton(
+                    child: MyBlueButton(
                       text: "Add",
                     ),
                   ),

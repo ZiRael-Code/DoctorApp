@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'AllMed.dart';
 import 'Device.dart';
 void main() {
-  runApp(const MaterialApp(home: Ministore()));
+  runApp(MaterialApp(home: Ministore()));
 }
 
 class Ministore extends StatefulWidget {
-  const Ministore({super.key});
+  Ministore({super.key});
 
   @override
   State<Ministore> createState() => _MinistoreState();
@@ -28,7 +28,7 @@ class _MinistoreState extends State<Ministore> {
               shape: BoxShape.circle,
               color: Colors.grey.shade200,
             ),
-            child: const Icon(Icons.arrow_back_ios_new),
+            child: Icon(Icons.arrow_back_ios_new),
           ),
           actions: [
             GestureDetector(
@@ -36,25 +36,25 @@ class _MinistoreState extends State<Ministore> {
           show_update_drug_bottomSheet();
     },
         child: Container(
-              margin: const EdgeInsets.only(right: 10),
+              margin: EdgeInsets.only(right: 10),
               width: 45,
               height: 45,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.grey.shade200,
               ),
-              child: const Icon(Icons.edit),
+              child: Icon(Icons.edit),
             ),
             ),
           ],
         ),
         body: Padding(
-          padding: const EdgeInsets.only(left: 12, right: 12),
+          padding: EdgeInsets.only(left: 12, right: 12),
           child: Stack(
             children: [
               Column(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 124,
                     height: 124,
                     child: CircleAvatar(
@@ -62,13 +62,13 @@ class _MinistoreState extends State<Ministore> {
                       backgroundImage: AssetImage('assets/images/doc.png'),
                     ),
                   ),
-                  const SizedBox(height: 15),
-                  const Text(
+                  SizedBox(height: 15),
+                  Text(
                     "Dr. Sanni Store",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
                   ),
-                  const SizedBox(height: 10),
-                  const SizedBox(
+                  SizedBox(height: 10),
+                  SizedBox(
                     width: 189,
                     child: Text(
                       "No. 33 Adegoke Street, Surulere, Lagos State",
@@ -76,15 +76,15 @@ class _MinistoreState extends State<Ministore> {
                       style: TextStyle(color: Colors.black45, fontSize: 14),
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  SizedBox(height: 25),
                   Container(
-                    padding: const EdgeInsets.only(right: 10),
+                    padding: EdgeInsets.only(right: 10),
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(30),
                     ),
-                    child: const TextField(
+                    child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Search by name, category...',
                         hintStyle: TextStyle(color: Colors.grey),
@@ -94,22 +94,22 @@ class _MinistoreState extends State<Ministore> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 25),
+                  SizedBox(height: 25),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         condition(index: 0, text: "All"),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         condition(index: 1, text: "Device"),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         condition(index: 2, text: "Tablet"),
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10),
                         condition(index: 3, text: "Capsule"),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Expanded(
                     child: contentDisplay(),
                   ),
@@ -125,11 +125,11 @@ class _MinistoreState extends State<Ministore> {
                   child: Container(
                     width: 64,
                     height: 64,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.blue,
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.add,
                       color: Colors.white,
                       size: 39,
@@ -154,9 +154,9 @@ class _MinistoreState extends State<Ministore> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.only(left: 22, right: 22, top: 12, bottom: 12),
+        padding: EdgeInsets.only(left: 22, right: 22, top: 12, bottom: 12),
         decoration: BoxDecoration(
-          color: selectedIndex == index ? Colors.blue : const Color(0xffE2EDFF),
+          color: selectedIndex == index ? Colors.blue : Color(0xffE2EDFF),
           borderRadius: BorderRadius.circular(50),
         ),
         child: Text(
@@ -173,15 +173,15 @@ class _MinistoreState extends State<Ministore> {
   Widget contentDisplay() {
     switch (selectedIndex) {
       case 0:
-        return const AllMed();
+        return AllMed();
       case 1:
-        return const Device();
+        return Device();
       case 2:
-        return const Center(child: Text("Showing Tablets"));
+        return Center(child: Text("Showing Tablets"));
       case 3:
-        return const Center(child: Text("Showing Capsules"));
+        return Center(child: Text("Showing Capsules"));
       default:
-        return const SizedBox();
+        return SizedBox();
     }
   }
 
@@ -190,17 +190,17 @@ class _MinistoreState extends State<Ministore> {
     tValue.text = 0.toString();
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
       ),
       builder: (BuildContext context) {
         return SingleChildScrollView(
             child: Container(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
+              Text(
                 "Add Drug",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
@@ -212,7 +212,7 @@ class _MinistoreState extends State<Ministore> {
                   hint: "Tablet",
                   drop: ["Tablet", "Syrup", "Tinubu"]
               ),
-              const Align(
+              Align(
                 alignment: Alignment.topLeft,
                 child: Text("Content", style: TextStyle(fontSize: 14),),
               ),
@@ -220,7 +220,7 @@ class _MinistoreState extends State<Ministore> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(height: 25,),
+                  SizedBox(height: 25,),
                     SizedBox(
                     width: 141,
                     child:   Container(
@@ -234,10 +234,10 @@ class _MinistoreState extends State<Ministore> {
                       decoration: InputDecoration(
                         prefix: IconButton(onPressed: (){
                           int.parse(tValue.text) > 0 ? tValue.text = (int.parse(tValue.text) - 1).toString() : null;
-                        }, icon: const Icon(Icons.keyboard_arrow_down)),
+                        }, icon: Icon(Icons.keyboard_arrow_down)),
                         suffixIcon: IconButton(onPressed: (){
                           tValue.text = (int.parse(tValue.text) + 1).toString();
-                        }, icon: const Icon(Icons.keyboard_arrow_up)),
+                        }, icon: Icon(Icons.keyboard_arrow_up)),
                         hintStyle: TextStyle(
                           color: Colors.grey[400],
                           fontWeight: FontWeight.normal,
@@ -251,7 +251,7 @@ class _MinistoreState extends State<Ministore> {
                   ),
                   ),
 
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
                   SizedBox(
@@ -272,7 +272,7 @@ class _MinistoreState extends State<Ministore> {
                   hint: "0",
                   drop: ["Tablet", "Syrup", "Tinubu"]
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -282,7 +282,7 @@ class _MinistoreState extends State<Ministore> {
                     borderRadius: BorderRadius.circular(9),
                   ),
                 ),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Save changes',
@@ -304,17 +304,17 @@ class _MinistoreState extends State<Ministore> {
     tValue.text = 0.toString();
     showModalBottomSheet(
       context: context,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(16.0)),
       ),
       builder: (BuildContext context) {
         return SingleChildScrollView(
             child: Container(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text(
+              Text(
                 "Edit drug details",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
@@ -326,7 +326,7 @@ class _MinistoreState extends State<Ministore> {
                   hint: "Tablet",
                   drop: ["Tablet", "Syrup", "Tinubu"]
               ),
-              const Align(
+              Align(
                 alignment: Alignment.topLeft,
                 child: Text("Content", style: TextStyle(fontSize: 14),),
               ),
@@ -334,7 +334,7 @@ class _MinistoreState extends State<Ministore> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox(height: 25,),
+                  SizedBox(height: 25,),
                     SizedBox(
                     width: 141,
                     child:   Container(
@@ -348,10 +348,10 @@ class _MinistoreState extends State<Ministore> {
                       decoration: InputDecoration(
                         prefix: IconButton(onPressed: (){
                           int.parse(tValue.text) > 0 ? tValue.text = (int.parse(tValue.text) - 1).toString() : null;
-                        }, icon: const Icon(Icons.keyboard_arrow_down)),
+                        }, icon: Icon(Icons.keyboard_arrow_down)),
                         suffixIcon: IconButton(onPressed: (){
                           tValue.text = (int.parse(tValue.text) + 1).toString();
-                        }, icon: const Icon(Icons.keyboard_arrow_up)),
+                        }, icon: Icon(Icons.keyboard_arrow_up)),
                         hintStyle: TextStyle(
                           color: Colors.grey[400],
                           fontWeight: FontWeight.normal,
@@ -365,7 +365,7 @@ class _MinistoreState extends State<Ministore> {
                   ),
                   ),
 
-                  const SizedBox(
+                  SizedBox(
                     width: 10,
                   ),
                   SizedBox(
@@ -386,7 +386,7 @@ class _MinistoreState extends State<Ministore> {
                   hint: "0",
                   drop: ["Tablet", "Syrup", "Tinubu"]
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -396,7 +396,7 @@ class _MinistoreState extends State<Ministore> {
                     borderRadius: BorderRadius.circular(9),
                   ),
                 ),
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Save changes',
@@ -422,9 +422,9 @@ required String hint,
     children: [
       Align(
         alignment: Alignment.topLeft,
-        child: Text(label, style: const TextStyle(fontSize: 14),),
+        child: Text(label, style: TextStyle(fontSize: 14),),
       ),
-    const SizedBox(height: 10,),
+    SizedBox(height: 10,),
     Container(
    width: double.infinity,
     decoration: BoxDecoration(
@@ -440,7 +440,7 @@ required String hint,
           )),
     ),
   ),
-      const SizedBox(height: 10,)
+      SizedBox(height: 10,)
     ],
   );
 }
@@ -458,9 +458,9 @@ Widget textFieldSuffixIcon({
     children: [
       Text(
         label,
-        style: const TextStyle(fontSize: 14),
+        style: TextStyle(fontSize: 14),
       ),
-      const SizedBox(height: 10),
+      SizedBox(height: 10),
       StatefulBuilder(
         builder: (context, setState) {
           return Container(
@@ -478,7 +478,7 @@ Widget textFieldSuffixIcon({
                   decoration: InputDecoration(
                     hintText: selectedValue ?? hint,
                     suffixIcon: PopupMenuButton<String>(
-                      icon: const Icon(Icons.keyboard_arrow_down),
+                      icon: Icon(Icons.keyboard_arrow_down),
                       onSelected: (value) {
                         setState(() {
                           selectedValue = value;
@@ -509,7 +509,7 @@ Widget textFieldSuffixIcon({
           );
         },
       ),
-      const SizedBox(height: 10,)
+      SizedBox(height: 10,)
     ],
   );
 }

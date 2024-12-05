@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../components/my_textfield.dart';
 
 class SetPassword extends StatefulWidget {
-  const SetPassword({super.key});
+  SetPassword({super.key});
 
   @override
   State<SetPassword> createState() => _SetPasswordState();
@@ -17,30 +17,30 @@ class _SetPasswordState extends State<SetPassword> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 60,
             ),
             Image.asset(
               "assets/images/setpasswordframe.png",
               scale: 4,
             ),
-            const SizedBox(
+            SizedBox(
               height: 40,
             ),
-            const Text(
+            Text(
               "Set Password",
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 30,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Type in a new assword",
@@ -49,7 +49,7 @@ class _SetPasswordState extends State<SetPassword> {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
             MyTextfield(
@@ -65,10 +65,10 @@ class _SetPasswordState extends State<SetPassword> {
                     _obscureText ? Icons.visibility : Icons.visibility_off),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 30,
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Confirm password",
@@ -77,7 +77,7 @@ class _SetPasswordState extends State<SetPassword> {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
             MyTextfield(
@@ -93,9 +93,9 @@ class _SetPasswordState extends State<SetPassword> {
                     _obscureText ? Icons.visibility : Icons.visibility_off),
               ),
             ),
-            const Spacer(),
-            const MyBlueButton(text: "Continue"),
-            const SizedBox(
+            Spacer(),
+            MyBlueButton(text: "Continue"),
+            SizedBox(
               height: 40,
             )
           ],

@@ -8,7 +8,7 @@ import 'Dashboard.dart';
 import 'Patients.dart';
 
 class Network extends StatefulWidget {
-  const Network({super.key});
+  Network({super.key});
 
   @override
   State<Network> createState() => _NetworkState();
@@ -24,7 +24,7 @@ class _NetworkState extends State<Network> {
       ),
       body: Column(
               children: [
-      Padding(padding: const EdgeInsets.all(12),
+      Padding(padding: EdgeInsets.all(12),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,43 +35,43 @@ class _NetworkState extends State<Network> {
                         context,
                         Icons.supervisor_account,
                         "All affiliated networks",
-                        MaterialPageRoute(builder: (builder)=>const AddAPatient())
+                        MaterialPageRoute(builder: (builder)=>AddAPatient())
                     ),
                     actions(
                         context,
                         Icons.public_outlined,
                         "My network",
-                         MaterialPageRoute(builder: (builder)=>const Messages())
+                         MaterialPageRoute(builder: (builder)=>Messages())
                     ),
                     actions(
                         context,
                         Icons.share,
                         "Join new network",
-                        MaterialPageRoute(builder: (builder)=>const AllPatientReading())
+                        MaterialPageRoute(builder: (builder)=>AllPatientReading())
                     ),
                     actions(
                         context,
                         Icons.add_home_work_outlined,
                         "Personal ministore",
-                        MaterialPageRoute(builder: (builder)=>const Searchpatient())
+                        MaterialPageRoute(builder: (builder)=>Searchpatient())
                     ),
                   ],
                 ),
-                const SizedBox(height: 25,),
+                SizedBox(height: 25,),
                 Text("Network updates", style: TextStyle(fontSize: getFontSize(22, context), fontWeight: FontWeight.w500),)
                ]
           )
       )
                 , Expanded(child:  SingleChildScrollView(
                     child:Padding(
-                    padding: const EdgeInsets.only(left: 5, right: 5),
+                    padding: EdgeInsets.only(left: 5, right: 5),
                     child: Container(
-                      padding: const EdgeInsets.only(left: 1.5, right: 1.5),
+                      padding: EdgeInsets.only(left: 1.5, right: 1.5),
                       width: double.infinity,
                       decoration: BoxDecoration(color: Colors.grey[300]),
                       child: Column(
                         children: [
-                          const SizedBox(
+                          SizedBox(
                             height: 3,
                           ),
                           network_update(
@@ -84,7 +84,7 @@ class _NetworkState extends State<Network> {
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                               imageList: []
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
 
                           ),
                           network_update(
@@ -98,7 +98,7 @@ class _NetworkState extends State<Network> {
                               imageList: [
                                 "assets/images/doc.png"]
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
 
                           ),
                           network_update(
@@ -111,7 +111,7 @@ class _NetworkState extends State<Network> {
                               "We have restocked our pharmacy and new drugs are now available for sale.",
                               imageList: []
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
 
                           ),
                           network_update(
@@ -131,7 +131,7 @@ class _NetworkState extends State<Network> {
                                 "assets/images/doc.png"
                               ]
                               ,context: context,
-                              action: MaterialPageRoute(builder: (builder)=> const Ministore())
+                              action: MaterialPageRoute(builder: (builder)=> Ministore())
                           ),
 
                         ],

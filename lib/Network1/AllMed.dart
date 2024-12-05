@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class AllMed extends StatefulWidget {
-  const AllMed({super.key});
+  AllMed({super.key});
 
   @override
   State<AllMed> createState() => _AllMedState();
@@ -69,13 +69,13 @@ class _AllMedState extends State<AllMed> {
       children: [
         Row(
           children: [
-            Text("$name  ", style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16 ),),
-            Text("($type)", style: const TextStyle(color: Colors.black26)),
-            const Spacer(),
-            const Text("Qty left:"),
-            const SizedBox(width: 13),
+            Text("$name  ", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16 ),),
+            Text("($type)", style: TextStyle(color: Colors.black26)),
+            Spacer(),
+            Text("Qty left:"),
+            SizedBox(width: 13),
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.grey.shade200
@@ -84,12 +84,12 @@ class _AllMedState extends State<AllMed> {
             )
           ],
         ),
-        Text(price, style: const TextStyle(fontSize: 18,
+        Text(price, style: TextStyle(fontSize: 18,
             fontWeight: FontWeight.w500,
             color: Colors.black45),),
-        const SizedBox(height: 10,),
+        SizedBox(height: 10,),
         SvgPicture.asset("assets/images/line.svg"),
-        const SizedBox(height: 10,)
+        SizedBox(height: 10,)
       ],
     );
   }

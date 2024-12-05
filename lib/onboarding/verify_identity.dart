@@ -4,7 +4,7 @@ import 'package:doctor_app/onboarding/upload_id_card.dart';
 import 'package:flutter/material.dart';
 
 class VerifyIdentity extends StatelessWidget {
-  const VerifyIdentity({super.key});
+  VerifyIdentity({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,24 +12,24 @@ class VerifyIdentity extends StatelessWidget {
       body: Center(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(25),
+            padding: EdgeInsets.all(25),
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     height: 80,
                   ),
-                  const Text(
+                  Text(
                     "Verify Identity",
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.symmetric(horizontal: 75),
                     child: Text(
                       "Verify your identity as a medical specalist. You will be needed to upload or take a photo of your license.",
@@ -45,7 +45,7 @@ class VerifyIdentity extends StatelessWidget {
                     children: [
                       Center(
                         child: Container(
-                          margin: const EdgeInsets.only(top: 80.5),
+                          margin: EdgeInsets.only(top: 80.5),
                           child: Image.asset(
                             "assets/images/Group 803.png",
                             width: 215,
@@ -55,7 +55,7 @@ class VerifyIdentity extends StatelessWidget {
                       ),
                       Center(
                         child: Container(
-                          margin: const EdgeInsets.only(top: 26),
+                          margin: EdgeInsets.only(top: 26),
                           child: Image.asset(
                             "assets/images/id-card.png",
                             width: 222,
@@ -66,20 +66,20 @@ class VerifyIdentity extends StatelessWidget {
                     ],
                   ),
 
-                  const Spacer(),
+                  Spacer(),
 
                   GestureDetector(
                       onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const UploadIdCard(),
+                              builder: (context) => UploadIdCard(),
                             ),
                           ),
-                      child: const MyBlueButton(text: "Continue")),
-                  const SizedBox(
+                      child: MyBlueButton(text: "Continue")),
+                  SizedBox(
                     height: 20,
                   ),
-                  const MyWhiteButton(text: "I'll do this later")
+                  MyWhiteButton(text: "I'll do this later")
                 ],
               ),
             ),

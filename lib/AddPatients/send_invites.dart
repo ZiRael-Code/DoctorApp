@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 class SendInvites extends StatefulWidget {
   final List<String> selectedContacts;
-  const SendInvites({super.key, required this.selectedContacts});
+  SendInvites({super.key, required this.selectedContacts});
 
   @override
   State<SendInvites> createState() => _SendInvitesState();
@@ -17,10 +17,10 @@ class _SendInvitesState extends State<SendInvites> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 30),
+              SizedBox(height: 30),
               Row(
                 children: [
                   GestureDetector(
@@ -28,10 +28,10 @@ class _SendInvitesState extends State<SendInvites> {
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -40,8 +40,8 @@ class _SendInvitesState extends State<SendInvites> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 50),
-                  const Center(
+                  SizedBox(width: 50),
+                  Center(
                     child: Text(
                       "Select from contact list",
                       style: TextStyle(
@@ -52,8 +52,8 @@ class _SendInvitesState extends State<SendInvites> {
                   ),
                 ],
               ),
-              const SizedBox(height: 40),
-              const SizedBox(
+              SizedBox(height: 40),
+              SizedBox(
                 width: 310,
                 height: 190,
                 child: Column(
@@ -83,27 +83,27 @@ class _SendInvitesState extends State<SendInvites> {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
-              const SizedBox(height: 5),
+              SizedBox(height: 30),
+              SizedBox(height: 5),
               SizedBox(
                 width: 350,
                 child: Divider(
                   color: Colors.grey[300],
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               // Display the count of selected contacts
               Center(
                 child: Text(
                   "${widget.selectedContacts.length} Contacts selected ",
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.blue,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               // Display selected contacts in a horizontal scroll view
               SizedBox(
                 height: 100,
@@ -113,7 +113,7 @@ class _SendInvitesState extends State<SendInvites> {
                   itemBuilder: (context, index) {
                     final contact = widget.selectedContacts[index];
                     return Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: EdgeInsets.only(right: 10),
                       child: Column(
                         children: [
                           Stack(
@@ -122,7 +122,7 @@ class _SendInvitesState extends State<SendInvites> {
                               Container(
                                 width: 60,
                                 height: 60,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.black,
                                 ),
@@ -130,7 +130,7 @@ class _SendInvitesState extends State<SendInvites> {
                                   child: Text(
                                     contact[
                                         0], // First letter of contact's name
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -156,7 +156,7 @@ class _SendInvitesState extends State<SendInvites> {
                                       shape: BoxShape.circle,
                                       color: Colors.red,
                                     ),
-                                    child: const Icon(
+                                    child: Icon(
                                       Icons.close,
                                       color: Colors.white,
                                       size: 16,
@@ -166,13 +166,13 @@ class _SendInvitesState extends State<SendInvites> {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 5),
+                          SizedBox(height: 5),
                           // Contact name
                           SizedBox(
                             width: 70,
                             child: Text(
                               contact,
-                              style: const TextStyle(fontSize: 12),
+                              style: TextStyle(fontSize: 12),
                               overflow: TextOverflow.visible,
                               textAlign: TextAlign.center,
                             ),
@@ -183,7 +183,7 @@ class _SendInvitesState extends State<SendInvites> {
                   },
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               SizedBox(
@@ -192,7 +192,7 @@ class _SendInvitesState extends State<SendInvites> {
                   color: Colors.grey[300],
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 5,
               ),
               Center(
@@ -200,7 +200,7 @@ class _SendInvitesState extends State<SendInvites> {
                   "assets/images/Rectangle.png",
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               Row(
@@ -214,16 +214,16 @@ class _SendInvitesState extends State<SendInvites> {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle, color: Colors.blue[100]),
                         child: Container(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(30),
                           child: SvgPicture.asset(
                             "assets/images/whatsapps.svg",
                           ),
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 90,
                         child: Text(
                           "Share on whatsapp",
@@ -234,7 +234,7 @@ class _SendInvitesState extends State<SendInvites> {
                       ),
                     ],
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 50,
                   ),
                   Column(
@@ -245,16 +245,16 @@ class _SendInvitesState extends State<SendInvites> {
                         decoration: BoxDecoration(
                             shape: BoxShape.circle, color: Colors.blue[100]),
                         child: Container(
-                          padding: const EdgeInsets.all(30),
+                          padding: EdgeInsets.all(30),
                           child: SvgPicture.asset(
                             "assets/images/messangers.svg",
                           ),
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 20,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 90,
                         child: Text(
                           "Share as text message",
@@ -267,7 +267,7 @@ class _SendInvitesState extends State<SendInvites> {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
               GestureDetector(
@@ -275,8 +275,8 @@ class _SendInvitesState extends State<SendInvites> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              const SendInvitesSuccessPage())),
-                  child: const MyBlueButton(text: "Send invites"))
+                              SendInvitesSuccessPage())),
+                  child: MyBlueButton(text: "Send invites"))
             ],
           ),
         ),

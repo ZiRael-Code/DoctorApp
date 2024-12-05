@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'Dashboard.dart';
 
 class Patients extends StatefulWidget {
-  const Patients({super.key});
+  Patients({super.key});
 
   @override
   State<Patients> createState() => _PatientsState();
@@ -23,14 +23,14 @@ class _PatientsState extends State<Patients> {
         title:   Text("Patients", style: TextStyle(fontSize: getFontSize(27, context), fontWeight: FontWeight.w500),),
         actions: [
           IconButton(
-            icon: const Icon(Icons.stars_rounded, size: 36,),
+            icon: Icon(Icons.stars_rounded, size: 36,),
             onPressed: () {
               // Search logic here
             },
           ),
         ],
       ),
-      body: Padding(padding: const EdgeInsets.all(12),
+      body: Padding(padding: EdgeInsets.all(12),
       child: Column(
         children: [
           Row(
@@ -40,30 +40,30 @@ class _PatientsState extends State<Patients> {
                 context,
                 Icons.add,
                  "Add new patient",
-                 MaterialPageRoute(builder: (builder)=>const AddAPatient()),
+                 MaterialPageRoute(builder: (builder)=>AddAPatient()),
 
               ),
               actions(
                   context,
                  Icons.message,
                  "Message patients",
-                 MaterialPageRoute(builder: (builder)=>const Messages())
+                 MaterialPageRoute(builder: (builder)=>Messages())
               ),
               actions(
                   context,
                  Icons.edit_note,
                  "Patient’s readings",
-                 MaterialPageRoute(builder: (builder)=>const AllPatientReading())
+                 MaterialPageRoute(builder: (builder)=>AllPatientReading())
               ),
               actions(
                   context,
                  Icons.search,
                  "Search for patients",
-                 MaterialPageRoute(builder: (builder)=>const Searchpatient())
+                 MaterialPageRoute(builder: (builder)=>Searchpatient())
               ),
             ],
           ),
-          const SizedBox(height: 30,),
+          SizedBox(height: 30,),
           Align(
             alignment: Alignment.centerLeft,
             child:
@@ -133,7 +133,7 @@ class _PatientsState extends State<Patients> {
     return Container(
       child: Column(
         children: [
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -158,8 +158,8 @@ class _PatientsState extends State<Patients> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 5,),
-                  const SizedBox(height: 2),
+                  SizedBox(height: 5,),
+                  SizedBox(height: 2),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -172,7 +172,7 @@ class _PatientsState extends State<Patients> {
                   ),
                 ],
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: 10),
 
               Column(
                 children: [
@@ -196,13 +196,13 @@ class _PatientsState extends State<Patients> {
                   ),
                 ),
               ),
-                  const SizedBox(height: 10,),
+                  SizedBox(height: 10,),
                   Text(date, style: TextStyle(fontSize: getFontSize(11, context)),)
               ]
           )
             ],
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5),
           SizedBox(
             width: 350,
             child: Divider(
@@ -229,13 +229,13 @@ actions(
         children: [
           Container(
             padding:  EdgeInsets.all(getFontSize(12, context)),
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Color(0xffE2EDFF)
             ),
             child: Icon(icon, size: getFontSize(36, context), color: Colors.blue,),
           ),
-          const SizedBox(height: 12,),
+          SizedBox(height: 12,),
           SizedBox(
             width: 62,
             child:  Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(13, context),  fontWeight: FontWeight.w400),),

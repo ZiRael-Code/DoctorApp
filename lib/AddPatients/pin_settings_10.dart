@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PinSettings10 extends StatelessWidget {
-  const PinSettings10({super.key});
+  PinSettings10({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 40,
             ),
             Row(
@@ -23,10 +23,10 @@ class PinSettings10 extends StatelessWidget {
                   child: Container(
                     width: 35,
                     height: 35,
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E5E5),
+                      color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset(
                       'assets/images/back.svg',
@@ -35,10 +35,10 @@ class PinSettings10 extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 80,
                 ),
-                const Center(
+                Center(
                   child: Text(
                     "Success!",
                     style: TextStyle(
@@ -49,10 +49,10 @@ class PinSettings10 extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 100,
             ),
-            const SizedBox(
+            SizedBox(
               width: 260,
               height: 70,
               child: Text(
@@ -61,9 +61,9 @@ class PinSettings10 extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
             ),
-            const Spacer(),
-            const MyBlueButton(text: "Done"),
-            const SizedBox(
+            Spacer(),
+            MyBlueButton(text: "Done"),
+            SizedBox(
               height: 40,
             )
           ],
