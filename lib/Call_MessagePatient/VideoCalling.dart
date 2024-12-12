@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class VideoCalling extends StatefulWidget {
-  const VideoCalling({super.key});
+  VideoCalling({super.key});
 
   @override
   State<VideoCalling> createState() => _VideoCallingState();
@@ -26,11 +26,11 @@ class _VideoCallingState extends State<VideoCalling> {
               SafeArea(
         child:
               Padding(
-            padding: const EdgeInsets.all(0),
+            padding: EdgeInsets.all(0),
         child: Column(
           children: [
-            const SizedBox(height: 70,),
-            const SizedBox(
+            SizedBox(height: 70,),
+            SizedBox(
             width: 108,
             height: 108,
             child:
@@ -39,18 +39,18 @@ class _VideoCallingState extends State<VideoCalling> {
               backgroundImage: AssetImage('assets/images/doc.png'),
             )
             ),
-            const SizedBox(height: 20,),
-            const Text('Dr. Nelson Yang', style: TextStyle(color: Colors.white ,fontSize: 16),)
-            ,const Text('Calling', style: TextStyle(fontSize: 16, color: Colors.white),)
+            SizedBox(height: 20,),
+            Text('Dr. Nelson Yang', style: TextStyle(color: Colors.white ,fontSize: 16),)
+            ,Text('Calling', style: TextStyle(fontSize: 16, color: Colors.white),)
 
-            ,const Spacer(),
+            ,Spacer(),
 
             Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Color(0xff2E2E42),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12))
               ),
-              padding: const EdgeInsets.all(19),
+              padding: EdgeInsets.all(19),
               child:
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,11 +67,11 @@ class _VideoCallingState extends State<VideoCalling> {
             Container(
               width: 62,
               height: 62,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.red,
               ),
-              child: const Icon(Icons.phone_missed_outlined, color: Colors.white,),
+              child: Icon(Icons.phone_missed_outlined, color: Colors.white,),
             ),
 
               ],
@@ -93,7 +93,7 @@ class _VideoCallingState extends State<VideoCalling> {
     return Container(
       width: 62,
       height: 62,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Color(0xffE2EDFF),
       ),

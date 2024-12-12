@@ -1,10 +1,11 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/onboarding2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Onboarding1 extends StatelessWidget {
-  const Onboarding1({super.key});
+  Onboarding1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,33 +13,34 @@ class Onboarding1 extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: getFontSize(40, context),
             ),
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.only(right: 25),
+                padding: EdgeInsets.only(right: getFontSize(25, context)),
                 child: Text(
                   "SKIP",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 14,
+                    fontSize: getFontSize(14, context),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
             SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: SvgPicture.asset(
-                  "assets/images/onboarding1.svg",
-                  fit: BoxFit.cover,
-                )),
-            const SizedBox(
-              height: 40,
+              width: MediaQuery.of(context).size.width,
+              child: Image.asset(
+                "assets/images/onboarding1.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+            SizedBox(
+              height: getFontSize(40, context),
             ),
             Center(
               child: Image.asset(
@@ -46,39 +48,41 @@ class Onboarding1 extends StatelessWidget {
                 scale: 4,
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: getFontSize(20, context),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+            Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
-                  width: 340,
-                  height: 80,
+                  width: getFontSize(340, context),
+                  height: getFontSize(80, context),
                   child: Text(
                     "You can register a patient under you, and always get notified of the patient's vial readings so if things start going out of hand, you can always step in.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
               ),
             ),
-            const Spacer(),
+            Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding:
+                  EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: GestureDetector(
                   onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Onboarding2(),
+                          builder: (context) => Onboarding2(),
                         ),
                       ),
-                  child: const MyBlueButton(text: "Continue")),
+                  child: MyBlueButton(text: "Continue")),
             ),
-            const SizedBox(
-              height: 50,
+            SizedBox(
+              height: getFontSize(50, context),
             )
           ],
         ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PrioritizedPatients extends StatefulWidget {
-  const PrioritizedPatients({super.key});
+  PrioritizedPatients({super.key});
 
   @override
   State<PrioritizedPatients> createState() => _PrioritizedPatientsState();
@@ -44,10 +44,10 @@ class _PrioritizedPatientsState extends State<PrioritizedPatients> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: 25),
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            SizedBox(height: 40),
             Row(
               children: [
                 GestureDetector(
@@ -55,10 +55,10 @@ class _PrioritizedPatientsState extends State<PrioritizedPatients> {
                   child: Container(
                     width: 35,
                     height: 35,
-                    padding: const EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E5E5),
+                      color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset(
                       'assets/images/back.svg',
@@ -67,8 +67,8 @@ class _PrioritizedPatientsState extends State<PrioritizedPatients> {
                     ),
                   ),
                 ),
-                const SizedBox(width: 60),
-                const Center(
+                SizedBox(width: 60),
+                Center(
                   child: Text(
                     "Prioritized patients",
                     style: TextStyle(
@@ -79,12 +79,12 @@ class _PrioritizedPatientsState extends State<PrioritizedPatients> {
                 ),
               ],
             ),
-            const SizedBox(height: 35),
+            SizedBox(height: 35),
             Row(
               children: [
                 Container(
                   height: 50,
-                  padding: const EdgeInsets.all(4),
+                  padding: EdgeInsets.all(4),
                   width: 285,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
@@ -96,14 +96,14 @@ class _PrioritizedPatientsState extends State<PrioritizedPatients> {
                       hintText: "Search by name, vital reading..",
                       hintStyle:
                           TextStyle(fontSize: 14, color: Colors.grey[400]),
-                      prefixIcon: const Icon(Icons.search),
+                      prefixIcon: Icon(Icons.search),
                       prefixIconColor: Colors.grey[400],
                       enabledBorder: InputBorder.none,
                       border: InputBorder.none,
                     ),
                   ),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 15,
                 ),
                 Container(
@@ -112,13 +112,13 @@ class _PrioritizedPatientsState extends State<PrioritizedPatients> {
                   decoration: BoxDecoration(
                       color: Colors.grey[200], shape: BoxShape.circle),
                   child: Padding(
-                    padding: const EdgeInsets.all(14),
+                    padding: EdgeInsets.all(14),
                     child: SvgPicture.asset("assets/images/collapse.svg"),
                   ),
                 )
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 20,
             ),
             Expanded(

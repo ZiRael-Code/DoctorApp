@@ -4,7 +4,7 @@ class PatientsTextfield extends StatelessWidget {
   final double width;
   final double height;
   final String hinttext;
-  const PatientsTextfield(
+  PatientsTextfield(
       {super.key,
       required this.height,
       required this.width,

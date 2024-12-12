@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/upload_id_card_validator.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
 class UploadIdCard extends StatefulWidget {
-  const UploadIdCard({super.key});
+  UploadIdCard({super.key});
 
   @override
   State<UploadIdCard> createState() => _UploadIdCardState();
@@ -28,7 +29,7 @@ class _UploadIdCardState extends State<UploadIdCard> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const UploadIdCardValidator(),
+          builder: (context) => UploadIdCardValidator(),
         ),
       );
     }
@@ -39,35 +40,35 @@ class _UploadIdCardState extends State<UploadIdCard> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: EdgeInsets.all(25),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 60,
+                SizedBox(
+                  height: getFontSize(60, context),
                 ),
                 Center(
                   child: Column(
                     children: [
                       Image.asset(
                         "assets/images/Frame 1308.png",
-                        width: 65,
+                        width: getFontSize(65, context),
                       ),
-                      const SizedBox(
-                        height: 60,
+                      SizedBox(
+                        height: getFontSize(60, context),
                       ),
-                      const Text(
+                      Text(
                         "Upload ID Card",
                         style: TextStyle(
-                            fontSize: 28, fontWeight: FontWeight.bold),
+                            fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 50,
+                      SizedBox(
+                        height: getFontSize(50, context),
                       ),
                       DottedBorder(
                         color: Colors.grey.withOpacity(0.70),
-                        radius: const Radius.circular(19),
-                        dashPattern: const [8, 6],
+                        radius: Radius.circular(19),
+                        dashPattern: [8, 6],
                         borderType: BorderType.RRect,
                         strokeWidth: 2,
                         child: Column(
@@ -75,46 +76,46 @@ class _UploadIdCardState extends State<UploadIdCard> {
                             Container(
                               decoration:
                                   BoxDecoration(color: Colors.grey.shade100),
-                              width: 245,
-                              height: 230,
+                              width: getFontSize(245, context),
+                              height: getFontSize(230, context),
                               child: Column(
                                 children: [
-                                  const SizedBox(
-                                    height: 50,
+                                  SizedBox(
+                                    height: getFontSize(50, context),
                                   ),
                                   _selectedImage != null
                                       ? Image.file(
                                           _selectedImage!,
-                                          width: 150,
-                                          height: 150,
+                                          width: getFontSize(150, context),
+                                          height: getFontSize(150, context),
                                           fit: BoxFit.cover,
                                         )
                                       : Image.asset(
                                           "assets/images/filelogo.png"),
-                                  const SizedBox(
-                                    height: 30,
+                                  SizedBox(
+                                    height: getFontSize(30, context),
                                   ),
-                                  const Text(
+                                  Text(
                                     "Accepted formats: .jpg, .png",
                                     style: TextStyle(color: Colors.grey),
                                   ),
-                                  const SizedBox(
-                                    height: 20,
+                                  SizedBox(
+                                    height: getFontSize(20, context),
                                   ),
                                   Container(
-                                    height: 55,
-                                    padding: const EdgeInsets.only(
-                                        left: 50,
-                                        right: 50,
-                                        top: 10,
-                                        bottom: 10),
+                                    height: getFontSize(55, context),
+                                    padding: EdgeInsets.only(
+                                        left: getFontSize(50, context),
+                                        right: getFontSize(50, context),
+                                        top: getFontSize(10, context),
+                                        bottom: getFontSize(10, context)),
                                     decoration: BoxDecoration(
                                         color: Colors.blue,
                                         borderRadius:
                                             BorderRadius.circular(12)),
                                     child: TextButton(
                                       onPressed: _pickImage,
-                                      child: const Text(
+                                      child: Text(
                                         "Upload ID",
                                         style: TextStyle(
                                           color: Colors.white,
@@ -132,25 +133,25 @@ class _UploadIdCardState extends State<UploadIdCard> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: getFontSize(50, context),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Liscence Type",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 14),
+                            fontWeight: FontWeight.bold, fontSize: getFontSize(14, context)),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: getFontSize(10, context),
                     ),
                     Container(
-                      height: 50,
+                      height: getFontSize(50, context),
                       decoration: BoxDecoration(
                         color: Colors.grey.shade100,
                         borderRadius: BorderRadius.circular(12),
@@ -158,8 +159,8 @@ class _UploadIdCardState extends State<UploadIdCard> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.only(left: 10),
+                          Padding(
+                            padding: EdgeInsets.only(left: getFontSize(10, context)),
                             child: Text(
                               "e.g basic or advanced",
                               style: TextStyle(color: Colors.grey),
@@ -167,24 +168,24 @@ class _UploadIdCardState extends State<UploadIdCard> {
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(Icons.arrow_drop_down),
+                            icon: Icon(Icons.arrow_drop_down),
                           )
                         ],
                       ),
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: getFontSize(40, context),
                 ),
                 GestureDetector(
                   onTap: () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const UploadIdCardValidator(),
+                      builder: (context) => UploadIdCardValidator(),
                     ),
                   ),
-                  child: const MyBlueButton(text: "Continue"),
+                  child: MyBlueButton(text: "Continue"),
                 )
               ],
             ),

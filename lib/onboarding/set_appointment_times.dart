@@ -1,81 +1,82 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/my_selected.dart';
 import 'package:flutter/material.dart';
 
 class SetAppointmentTimes extends StatelessWidget {
-  const SetAppointmentTimes({super.key});
+  SetAppointmentTimes({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: EdgeInsets.all(25),
           child: Column(
             children: [
-              const SizedBox(
-                height: 40,
+              SizedBox(
+                height: getFontSize(40, context),
               ),
               Row(
                 children: [
                   Container(
-                    height: 45,
-                    width: 45,
+                    height: getFontSize(45, context),
+                    width: getFontSize(45, context),
                     decoration: BoxDecoration(
                         color: Colors.grey.shade300, shape: BoxShape.circle),
-                    child: const Icon(Icons.arrow_back),
+                    child: Icon(Icons.arrow_back),
                   ),
-                  const SizedBox(
-                    width: 110,
+                  SizedBox(
+                    width: getFontSize(110, context),
                   ),
                   Center(
                     child: Image.asset(
                       "assets/images/frames.png",
-                      width: 65,
+                      width: getFontSize(65, context),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 40,
+              SizedBox(
+                height: getFontSize(40, context),
               ),
-              const Column(
+              Column(
                 children: [
                   Text(
                     "Set appointment",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                     ),
                   ),
                   Text(
                     "times",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: getFontSize(30, context),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Align(
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Specialzation",
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(14, context)),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                  SizedBox(
+                    height: getFontSize(10, context),
                   ),
                   Container(
-                    height: 50,
+                    height: getFontSize(50, context),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade200,
                       borderRadius: BorderRadius.circular(12),
@@ -83,8 +84,8 @@ class SetAppointmentTimes extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.only(left: 10),
+                        Padding(
+                          padding: EdgeInsets.only(left: getFontSize(10, context)),
                           child: Text(
                             "e.g cardiologist",
                             style: TextStyle(color: Colors.grey),
@@ -92,19 +93,19 @@ class SetAppointmentTimes extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: const Icon(Icons.arrow_drop_down),
+                          icon: Icon(Icons.arrow_drop_down),
                         )
                       ],
                     ),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: getFontSize(15, context),
               ),
 
               // add available times
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,41 +113,41 @@ class SetAppointmentTimes extends StatelessWidget {
                     Text(
                       "Add available times",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: getFontSize(15, context),
                     ),
                     MySelected(
                       text: "Add time",
                       isSelected: false,
-                      height: 38,
-                      width: 88,
+                      height: getFontSize(38, context),
+                      width: getFontSize(88, context),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                     Text(
                       "Add available times",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: getFontSize(15, context),
                     ),
                     MySelected(
                       text: "Add days",
                       isSelected: false,
-                      height: 38,
-                      width: 88,
+                      height: getFontSize(38, context),
+                      width: getFontSize(88, context),
                     ),
                   ],
                 ),
               ),
-              const Spacer(),
-              const MyBlueButton(text: "Continue"),
-              const SizedBox(
-                height: 30,
+              Spacer(),
+              MyBlueButton(text: "Continue"),
+              SizedBox(
+                height: getFontSize(30, context),
               ),
             ],
           ),

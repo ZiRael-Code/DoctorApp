@@ -4,12 +4,12 @@ import 'package:flutter_svg/svg.dart';
 class PrioritizedPatientsTile extends StatelessWidget {
   final String name;
 
-  const PrioritizedPatientsTile({super.key, required this.name});
+  PrioritizedPatientsTile({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10), // Add padding for spacing
+      padding: EdgeInsets.all(10), // Add padding for spacing
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start, // Align items to the top
         children: [
@@ -24,7 +24,7 @@ class PrioritizedPatientsTile extends StatelessWidget {
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image.asset("assets/images/ppp.png"))),
-          const SizedBox(width: 10), // Spacing between image and text
+          SizedBox(width: 10), // Spacing between image and text
 
           // Name and hospital details
           Expanded(
@@ -37,7 +37,7 @@ class PrioritizedPatientsTile extends StatelessWidget {
                   children: [
                     Text(
                       "$name ⭐",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                       ),
@@ -49,8 +49,8 @@ class PrioritizedPatientsTile extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5), // Adjust vertical spacing
-                const Text(
+                SizedBox(height: 5), // Adjust vertical spacing
+                Text(
                   "Hospital",
                   style: TextStyle(
                     color: Colors.grey, // Add subtle styling

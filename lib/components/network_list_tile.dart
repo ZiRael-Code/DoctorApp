@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NetworkListTile extends StatefulWidget {
   final bool isChecked; // Add the isChecked property
 
-  const NetworkListTile({
+  NetworkListTile({
     super.key,
     this.isChecked = false, // Default value set to false
   });
@@ -24,21 +24,21 @@ class _NetworkListTileState extends State<NetworkListTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: 15),
       child: Container(
         child: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               height: 5,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   backgroundImage: AssetImage("assets/images/guild.png"),
                   radius: 25,
                 ),
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
@@ -56,7 +56,7 @@ class _NetworkListTileState extends State<NetworkListTile> {
                     ),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   width: 40,
                 ),
                 GestureDetector(
@@ -73,7 +73,7 @@ class _NetworkListTileState extends State<NetworkListTile> {
                       shape: BoxShape.circle,
                     ),
                     child: isChecked
-                        ? const Icon(
+                        ? Icon(
                             Icons.check,
                             color: Colors.white,
                             size: 16,
@@ -83,7 +83,7 @@ class _NetworkListTileState extends State<NetworkListTile> {
                 ),
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 5,
             ),
             SizedBox(

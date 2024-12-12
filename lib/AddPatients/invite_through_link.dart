@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InviteThroughLink extends StatefulWidget {
-  const InviteThroughLink({super.key});
+  InviteThroughLink({super.key});
 
   @override
   State<InviteThroughLink> createState() => _InviteThroughLinkState();
@@ -15,7 +15,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
         alignment: Alignment.center,
         child: Column(
           children: [
-            const SizedBox(
+            SizedBox(
               width: 305,
               child: Column(
                 children: [
@@ -37,13 +37,13 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                 ],
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   children: [
                     SizedBox(
                       width: 30,
@@ -56,7 +56,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 10),
                   child: Container(
                     width: 79,
                     height: 28,
@@ -66,7 +66,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                     ),
                     child: Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         SizedBox(
@@ -76,17 +76,17 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                             "assets/images/Union.png",
                           ),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 8,
                         ),
-                        const Text("Copy")
+                        Text("Copy")
                       ],
                     ),
                   ),
                 )
               ],
             ),
-            const SizedBox(
+            SizedBox(
               height: 40,
             ),
             Center(
@@ -97,7 +97,7 @@ class _InviteThroughLinkState extends State<InviteThroughLink> {
                   color: Colors.blue[100],
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: const Center(child: Text("Select from contact list")),
+                child: Center(child: Text("Select from contact list")),
               ),
             )
           ],

@@ -6,7 +6,7 @@ import 'package:flutter_svg/svg.dart';
 import '../components/contacts_checked_tile.dart';
 
 class SelectFromContactList extends StatefulWidget {
-  const SelectFromContactList({super.key});
+  SelectFromContactList({super.key});
 
   @override
   State<SelectFromContactList> createState() => _SelectFromContactListState();
@@ -78,10 +78,10 @@ class _SelectFromContactListState extends State<SelectFromContactList>
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
               Row(
                 children: [
                   GestureDetector(
@@ -89,10 +89,10 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -101,8 +101,8 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                       ),
                     ),
                   ),
-                  const SizedBox(width: 50),
-                  const Center(
+                  SizedBox(width: 50),
+                  Center(
                     child: Text(
                       "Select from contact list",
                       style: TextStyle(
@@ -116,7 +116,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
               Container(
                 child: selectedContacts.isNotEmpty
                     ? Padding(
-                        padding: const EdgeInsets.only(top: 40),
+                        padding: EdgeInsets.only(top: 40),
                         child: SizedBox(
                           height: 60,
                           child: Column(
@@ -129,39 +129,39 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                                   Container(
                                     width: 49,
                                     height: 49,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
-                                    child: const Icon(Icons.person,
+                                    child: Icon(Icons.person,
                                         color: Colors.white),
                                   ),
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
 
-                                  const Text(
+                                  Text(
                                     'Referral link:',
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const SizedBox(width: 10), // Spacing
+                                  SizedBox(width: 10), // Spacing
 
                                   Expanded(
                                     child: Text(
                                       referralCode,
-                                      style: const TextStyle(fontSize: 16),
+                                      style: TextStyle(fontSize: 16),
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
 
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: 10),
 
                                   GestureDetector(
                                     onTap: () {
                                       Clipboard.setData(
                                           ClipboardData(text: referralCode));
                                       ScaffoldMessenger.of(context)
-                                          .showSnackBar(const SnackBar(
+                                          .showSnackBar(SnackBar(
                                               content:
                                                   Text('Copied to clipboard')));
                                     },
@@ -169,10 +169,10 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                                       width: 79,
                                       height: 28,
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFFE2EDFF),
+                                        color: Color(0xFFE2EDFF),
                                         borderRadius: BorderRadius.circular(5),
                                       ),
-                                      child: const Row(
+                                      child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
@@ -197,14 +197,14 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                       )
                     : null,
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Expanded(
                 child: Column(
                   children: [
-                    const SizedBox(height: 35),
+                    SizedBox(height: 35),
                     Container(
                       height: 50,
-                      padding: const EdgeInsets.all(4),
+                      padding: EdgeInsets.all(4),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
@@ -216,28 +216,28 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                           hintText: "Patient name or Phone number",
                           hintStyle:
                               TextStyle(fontSize: 14, color: Colors.grey[400]),
-                          prefixIcon: const Icon(Icons.search),
+                          prefixIcon: Icon(Icons.search),
                           prefixIconColor: Colors.grey[400],
                           enabledBorder: InputBorder.none,
                           border: InputBorder.none,
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     // Increment selected
                     Center(
                       child: Text(
                         "[ ${selectedContacts.length} selected ]", // Show the count of selected contacts
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.blue,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Expanded(
@@ -259,7 +259,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                   ],
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
               Container(
@@ -278,7 +278,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               "Done",
                               style: TextStyle(
@@ -291,7 +291,7 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                       )
                     : null,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               )
             ],

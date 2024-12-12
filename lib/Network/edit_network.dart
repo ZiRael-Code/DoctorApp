@@ -4,7 +4,6 @@ import 'package:doctor_app/Network/add_a_new_update.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 
 class EditNetwork extends StatefulWidget {
@@ -12,7 +11,7 @@ class EditNetwork extends StatefulWidget {
   final String description;
   final File? image;
 
-  const EditNetwork({
+  EditNetwork({
     super.key,
     required this.name,
     required this.description,
@@ -54,32 +53,27 @@ class _EditNetworkState extends State<EditNetwork> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(25),
+            padding: EdgeInsets.all(25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 25),
+                SizedBox(height: 25),
                 Row(
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                        width: 35,
-                        height: 35,
-                        padding: const EdgeInsets.all(10),
+                        height: 45,
+                        width: 45,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: const Color(0xFFE5E5E5),
+                          color: Colors.grey.shade300,
+                          shape: BoxShape.circle,
                         ),
-                        child: SvgPicture.asset(
-                          'assets/images/back.svg',
-                          width: 8.0,
-                          height: 15,
-                        ),
+                        child: Icon(Icons.arrow_back),
                       ),
                     ),
-                    const SizedBox(width: 60),
-                    const Text(
+                    SizedBox(width: 60),
+                    Text(
                       "Edit network",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -88,12 +82,12 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 40),
-                const Text(
+                SizedBox(height: 40),
+                Text(
                   "Name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Container(
                   height: 48,
                   width: 335,
@@ -114,12 +108,12 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Text(
+                SizedBox(height: 20),
+                Text(
                   "Description",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Container(
                   height: 82,
                   width: 335,
@@ -140,16 +134,16 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
-                const Text(
+                SizedBox(height: 30),
+                Text(
                   "Display picture",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 DottedBorder(
                   color: Colors.grey.withOpacity(0.70),
-                  radius: const Radius.circular(19),
-                  dashPattern: const [8, 6],
+                  radius: Radius.circular(19),
+                  dashPattern: [8, 6],
                   borderType: BorderType.RRect,
                   strokeWidth: 2,
                   child: Container(
@@ -167,7 +161,7 @@ class _EditNetworkState extends State<EditNetwork> {
                                 fit: BoxFit.cover,
                               ),
                             )
-                          : const Icon(
+                          : Icon(
                               Icons.image,
                               color: Colors.grey,
                               size: 50,
@@ -175,7 +169,7 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
                 Center(
                   child: Container(
                     width: 174,
@@ -186,18 +180,16 @@ class _EditNetworkState extends State<EditNetwork> {
                     child: Center(
                       child: TextButton(
                         onPressed: _changeImage,
-                        child: const Text("Change photo"),
+                        child: Text("Change photo"),
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
+                SizedBox(height: 30),
                 GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddANewUpdate())),
-                  child: const MyBlueButton(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AddANewUpdate())),
+                  child: MyBlueButton(
                     text: "Save",
                   ),
                 ),

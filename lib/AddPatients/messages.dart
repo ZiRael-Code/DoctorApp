@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Messages extends StatefulWidget {
-  const Messages({super.key});
+  Messages({super.key});
 
   @override
   State<Messages> createState() => _MessagesState();
@@ -70,10 +70,10 @@ class _MessagesState extends State<Messages> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
               Row(
                 children: [
                   GestureDetector(
@@ -81,10 +81,10 @@ class _MessagesState extends State<Messages> {
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -93,8 +93,8 @@ class _MessagesState extends State<Messages> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 60),
-                  const Text(
+                  SizedBox(width: 60),
+                  Text(
                     "Messages",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -103,10 +103,10 @@ class _MessagesState extends State<Messages> {
                   ),
                 ],
               ),
-              const SizedBox(height: 35),
+              SizedBox(height: 35),
               Container(
                 height: 50,
-                padding: const EdgeInsets.all(4),
+                padding: EdgeInsets.all(4),
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.grey[200],
@@ -117,14 +117,14 @@ class _MessagesState extends State<Messages> {
                   decoration: InputDecoration(
                     hintText: "Search",
                     hintStyle: TextStyle(fontSize: 14, color: Colors.grey[400]),
-                    prefixIcon: const Icon(Icons.search),
+                    prefixIcon: Icon(Icons.search),
                     prefixIconColor: Colors.grey[400],
                     enabledBorder: InputBorder.none,
                     border: InputBorder.none,
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
                   itemCount: filteredContacts.length,
@@ -138,7 +138,7 @@ class _MessagesState extends State<Messages> {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ChatPage(),
+                          builder: (context) => ChatPage(),
                         ),
                       ),
                     );

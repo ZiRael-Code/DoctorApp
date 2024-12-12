@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddANewUpdate extends StatefulWidget {
-  const AddANewUpdate({super.key});
+  AddANewUpdate({super.key});
 
   @override
   State<AddANewUpdate> createState() => _AddANewUpdateState();
@@ -47,10 +47,10 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
               Row(
@@ -60,10 +60,10 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -72,8 +72,8 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 60),
-                  const Text(
+                  SizedBox(width: 60),
+                  Text(
                     "Add a new update",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -82,15 +82,15 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                   ),
                 ],
               ),
-              const SizedBox(height: 60),
-              const Align(
+              SizedBox(height: 60),
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
@@ -116,25 +116,25 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                   ),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
-              const Align(
+              Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Add a picture",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
               Align(
                 alignment: Alignment.centerLeft,
                 child: DottedBorder(
                   color: Colors.grey.withOpacity(0.70),
-                  radius: const Radius.circular(19),
-                  dashPattern: const [8, 6],
+                  radius: Radius.circular(19),
+                  dashPattern: [8, 6],
                   borderType: BorderType.RRect,
                   strokeWidth: 2,
                   child: Column(
@@ -145,7 +145,7 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                         height: 230,
                         child: Column(
                           children: [
-                            const SizedBox(
+                            SizedBox(
                               height: 50,
                             ),
                             _selectedImage != null
@@ -156,26 +156,26 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                                     fit: BoxFit.cover,
                                   )
                                 : Image.asset("assets/images/filelogo.png"),
-                            const SizedBox(
+                            SizedBox(
                               height: 30,
                             ),
-                            const Text(
+                            Text(
                               "Accepted formats: .jpg, .png",
                               style: TextStyle(color: Colors.grey),
                             ),
-                            const SizedBox(
+                            SizedBox(
                               height: 20,
                             ),
                             Container(
                               height: 55,
-                              padding: const EdgeInsets.only(
+                              padding: EdgeInsets.only(
                                   left: 50, right: 50, top: 10, bottom: 10),
                               decoration: BoxDecoration(
                                   color: Colors.blue.shade100,
                                   borderRadius: BorderRadius.circular(12)),
                               child: TextButton(
                                 onPressed: _pickImage,
-                                child: const Text(
+                                child: Text(
                                   "Upload ID",
                                   style: TextStyle(
                                     color: Colors.blue,
@@ -191,9 +191,9 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                   ),
                 ),
               ),
-              const Spacer(),
-              const MyBlueButton(text: "Upload"),
-              const SizedBox(
+              Spacer(),
+              MyBlueButton(text: "Upload"),
+              SizedBox(
                 height: 30,
               )
             ],

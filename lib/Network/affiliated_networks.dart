@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 // import 'network_tile.dart'; // Import the NetworkTile component
 
 class AffiliatedNetworks extends StatefulWidget {
-  const AffiliatedNetworks({super.key});
+  AffiliatedNetworks({super.key});
 
   @override
   State<AffiliatedNetworks> createState() => _AffiliatedNetworksState();
@@ -70,10 +70,10 @@ class _AffiliatedNetworksState extends State<AffiliatedNetworks> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
               Row(
                 children: [
                   GestureDetector(
@@ -81,10 +81,10 @@ class _AffiliatedNetworksState extends State<AffiliatedNetworks> {
                     child: Container(
                       width: 35,
                       height: 35,
-                      padding: const EdgeInsets.all(10),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
@@ -93,8 +93,8 @@ class _AffiliatedNetworksState extends State<AffiliatedNetworks> {
                       ),
                     ),
                   ),
-                  const SizedBox(width: 60),
-                  const Center(
+                  SizedBox(width: 60),
+                  Center(
                     child: Text(
                       "Join a network",
                       style: TextStyle(
@@ -105,12 +105,12 @@ class _AffiliatedNetworksState extends State<AffiliatedNetworks> {
                   ),
                 ],
               ),
-              const SizedBox(height: 35),
+              SizedBox(height: 35),
               Row(
                 children: [
                   Container(
                     height: 50,
-                    padding: const EdgeInsets.all(4),
+                    padding: EdgeInsets.all(4),
                     width: 285,
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
@@ -122,27 +122,27 @@ class _AffiliatedNetworksState extends State<AffiliatedNetworks> {
                         hintText: "Search by name, location",
                         hintStyle:
                             TextStyle(fontSize: 14, color: Colors.grey[400]),
-                        prefixIcon: const Icon(Icons.search),
+                        prefixIcon: Icon(Icons.search),
                         prefixIconColor: Colors.grey[400],
                         enabledBorder: InputBorder.none,
                         border: InputBorder.none,
                       ),
                     ),
                   ),
-                  const SizedBox(width: 15),
+                  SizedBox(width: 15),
                   Container(
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
                         color: Colors.grey[200], shape: BoxShape.circle),
                     child: Padding(
-                      padding: const EdgeInsets.all(14),
+                      padding: EdgeInsets.all(14),
                       child: SvgPicture.asset("assets/images/collapse.svg"),
                     ),
                   )
                 ],
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
                   itemCount: filteredContacts.length,

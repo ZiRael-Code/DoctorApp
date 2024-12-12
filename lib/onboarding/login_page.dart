@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/MainSelectionScreen/MainNavigator.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/my_textfield.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -19,12 +20,12 @@ class _LoginPageState extends State<LoginPage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 60,
+                SizedBox(
+                  height: getFontSize(60, context),
                 ),
                 Center(
                   child: Image.asset(
@@ -32,52 +33,67 @@ class _LoginPageState extends State<LoginPage> {
                     scale: 4,
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
+                SizedBox(
+                  height: getFontSize(25, context),
                 ),
                 Column(
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Welcome",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                          fontSize: getFontSize(28, context),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: getFontSize(20, context),
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Username",
                         style: TextStyle(
+<<<<<<< HEAD
                             fontSize: 14, fontWeight: FontWeight.w500),
+=======
+                          fontSize: getFontSize(14, context),
+                        ),
+>>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: getFontSize(20, context),
                     ),
-                    const MyTextfield(
+                    MyTextfield(
                       hinttext: "Username",
                       obscuretext: false,
                     ),
+<<<<<<< HEAD
                     const SizedBox(
                       height: 15,
+=======
+                    SizedBox(
+                      height: getFontSize(10, context),
+>>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Password",
                         style: TextStyle(
+<<<<<<< HEAD
                             fontSize: 14, fontWeight: FontWeight.w500),
+=======
+                          fontSize: getFontSize(14, context),
+                        ),
+>>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: getFontSize(10, context),
                     ),
                     MyTextfield(
                       hinttext: "*********",
@@ -93,31 +109,32 @@ class _LoginPageState extends State<LoginPage> {
                             : Icons.visibility_off),
                       ),
                     ),
-                    const SizedBox(
-                      height: 15,
+                    SizedBox(
+                      height: getFontSize(15, context),
                     ),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         "Forgot passowrd",
                         style: TextStyle(
                             color: Colors.blue,
-                            fontSize: 14,
+                            fontSize: getFontSize(14, context),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const SizedBox(
-                      height: 30,
+                    SizedBox(
+                      height: getFontSize(30, context),
                     ),
                     GestureDetector(
                         onTap: () => Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const MainNavigator())),
-                        child: const MyBlueButton(text: "Login")),
-                    const SizedBox(
-                      height: 20,
+                                builder: (context) => MainNavigator())),
+                        child: MyBlueButton(text: "Login")),
+                    SizedBox(
+                      height: getFontSize(20, context),
                     ),
+<<<<<<< HEAD
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -131,9 +148,13 @@ class _LoginPageState extends State<LoginPage> {
                           width: 6,
                         ),
                       ],
+=======
+                    Center(
+                      child: Text("Or login with"),
+>>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: getFontSize(20, context),
                     ),
                   ],
                 ),
@@ -147,7 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                           "assets/images/facebook.png",
                           scale: 4,
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: getFontSize(10, context)),
                         Image.asset(
                           "assets/images/google.png",
                           scale: 4,
@@ -156,22 +177,22 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account yet?"),
-                    const SizedBox(
-                      width: 4,
+                    Text("Don't have an account yet?"),
+                    SizedBox(
+                      width: getFontSize(4, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage())),
-                      child: const Text(
+                              builder: (context) => RegisterPage())),
+                      child: Text(
                         "Register here",
                         style: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.w500),

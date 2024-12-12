@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(const SendPrescription());
+  runApp(SendPrescription());
 }
 
 class SendPrescription extends StatelessWidget {
-  const SendPrescription({super.key});
+  SendPrescription({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,20 +19,20 @@ class SendPrescription extends StatelessWidget {
               Container(
                 width: 35,
                 height: 35,
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: const Color(0xFFE5E5E5),
+                  color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              const Spacer(),
+              Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                const Text(
+                Text(
                   'Send prescription',
                   style: TextStyle(
                       fontSize: 20,
@@ -41,18 +41,18 @@ class SendPrescription extends StatelessWidget {
                   ),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
 
             ],
           ),
         ),
-        body: Padding(padding: const EdgeInsets.all(12),
+        body: Padding(padding: EdgeInsets.all(12),
           child: Column(
           children: [
 
-            const SizedBox(height: 20,),
+            SizedBox(height: 20,),
 
-            const Wrap(
+            Wrap(
               direction: Axis.horizontal,
               children: [
                 Row(
@@ -88,7 +88,7 @@ class SendPrescription extends StatelessWidget {
                 ),
               ],
             ),
-              const SizedBox(height: 25,),
+              SizedBox(height: 25,),
 
 
 
@@ -99,20 +99,20 @@ class SendPrescription extends StatelessWidget {
               drugUnit: '1 pack:  '
             ),
 
-            const SizedBox(height: 20,),
+            SizedBox(height: 20,),
 
 
-            const Spacer(),
+            Spacer(),
 
             Container(
               width: MediaQuery.of(context).size.width,
-              padding: const EdgeInsets.all(12),
+              padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(7),
-                color: const Color(0xFFF2F2F2),
+                color: Color(0xFFF2F2F2),
               ),
 
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -127,11 +127,11 @@ class SendPrescription extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 40,),
+            SizedBox(height: 40,),
 
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>const Prescriptionsentsuccess()));
+                Navigator.of(context).push(MaterialPageRoute(builder: (builder)=>Prescriptionsentsuccess()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
@@ -140,7 +140,7 @@ class SendPrescription extends StatelessWidget {
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Send',
@@ -161,7 +161,7 @@ class SendPrescription extends StatelessWidget {
     required String drugUnit
   }) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey.shade200, width: 1),
@@ -171,8 +171,8 @@ class SendPrescription extends StatelessWidget {
       Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Text(name, style: const TextStyle(fontSize: 18)),
-            const SizedBox(height: 10,),
+          Text(name, style: TextStyle(fontSize: 18)),
+            SizedBox(height: 10,),
           Row(
           children: [
             Text(drugUnit, style: TextStyle(color: Colors.grey[500]),),

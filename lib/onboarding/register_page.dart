@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/set_password.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import '../components/my_textfield.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+  RegisterPage({super.key});
 
   @override
   State<RegisterPage> createState() => _RegisterPageState();
@@ -19,129 +20,145 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: getFontSize(40, context),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Register",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: getFontSize(30, context),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "First Name",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: getFontSize(10, context),
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "First Name",
                   obscuretext: false,
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: getFontSize(20, context),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Last Name",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: getFontSize(10, context),
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "Last Name",
                   obscuretext: false,
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: getFontSize(20, context),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Phone Number",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: getFontSize(10, context),
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "Phone Number",
                   obscuretext: false,
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: getFontSize(20, context),
                 ),
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Email",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: getFontSize(10, context),
                 ),
-                const MyTextfield(
+                MyTextfield(
                   hinttext: "Email Address",
                   obscuretext: false,
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: getFontSize(20, context),
                 ),
                 GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SetPassword())),
-                  child: const MyBlueButton(
+                  onTap: () {
+                    // Navigate to login page
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SetPassword()));
+                  },
+                  child: MyBlueButton(
                     text: "Register",
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset("assets/images/divider.svg"),
                     SizedBox(
-                      width: 6,
+                      width: getFontSize(120, context),
+                      child: Divider(
+                        color: Colors.grey.shade300,
+                        thickness: 1,
+                      ),
                     ),
-                    Text("Or register with"),
-                    SvgPicture.asset("assets/images/divider.svg"),
                     SizedBox(
-                      width: 6,
+                      width: getFontSize(8, context),
                     ),
+                    Text(
+                      "Or register with",
+                    ),
+                    SizedBox(
+                      width: getFontSize(8, context),
+                    ),
+                    SizedBox(
+                      width: getFontSize(120, context),
+                      child: Divider(
+                        color: Colors.grey.shade300,
+                        thickness: 1,
+                      ),
+                    )
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: getFontSize(20, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -150,29 +167,29 @@ class _RegisterPageState extends State<RegisterPage> {
                       "assets/images/facebook.png",
                       scale: 4,
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: getFontSize(10, context)),
                     Image.asset(
                       "assets/images/google.png",
                       scale: 4,
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Already have an account?"),
-                    const SizedBox(
-                      width: 4,
+                    Text("Already have an account?"),
+                    SizedBox(
+                      width: getFontSize(4, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage())),
-                      child: const Text(
+                              builder: (context) => RegisterPage())),
+                      child: Text(
                         "Login here",
                         style: TextStyle(
                             color: Colors.blue, fontWeight: FontWeight.w500),

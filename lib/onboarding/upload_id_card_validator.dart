@@ -1,44 +1,45 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
 class UploadIdCardValidator extends StatelessWidget {
-  const UploadIdCardValidator({super.key});
+  UploadIdCardValidator({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: EdgeInsets.all(25),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(
-                  height: 80,
+                SizedBox(
+                  height: getFontSize(80, context),
                 ),
                 Center(
                   child: Column(
                     children: [
                       Image.asset(
                         "assets/images/Frame 1308.png",
-                        width: 65,
+                        width: getFontSize(65, context),
                       ),
-                      const SizedBox(
-                        height: 60,
+                      SizedBox(
+                        height: getFontSize(60, context),
                       ),
-                      const Text(
+                      Text(
                         "Upload ID Card",
                         style: TextStyle(
-                            fontSize: 28, fontWeight: FontWeight.bold),
+                            fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),
                       ),
-                      const SizedBox(
-                        height: 50,
+                      SizedBox(
+                        height: getFontSize(50, context),
                       ),
                       DottedBorder(
                         color: Colors.grey.withOpacity(0.70),
-                        radius: const Radius.circular(19),
-                        dashPattern: const [8, 6],
+                        radius: Radius.circular(19),
+                        dashPattern: [8, 6],
                         borderType: BorderType.RRect,
                         strokeWidth: 2,
                         child: Column(
@@ -46,35 +47,35 @@ class UploadIdCardValidator extends StatelessWidget {
                             Container(
                               decoration:
                                   BoxDecoration(color: Colors.grey.shade100),
-                              width: 245,
-                              height: 230,
+                              width: getFontSize(245, context),
+                              height: getFontSize(230, context),
                               child: Column(
                                 children: [
-                                  const SizedBox(
-                                    height: 60,
+                                  SizedBox(
+                                    height: getFontSize(60, context),
                                   ),
                                   Image.asset("assets/images/filelogo.png"),
-                                  const SizedBox(
-                                    height: 30,
+                                  SizedBox(
+                                    height: getFontSize(30, context),
                                   ),
-                                  const Text(
+                                  Text(
                                     "Accepted formats: .jpg, .png",
                                     style: TextStyle(color: Colors.grey),
                                   ),
-                                  const SizedBox(
-                                    height: 20,
+                                  SizedBox(
+                                    height: getFontSize(20, context),
                                   ),
                                   Container(
-                                    padding: const EdgeInsets.only(
-                                        left: 50,
-                                        right: 50,
-                                        top: 10,
-                                        bottom: 10),
+                                    padding: EdgeInsets.only(
+                                        left: getFontSize(50, context),
+                                        right: getFontSize(50, context),
+                                        top: getFontSize(10, context),
+                                        bottom: getFontSize(10, context)),
                                     decoration: BoxDecoration(
                                         color: Colors.blue,
                                         borderRadius:
                                             BorderRadius.circular(12)),
-                                    child: const Text(
+                                    child: Text(
                                       "Upload Image",
                                       style: TextStyle(
                                           color: Colors.white,
@@ -87,47 +88,47 @@ class UploadIdCardValidator extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 20,
+                      SizedBox(
+                        height: getFontSize(20, context),
                       ),
                       Container(
-                        width: 174,
-                        height: 45,
+                        width: getFontSize(174, context),
+                        height: getFontSize(45, context),
                         decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 208, 232, 252),
+                            color: Color.fromARGB(255, 208, 232, 252),
                             borderRadius: BorderRadius.circular(12)),
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             "Change Photo",
                             style: TextStyle(
                                 color: Colors.blue,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 12),
+                                fontSize: getFontSize(12, context)),
                           ),
                         ),
                       )
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: getFontSize(50, context),
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    const Align(
+                    Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Liscence Type",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 14),
+                            fontWeight: FontWeight.bold, fontSize: getFontSize(14, context)),
                       ),
                     ),
-                    const SizedBox(
-                      height: 10,
+                    SizedBox(
+                      height: getFontSize(10, context),
                     ),
                     Container(
-                      height: 50,
+                      height: getFontSize(50, context),
                       decoration: BoxDecoration(
                         color: Colors.grey.shade100,
                         borderRadius: BorderRadius.circular(12),
@@ -135,8 +136,8 @@ class UploadIdCardValidator extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.only(left: 10),
+                          Padding(
+                            padding: EdgeInsets.only(left: getFontSize(10, context)),
                             child: Text(
                               "e.g basic or advanced",
                               style: TextStyle(color: Colors.grey),
@@ -144,23 +145,23 @@ class UploadIdCardValidator extends StatelessWidget {
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(Icons.arrow_drop_down),
+                            icon: Icon(Icons.arrow_drop_down),
                           )
                         ],
                       ),
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 40,
+                SizedBox(
+                  height: getFontSize(40, context),
                 ),
                 GestureDetector(
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const UploadIdCardValidator())),
-                    child: const MyBlueButton(text: "Continue"))
+                                UploadIdCardValidator())),
+                    child: MyBlueButton(text: "Continue"))
               ],
             ),
           ),

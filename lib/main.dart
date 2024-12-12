@@ -1,17 +1,16 @@
-import 'package:doctor_app/MainSelectionScreen/Account.dart';
-import 'package:doctor_app/MainSelectionScreen/Dashboard.dart';
-import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:doctor_app/onboarding/onboarding1.dart';
 import 'package:doctor_app/onboarding/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'Network/my_network.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 // this is israel on main.dart
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -20,16 +19,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Doctor App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Loader(),
+      home: Loader(),
     );
   }
 }
 
 class Loader extends StatefulWidget {
-  const Loader({super.key});
+  Loader({super.key});
 
   @override
   State<Loader> createState() => _LoaderState();
@@ -40,16 +39,16 @@ class _LoaderState extends State<Loader> {
   void initState() {
     super.initState();
     // Adding a delay of 2 seconds
-    Future.delayed(const Duration(milliseconds: 2000), () {
+    Future.delayed(Duration(milliseconds: 2000), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Onboarding1()),
+        MaterialPageRoute(builder: (context) => Onboarding1()),
       );
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return const SplashScreen();
+    return SplashScreen();
   }
 }

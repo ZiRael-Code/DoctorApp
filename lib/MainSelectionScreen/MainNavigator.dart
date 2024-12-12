@@ -6,7 +6,7 @@ import 'Network.dart';
 import 'Patients.dart';
 
 class MainNavigator extends StatefulWidget {
-  const MainNavigator({super.key});
+  MainNavigator({super.key});
 
   @override
   _MainNavigatorState createState() => _MainNavigatorState();
@@ -51,43 +51,11 @@ class _MainNavigatorState extends State<MainNavigator> {
               ),
               label: 'Home',
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                _selectedIndex == 1
-                    ? 'assets/images/s_patient.svg'
-                    : 'assets/images/un_patient.svg',
-                width: 28,
-                height: 28,
-              ),
-              label: 'Patients',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                _selectedIndex == 2
-                    ? 'assets/images/s_network.svg'
-                    : 'assets/images/un_network.svg',
-                width: 28,
-                height: 28,
-              ),
-              label: 'Network',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                _selectedIndex == 3
-                    ? 'assets/images/s_account.svg'
-                    : 'assets/images/un_account.svg',
-                width: 28,
-                height: 28,
-              ),
-              label: 'Account',
-            ),
-          ],
-        ),
-      ),
-    );
+          ),
+        );
+    }
   }
-}
-
-void main() {
-  runApp(const MaterialApp(home: MainNavigator()));
+void main(){
+  runApp(MaterialApp(
+      home: MainNavigator()));
 }

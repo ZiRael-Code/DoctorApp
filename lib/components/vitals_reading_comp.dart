@@ -11,7 +11,7 @@ class vitals_reading_comp extends StatelessWidget {
   final String datestamp;
   final String timestamp;
   final Color color;
-  const vitals_reading_comp({
+  vitals_reading_comp({
     super.key,
     required this.deviceName,
     required this.name,
@@ -27,11 +27,11 @@ class vitals_reading_comp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const CollapsibleCalendar()));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=> CollapsibleCalendar()));
       },
         child: Container(
-      margin: const EdgeInsets.all(9.0),
-      padding: const EdgeInsets.all(16.0),
+      margin: EdgeInsets.all(9.0),
+      padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
@@ -46,27 +46,27 @@ class vitals_reading_comp extends StatelessWidget {
             ),
             width: 50,
             height: 50,
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(10),
             child: SvgPicture.asset(iconPath),
           ),
-          const SizedBox(width: 12.0),
+          SizedBox(width: 12.0),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(name, style: const TextStyle(fontSize: 16)),
-              const SizedBox(height: 10,),
-              Text('Device: $deviceName', style: const TextStyle(fontSize: 10),),
+              Text(name, style: TextStyle(fontSize: 16)),
+              SizedBox(height: 10,),
+              Text('Device: $deviceName', style: TextStyle(fontSize: 10),),
             ],
           ),
-          const Spacer(),
+          Spacer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(reading, style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 16)),
-              const SizedBox(height: 10,),
-              Text('$timestamp . $datestamp', style: const TextStyle(fontSize: 10)),
+              Text(reading, style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 16)),
+              SizedBox(height: 10,),
+              Text('$timestamp . $datestamp', style: TextStyle(fontSize: 10)),
             ],
           )
         ],

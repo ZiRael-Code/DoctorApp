@@ -3,11 +3,11 @@ import 'package:flutter_svg/svg.dart';
 
 
 void main(){
-  runApp(const AppointmentPayment());
+  runApp(AppointmentPayment());
 }
 
 class AppointmentPayment extends StatefulWidget {
-  const AppointmentPayment({super.key});
+  AppointmentPayment({super.key});
   @override
   _AppointmentPaymentScreen createState() => _AppointmentPaymentScreen();
 }
@@ -25,20 +25,20 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
               Container(
                 width: 35,
                 height: 35,
-                padding: const EdgeInsets.all(10),
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: const Color(0xFFE5E5E5),
+                  color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
                   width: 8.0,
                   height: 15,),
               ),
-              const Spacer(),
+              Spacer(),
               Container(
                 alignment: Alignment.center,
                 child:
-                const Center(child: Text(
+                Center(child: Text(
                   'Affiliated Network',
                   style: TextStyle(
                       fontSize: 20,
@@ -47,7 +47,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                 ),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
 
             ],
           ),
@@ -55,17 +55,17 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
         ),
         body:
         Container(
-          padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
+          padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
           child: Align(
             child: Column(
               children: [
-                const SizedBox(height: 40),
+                SizedBox(height: 40),
                 Container(
                   height: 50,
-                  padding: const EdgeInsets.all(4),
+                  padding: EdgeInsets.all(4),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xffE0E0E0),
+                    color: Color(0xffE0E0E0),
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: SizedBox(
@@ -78,8 +78,8 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                       ),
                       indicatorColor: Colors.transparent, // Removes the default bottom underline
                       labelColor: Colors.black,
-                      unselectedLabelColor: const Color(0xff4F4F4F),
-                      tabs: const [
+                      unselectedLabelColor: Color(0xff4F4F4F),
+                      tabs: [
                         Tab(text: "Specialists"),
                         Tab(text: "Pharmacies"),
                         Tab(text: "Hospitals"),
@@ -87,7 +87,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
@@ -106,7 +106,7 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
   specialists() {
     return Column(
       children: [
-        const SizedBox(height: 20),
+        SizedBox(height: 20),
 
     specialist(
       image: "assets/images/doc1.png",
@@ -196,16 +196,16 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: const TextStyle(
+                  Text(name, style: TextStyle(
                       fontSize: 18,
                       color: Colors.black
                   ),),
-                  const SizedBox(height: 5,),
+                  SizedBox(height: 5,),
                   Text("$specialization . $workingType", style: TextStyle(
                       fontSize: 12,
                       color: Colors.grey.withOpacity(0.90)
@@ -215,9 +215,9 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
 
             ],
           ),
-          const SizedBox(height: 15,),
+          SizedBox(height: 15,),
           SvgPicture.asset('assets/images/line.svg'),
-          const SizedBox(height: 15,),
+          SizedBox(height: 15,),
         ],
       ),
     );
@@ -246,17 +246,17 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: const TextStyle(
+                  Text(name, style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),),
-                  const SizedBox(height: 5,),
+                  SizedBox(height: 5,),
                   Text(type, style: TextStyle(
                       fontSize: 12,
                       color: Colors.grey.withOpacity(0.90)
@@ -266,9 +266,9 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
 
             ],
           ),
-          const SizedBox(height: 15,),
+          SizedBox(height: 15,),
           SvgPicture.asset('assets/images/line.svg'),
-          const SizedBox(height: 15,),
+          SizedBox(height: 15,),
         ],
       ),
     );
@@ -296,17 +296,17 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              SizedBox(width: 12),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: const TextStyle(
+                  Text(name, style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),),
-                  const SizedBox(height: 5,),
+                  SizedBox(height: 5,),
                   Text(type, style: TextStyle(
                       fontSize: 12,
                       color: Colors.grey.withOpacity(0.90)
@@ -316,9 +316,9 @@ class _AppointmentPaymentScreen extends  State<AppointmentPayment> with SingleTi
 
             ],
           ),
-          const SizedBox(height: 15,),
+          SizedBox(height: 15,),
           SvgPicture.asset('assets/images/line.svg'),
-          const SizedBox(height: 15,),
+          SizedBox(height: 15,),
         ],
       ),
     );

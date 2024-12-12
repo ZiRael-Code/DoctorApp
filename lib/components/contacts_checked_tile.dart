@@ -5,7 +5,7 @@ class ContactsCheckedTile extends StatefulWidget {
   final bool isInitiallySelected;
   final ValueChanged<bool> onSelectionChanged;
 
-  const ContactsCheckedTile({
+  ContactsCheckedTile({
     super.key,
     required this.name,
     this.isInitiallySelected = false,
@@ -30,7 +30,7 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
     return Container(
       child: Column(
         children: [
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
           Row(
@@ -39,14 +39,14 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
               Container(
                 width: 50,
                 height: 50,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black,
                 ),
                 child: Center(
                   child: Text(
                     widget.name[0],
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -56,22 +56,22 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     height: 20,
                   ),
                   Text(
                     widget.name,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 14,
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 width: 40,
               ),
               GestureDetector(
@@ -89,7 +89,7 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
                     shape: BoxShape.circle,
                   ),
                   child: isChecked
-                      ? const Icon(
+                      ? Icon(
                           Icons.check,
                           color: Colors.white,
                           size: 16,
@@ -99,7 +99,7 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
               ),
             ],
           ),
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
           SizedBox(

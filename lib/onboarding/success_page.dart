@@ -1,58 +1,59 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SuccessPage extends StatelessWidget {
-  const SuccessPage({super.key});
+  SuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Center(
               child: Column(
             children: [
-              const SizedBox(
-                height: 120,
+              SizedBox(
+                height: getFontSize(120, context),
               ),
-              const Text(
+              Text(
                 "Success!",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 28,
+                  fontSize: getFontSize(28, context),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
-              const Column(
+              Column(
                 children: [
                   Text(
                     "Your account has been created",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
                   ),
                   Text(
                     "successfully",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 100,
+              SizedBox(
+                height: getFontSize(100, context),
               ),
               Image.asset(
                 "assets/images/unboardinglogo.png",
                 scale: 4,
               ),
-              const Spacer(),
+              Spacer(),
               GestureDetector(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const LoginPage())),
-                  child: const MyBlueButton(text: "Continue to Login")),
-              const SizedBox(
-                height: 40,
+                      MaterialPageRoute(builder: (context) => LoginPage())),
+                  child: MyBlueButton(text: "Continue to Login")),
+              SizedBox(
+                height: getFontSize(40, context),
               )
             ],
           )),
