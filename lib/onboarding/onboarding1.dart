@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/onboarding2.dart';
 import 'package:flutter/material.dart';
@@ -12,23 +13,23 @@ class Onboarding1 extends StatelessWidget {
         body: Column(
           children: [
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
             Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.only(right: 25),
+                padding: EdgeInsets.only(right: getFontSize(25, context)),
                 child: Text(
                   "SKIP",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 14,
+                    fontSize: getFontSize(14, context),
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 20,
+              height: getFontSize(20, context),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -38,7 +39,7 @@ class Onboarding1 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
             Center(
               child: Image.asset(
@@ -47,19 +48,19 @@ class Onboarding1 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: getFontSize(20, context),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
-                  width: 340,
-                  height: 80,
+                  width: getFontSize(340, context),
+                  height: getFontSize(80, context),
                   child: Text(
                     "You can register a patient under you, and always get notified of the patient's vial readings so if things start going out of hand, you can always step in.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
@@ -67,7 +68,7 @@ class Onboarding1 extends StatelessWidget {
             ),
             Spacer(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: GestureDetector(
                   onTap: () => Navigator.push(
                         context,
@@ -78,7 +79,7 @@ class Onboarding1 extends StatelessWidget {
                   child: MyBlueButton(text: "Continue")),
             ),
             SizedBox(
-              height: 50,
+              height: getFontSize(50, context),
             )
           ],
         ),

@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/onboarding/onboarding3.dart';
 import 'package:flutter/material.dart';
 
@@ -13,23 +14,23 @@ class Onboarding2 extends StatelessWidget {
         body: Column(
           children: [
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
             Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.only(right: 25),
+                padding: EdgeInsets.only(right: getFontSize(25, context)),
                 child: Text(
                   "SKIP",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 14,
+                    fontSize: getFontSize(14, context),
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 60,
+              height: getFontSize(60, context),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -39,7 +40,7 @@ class Onboarding2 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: getFontSize(50, context),
             ),
             Center(
               child: Image.asset(
@@ -48,19 +49,19 @@ class Onboarding2 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: getFontSize(20, context),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: SizedBox(
-                  width: 301,
-                  height: 71,
+                  width: getFontSize(301, context),
+                  height: getFontSize(71, context),
                   child: Text(
                     "Easily schedule appointments with your patients, either through a video/voice call or a physical appointment, right from the app.",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
@@ -68,7 +69,7 @@ class Onboarding2 extends StatelessWidget {
             ),
             Spacer(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+              padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
               child: GestureDetector(
                   onTap: () => Navigator.push(
                         context,
@@ -79,7 +80,7 @@ class Onboarding2 extends StatelessWidget {
                   child: MyBlueButton(text: "Continue")),
             ),
             SizedBox(
-              height: 50,
+              height: getFontSize(50, context),
             )
           ],
         ),

@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -18,20 +19,20 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: getFontSize(200, context),
             ),
             Center(
               child: SizedBox(
-                width: 300,
-                height: 80,
+                width: getFontSize(300, context),
+                height: getFontSize(80, context),
                 child: Stack(
                   children: [
                     Center(
                       child: Image.asset("assets/images/myvitalz.png"),
                     ),
                     Positioned(
-                      right: 0,
-                      bottom: 0,
+                      right: getFontSize(0, context),
+                      bottom: getFontSize(0, context),
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: SvgPicture.asset("assets/images/doctorsvg.svg"),

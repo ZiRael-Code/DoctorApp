@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import '../components/my_blue_button.dart';
 import '../components/my_selected.dart';
@@ -14,30 +15,30 @@ class SetAppointmentTimes2 extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(
-                height: 40,
+                height: getFontSize(40, context),
               ),
               Row(
                 children: [
                   Container(
-                    height: 45,
-                    width: 45,
+                    height: getFontSize(45, context),
+                    width: getFontSize(45, context),
                     decoration: BoxDecoration(
                         color: Colors.grey.shade300, shape: BoxShape.circle),
                     child: Icon(Icons.arrow_back),
                   ),
                   SizedBox(
-                    width: 110,
+                    width: getFontSize(110, context),
                   ),
                   Center(
                     child: Image.asset(
                       "assets/images/frames.png",
-                      width: 65,
+                      width: getFontSize(65, context),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 40,
+                height: getFontSize(40, context),
               ),
               Column(
                 children: [
@@ -45,20 +46,20 @@ class SetAppointmentTimes2 extends StatelessWidget {
                     "Set appointment",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                     ),
                   ),
                   Text(
                     "times",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: getFontSize(30, context),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -68,14 +69,14 @@ class SetAppointmentTimes2 extends StatelessWidget {
                     child: Text(
                       "Specialzation",
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(14, context)),
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: getFontSize(10, context),
                   ),
                   Container(
-                    height: 50,
+                    height: getFontSize(50, context),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade200,
                       borderRadius: BorderRadius.circular(12),
@@ -84,7 +85,7 @@ class SetAppointmentTimes2 extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 10),
+                          padding: EdgeInsets.only(left: getFontSize(10, context)),
                           child: Text(
                             "e.g cardiologist",
                             style: TextStyle(color: Colors.grey),
@@ -100,7 +101,7 @@ class SetAppointmentTimes2 extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15,
+                height: getFontSize(15, context),
               ),
 
               // add available times
@@ -112,49 +113,49 @@ class SetAppointmentTimes2 extends StatelessWidget {
                     Text(
                       "Add available times",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: getFontSize(15, context),
                     ),
                     Row(
                       children: [
                         MySelected(
                           text: "+ Add time",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: getFontSize(15, context),
                         ),
                         MySelected(
                           text: "11:00AM - 3:00AM",
                           isSelected: false,
-                          height: 38,
-                          width: 138,
+                          height: getFontSize(38, context),
+                          width: getFontSize(138, context),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: getFontSize(15, context),
                         ),
                         MySelected(
                           text: "12:30AM",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                       ],
                     ),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                     Text(
                       "Add available times",
                       style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: getFontSize(15, context),
                     ),
                     Wrap(
                       runSpacing: 10.0,
@@ -162,44 +163,44 @@ class SetAppointmentTimes2 extends StatelessWidget {
                         MySelected(
                           text: "+ Add days",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: getFontSize(15, context),
                         ),
                         MySelected(
                           text: "MON",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: getFontSize(15, context),
                         ),
                         MySelected(
                           text: "WED",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: getFontSize(15, context),
                         ),
                         MySelected(
                           text: "THR",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                         SizedBox(
-                          width: 15,
+                          width: getFontSize(15, context),
                         ),
                         MySelected(
                           text: "FRI",
                           isSelected: false,
-                          height: 38,
-                          width: 88,
+                          height: getFontSize(38, context),
+                          width: getFontSize(88, context),
                         ),
                       ],
                     )
@@ -209,7 +210,7 @@ class SetAppointmentTimes2 extends StatelessWidget {
               Spacer(),
               MyBlueButton(text: "Continue"),
               SizedBox(
-                height: 30,
+                height: getFontSize(30, context),
               ),
             ],
           ),

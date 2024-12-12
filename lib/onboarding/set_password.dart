@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:flutter/material.dart';
 
@@ -17,40 +18,40 @@ class _SetPasswordState extends State<SetPassword> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
         child: Column(
           children: [
             SizedBox(
-              height: 60,
+              height: getFontSize(60, context),
             ),
             Image.asset(
               "assets/images/setpasswordframe.png",
               scale: 4,
             ),
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             ),
             Text(
               "Set Password",
               style: TextStyle(
-                fontSize: 28,
+                fontSize: getFontSize(28, context),
                 fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
-              height: 30,
+              height: getFontSize(30, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Type in a new assword",
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: getFontSize(14, context),
                 ),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             MyTextfield(
               hinttext: "******",
@@ -66,19 +67,19 @@ class _SetPasswordState extends State<SetPassword> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: getFontSize(30, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
                 "Confirm password",
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: getFontSize(14, context),
                 ),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             MyTextfield(
               hinttext: "******",
@@ -96,7 +97,7 @@ class _SetPasswordState extends State<SetPassword> {
             Spacer(),
             MyBlueButton(text: "Continue"),
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             )
           ],
         ),

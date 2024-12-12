@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/set_password.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,11 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
             child: Column(
               children: [
                 SizedBox(
-                  height: 40,
+                  height: getFontSize(40, context),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -30,88 +31,88 @@ class _RegisterPageState extends State<RegisterPage> {
                     "Register",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: getFontSize(30, context),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "First Name",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: getFontSize(10, context),
                 ),
                 MyTextfield(
                   hinttext: "First Name",
                   obscuretext: false,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: getFontSize(20, context),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Last Name",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: getFontSize(10, context),
                 ),
                 MyTextfield(
                   hinttext: "Last Name",
                   obscuretext: false,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: getFontSize(20, context),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Phone Number",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: getFontSize(10, context),
                 ),
                 MyTextfield(
                   hinttext: "Phone Number",
                   obscuretext: false,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: getFontSize(20, context),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     "Email",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: getFontSize(10, context),
                 ),
                 MyTextfield(
                   hinttext: "Email Address",
                   obscuretext: false,
                 ),
                 SizedBox(
-                  height: 20,
+                  height: getFontSize(20, context),
                 ),
                  GestureDetector(
                    onTap: (){
@@ -123,29 +124,29 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: 120,
+                      width: getFontSize(120, context),
                       child: Divider(
                         color: Colors.grey.shade300,
                         thickness: 1,
                       ),
                     ),
                     SizedBox(
-                      width: 8,
+                      width: getFontSize(8, context),
                     ),
                     Text(
                       "Or register with",
                     ),
                     SizedBox(
-                      width: 8,
+                      width: getFontSize(8, context),
                     ),
                     SizedBox(
-                      width: 120,
+                      width: getFontSize(120, context),
                       child: Divider(
                         color: Colors.grey.shade300,
                         thickness: 1,
@@ -154,7 +155,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: getFontSize(20, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -163,7 +164,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       "assets/images/facebook.png",
                       scale: 4,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: getFontSize(10, context)),
                     Image.asset(
                       "assets/images/google.png",
                       scale: 4,
@@ -171,14 +172,14 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Already have an account?"),
                     SizedBox(
-                      width: 4,
+                      width: getFontSize(4, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(

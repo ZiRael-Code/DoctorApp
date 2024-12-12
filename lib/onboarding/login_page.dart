@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/MainSelectionScreen/MainNavigator.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/my_textfield.dart';
@@ -18,12 +19,12 @@ class _LoginPageState extends State<LoginPage> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(
-                  height: 60,
+                  height: getFontSize(60, context),
                 ),
                 Center(
                   child: Image.asset(
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: getFontSize(25, context),
                 ),
                 Column(
                   children: [
@@ -42,43 +43,43 @@ class _LoginPageState extends State<LoginPage> {
                         "Welcome",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                          fontSize: getFontSize(28, context),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Username",
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: getFontSize(14, context),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                     MyTextfield(
                       hinttext: "Username",
                       obscuretext: false,
                     ),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Password",
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: getFontSize(14, context),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 10,
+                      height: getFontSize(10, context),
                     ),
                     MyTextfield(
                       hinttext: "Password",
@@ -95,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: getFontSize(15, context),
                     ),
                     Align(
                       alignment: Alignment.centerRight,
@@ -103,12 +104,12 @@ class _LoginPageState extends State<LoginPage> {
                         "Forgot passowrd",
                         style: TextStyle(
                             color: Colors.blue,
-                            fontSize: 14,
+                            fontSize: getFontSize(14, context),
                             fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: getFontSize(30, context),
                     ),
                     GestureDetector(
                         onTap: () => Navigator.pushReplacement(
@@ -117,13 +118,13 @@ class _LoginPageState extends State<LoginPage> {
                                 builder: (context) => MainNavigator())),
                         child: MyBlueButton(text: "Login")),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                     Center(
                       child: Text("Or login with"),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                   ],
                 ),
@@ -137,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                           "assets/images/facebook.png",
                           scale: 4,
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: getFontSize(10, context)),
                         Image.asset(
                           "assets/images/google.png",
                           scale: 4,
@@ -147,14 +148,14 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: getFontSize(30, context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have an account yet?"),
                     SizedBox(
-                      width: 4,
+                      width: getFontSize(4, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(

@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:flutter/material.dart';
@@ -10,37 +11,37 @@ class SuccessPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Center(
               child: Column(
             children: [
               SizedBox(
-                height: 120,
+                height: getFontSize(120, context),
               ),
               Text(
                 "Success!",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 28,
+                  fontSize: getFontSize(28, context),
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: getFontSize(20, context),
               ),
               Column(
                 children: [
                   Text(
                     "Your account has been created",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
                   ),
                   Text(
                     "successfully",
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
                   )
                 ],
               ),
               SizedBox(
-                height: 100,
+                height: getFontSize(100, context),
               ),
               Image.asset(
                 "assets/images/unboardinglogo.png",
@@ -52,7 +53,7 @@ class SuccessPage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => LoginPage())),
                   child: MyBlueButton(text: "Continue to Login")),
               SizedBox(
-                height: 40,
+                height: getFontSize(40, context),
               )
             ],
           )),

@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/my_white_button.dart';
 import 'package:doctor_app/onboarding/upload_id_card.dart';
@@ -17,24 +18,24 @@ class VerifyIdentity extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 80,
+                    height: getFontSize(80, context),
                   ),
                   Text(
                     "Verify Identity",
                     style: TextStyle(
-                      fontSize: 28,
+                      fontSize: getFontSize(28, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: getFontSize(20, context),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 75),
+                    padding: EdgeInsets.symmetric(horizontal: getFontSize(75, context)),
                     child: Text(
                       "Verify your identity as a medical specalist. You will be needed to upload or take a photo of your license.",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -45,21 +46,21 @@ class VerifyIdentity extends StatelessWidget {
                     children: [
                       Center(
                         child: Container(
-                          margin: EdgeInsets.only(top: 80.5),
+                          margin: EdgeInsets.only(top: getFontSize(80.5, context)),
                           child: Image.asset(
                             "assets/images/Group 803.png",
-                            width: 215,
-                            height: 215,
+                            width: getFontSize(215, context),
+                            height: getFontSize(215, context),
                           ),
                         ),
                       ),
                       Center(
                         child: Container(
-                          margin: EdgeInsets.only(top: 26),
+                          margin: EdgeInsets.only(top: getFontSize(26, context)),
                           child: Image.asset(
                             "assets/images/id-card.png",
-                            width: 222,
-                            height: 276,
+                            width: getFontSize(222, context),
+                            height: getFontSize(276, context),
                           ),
                         ),
                       ),
@@ -77,7 +78,7 @@ class VerifyIdentity extends StatelessWidget {
                           ),
                       child: MyBlueButton(text: "Continue")),
                   SizedBox(
-                    height: 20,
+                    height: getFontSize(20, context),
                   ),
                   MyWhiteButton(text: "I'll do this later")
                 ],
