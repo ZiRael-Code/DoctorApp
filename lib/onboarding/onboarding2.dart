@@ -1,5 +1,6 @@
 import 'package:doctor_app/onboarding/onboarding3.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../components/my_blue_button.dart';
 
@@ -33,8 +34,8 @@ class Onboarding2 extends StatelessWidget {
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                "assets/images/onboarding2.png",
+              child: SvgPicture.asset(
+                "assets/images/onboarding2.svg",
                 fit: BoxFit.cover,
               ),
             ),
@@ -68,7 +69,7 @@ class Onboarding2 extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.only(bottom: 30, left: 25, right: 25),
               child: GestureDetector(
                   onTap: () => Navigator.push(
                         context,
@@ -78,9 +79,6 @@ class Onboarding2 extends StatelessWidget {
                       ),
                   child: const MyBlueButton(text: "Continue")),
             ),
-            const SizedBox(
-              height: 50,
-            )
           ],
         ),
       ),

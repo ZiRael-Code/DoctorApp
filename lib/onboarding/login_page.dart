@@ -3,6 +3,7 @@ import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/my_textfield.dart';
 import 'package:doctor_app/onboarding/register_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -54,8 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text(
                         "Username",
                         style: TextStyle(
-                          fontSize: 14,
-                        ),
+                            fontSize: 14, fontWeight: FontWeight.w500),
                       ),
                     ),
                     const SizedBox(
@@ -66,22 +66,21 @@ class _LoginPageState extends State<LoginPage> {
                       obscuretext: false,
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 15,
                     ),
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Password",
                         style: TextStyle(
-                          fontSize: 14,
-                        ),
+                            fontSize: 14, fontWeight: FontWeight.w500),
                       ),
                     ),
                     const SizedBox(
                       height: 10,
                     ),
                     MyTextfield(
-                      hinttext: "Password",
+                      hinttext: "*********",
                       obscuretext: _obscureText,
                       suffixicon: IconButton(
                         onPressed: () {
@@ -119,8 +118,19 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       height: 20,
                     ),
-                    const Center(
-                      child: Text("Or login with"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset("assets/images/divider.svg"),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text("Or login with"),
+                        SvgPicture.asset("assets/images/divider.svg"),
+                        SizedBox(
+                          width: 6,
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 20,
@@ -163,7 +173,8 @@ class _LoginPageState extends State<LoginPage> {
                               builder: (context) => const RegisterPage())),
                       child: const Text(
                         "Register here",
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.w500),
                       ),
                     )
                   ],

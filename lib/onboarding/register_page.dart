@@ -1,5 +1,7 @@
 import 'package:doctor_app/components/my_blue_button.dart';
+import 'package:doctor_app/onboarding/set_password.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../components/my_textfield.dart';
 
@@ -112,8 +114,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 20,
                 ),
-                const MyBlueButton(
-                  text: "Register",
+                GestureDetector(
+                  onTap: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SetPassword())),
+                  child: const MyBlueButton(
+                    text: "Register",
+                  ),
                 ),
                 const SizedBox(
                   height: 30,
@@ -121,29 +129,15 @@ class _RegisterPageState extends State<RegisterPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    SvgPicture.asset("assets/images/divider.svg"),
                     SizedBox(
-                      width: 120,
-                      child: Divider(
-                        color: Colors.grey.shade300,
-                        thickness: 1,
-                      ),
+                      width: 6,
                     ),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    const Text(
-                      "Or register with",
-                    ),
-                    const SizedBox(
-                      width: 8,
-                    ),
+                    Text("Or register with"),
+                    SvgPicture.asset("assets/images/divider.svg"),
                     SizedBox(
-                      width: 120,
-                      child: Divider(
-                        color: Colors.grey.shade300,
-                        thickness: 1,
-                      ),
-                    )
+                      width: 6,
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -180,7 +174,8 @@ class _RegisterPageState extends State<RegisterPage> {
                               builder: (context) => const RegisterPage())),
                       child: const Text(
                         "Login here",
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.w500),
                       ),
                     )
                   ],

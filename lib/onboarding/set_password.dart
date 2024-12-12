@@ -1,4 +1,5 @@
 import 'package:doctor_app/components/my_blue_button.dart';
+import 'package:doctor_app/onboarding/enable_fingerprint.dart';
 import 'package:flutter/material.dart';
 
 import '../components/my_textfield.dart';
@@ -94,7 +95,12 @@ class _SetPasswordState extends State<SetPassword> {
               ),
             ),
             const Spacer(),
-            const MyBlueButton(text: "Continue"),
+            GestureDetector(
+                onTap: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => EnableFingerprint())),
+                child: const MyBlueButton(text: "Continue")),
             const SizedBox(
               height: 40,
             )

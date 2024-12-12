@@ -1,8 +1,9 @@
 import 'package:doctor_app/MainSelectionScreen/Account.dart';
+import 'package:doctor_app/MainSelectionScreen/Dashboard.dart';
+import 'package:doctor_app/onboarding/login_page.dart';
 import 'package:doctor_app/onboarding/onboarding1.dart';
 import 'package:doctor_app/onboarding/splash_screen.dart';
 import 'package:flutter/material.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: const Account(),
+      home: const Loader(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/onboarding2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Onboarding1 extends StatelessWidget {
   const Onboarding1({super.key});
@@ -31,12 +32,11 @@ class Onboarding1 extends StatelessWidget {
               height: 20,
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                "assets/images/onboarding1.png",
-                fit: BoxFit.cover,
-              ),
-            ),
+                width: MediaQuery.of(context).size.width,
+                child: SvgPicture.asset(
+                  "assets/images/onboarding1.svg",
+                  fit: BoxFit.cover,
+                )),
             const SizedBox(
               height: 40,
             ),

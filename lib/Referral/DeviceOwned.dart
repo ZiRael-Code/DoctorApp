@@ -118,7 +118,8 @@ class _DeviceOwnedScreen extends State<DeviceOwned> {
             height: 10,
           ),
           Text(name,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              style:
+                  const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
           const SizedBox(
             height: 20,
           ),
