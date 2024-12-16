@@ -56,12 +56,8 @@ class _LoginPageState extends State<LoginPage> {
                       child: Text(
                         "Username",
                         style: TextStyle(
-<<<<<<< HEAD
-                            fontSize: 14, fontWeight: FontWeight.w500),
-=======
                           fontSize: getFontSize(14, context),
                         ),
->>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                       ),
                     ),
                     SizedBox(
@@ -71,28 +67,19 @@ class _LoginPageState extends State<LoginPage> {
                       hinttext: "Username",
                       obscuretext: false,
                     ),
-<<<<<<< HEAD
-                    const SizedBox(
-                      height: 15,
-=======
-                    SizedBox(
+                     SizedBox(
                       height: getFontSize(10, context),
->>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                     ),
-                    Align(
+                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "Password",
                         style: TextStyle(
-<<<<<<< HEAD
-                            fontSize: 14, fontWeight: FontWeight.w500),
-=======
                           fontSize: getFontSize(14, context),
                         ),
->>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
                       ),
                     ),
-                    SizedBox(
+                     SizedBox(
                       height: getFontSize(10, context),
                     ),
                     MyTextfield(
@@ -112,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: getFontSize(15, context),
                     ),
-                    Align(
+                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         "Forgot passowrd",
@@ -122,19 +109,18 @@ class _LoginPageState extends State<LoginPage> {
                             fontWeight: FontWeight.bold),
                       ),
                     ),
-                    SizedBox(
+                     SizedBox(
                       height: getFontSize(30, context),
                     ),
-                    GestureDetector(
+                     GestureDetector(
                         onTap: () => Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => MainNavigator())),
                         child: MyBlueButton(text: "Login")),
-                    SizedBox(
+                     SizedBox(
                       height: getFontSize(20, context),
                     ),
-<<<<<<< HEAD
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -147,17 +133,9 @@ class _LoginPageState extends State<LoginPage> {
                         SizedBox(
                           width: 6,
                         ),
-                      ],
-=======
-                    Center(
-                      child: Text("Or login with"),
->>>>>>> 94d90a26bb1335db614dc24158284efe375dd294
-                    ),
                     SizedBox(
                       height: getFontSize(20, context),
                     ),
-                  ],
-                ),
                 Center(
                   child: Container(
                     child: Row(
@@ -201,10 +179,14 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 )
               ],
-            ),
-          ),
         ),
+    ]
       ),
+    ]
+        ),
+        )
+        )
+      )
     );
   }
 }

@@ -1,10 +1,11 @@
-import '../MainScreen/Dashboard.dart';
+import '../Account/DeviceSummary.dart';
 
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../MainSelectionScreen/Dashboard.dart';
 import 'DeviceSummary.dart';
 
 

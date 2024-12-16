@@ -51,8 +51,40 @@ class _MainNavigatorState extends State<MainNavigator> {
               ),
               label: 'Home',
             ),
-          ),
-        );
+      BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                _selectedIndex == 0
+                    ? 'assets/images/s_home.svg'
+                    : 'assets/images/un_home.svg',
+                width: 28,
+                height: 28,
+              ),
+              label: 'Home',
+            ),
+      BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                _selectedIndex == 0
+                    ? 'assets/images/s_home.svg'
+                    : 'assets/images/un_home.svg',
+                width: 28,
+                height: 28,
+              ),
+              label: 'Home',
+            ),
+      BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                _selectedIndex == 0
+                    ? 'assets/images/s_home.svg'
+                    : 'assets/images/un_home.svg',
+                width: 28,
+                height: 28,
+              ),
+              label: 'Home',
+        )
+        ]
+        )
+    )
+    );
     }
   }
 void main(){
