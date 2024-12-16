@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../MainSelectionScreen/MainNavigator.dart';
+
 
 void main(){
   runApp(PinResetSucess());
@@ -86,7 +88,12 @@ class _PinResetSucessScreen extends  State<PinResetSucess> {
                   Spacer(),
 
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                            (Route<dynamic> route) => false,
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                       fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),

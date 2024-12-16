@@ -94,7 +94,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
 
         SizedBox(height: getFontSize(15, context),),
         SizedBox(
-          width: getFontSize(200, context),
+          // width: getFontSize(200, context),
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(
@@ -106,7 +106,6 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
-            fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
             ),

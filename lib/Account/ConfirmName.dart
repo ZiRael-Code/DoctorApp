@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../MainSelectionScreen/MainNavigator.dart';
+
 
 void main(){
   runApp(ConfirmName());
@@ -76,7 +78,12 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                          (Route<dynamic> route) => false, // Remove all previous routes
+                    );
+                  },
                   child: Text(
                     'Confirm',
                     style: TextStyle(
@@ -98,18 +105,6 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            textHeader,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16.0,
-            ),
-            textAlign: TextAlign.start,
-          ),
-        ),
-        SizedBox(height: 15.0),
         Align(alignment: Alignment.centerLeft,child:
         Text(
         textHeader,

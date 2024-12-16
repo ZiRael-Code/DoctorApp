@@ -6,14 +6,15 @@ import 'Network.dart';
 import 'Patients.dart';
 
 class MainNavigator extends StatefulWidget {
-  MainNavigator({super.key});
+  final int index;
+  MainNavigator({super.key, required this.index});
 
   @override
   _MainNavigatorState createState() => _MainNavigatorState();
 }
 
 class _MainNavigatorState extends State<MainNavigator> {
-  int _selectedIndex = 0;
+  late int _selectedIndex = widget.index;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -25,7 +26,7 @@ class _MainNavigatorState extends State<MainNavigator> {
     Dashboard(onItemTapped: _onItemTapped),
     Patients(),
     Network(),
-    Account(),
+    Account(onItemTapped: _onItemTapped),
   ];
 
   @override
@@ -53,33 +54,33 @@ class _MainNavigatorState extends State<MainNavigator> {
             ),
       BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                _selectedIndex == 0
-                    ? 'assets/images/s_home.svg'
-                    : 'assets/images/un_home.svg',
+                _selectedIndex == 1
+                    ? 'assets/images/s_patient.svg'
+                    : 'assets/images/un_patient.svg',
                 width: 28,
                 height: 28,
               ),
-              label: 'Home',
+              label: 'Patient',
             ),
       BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                _selectedIndex == 0
-                    ? 'assets/images/s_home.svg'
-                    : 'assets/images/un_home.svg',
+                _selectedIndex == 2
+                    ? 'assets/images/s_network.svg'
+                    : 'assets/images/un_network.svg',
                 width: 28,
                 height: 28,
               ),
-              label: 'Home',
+              label: 'Network',
             ),
       BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                _selectedIndex == 0
-                    ? 'assets/images/s_home.svg'
-                    : 'assets/images/un_home.svg',
+                _selectedIndex == 3
+                    ? 'assets/images/s_account.svg'
+                    : 'assets/images/un_account.svg',
                 width: 28,
                 height: 28,
               ),
-              label: 'Home',
+              label: 'Account',
         )
         ]
         )
@@ -87,7 +88,7 @@ class _MainNavigatorState extends State<MainNavigator> {
     );
     }
   }
-void main(){
-  runApp(MaterialApp(
-      home: MainNavigator()));
-}
+// void main(){
+//   runApp(MaterialApp(
+//       home: MainNavigator(index: 0,)));
+// }

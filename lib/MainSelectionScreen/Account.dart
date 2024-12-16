@@ -21,7 +21,8 @@ import '../Account/Referral/Referrals.dart';
 import '../Account/ResetPin.dart';
 
 class Account extends StatefulWidget {
-  Account({super.key});
+  final void Function(int index) onItemTapped;
+  Account({super.key, required this.onItemTapped});
 
   @override
   State<Account> createState() => _AccountState();
@@ -535,7 +536,10 @@ class _AccountState extends State<Account> {
       required String detailInfo,
       required bool shouldLine,
       lol}) {
-    return Column(children: [
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      width: double.infinity,
+        child: Column(children: [
       Row(
         children: [
           Container(
@@ -571,6 +575,6 @@ class _AccountState extends State<Account> {
       ),
       SizedBox(height: getFontSize(10, context)),
       SvgPicture.asset(shouldLine == true ? "assets/images/line.svg" : ""),
-    ]);
+    ]));
   }
 }

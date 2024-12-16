@@ -140,8 +140,8 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                           ),
                         ),
                         suffixIcon: Container(
-                          width: getFontSize(96, context),
                           child: Row(
+                            mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               IconButton(

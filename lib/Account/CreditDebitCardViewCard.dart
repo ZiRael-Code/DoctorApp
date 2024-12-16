@@ -339,11 +339,9 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                         backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MainNavigator(),
-                          ),
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                              (Route<dynamic> route) => false, // Remove all previous routes
                         );
                       },
                       child: Text(

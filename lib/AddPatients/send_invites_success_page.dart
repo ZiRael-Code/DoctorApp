@@ -2,6 +2,8 @@ import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../MainSelectionScreen/MainNavigator.dart';
+
 class SendInvitesSuccessPage extends StatelessWidget {
   SendInvitesSuccessPage({super.key});
 
@@ -60,8 +62,16 @@ class SendInvitesSuccessPage extends StatelessWidget {
                 ),
               ),
               Spacer(),
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                        (Route<dynamic> route) => false, // Remove all previous routes
+                  );
+                },
+                child:
               MyBlueButton(text: "Done"),
-              SizedBox(
+              ),SizedBox(
                 height: 30,
               )
             ],

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../MainSelectionScreen/MainNavigator.dart';
 import 'CreditDebitCardAvailableCard.dart';
 
 
@@ -88,11 +89,9 @@ class _SuccessScreen extends  State<CreditCardAddedSucess> {
 
         ElevatedButton(
           onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CreditDebitCardAvailableCard(),
-              ),
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                  (Route<dynamic> route) => false, // Remove all previous routes
             );
           },
           style: ElevatedButton.styleFrom(
