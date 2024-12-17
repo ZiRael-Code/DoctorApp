@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/onboarding/setup_complete.dart';
@@ -194,7 +195,7 @@ class _AppointmentPaymentScreen extends State<SetNewPin> {
                     ]),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 30),
+                    padding: EdgeInsets.only(top: getFontSize(30, context)),
                     child: MyBlueButton(text: "Continue"),
                   )
                 ],

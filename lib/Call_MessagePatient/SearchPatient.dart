@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../MainSelectionScreen/Dashboard.dart';
+
 class Searchpatient extends StatefulWidget {
   Searchpatient({super.key});
 
@@ -34,16 +36,16 @@ class _SearchpatientState extends State<Searchpatient> {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Color(0xFFE5E5E5),
               ),
               child: SvgPicture.asset('assets/images/back.svg',
-                width: 8.0,
-                height: 15,),
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),),
             ),
             Spacer(),
             Container(
@@ -52,7 +54,7 @@ class _SearchpatientState extends State<Searchpatient> {
               Center(child: Text(
                 'Search patient',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontStyle: FontStyle.normal
                 ),
               ),
@@ -66,7 +68,7 @@ class _SearchpatientState extends State<Searchpatient> {
       child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(right: getFontSize(10, context)),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.grey[200],
@@ -100,12 +102,12 @@ class _SearchpatientState extends State<Searchpatient> {
                   )
                       : null,
                   border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(vertical: 15),
+                  contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                 ),
               ),
             ),
 
-            SizedBox(height: 16),
+            SizedBox(height: getFontSize(16, context)),
             Visibility(
               visible: controller.text.isNotEmpty,
               child:
@@ -135,10 +137,10 @@ class _SearchpatientState extends State<Searchpatient> {
 
 
            controller.text.isEmpty ? Column(children: [
-              SizedBox(height: 60,),
+              SizedBox(height: getFontSize(60, context),),
             SvgPicture.asset('assets/images/searchname.svg'),
             SizedBox(
-              width: 260,
+              width: getFontSize(260, context),
                 child: Text(textAlign: TextAlign.center, "Start typing a patient’s name or phone number to search for them. Only patients you’ve added will show up here."),
             ),
               ]
@@ -152,8 +154,8 @@ class _SearchpatientState extends State<Searchpatient> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text("No users were found.", style: TextStyle(fontSize: 14),),
-                SizedBox(height: 12,),
+                Text("No users were found.", style: TextStyle(fontSize: getFontSize(14, context)),),
+                SizedBox(height: getFontSize(12, context),),
                 ElevatedButton(
                   onPressed: () {
                   },
@@ -164,19 +166,19 @@ class _SearchpatientState extends State<Searchpatient> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 7.0),
+                    padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(7.0, context)),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
                           Icons.add,
                           color: Colors.white,
-                          size: 16,
+                          size: getFontSize(16, context),
                         ),
-                        SizedBox(width: 8),
+                        SizedBox(width: getFontSize(8, context)),
                         Text(
                           'Add a new patient',
-                          style: TextStyle(color: Colors.white, fontSize: 12),
+                          style: TextStyle(color: Colors.white, fontSize: getFontSize(12, context)),
                         ),
                       ],
                     ),

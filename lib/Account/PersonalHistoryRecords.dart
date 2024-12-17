@@ -33,6 +33,12 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -45,6 +51,10 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
               Spacer(),
@@ -111,7 +121,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Add a condition',
               style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),

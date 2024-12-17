@@ -28,6 +28,12 @@ class HowItWorkExplainedState extends  State<HowItWorkExplained> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -40,6 +46,10 @@ class HowItWorkExplainedState extends  State<HowItWorkExplained> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
               Spacer(),

@@ -31,18 +31,23 @@ class _AppointmentPaymentScreen extends  State<SetNewPin> {
               InkWell(
                 onTap: () => Navigator.pop(context),
                 child:
-                Container(
-                  width: getFontSize(35, context),
-                  height: getFontSize(35, context),
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFE5E5E5),
-                  ),
-                  child: SvgPicture.asset('assets/images/back.svg',
-                    width: getFontSize(8.0, context),
-                    height: getFontSize(15, context),),
+                InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              Container(
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xFFE5E5E5),
                 ),
+                child: SvgPicture.asset('assets/images/back.svg',
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
+              ),
+              ),
+
               ),
 
               Spacer(),

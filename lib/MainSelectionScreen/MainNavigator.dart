@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'Account.dart';
@@ -26,7 +27,7 @@ class _MainNavigatorState extends State<MainNavigator> {
     Dashboard(onItemTapped: _onItemTapped),
     Patients(),
     Network(),
-    Account(onItemTapped: _onItemTapped),
+    Account(),
   ];
 
   @override
@@ -47,8 +48,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                 _selectedIndex == 0
                     ? 'assets/images/s_home.svg'
                     : 'assets/images/un_home.svg',
-                width: 28,
-                height: 28,
+                width: getFontSize(28, context),
+                height: getFontSize(28, context),
               ),
               label: 'Home',
             ),
@@ -57,8 +58,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                 _selectedIndex == 1
                     ? 'assets/images/s_patient.svg'
                     : 'assets/images/un_patient.svg',
-                width: 28,
-                height: 28,
+                width: getFontSize(28, context),
+                height: getFontSize(28, context),
               ),
               label: 'Patient',
             ),
@@ -67,8 +68,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                 _selectedIndex == 2
                     ? 'assets/images/s_network.svg'
                     : 'assets/images/un_network.svg',
-                width: 28,
-                height: 28,
+                width: getFontSize(28, context),
+                height: getFontSize(28, context),
               ),
               label: 'Network',
             ),
@@ -77,8 +78,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                 _selectedIndex == 3
                     ? 'assets/images/s_account.svg'
                     : 'assets/images/un_account.svg',
-                width: 28,
-                height: 28,
+                width: getFontSize(28, context),
+                height: getFontSize(28, context),
               ),
               label: 'Account',
         )

@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/blue_text_bubble.dart';
 import 'package:doctor_app/components/grey_text_bubble.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class _ChatPageState extends State<ChatPage> {
       ),
       builder: (context) {
         return Container(
-          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+          padding: EdgeInsets.symmetric(vertical: getFontSize(16.0, context), horizontal: getFontSize(8.0, context)),
           child: Column(
             mainAxisSize: MainAxisSize.min, // Keep it minimal height
             children: [
@@ -27,7 +28,7 @@ class _ChatPageState extends State<ChatPage> {
                 title: Center(
                   child: Text(
                     'View patient information',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: getFontSize(16, context)),
                   ),
                 ),
                 onTap: () {
@@ -40,7 +41,7 @@ class _ChatPageState extends State<ChatPage> {
                 title: Center(
                   child: Text(
                     'Add to prioritized patients',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: getFontSize(16, context)),
                   ),
                 ),
                 onTap: () {
@@ -60,10 +61,10 @@ class _ChatPageState extends State<ChatPage> {
     return SafeArea(
         child: Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 25),
+        padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
         child: Column(
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: getFontSize(40, context)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -72,8 +73,8 @@ class _ChatPageState extends State<ChatPage> {
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                        height: 45,
-                        width: 45,
+                        height: getFontSize(45, context),
+                        width: getFontSize(45, context),
                         decoration: BoxDecoration(
                           color: Colors.grey.shade300,
                           shape: BoxShape.circle,
@@ -82,23 +83,23 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: getFontSize(20, context),
                     ),
                     Column(
                       children: [
                         Text(
                           "Janet Okoli",
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                              fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),
                         ),
                         SizedBox(
-                          height: 8,
+                          height: getFontSize(8, context),
                         ),
                         Row(
                           children: [
                             Container(
-                              width: 12,
-                              height: 12,
+                              width: getFontSize(12, context),
+                              height: getFontSize(12, context),
                               decoration: BoxDecoration(
                                 color: Colors.green,
                                 shape: BoxShape.circle,
@@ -106,12 +107,12 @@ class _ChatPageState extends State<ChatPage> {
                               ),
                             ),
                             SizedBox(
-                              width: 8,
+                              width: getFontSize(8, context),
                             ),
                             Text(
                               "Active now",
                               style:
-                                  TextStyle(fontSize: 12, color: Colors.grey),
+                                  TextStyle(fontSize: getFontSize(12, context), color: Colors.grey),
                             )
                           ],
                         ),
@@ -122,8 +123,8 @@ class _ChatPageState extends State<ChatPage> {
                 Row(
                   children: [
                     Container(
-                      width: 44,
-                      height: 44,
+                      width: getFontSize(44, context),
+                      height: getFontSize(44, context),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle, color: Colors.blue[100]),
                       child: Container(
@@ -134,14 +135,14 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: getFontSize(10, context),
                     ),
                     // Blue dots with click functionality
                     GestureDetector(
                       onTap: () => _showDropdownPopup(context),
                       child: Container(
-                        width: 44,
-                        height: 44,
+                        width: getFontSize(44, context),
+                        height: getFontSize(44, context),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.blue[100],
@@ -159,19 +160,19 @@ class _ChatPageState extends State<ChatPage> {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: getFontSize(30, context),
             ),
             Center(
               child: Text(
                 "Wed 8:12 AM",
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: getFontSize(12, context),
                   color: Colors.grey,
                 ),
               ),
             ),
             SizedBox(
-              height: 20,
+              height: getFontSize(20, context),
             ),
             // chat bubbles
             Align(
@@ -180,7 +181,7 @@ class _ChatPageState extends State<ChatPage> {
                   text: "Hello, i'm Dr Nelson!, How can i help you?"),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             Align(
               alignment: Alignment.centerRight,
@@ -189,7 +190,7 @@ class _ChatPageState extends State<ChatPage> {
                       "I am not feeling too well. I woke up with a fever this morning. What should i do?"),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
@@ -199,28 +200,28 @@ class _ChatPageState extends State<ChatPage> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             Align(
                 alignment: Alignment.centerRight,
                 child: BlueTextBubble(text: "Okay")),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: GreyTextBubble(text: "Use these medications"),
             ),
             SizedBox(
-              height: 10,
+              height: getFontSize(10, context),
             ),
             Align(
               alignment: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: getFontSize(10, context)),
                 child: Container(
-                  width: 233,
-                  height: 40,
+                  width: getFontSize(233, context),
+                  height: getFontSize(40, context),
                   decoration: BoxDecoration(
                       border: Border.all(color: Colors.green),
                       borderRadius: BorderRadius.circular(20),
@@ -233,12 +234,12 @@ class _ChatPageState extends State<ChatPage> {
                           child: SvgPicture.asset("assets/images/pills.svg"),
                         ),
                         SizedBox(
-                          width: 0,
+                          width: getFontSize(0, context),
                         ),
                         Text(
                           "12/06/2022 - Prescriptions",
                           style:
-                              TextStyle(color: Colors.green[900], fontSize: 14),
+                              TextStyle(color: Colors.green[900], fontSize: getFontSize(14, context)),
                         )
                       ],
                     ),
@@ -251,8 +252,8 @@ class _ChatPageState extends State<ChatPage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Container(
-                  width: 284,
-                  height: 50,
+                  width: getFontSize(284, context),
+                  height: getFontSize(50, context),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     border: Border.all(color: Colors.grey.shade300),
@@ -267,32 +268,32 @@ class _ChatPageState extends State<ChatPage> {
                                 color: Colors.grey,
                                 fontWeight: FontWeight.normal),
                             contentPadding:
-                                EdgeInsets.symmetric(horizontal: 15),
+                                EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
                             border:
                                 InputBorder.none, // Remove default underline
                           ),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: getFontSize(10, context)),
                         child: SvgPicture.asset("assets/images/pin.svg"),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: getFontSize(10, context)),
                         child: Image.asset("assets/images/mic.png"),
                       ),
                       SizedBox(
-                        width: 8,
+                        width: getFontSize(8, context),
                       )
                     ],
                   ),
                 ),
                 SizedBox(
-                  width: 15,
+                  width: getFontSize(15, context),
                 ),
                 Container(
-                  width: 51,
-                  height: 51,
+                  width: getFontSize(51, context),
+                  height: getFontSize(51, context),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.blue,
@@ -305,7 +306,7 @@ class _ChatPageState extends State<ChatPage> {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: getFontSize(40, context),
             )
           ],
         ),

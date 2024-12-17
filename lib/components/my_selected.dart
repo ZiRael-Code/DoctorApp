@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class MySelected extends StatefulWidget {
@@ -47,7 +48,7 @@ class _MySelectedState extends State<MySelected> {
             widget.text,
             style: TextStyle(
               color: Color.fromARGB(255, 63, 164, 246),
-              fontSize: 12,
+              fontSize: getFontSize(12, context),
             ),
           ),
         ),

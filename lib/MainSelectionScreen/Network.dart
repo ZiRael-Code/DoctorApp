@@ -1,8 +1,13 @@
+import '../MainSelectionScreen/Dashboard.dart';
+import 'package:doctor_app/Network/add_new_network.dart';
+import 'package:doctor_app/Network/join_a_network.dart';
+import 'package:doctor_app/Network/my_network.dart';
 import 'package:flutter/material.dart';
 import '../AddPatients/add_a_patient.dart';
 import '../AddPatients/messages.dart';
 import '../AllPatientReading/AllPatientReading.dart';
 import '../Call_MessagePatient/SearchPatient.dart';
+import '../Network1/AffiliatedNetwork.dart';
 import '../Network1/PersonalMinistore.dart';
 import 'Dashboard.dart';
 import 'Patients.dart';
@@ -31,48 +36,69 @@ class _NetworkState extends State<Network> {
         Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    actions(
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>AffiliatedNetwork()));
+                      },
+                      child:
+                      actions(
                         context,
                         Icons.supervisor_account,
                         "All affiliated networks",
-                        MaterialPageRoute(builder: (builder)=>AddAPatient())
                     ),
+                    ),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>MyNetwork()));
+                      },
+                      child:
                     actions(
                         context,
                         Icons.public_outlined,
-                        "My network",
-                         MaterialPageRoute(builder: (builder)=>Messages())
+                        "My network"
                     ),
-                    actions(
+                    ),
+
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>JoinANetwork()));
+                      },
+                      child:
+                      actions(
                         context,
                         Icons.share,
-                        "Join new network",
-                        MaterialPageRoute(builder: (builder)=>AllPatientReading())
+                        "Join new network"
                     ),
-                    actions(
+                    ),
+                    InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (builder)=>Searchpatient()));
+                      },
+                      child:
+                      actions(
                         context,
                         Icons.add_home_work_outlined,
-                        "Personal ministore",
-                        MaterialPageRoute(builder: (builder)=>Searchpatient())
+                        "Personal ministore"
+                    ),
                     ),
                   ],
                 ),
-                SizedBox(height: 25,),
+                SizedBox(height: getFontSize(25, context),),
                 Text("Network updates", style: TextStyle(fontSize: getFontSize(22, context), fontWeight: FontWeight.w500),)
                ]
           )
       )
                 , Expanded(child:  SingleChildScrollView(
                     child:Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5),
+                    padding: EdgeInsets.only(left: getFontSize(5, context), right: getFontSize(5, context)),
                     child: Container(
-                      padding: EdgeInsets.only(left: 1.5, right: 1.5),
+                      padding: EdgeInsets.only(left: getFontSize(1.5, context), right: getFontSize(1.5, context)),
                       width: double.infinity,
                       decoration: BoxDecoration(color: Colors.grey[300]),
                       child: Column(
                         children: [
                           SizedBox(
-                            height: 3,
+                            height: getFontSize(3, context),
                           ),
                           network_update(
                               network_name: "My Network",

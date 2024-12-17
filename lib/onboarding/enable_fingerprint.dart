@@ -90,7 +90,7 @@ class EnableFingerprintState extends State<EnableFingerprint> {
                     ),
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                          vertical: 12.0, horizontal: 24.0),
+                          vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                       child: Text(
                         'Continue',
                         style: TextStyle(

@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/AddPatients/add_a_patient.dart';
 import 'package:doctor_app/AddPatients/messages.dart';
 import 'package:doctor_app/AllPatientReading/AllPatientReading.dart';
@@ -23,7 +24,7 @@ class _PatientsState extends State<Patients> {
         title:   Text("Patients", style: TextStyle(fontSize: getFontSize(27, context), fontWeight: FontWeight.w500),),
         actions: [
           IconButton(
-            icon: Icon(Icons.stars_rounded, size: 36,),
+            icon: Icon(Icons.stars_rounded, size: getFontSize(36, context),),
             onPressed: () {
               // Search logic here
             },
@@ -36,39 +37,58 @@ class _PatientsState extends State<Patients> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>AddAPatient()));
+                },
+                child:
               actions(
                 context,
                 Icons.add,
                  "Add new patient",
-                 MaterialPageRoute(builder: (builder)=>AddAPatient()),
-
               ),
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>Messages()));
+                },
+                child:
               actions(
                   context,
                  Icons.message,
                  "Message patients",
-                 MaterialPageRoute(builder: (builder)=>Messages())
               ),
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>AllPatientReading()));
+                },
+                child:
               actions(
                   context,
                  Icons.edit_note,
                  "Patient’s readings",
-                 MaterialPageRoute(builder: (builder)=>AllPatientReading())
               ),
+              ),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (builder)=>Searchpatient()));
+                },
+                child:
               actions(
                   context,
                  Icons.search,
                  "Search for patients",
-                 MaterialPageRoute(builder: (builder)=>Searchpatient())
+              ),
               ),
             ],
           ),
-          SizedBox(height: 30,),
+          SizedBox(height: getFontSize(30, context),),
           Align(
             alignment: Alignment.centerLeft,
             child:
           Text("Requests from patients", style: TextStyle(fontWeight: FontWeight.w600 ,fontSize: getFontSize(20, context)),),),
-          SizedBox(height: 14,),
+          SizedBox(height: getFontSize(14, context),),
           Expanded(
             child:
           SingleChildScrollView(
@@ -133,7 +153,7 @@ class _PatientsState extends State<Patients> {
     return Container(
       child: Column(
         children: [
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -158,8 +178,8 @@ class _PatientsState extends State<Patients> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 5,),
-                  SizedBox(height: 2),
+                  SizedBox(height: getFontSize(5, context),),
+                  SizedBox(height: getFontSize(2, context)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -172,13 +192,13 @@ class _PatientsState extends State<Patients> {
                   ),
                 ],
               ),
-              SizedBox(width: 10),
+              SizedBox(width: getFontSize(10, context)),
 
               Column(
                 children: [
               Container(
-                width: 79,
-                height: 27,
+                // width: getFontSize(79, context),
+                height: getFontSize(27, context),
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(8),
@@ -196,15 +216,15 @@ class _PatientsState extends State<Patients> {
                   ),
                 ),
               ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getFontSize(10, context),),
                   Text(date, style: TextStyle(fontSize: getFontSize(11, context)),)
               ]
           )
             ],
           ),
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           SizedBox(
-            width: 350,
+            width: getFontSize(350, context),
             child: Divider(
               color: Colors.grey[300],
             ),
@@ -218,13 +238,10 @@ class _PatientsState extends State<Patients> {
 actions(
     BuildContext context,
     IconData icon,
-    String text,
-    MaterialPageRoute action
+    String text
     ) {
-  return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(action);
-      },
+  return Container(
+      height: getFontSize(112, context),
       child: Column(
         children: [
           Container(
@@ -235,13 +252,12 @@ actions(
             ),
             child: Icon(icon, size: getFontSize(36, context), color: Colors.blue,),
           ),
-          SizedBox(height: 12,),
+          SizedBox(height: getFontSize(12, context),),
           SizedBox(
-            width: 62,
+            width: getFontSize(65, context),
             child:  Text(text, textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(13, context),  fontWeight: FontWeight.w400),),
           )
         ],
-      )
+  )
   );
 }
-

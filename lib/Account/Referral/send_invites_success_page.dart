@@ -19,7 +19,7 @@ class SendInvitesSuccessPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             children: [
               SizedBox(height: getFontSize(40, context)),

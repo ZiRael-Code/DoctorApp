@@ -61,7 +61,7 @@ class SetupComplete extends StatelessWidget {
                 ),
                 child: Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                      EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                   child: Text(
                     'Continue',
                     style: TextStyle(
@@ -94,7 +94,7 @@ class SetupComplete extends StatelessWidget {
                     textStyle: TextStyle(color: Colors.blue)),
                 child: Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                      EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                   child: Text(
                     'Login to app instead',
                     style: TextStyle(

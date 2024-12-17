@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:doctor_app/components/my_blue_button.dart';
 import 'package:doctor_app/components/patients_textfield.dart';
 import 'package:flutter/material.dart';
@@ -16,18 +17,18 @@ class _PatientsInformationState extends State<PatientsInformation> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
@@ -35,48 +36,48 @@ class _PatientsInformationState extends State<PatientsInformation> {
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
-                  SizedBox(width: 60),
+                  SizedBox(width: getFontSize(60, context)),
                   Text(
                     "Patients information",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
 
               // Patient full name
               Text(
                 "Patient full name",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g Janet Okoli",
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Patient phone number
               Text(
                 "Patient phone number",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g 08011112233",
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Gender and Age
               Row(
@@ -89,15 +90,15 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Gender",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "e.g Male",
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: getFontSize(30, context)),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -105,17 +106,17 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Age",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "e.g 34",
                       ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Blood group and Genotype
               Row(
@@ -128,15 +129,15 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Blood group",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "O+",
                       ),
                     ],
                   ),
-                  SizedBox(width: 30),
+                  SizedBox(width: getFontSize(30, context)),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -144,47 +145,47 @@ class _PatientsInformationState extends State<PatientsInformation> {
                         "Genotype",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: getFontSize(10, context)),
                       PatientsTextfield(
-                        height: 50,
-                        width: 157,
+                        height: getFontSize(50, context),
+                        width: getFontSize(157, context),
                         hinttext: "AS",
                       ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Location
               Text(
                 "Location",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 50,
-                width: 335,
+                height: getFontSize(50, context),
+                width: getFontSize(335, context),
                 hinttext: "e.g Lagos",
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Medical history
               Text(
                 "Medical history",
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               PatientsTextfield(
-                height: 160,
-                width: 335,
+                height: getFontSize(160, context),
+                width: getFontSize(335, context),
                 hinttext: "No medical history available yet",
               ),
-              SizedBox(height: 60),
+              SizedBox(height: getFontSize(60, context)),
 
               // Save button
               MyBlueButton(text: "Save changes"),
-              SizedBox(height: 30),
+              SizedBox(height: getFontSize(30, context)),
             ],
           ),
         ),

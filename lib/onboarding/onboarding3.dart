@@ -12,11 +12,9 @@ class Onboarding3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        body:  Padding(padding: EdgeInsets.only(top: getFontSize(25, context), bottom: getFontSize(20, context)),
+          child: Column(
           children: [
-            SizedBox(
-              height: getFontSize(40, context),
-            ),
             Align(
               alignment: Alignment.centerRight,
               child: Padding(
@@ -79,10 +77,8 @@ class Onboarding3 extends StatelessWidget {
                 child: MyBlueButton(text: "Continue"),
               ),
             ),
-            SizedBox(
-              height: getFontSize(50, context),
-            )
           ],
+        ),
         ),
       ),
     );

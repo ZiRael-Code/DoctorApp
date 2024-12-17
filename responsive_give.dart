@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  final directory = Directory('lib/onboarding');
+  final directory = Directory('lib');
   final sizeParameters = ['width', 'height', 'size', 'fontSize', 'top', 'bottom',
     'left', 'right', 'horizontal', 'vertical', ];
 

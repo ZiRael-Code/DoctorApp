@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:doctor_app/AllPatientReading/PatientReading.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class Dashboard extends StatefulWidget {
   State<Dashboard> createState() => _DashboardState();
 }
 
-class _DashboardState extends State<Dashboard> {
+  class _DashboardState extends State<Dashboard> {
   List<Map<String, dynamic>> show_notification = [
     {
       'icon': Icon(
@@ -53,8 +54,8 @@ class _DashboardState extends State<Dashboard> {
         title: Row(
           children: [
             SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: getFontSize(50.0),
+              height: getFontSize(50.0),
               child: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -93,10 +94,10 @@ class _DashboardState extends State<Dashboard> {
                 // },
                 ),
             SizedBox(
-              width: 10,
+              width: getFontSize(10),
             ),
             Icon(Icons.wallet_outlined, size: getFontSize(29),),
-            SizedBox(width: 10,),
+            SizedBox(width: getFontSize(10),),
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
@@ -151,7 +152,7 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                   SizedBox(
-                    height: 20,
+                    height: getFontSize(20 ),
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -186,7 +187,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ),
                   SizedBox(
-                    height: 14,
+                    height: getFontSize(14 ),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -201,15 +202,15 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ])),
             Padding(
-                padding: EdgeInsets.only(left: 5, right: 5),
+                padding: EdgeInsets.only(left: getFontSize(5 ), right: getFontSize(5 )),
                 child: Container(
-                  padding: EdgeInsets.only(left: 1.5, right: 1.5),
+                  padding: EdgeInsets.only(left: getFontSize(1.5 ), right: getFontSize(1.5 )),
                   width: double.infinity,
                   decoration: BoxDecoration(color: Colors.grey[300]),
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 3,
+                        height: getFontSize(3,  ),
                       ),
                       network_update(
                           network_name: "My Network",
@@ -325,7 +326,7 @@ class _DashboardState extends State<Dashboard> {
         });
       },
         child: SizedBox(
-      // height: 150,
+      // height: getFontSize(150, context),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -350,8 +351,8 @@ class _DashboardState extends State<Dashboard> {
               : double.infinity
 
         : double.infinity,
-      margin: EdgeInsets.only(bottom: 10,),
-      padding: EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
+      margin: EdgeInsets.only(bottom: getFontSize(10 ),),
+      padding: EdgeInsets.only(top: getFontSize(19 ), bottom: getFontSize(19 ), left: getFontSize(12), right: getFontSize(12)),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(12.0),
@@ -369,8 +370,8 @@ class _DashboardState extends State<Dashboard> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35 ),
+            height: getFontSize(35 ),
             decoration:
                 BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
             child: icon,
@@ -382,7 +383,7 @@ class _DashboardState extends State<Dashboard> {
             alignment: Alignment.centerLeft,
             width: textContSize,
             child: AutoSizeText(text,
-                style: TextStyle(fontSize: 16.0* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
+                style: TextStyle(fontSize: getFontSize(16.0 )* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
                 overflow: TextOverflow.ellipsis),
           ),
           ),
@@ -422,19 +423,19 @@ class _DashboardState extends State<Dashboard> {
       Navigator.push(context, action)
     },
         child: Container(
-      margin: EdgeInsets.only(right: 15),
+      margin: EdgeInsets.only(right: getFontSize(15 )),
       width: w * 0.80,
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(width: 0.7, color: Colors.black12)),
+          border: Border.all(width: getFontSize(0.7 ), color: Colors.black12)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Label
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+            padding: EdgeInsets.symmetric(horizontal: getFontSize(8.0 ), vertical: getFontSize(4.0 )),
             decoration: BoxDecoration(
               color: regularityColor.withOpacity(0.15),
               borderRadius: BorderRadius.circular(8.0),
@@ -447,7 +448,7 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
           ),
-          SizedBox(height: 12.0),
+          SizedBox(height: getFontSize(12.0 )),
           // User Information
           Row(
             children: [
@@ -456,7 +457,7 @@ class _DashboardState extends State<Dashboard> {
                     AssetImage(path), // Replace with your image asset
                 radius: 24.0,
               ),
-              SizedBox(width: 12.0),
+              SizedBox(width: getFontSize(12.0 )),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -467,21 +468,21 @@ class _DashboardState extends State<Dashboard> {
                       fontSize: getFontSize(18.0),
                     ),
                   ),
-                  SizedBox(height: 4.0),
+                  SizedBox(height: getFontSize(4.0)),
                   Text(
                     '$time · $date',
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: 12.0,
+                      fontSize: getFontSize(12.0 ),
                     ),
                   ),
                 ],
               ),
             ],
           ),
-          SizedBox(height: 16.0),
+          SizedBox(height: getFontSize(16.0 )),
           SvgPicture.asset("assets/images/line.svg"),
-          SizedBox(height: 8.0),
+          SizedBox(height: getFontSize(8.0 )),
           // Health Readings
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -494,9 +495,9 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 12),
+                        fontSize: getFontSize(12 )),
                   ),
-                  Text(bp, style: TextStyle(fontSize: 12),
+                  Text(bp, style: TextStyle(fontSize: getFontSize(12 )),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
@@ -509,9 +510,9 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 12),
+                        fontSize: getFontSize(12 )),
                   ),
-                  Text(hba1c, style: TextStyle(fontSize: 12),
+                  Text(hba1c, style: TextStyle(fontSize: getFontSize(12 )),
 
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -525,9 +526,9 @@ class _DashboardState extends State<Dashboard> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
-                        fontSize: 12),
+                        fontSize: getFontSize(12 )),
                   ),
-                  Text(ihra, style: TextStyle(fontSize: 12),
+                  Text(ihra, style: TextStyle(fontSize: getFontSize(12 )),
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
@@ -571,7 +572,7 @@ network_update({
     },
       child: Container(
     alignment: Alignment.center,
-    margin: EdgeInsets.only(bottom: 15),
+    margin: EdgeInsets.only(bottom: getFontSize(15, context)),
     decoration: BoxDecoration(color: Colors.white),
     padding: EdgeInsets.all(12),
     child: Column(
@@ -581,15 +582,15 @@ network_update({
         Row(
           children: [
             SizedBox(
-              width:  42 * w / 375,
-              height: 42 * h / 812,
+              width: getFontSize(42, context) * w / 375,
+              height: getFontSize(42, context) * h / 812,
               child: CircleAvatar(
                 radius: 50,
                 backgroundImage: AssetImage(profile_path),
               ),
             ),
              SizedBox(
-              width: 10,
+              width: getFontSize(10, context),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -617,14 +618,14 @@ network_update({
           ],
         ),
         SizedBox(
-          height: 20,
+          height: getFontSize(20, context),
         ),
         SizedBox(
-          width: 285,
+          width: getFontSize(285, context),
           child: Text(text, style: TextStyle(fontSize: getFontSize(16.8, context))),
         ),
         SizedBox(
-          height: 20,
+          height: getFontSize(20, context),
         ),
         imageList.length == 1
             ? imageViewer(w: double.infinity, h: 326 * h / 817, path: imageList[0], imageList: imageList, index: 0)
@@ -640,8 +641,8 @@ network_update({
           }),
         )
         )
-            : SizedBox(height: 15,),
-        SizedBox(height: 8,),
+            : SizedBox(height: getFontSize(15, context),),
+        SizedBox(height: getFontSize(8, context),),
         Align(alignment: Alignment.center,
             child:
             Container(
@@ -650,7 +651,7 @@ network_update({
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
                       color: Colors.grey.withOpacity(0.5),
-                      width: 1,
+                      width: getFontSize(1, context),
                     ),
                     color: Color(0xffE2EDFF)),
                 child: Row(
@@ -658,7 +659,7 @@ network_update({
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text("View details", style: TextStyle(color: Colors.blue, fontSize: 16),),
+                    Text("View details", style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),),
                     Icon(Icons.arrow_forward, color: Colors.blue,)
                   ],
                 )))
@@ -712,5 +713,3 @@ Widget imageViewer({
 //
 // void main() {
 //   runApp(MaterialApp(home: Dashboard()));
-// }
-

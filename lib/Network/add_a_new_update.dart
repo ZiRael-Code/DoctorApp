@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'dart:io';
 
 import 'package:doctor_app/components/my_blue_button.dart';
@@ -47,19 +48,19 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
           child: Column(
             children: [
               SizedBox(
-                height: 30,
+                height: getFontSize(30, context),
               ),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
@@ -67,22 +68,22 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
-                  SizedBox(width: 60),
+                  SizedBox(width: getFontSize(60, context)),
                   Text(
                     "Add a new update",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 60),
+              SizedBox(height: getFontSize(60, context)),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -90,12 +91,12 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Container(
-                  height: 121,
-                  width: 335,
+                  height: getFontSize(121, context),
+                  width: getFontSize(335, context),
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     borderRadius: BorderRadius.circular(12),
@@ -117,7 +118,7 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: getFontSize(30, context),
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -127,7 +128,7 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: getFontSize(10, context),
               ),
               Align(
                 alignment: Alignment.centerLeft,
@@ -141,35 +142,35 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
                     children: [
                       Container(
                         decoration: BoxDecoration(color: Colors.grey.shade100),
-                        width: 335,
-                        height: 230,
+                        width: getFontSize(335, context),
+                        height: getFontSize(230, context),
                         child: Column(
                           children: [
                             SizedBox(
-                              height: 50,
+                              height: getFontSize(50, context),
                             ),
                             _selectedImage != null
                                 ? Image.file(
                                     _selectedImage!,
-                                    width: 150,
-                                    height: 150,
+                                    width: getFontSize(150, context),
+                                    height: getFontSize(150, context),
                                     fit: BoxFit.cover,
                                   )
                                 : Image.asset("assets/images/filelogo.png"),
                             SizedBox(
-                              height: 30,
+                              height: getFontSize(30, context),
                             ),
                             Text(
                               "Accepted formats: .jpg, .png",
                               style: TextStyle(color: Colors.grey),
                             ),
                             SizedBox(
-                              height: 20,
+                              height: getFontSize(20, context),
                             ),
                             Container(
-                              height: 55,
+                              height: getFontSize(55, context),
                               padding: EdgeInsets.only(
-                                  left: 50, right: 50, top: 10, bottom: 10),
+                                  left: getFontSize(50, context), right: getFontSize(50, context), top: getFontSize(10, context), bottom: getFontSize(10, context)),
                               decoration: BoxDecoration(
                                   color: Colors.blue.shade100,
                                   borderRadius: BorderRadius.circular(12)),
@@ -194,7 +195,7 @@ class _AddANewUpdateState extends State<AddANewUpdate> {
               Spacer(),
               MyBlueButton(text: "Upload"),
               SizedBox(
-                height: 30,
+                height: getFontSize(30, context),
               )
             ],
           ),

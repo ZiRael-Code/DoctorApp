@@ -303,8 +303,8 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           padding: EdgeInsets.symmetric(
-            vertical: 15.0,
-            horizontal: 10.0,
+            vertical: getFontSize(15.0, context),
+            horizontal: getFontSize(10.0, context),
           ),
           child: Text(
             textHint,

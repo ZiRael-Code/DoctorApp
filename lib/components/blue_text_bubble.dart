@@ -1,4 +1,6 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
+
 
 class BlueTextBubble extends StatelessWidget {
   final String text;
@@ -8,8 +10,8 @@ class BlueTextBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-      padding: EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+      margin: EdgeInsets.symmetric(vertical: getFontSize(5, context), horizontal: getFontSize(10, context)),
+      padding: EdgeInsets.symmetric(vertical: getFontSize(12, context), horizontal: getFontSize(15, context)),
       decoration: BoxDecoration(
         color: Colors.blue, // Light grey background
         borderRadius: BorderRadius.only(
@@ -24,7 +26,7 @@ class BlueTextBubble extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
           color: Colors.white, // Darker text for better readability
         ),
       ),

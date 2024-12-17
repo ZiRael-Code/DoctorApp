@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class ContactsTile extends StatelessWidget {
@@ -17,13 +18,13 @@ class ContactsTile extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 50,
-                height: 50,
+                width: getFontSize(50, context),
+                height: getFontSize(50, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black,
@@ -41,18 +42,18 @@ class ContactsTile extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 20),
+                  SizedBox(height: getFontSize(20, context)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       name,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: getFontSize(16, context),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(height: 2),
+                  SizedBox(height: getFontSize(2, context)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -64,10 +65,10 @@ class ContactsTile extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(width: 10),
+              SizedBox(width: getFontSize(10, context)),
               Container(
-                width: 79,
-                height: 27,
+                width: getFontSize(79, context),
+                height: getFontSize(27, context),
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(8),
@@ -78,16 +79,16 @@ class ContactsTile extends StatelessWidget {
                     "Add Patient",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: getFontSize(10, context),
                     ),
                   ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           SizedBox(
-            width: 350,
+            width: getFontSize(350, context),
             child: Divider(
               color: Colors.grey[300],
             ),

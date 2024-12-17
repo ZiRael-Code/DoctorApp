@@ -28,8 +28,8 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
@@ -37,8 +37,8 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
               ),
               child: SvgPicture.asset(
                 'assets/images/back.svg',
-                width: 8.0,
-                height: 15,
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),
               ),
             ),
             Spacer(),
@@ -47,7 +47,7 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
               child: Text(
                 'Add Account',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold),
               ),
@@ -61,18 +61,18 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20.0),
+            SizedBox(height: getFontSize(20.0, context)),
             textField(textHeader: 'Account Number', textHint: "0123456789"),
-            SizedBox(height: 25.0),
+            SizedBox(height: getFontSize(25.0, context)),
             textField(textHeader: 'Bank name', textHint: "GTBank"),
-            SizedBox(height: 25.0),
+            SizedBox(height: getFontSize(25.0, context)),
             textField(textHeader: "Name", textHint: "SANNI MUIZ DOLAPO"),
-            SizedBox(height: 25.0),
+            SizedBox(height: getFontSize(25.0, context)),
             Spacer(),
             Align(
               child: Container(
                 width: double.infinity,
-                height: 54,
+                height: getFontSize(54, context),
                 decoration: BoxDecoration(
                   color: Color(0xFF3C8AFF),
                   borderRadius: BorderRadius.circular(10),
@@ -88,13 +88,13 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
                     'Confirm',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: getFontSize(16, context),
                     ),
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 15.0),
+            SizedBox(height: getFontSize(15.0, context)),
           ],
         ),
       ),
@@ -123,8 +123,8 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           padding: EdgeInsets.symmetric(
-            vertical: 15.0,
-            horizontal: 10.0,
+            vertical: getFontSize(15.0, context),
+            horizontal: getFontSize(10.0, context),
           ),
           child: Text(
             textHint,

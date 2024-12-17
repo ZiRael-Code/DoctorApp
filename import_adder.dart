@@ -2,8 +2,7 @@ import 'dart:io';
 
 void main() {
   // Specify the folder to process
-  final directory = Directory('lib/onboarding');
-
+  final directory = Directory('lib/Referral');
   // The import statement to add
   const importStatement = "import '../MainSelectionScreen/Dashboard.dart';";
 

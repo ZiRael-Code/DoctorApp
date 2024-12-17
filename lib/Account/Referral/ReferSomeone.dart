@@ -48,6 +48,12 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                   InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -60,6 +66,10 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
                   Spacer(),
@@ -165,7 +175,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                       hintStyle: TextStyle(color: Colors.grey),
                       prefixIcon: Icon(Icons.search, color: Colors.grey),
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.symmetric(vertical: 15),
+                      contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                     ),
                   ),
                 ),
@@ -229,7 +239,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                     ),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                     child: Text(
                       'Done',
                       style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

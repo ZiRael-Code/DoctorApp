@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class MyWhiteButton extends StatelessWidget {
@@ -18,7 +19,7 @@ class MyWhiteButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 16),
+              color: Colors.blue, fontWeight: FontWeight.bold, fontSize: getFontSize(16, context)),
         ),
       ),
     );

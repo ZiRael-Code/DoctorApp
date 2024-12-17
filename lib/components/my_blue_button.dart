@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class MyBlueButton extends StatelessWidget {
@@ -17,7 +18,7 @@ class MyBlueButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: getFontSize(16, context)),
         ),
       ),
     );

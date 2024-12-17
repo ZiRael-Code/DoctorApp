@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../MainSelectionScreen/Dashboard.dart';
+
 class VideoCalling extends StatefulWidget {
   VideoCalling({super.key});
 
@@ -29,19 +31,19 @@ class _VideoCallingState extends State<VideoCalling> {
             padding: EdgeInsets.all(0),
         child: Column(
           children: [
-            SizedBox(height: 70,),
+            SizedBox(height: getFontSize(70, context),),
             SizedBox(
-            width: 108,
-            height: 108,
+            width: getFontSize(108, context),
+            height: getFontSize(108, context),
             child:
             CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/images/doc.png'),
             )
             ),
-            SizedBox(height: 20,),
-            Text('Dr. Nelson Yang', style: TextStyle(color: Colors.white ,fontSize: 16),)
-            ,Text('Calling', style: TextStyle(fontSize: 16, color: Colors.white),)
+            SizedBox(height: getFontSize(20, context),),
+            Text('Dr. Nelson Yang', style: TextStyle(color: Colors.white ,fontSize: getFontSize(16, context)),)
+            ,Text('Calling', style: TextStyle(fontSize: getFontSize(16, context), color: Colors.white),)
 
             ,Spacer(),
 
@@ -65,8 +67,8 @@ class _VideoCallingState extends State<VideoCalling> {
                   icon: Icons.mic_none,
                 ),
             Container(
-              width: 62,
-              height: 62,
+              width: getFontSize(62, context),
+              height: getFontSize(62, context),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.red,
@@ -91,13 +93,13 @@ class _VideoCallingState extends State<VideoCalling> {
     required IconData icon})
   {
     return Container(
-      width: 62,
-      height: 62,
+      width: getFontSize(62, context),
+      height: getFontSize(62, context),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Color(0xffE2EDFF),
       ),
-      child: Icon(icon, color: Colors.blue, size: 29,),
+      child: Icon(icon, color: Colors.blue, size: getFontSize(29, context),),
     );
   }
 }

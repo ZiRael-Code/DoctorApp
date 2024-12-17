@@ -21,7 +21,7 @@ class _MyNetworkState extends State<MyNetwork> {
       ),
       builder: (context) {
         return Container(
-          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+          padding: EdgeInsets.symmetric(vertical: getFontSize(16.0, context), horizontal: getFontSize(8.0, context)),
           child: Column(
             mainAxisSize: MainAxisSize.min, // Keep it minimal height
             children: [
@@ -98,7 +98,7 @@ class _MyNetworkState extends State<MyNetwork> {
         builder: (context) {
           return Container(
             padding:
-                EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+                EdgeInsets.symmetric(vertical: getFontSize(16.0, context), horizontal: getFontSize(8.0, context)),
             child:  Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -138,7 +138,7 @@ class _MyNetworkState extends State<MyNetwork> {
             return Container(
               height: getFontSize(210, context),
               padding:
-                  EdgeInsets.symmetric(vertical: 16.0, horizontal: 8.0),
+                  EdgeInsets.symmetric(vertical: getFontSize(16.0, context), horizontal: getFontSize(8.0, context)),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -251,7 +251,7 @@ class _MyNetworkState extends State<MyNetwork> {
                       ),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
                       child: Column(
                         children: [
                            SizedBox(height: getFontSize(50, context)),
@@ -375,7 +375,7 @@ class _MyNetworkState extends State<MyNetwork> {
                                   padding:  EdgeInsets.only(top: getFontSize(8, context)),
                                   child: Container(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: 16),
+                                        horizontal: getFontSize(16, context)),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
@@ -459,7 +459,7 @@ class _MyNetworkState extends State<MyNetwork> {
                 height: getFontSize(40, context),
               ),
                Padding(
-                padding: EdgeInsets.symmetric(horizontal: 28),
+                padding: EdgeInsets.symmetric(horizontal: getFontSize(28, context)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -491,7 +491,7 @@ SizedBox(
                     ),
                     // main row
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -595,7 +595,7 @@ SizedBox(
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4),
+                padding: EdgeInsets.symmetric(horizontal: getFontSize(4, context)),
                 child: Container(
                   width: getFontSize(410, context),
                   height: getFontSize(10, context),
@@ -615,7 +615,7 @@ SizedBox(
                     ),
                     // main row
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -728,7 +728,7 @@ SizedBox(
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4),
+                padding: EdgeInsets.symmetric(horizontal: getFontSize(4, context)),
                 child: Container(
                   width: getFontSize(410, context),
                   height: getFontSize(10, context),
@@ -748,7 +748,7 @@ SizedBox(
                     ),
                     // main row
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
+                      padding: EdgeInsets.symmetric(horizontal: getFontSize(25, context)),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -853,7 +853,7 @@ SizedBox(
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 4),
+                padding: EdgeInsets.symmetric(horizontal: getFontSize(4, context)),
                 child: Container(
                   width: getFontSize(410, context),
                   height: getFontSize(10, context),

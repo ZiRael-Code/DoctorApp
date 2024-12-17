@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class NetworkListTile extends StatefulWidget {
@@ -24,12 +25,12 @@ class _NetworkListTileState extends State<NetworkListTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15),
+      padding: EdgeInsets.symmetric(horizontal: getFontSize(15, context)),
       child: Container(
         child: Column(
           children: [
             SizedBox(
-              height: 5,
+              height: getFontSize(5, context),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,22 +43,22 @@ class _NetworkListTileState extends State<NetworkListTile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 20,
+                      height: getFontSize(20, context),
                     ),
                     Text(
                       "Guild of Nigerian Doctors",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: getFontSize(16, context),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(
-                      height: 14,
+                      height: getFontSize(14, context),
                     ),
                   ],
                 ),
                 SizedBox(
-                  width: 40,
+                  width: getFontSize(40, context),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -66,8 +67,8 @@ class _NetworkListTileState extends State<NetworkListTile> {
                     });
                   },
                   child: Container(
-                    height: 24,
-                    width: 24,
+                    height: getFontSize(24, context),
+                    width: getFontSize(24, context),
                     decoration: BoxDecoration(
                       color: isChecked ? Colors.green : Colors.grey,
                       shape: BoxShape.circle,
@@ -76,7 +77,7 @@ class _NetworkListTileState extends State<NetworkListTile> {
                         ? Icon(
                             Icons.check,
                             color: Colors.white,
-                            size: 16,
+                            size: getFontSize(16, context),
                           )
                         : null,
                   ),
@@ -84,10 +85,10 @@ class _NetworkListTileState extends State<NetworkListTile> {
               ],
             ),
             SizedBox(
-              height: 5,
+              height: getFontSize(5, context),
             ),
             SizedBox(
-              width: 350,
+              width: getFontSize(350, context),
               child: Divider(
                 color: Colors.grey[300],
               ),

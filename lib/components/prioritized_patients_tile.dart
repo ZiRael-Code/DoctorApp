@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -19,12 +20,12 @@ class PrioritizedPatientsTile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(25),
                 color: Colors.transparent,
               ),
-              width: 50,
-              height: 50,
+              width: getFontSize(50, context),
+              height: getFontSize(50, context),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image.asset("assets/images/ppp.png"))),
-          SizedBox(width: 10), // Spacing between image and text
+          SizedBox(width: getFontSize(10, context)), // Spacing between image and text
 
           // Name and hospital details
           Expanded(
@@ -39,22 +40,22 @@ class PrioritizedPatientsTile extends StatelessWidget {
                       "$name ⭐",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: getFontSize(16, context),
                       ),
                     ),
                     SvgPicture.asset(
                       "assets/images/dots.svg",
-                      width: 20, // Ensure consistent size
-                      height: 20,
+                      width: getFontSize(20, context), // Ensure consistent size
+                      height: getFontSize(20, context),
                     ),
                   ],
                 ),
-                SizedBox(height: 5), // Adjust vertical spacing
+                SizedBox(height: getFontSize(5, context)), // Adjust vertical spacing
                 Text(
                   "Hospital",
                   style: TextStyle(
                     color: Colors.grey, // Add subtle styling
-                    fontSize: 14,
+                    fontSize: getFontSize(14, context),
                   ),
                 ),
               ],

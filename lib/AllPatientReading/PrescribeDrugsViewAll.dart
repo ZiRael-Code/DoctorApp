@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -7,8 +8,13 @@ void main() {
   runApp(PrescribeDrugsViewAll());
 }
 
-class PrescribeDrugsViewAll extends StatelessWidget {
-  PrescribeDrugsViewAll({super.key});
+
+class PrescribeDrugsViewAll extends StatefulWidget {
+  @override
+  _PrescribeDrugsViewAllState createState() => _PrescribeDrugsViewAllState();
+}
+
+class _PrescribeDrugsViewAllState extends State<PrescribeDrugsViewAll> {
 
   @override
   Widget build(BuildContext context) {
@@ -18,16 +24,16 @@ class PrescribeDrugsViewAll extends StatelessWidget {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -36,7 +42,7 @@ class PrescribeDrugsViewAll extends StatelessWidget {
                 Text(
                   'Prescribe drugs',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal,
                       fontWeight: FontWeight.bold
                   ),
@@ -57,7 +63,7 @@ class PrescribeDrugsViewAll extends StatelessWidget {
               instructions: '2X daily',
               drugUnit: '1 pack:  '
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: getFontSize(20, context),),
 
             Align(
               child:
@@ -69,9 +75,9 @@ class PrescribeDrugsViewAll extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Icon(Icons.add_circle_outline,color: Colors.blue,),
-                      SizedBox(width: 8,),
-                      Text('Add Prescription', style: TextStyle(fontSize: 14, color: Colors.blue)),
-                      SizedBox(width: 6,),
+                      SizedBox(width: getFontSize(8, context),),
+                      Text('Add Prescription', style: TextStyle(fontSize: getFontSize(14, context), color: Colors.blue)),
+                      SizedBox(width: getFontSize(6, context),),
                     ]
                 ),
               ),
@@ -89,10 +95,10 @@ class PrescribeDrugsViewAll extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                 child: Text(
                   'Continue',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                 ),
               ),
             ),
@@ -113,15 +119,15 @@ class PrescribeDrugsViewAll extends StatelessWidget {
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.grey.shade200, width: 1),
+        border: Border.all(color: Colors.grey.shade200, width: getFontSize(1, context)),
       ),
         child: Row(
           children: [
       Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-          Text(name, style: TextStyle(fontSize: 18)),
-            SizedBox(height: 10,),
+          Text(name, style: TextStyle(fontSize: getFontSize(18, context))),
+            SizedBox(height: getFontSize(10, context),),
           Row(
           children: [
             Text(drugUnit, style: TextStyle(color: Colors.grey[500]),),

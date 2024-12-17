@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'dart:io';
 
 import 'package:doctor_app/Network/add_a_new_update.dart';
@@ -57,14 +58,14 @@ class _EditNetworkState extends State<EditNetwork> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 25),
+                SizedBox(height: getFontSize(25, context)),
                 Row(
                   children: [
                     GestureDetector(
                       onTap: () => Navigator.pop(context),
                       child: Container(
-                        height: 45,
-                        width: 45,
+                        height: getFontSize(45, context),
+                        width: getFontSize(45, context),
                         decoration: BoxDecoration(
                           color: Colors.grey.shade300,
                           shape: BoxShape.circle,
@@ -72,25 +73,25 @@ class _EditNetworkState extends State<EditNetwork> {
                         child: Icon(Icons.arrow_back),
                       ),
                     ),
-                    SizedBox(width: 60),
+                    SizedBox(width: getFontSize(60, context)),
                     Text(
                       "Edit network",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Text(
                   "Name",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: getFontSize(10, context)),
                 Container(
-                  height: 48,
-                  width: 335,
+                  height: getFontSize(48, context),
+                  width: getFontSize(335, context),
                   decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(12)),
@@ -108,15 +109,15 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 Text(
                   "Description",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: getFontSize(10, context)),
                 Container(
-                  height: 82,
-                  width: 335,
+                  height: getFontSize(82, context),
+                  width: getFontSize(335, context),
                   decoration: BoxDecoration(
                       color: Colors.grey[200],
                       borderRadius: BorderRadius.circular(12)),
@@ -134,12 +135,12 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: getFontSize(30, context)),
                 Text(
                   "Display picture",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: getFontSize(10, context)),
                 DottedBorder(
                   color: Colors.grey.withOpacity(0.70),
                   radius: Radius.circular(19),
@@ -148,32 +149,32 @@ class _EditNetworkState extends State<EditNetwork> {
                   strokeWidth: 2,
                   child: Container(
                     decoration: BoxDecoration(color: Colors.grey.shade100),
-                    width: 335,
-                    height: 230,
+                    width: getFontSize(335, context),
+                    height: getFontSize(230, context),
                     child: Center(
                       child: _selectedImage != null
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: Image.file(
                                 _selectedImage!,
-                                width: 150,
-                                height: 150,
+                                width: getFontSize(150, context),
+                                height: getFontSize(150, context),
                                 fit: BoxFit.cover,
                               ),
                             )
                           : Icon(
                               Icons.image,
                               color: Colors.grey,
-                              size: 50,
+                              size: getFontSize(50, context),
                             ),
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 Center(
                   child: Container(
-                    width: 174,
-                    height: 48,
+                    width: getFontSize(174, context),
+                    height: getFontSize(48, context),
                     decoration: BoxDecoration(
                         color: Colors.blue[100],
                         borderRadius: BorderRadius.circular(14)),
@@ -185,7 +186,7 @@ class _EditNetworkState extends State<EditNetwork> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: getFontSize(30, context)),
                 GestureDetector(
                   onTap: () => Navigator.push(context,
                       MaterialPageRoute(builder: (context) => AddANewUpdate())),

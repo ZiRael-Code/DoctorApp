@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import '../Account/PersonalHistoryRecords.dart';
 import 'Dashboard.dart';
 import 'dart:math';
@@ -21,8 +22,7 @@ import '../Account/Referral/Referrals.dart';
 import '../Account/ResetPin.dart';
 
 class Account extends StatefulWidget {
-  final void Function(int index) onItemTapped;
-  Account({super.key, required this.onItemTapped});
+  Account({super.key});
 
   @override
   State<Account> createState() => _AccountState();

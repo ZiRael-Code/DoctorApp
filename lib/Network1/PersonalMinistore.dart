@@ -1,3 +1,4 @@
+import '../MainSelectionScreen/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 import 'AllMed.dart';
@@ -22,8 +23,8 @@ class _MinistoreState extends State<Ministore> {
         appBar: AppBar(
           leadingWidth: 80,
           leading: Container(
-            width: 45,
-            height: 45,
+            width: getFontSize(45, context),
+            height: getFontSize(45, context),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.grey.shade200,
@@ -36,9 +37,9 @@ class _MinistoreState extends State<Ministore> {
           show_update_drug_bottomSheet();
     },
         child: Container(
-              margin: EdgeInsets.only(right: 10),
-              width: 45,
-              height: 45,
+              margin: EdgeInsets.only(right: getFontSize(10, context)),
+              width: getFontSize(45, context),
+              height: getFontSize(45, context),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.grey.shade200,
@@ -49,36 +50,36 @@ class _MinistoreState extends State<Ministore> {
           ],
         ),
         body: Padding(
-          padding: EdgeInsets.only(left: 12, right: 12),
+          padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context)),
           child: Stack(
             children: [
               Column(
                 children: [
                   SizedBox(
-                    width: 124,
-                    height: 124,
+                    width: getFontSize(124, context),
+                    height: getFontSize(124, context),
                     child: CircleAvatar(
                       radius: 50,
                       backgroundImage: AssetImage('assets/images/doc.png'),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: getFontSize(15, context)),
                   Text(
                     "Dr. Sanni Store",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                    style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.w500),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: getFontSize(10, context)),
                   SizedBox(
-                    width: 189,
+                    width: getFontSize(189, context),
                     child: Text(
                       "No. 33 Adegoke Street, Surulere, Lagos State",
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black45, fontSize: 14),
+                      style: TextStyle(color: Colors.black45, fontSize: getFontSize(14, context)),
                     ),
                   ),
-                  SizedBox(height: 25),
+                  SizedBox(height: getFontSize(25, context)),
                   Container(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: EdgeInsets.only(right: getFontSize(10, context)),
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.grey[200],
@@ -90,41 +91,41 @@ class _MinistoreState extends State<Ministore> {
                         hintStyle: TextStyle(color: Colors.grey),
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 15),
+                        contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context)),
                       ),
                     ),
                   ),
-                  SizedBox(height: 25),
+                  SizedBox(height: getFontSize(25, context)),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
                         condition(index: 0, text: "All"),
-                        SizedBox(width: 10),
+                        SizedBox(width: getFontSize(10, context)),
                         condition(index: 1, text: "Device"),
-                        SizedBox(width: 10),
+                        SizedBox(width: getFontSize(10, context)),
                         condition(index: 2, text: "Tablet"),
-                        SizedBox(width: 10),
+                        SizedBox(width: getFontSize(10, context)),
                         condition(index: 3, text: "Capsule"),
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: getFontSize(10, context)),
                   Expanded(
                     child: contentDisplay(),
                   ),
                 ],
               ),
               Positioned(
-                bottom: 20,
-                right: 20,
+                bottom: getFontSize(20, context),
+                right: getFontSize(20, context),
                 child: InkWell(
                   onTap: () {
                     show_add_drug_bottomSheet();
                   },
                   child: Container(
-                    width: 64,
-                    height: 64,
+                    width: getFontSize(64, context),
+                    height: getFontSize(64, context),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.blue,
@@ -132,7 +133,7 @@ class _MinistoreState extends State<Ministore> {
                     child: Icon(
                       Icons.add,
                       color: Colors.white,
-                      size: 39,
+                      size: getFontSize(39, context),
                     ),
                   ),
                 ),
@@ -154,7 +155,7 @@ class _MinistoreState extends State<Ministore> {
         });
       },
       child: Container(
-        padding: EdgeInsets.only(left: 22, right: 22, top: 12, bottom: 12),
+        padding: EdgeInsets.only(left: getFontSize(22, context), right: getFontSize(22, context), top: getFontSize(12, context), bottom: getFontSize(12, context)),
         decoration: BoxDecoration(
           color: selectedIndex == index ? Colors.blue : Color(0xffE2EDFF),
           borderRadius: BorderRadius.circular(50),
@@ -163,7 +164,7 @@ class _MinistoreState extends State<Ministore> {
           text,
           style: TextStyle(
             color: selectedIndex == index ? Colors.white : Colors.blue,
-            fontSize: 16,
+            fontSize: getFontSize(16, context),
           ),
         ),
       ),
@@ -202,7 +203,7 @@ class _MinistoreState extends State<Ministore> {
             children: [
               Text(
                 "Add Drug",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: getFontSize(20, context), fontWeight: FontWeight.bold),
               ),
               textField(
                   label: "Name",
@@ -214,15 +215,15 @@ class _MinistoreState extends State<Ministore> {
               ),
               Align(
                 alignment: Alignment.topLeft,
-                child: Text("Content", style: TextStyle(fontSize: 14),),
+                child: Text("Content", style: TextStyle(fontSize: getFontSize(14, context)),),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(height: 25,),
+                  SizedBox(height: getFontSize(25, context),),
                     SizedBox(
-                    width: 141,
+                    width: getFontSize(141, context),
                     child:   Container(
                       alignment: Alignment.center,
                       width: double.infinity,
@@ -252,10 +253,10 @@ class _MinistoreState extends State<Ministore> {
                   ),
 
                   SizedBox(
-                    width: 10,
+                    width: getFontSize(10, context),
                   ),
                   SizedBox(
-                    width: 141,
+                    width: getFontSize(141, context),
                     child:   textFieldSuffixIcon(
                         label: "",
                         hint: "Tablet",
@@ -272,7 +273,7 @@ class _MinistoreState extends State<Ministore> {
                   hint: "0",
                   drop: ["Tablet", "Syrup", "Tinubu"]
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -283,10 +284,10 @@ class _MinistoreState extends State<Ministore> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                   child: Text(
                     'Save changes',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
@@ -316,7 +317,7 @@ class _MinistoreState extends State<Ministore> {
             children: [
               Text(
                 "Edit drug details",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: getFontSize(20, context), fontWeight: FontWeight.bold),
               ),
               textField(
                   label: "Name",
@@ -328,15 +329,15 @@ class _MinistoreState extends State<Ministore> {
               ),
               Align(
                 alignment: Alignment.topLeft,
-                child: Text("Content", style: TextStyle(fontSize: 14),),
+                child: Text("Content", style: TextStyle(fontSize: getFontSize(14, context)),),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(height: 25,),
+                  SizedBox(height: getFontSize(25, context),),
                     SizedBox(
-                    width: 141,
+                    width: getFontSize(141, context),
                     child:   Container(
                       alignment: Alignment.center,
                       width: double.infinity,
@@ -366,10 +367,10 @@ class _MinistoreState extends State<Ministore> {
                   ),
 
                   SizedBox(
-                    width: 10,
+                    width: getFontSize(10, context),
                   ),
                   SizedBox(
-                    width: 141,
+                    width: getFontSize(141, context),
                     child:   textFieldSuffixIcon(
                         label: "",
                         hint: "Tablet",
@@ -386,7 +387,7 @@ class _MinistoreState extends State<Ministore> {
                   hint: "0",
                   drop: ["Tablet", "Syrup", "Tinubu"]
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -397,10 +398,10 @@ class _MinistoreState extends State<Ministore> {
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                   child: Text(
                     'Save changes',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
@@ -411,7 +412,6 @@ class _MinistoreState extends State<Ministore> {
       },
     );
   }
-}
 
 textField({
   required String label,
@@ -422,9 +422,9 @@ required String hint,
     children: [
       Align(
         alignment: Alignment.topLeft,
-        child: Text(label, style: TextStyle(fontSize: 14),),
+        child: Text(label, style: TextStyle(fontSize: getFontSize(14, context)),),
       ),
-    SizedBox(height: 10,),
+    SizedBox(height: getFontSize(10, context),),
     Container(
    width: double.infinity,
     decoration: BoxDecoration(
@@ -440,7 +440,7 @@ required String hint,
           )),
     ),
   ),
-      SizedBox(height: 10,)
+      SizedBox(height: getFontSize(10, context),)
     ],
   );
 }
@@ -458,9 +458,9 @@ Widget textFieldSuffixIcon({
     children: [
       Text(
         label,
-        style: TextStyle(fontSize: 14),
+        style: TextStyle(fontSize: getFontSize(14, context)),
       ),
-      SizedBox(height: 10),
+      SizedBox(height: getFontSize(10, context)),
       StatefulBuilder(
         builder: (context, setState) {
           return Container(
@@ -509,10 +509,10 @@ Widget textFieldSuffixIcon({
           );
         },
       ),
-      SizedBox(height: 10,)
+      SizedBox(height: getFontSize(10, context),)
     ],
   );
 }
-
+}
 
 
